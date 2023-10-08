@@ -3,7 +3,7 @@ import background from '../../public/images/portfolio-background.svg';
 import Image from 'next/image';
 import { Josefin_Sans } from '@next/font/google';
 
-
+// const inter = Inter({ subsets: ['latin'] })
 const josefin = Josefin_Sans({
   subsets: ['latin'],
   weight: ['100']
