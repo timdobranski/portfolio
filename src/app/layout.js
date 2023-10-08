@@ -19,7 +19,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-
+        <Head>
+          <meta property="og:image" content="./opengraph-image.png" />
+        </Head>
       <body id='app' className={josefin.className}>
         {/* <Image src={background} alt='Tim Dobranski' className='background' /> */}
         <div id='header-container'>
