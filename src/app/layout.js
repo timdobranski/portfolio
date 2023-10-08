@@ -2,8 +2,9 @@ import './globals.css';
 import background from '../../public/images/portfolio-background.svg';
 import Image from 'next/image';
 import { Josefin_Sans } from '@next/font/google';
+import Head from 'next/head';
 
-// const inter = Inter({ subsets: ['latin'] })
+
 const josefin = Josefin_Sans({
   subsets: ['latin'],
   weight: ['100']
@@ -12,11 +13,13 @@ const josefin = Josefin_Sans({
 export const metadata = {
   title: 'Tim Dobranski',
   description: 'A collection of projects and professional accomplishments',
+
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+
       <body id='app' className={josefin.className}>
         {/* <Image src={background} alt='Tim Dobranski' className='background' /> */}
         <div id='header-container'>

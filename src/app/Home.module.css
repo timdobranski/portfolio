@@ -105,12 +105,12 @@
 
 @keyframes pulsateBlue {
   0% {
-      box-shadow: 0 0 35px #004063;
+      box-shadow: 0 0 35px #00ccff;
   }
   50% {
-      box-shadow: 0 0 100px #004063;
+      box-shadow: 0 0 100px #00ccff;
   }
   100% {
-      box-shadow: 0 0 35px #004063;
+      box-shadow: 0 0 35px #00ccff;
   }
 }
