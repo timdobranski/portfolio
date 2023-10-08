@@ -11,7 +11,7 @@ export default function Home() {
 
   const rings = [
     {
-      header: '',
+      header: '0',
       text: 'To learn more about me and my background, click on the about me tab above',
       color: 'blueGlow'
     },
@@ -21,11 +21,15 @@ export default function Home() {
       color: 'greenGlow'
     },
     {
-      header: '',
+      header: '2',
       text: 'To see more of my work, click on the projects tab above',
       color: 'redGlow'
     },
-
+    {
+      header: '3',
+      text: 'To see more of my work, click on the projects tab above',
+      color: 'redGlow'
+    },
   ]
 
 
@@ -47,29 +51,31 @@ export default function Home() {
 
   return (
     <main id={styles.home}>
-    {rings.map((ring, i) => {
-        let ringClass = '';
+        {rings.map((ring, i) => {
+            // Determine the class for the ring
+            let ringClass = '';
+            if (i === activeRing) {
+                ringClass = styles.activeRing;
+            } else if (i === activeRing + 1) {
+                ringClass = styles.inactiveRight;
+            } else if (i === activeRing - 1) {
+                ringClass = styles.inactiveLeft;
+            } else {
+                return null; // Skip rendering if it's not one of the desired rings
+            }
 
-        if (i === activeRing) {
-          ringClass = styles.activeRing;
-      } else if (i === activeRing + 1) {
-          ringClass = styles.inactiveRight;
-      } else if (i === activeRing - 1) {
-          ringClass = styles.inactiveLeft;
-      }
-
-        return (
-            <div className={`${styles.ring} ${styles[ring.color]} ${ringClass}`} key={i}>
-                {i === activeRing ?
-                <>
-                  <h1>{ring.header}</h1>
-                  <p>{ring.text}</p>
-                </>
-                : ''
-                }
-            </div>
-        )
-    })}
+            // Render the ring
+            return (
+                <div className={`${styles.ring} ${styles[ring.color]} ${ringClass}`} key={i}>
+                    {i === activeRing ?
+                    <>
+                        <h1>{ring.header}</h1>
+                        <p>{ring.text}</p>
+                    </>
+                    : ''}
+                </div>
+            );
+        })}
     </main>
   )
 }
