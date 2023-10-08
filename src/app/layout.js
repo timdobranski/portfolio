@@ -18,10 +18,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body id='app' className={josefin.className}>
-        <Image src={background} alt='Tim Dobranski' className='background' />
+        {/* <Image src={background} alt='Tim Dobranski' className='background' /> */}
         <div id='header-container'>
           <h1 className='title '>TIM DOBRANSKI</h1>
-          <p className='description '>Web developer, musician, educator, and dog dad to Aria</p>
+          <p className='description '>Software developer, musician, educator, and dog dad to Aria</p>
           <div className='grid '>
             <a href='' className='card'>
               <h2>PROJECTS</h2>

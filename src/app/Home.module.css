@@ -1,8 +1,116 @@
 #home {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 75vh;
+  position: relative; /* Add this line */
+  background: linear-gradient(to bottom right, rgb(0, 156, 162), rgb(0, 33, 83));
+}
+.welcomeHeader {
+  font-size: 3rem;
+  color: white;
+
+}
+.me {
+  width: 500px;
+  height: auto;
+}
+.introduction {
+  color: white;
+  font-size: 2rem;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  font-weight: 200;
+}
+.ring {
+  display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-end;
-  height: 100vh;
-  border: solid white 3px;
+  justify-content: center;
+  align-items: center;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  padding-bottom: 3vw;
+  width: 30vw;
+  height: 30vw;
+  color: white;
+  font-size: 2rem;
+  border-radius: 50%;
+  background-color: black;
+}
+.activeRing {
+  width: 30vw;
+  height: 30vw;
+}
+.greenGlow {
+  border: 4px solid #00f38a;
+  box-shadow: 0 0 35px #00f38a;
+  animation: pulsateGreen 3s infinite;
+}
+.blueGlow {
+  border: 4px solid #00ccff;
+  box-shadow: 0 0 100px #004063;
+  animation: pulsateBlue 3s infinite;
+}
+.yellowGlow {
+  border: 4px solid #00f38a;
+  box-shadow: 0 0 35px #00f38a;
+}
+.redGlow {
+  border: 4px solid #fe9292;
+  box-shadow: 0 0 100px #ff0000;
+  animation: pulsateRed 3s infinite;
+}
+.inactiveLeft {
+  width: 15vw;
+  height: 15vw;
+  margin-right: 7.5vw;  /* half the width */
+  margin-left: -8vw;  /* negative width including half of its size */
+}
+
+.inactiveRight {
+  width: 15vw;
+  height: 15vw;
+  margin-left: 7.5vw;  /* half the width */
+  margin-right: -8vw;  /* negative width including half of its size */
+}
+.hidden {
+  display: none;
+}
+
+@keyframes pulsateGreen {
+  0% {
+      box-shadow: 0 0 35px #00f38a;
+  }
+  50% {
+      box-shadow: 0 0 75px #00f38a;
+  }
+  100% {
+      box-shadow: 0 0 35px #00f38a;
+  }
+}
+
+@keyframes pulsateRed {
+  0% {
+      box-shadow: 0 0 35px #ff0000;
+  }
+  50% {
+      box-shadow: 0 0 75px #ff0000;
+  }
+  100% {
+      box-shadow: 0 0 35px #ff0000;
+  }
+}
+
+@keyframes pulsateBlue {
+  0% {
+      box-shadow: 0 0 35px #004063;
+  }
+  50% {
+      box-shadow: 0 0 100px #004063;
+  }
+  100% {
+      box-shadow: 0 0 35px #004063;
+  }
 }
