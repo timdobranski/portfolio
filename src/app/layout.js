@@ -2,7 +2,7 @@ import './globals.css';
 import background from '../../public/images/portfolio-background.svg';
 import Image from 'next/image';
 import { Josefin_Sans } from '@next/font/google';
-import Head from 'next/head';
+
 
 
 const josefin = Josefin_Sans({
@@ -11,17 +11,27 @@ const josefin = Josefin_Sans({
 });
 
 export const metadata = {
-  title: 'Tim Dobranski',
-  description: 'A collection of projects and professional accomplishments',
-
-}
+  openGraph: {
+    title: 'Next.js',
+    description: 'The React Framework for the Web',
+    url: 'https://nextjs.org',
+    siteName: 'Next.js',
+    images: [
+      {
+        url: 'http://3.23.230.122/public/images/preview.png',
+        width: 800,
+        height: 600,
+        alt: 'Description of the image', // Optional, but good for accessibility.
+      }
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-        <Head>
-          <meta property="og:image" content="./opengraph-image.png" />
-        </Head>
       <body id='app' className={josefin.className}>
         {/* <Image src={background} alt='Tim Dobranski' className='background' /> */}
         <div id='header-container'>

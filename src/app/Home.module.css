@@ -10,11 +10,6 @@
 .welcomeHeader {
   font-size: 3rem;
   color: white;
-
-}
-.me {
-  width: 500px;
-  height: auto;
 }
 .introduction {
   color: white;
@@ -32,8 +27,6 @@
   padding-left: 3vw;
   padding-right: 3vw;
   padding-bottom: 3vw;
-  width: 30vw;
-  height: 30vw;
   color: white;
   font-size: 2rem;
   border-radius: 50%;
