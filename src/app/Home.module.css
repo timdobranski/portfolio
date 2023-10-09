@@ -1,10 +1,7 @@
 #home {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  position: relative;
   height: 75vh;
-  position: relative; /* Add this line */
+  overflow: hidden;
   background: linear-gradient(to bottom right, rgb(0, 156, 162), rgb(0, 33, 83));
 }
 .welcomeHeader {
@@ -31,21 +28,44 @@
   font-size: 2rem;
   border-radius: 50%;
   background-color: black;
-  transition: transform 1s ease, width 1s ease, height 1s ease, margin 1s ease;
-}
-.moveLeft {
-  transform: translateX(-100%);
-}
-
-.moveRight {
-  transform: translateX(100%);
+  transition: transform 1s ease, width 1s ease, height 1s ease, margin 1s ease, left 1s ease, top 1s ease, font-size 1s ease;
+  position: absolute;
 }
 .inactiveLeft, .inactiveRight, .activeRing {
-  transform: scale(1); /* Resets any previous transform */
+  transform: scale(1);
 }
 .activeRing {
+  position: absolute;
+  top: 8%;
+  left: 35%;
   width: 30vw;
   height: 30vw;
+}
+.inactiveLeft {
+  position: absolute;
+  top: 25%;
+  left: -8%;
+  width: 15vw;
+  height: 15vw;
+  font-size: 1rem;
+  transform: translate(0%, 0%);
+
+}
+.inactiveRight {
+  position: absolute;
+  top: 25%;
+  left: 85%;
+  width: 15vw;
+  height: 15vw;
+  font-size: 1rem;
+  margin-left: 7.5vw;
+  margin-right: -7vw;
+}
+.hidden {
+  opacity: 0;
+  display: hidden;
+  left: 150%;
+  transition: transform 1s ease, width 1s ease, height 1s ease, margin 1s ease, left 1s ease top 1s ease;
 }
 .greenGlow {
   border: 4px solid #00f38a;
@@ -66,24 +86,6 @@
   border: 4px solid #fb0019;
   box-shadow: 0 0 100px #ea0027;
   animation: pulsateRed 3s infinite;
-}
-.inactiveLeft {
-  width: 15vw;
-  height: 15vw;
-  font-size: 1rem;
-  margin-right: 7.5vw;  /* half the width */
-  margin-left: -8vw;  /* negative width including half of its size */
-
-
-}
-
-.inactiveRight {
-  width: 15vw;
-  height: 15vw;
-  font-size: 1rem;
-  margin-left: 7.5vw;  /* half the width */
-  margin-right: -7vw;  /* negative width including half of its size */
-  /* transform: translateX(100%); */
 }
 .leftNav, .rightNav {
   position: absolute;    /* Use absolute positioning */
@@ -121,7 +123,7 @@
       box-shadow: 0 0 35px #ea005a;
   }
   50% {
-      box-shadow: 0 0 130px #ea005a;
+      box-shadow: 0 0 150px #ea005a;
   }
   100% {
       box-shadow: 0 0 35px #ea005a;
