@@ -1,0 +1,25 @@
+.connectContainer {
+    position: relative;
+    height: 75vh;
+    width: 100vw;
+    overflow: hidden;
+}
+.connectContainer h1 p{
+  color: white;
+}
+.oversizedYellowRing {
+  height:200vh;
+  width: 95vw;
+  background-color: black;
+  border: solid 35px #f3db00;
+  border-radius: 50%;
+  box-shadow: 0 0 75px #fffb0f;
+  animation: pulsateYellow 3s infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

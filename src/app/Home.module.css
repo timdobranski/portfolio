@@ -2,7 +2,7 @@
   position: relative;
   height: 75vh;
   overflow: hidden;
-  background: linear-gradient(to bottom right, rgb(0, 156, 162), rgb(0, 33, 83));
+  /* background: linear-gradient(to bottom right, rgb(0, 156, 162), rgb(0, 33, 83)); */
 }
 .welcomeHeader {
   font-size: 3rem;
@@ -62,8 +62,8 @@
   margin-right: -7vw;
 }
 .hidden {
-  opacity: 0;
-  display: hidden;
+  /* opacity: 0;
+  display: hidden; */
   left: 150%;
   z-index: -1;
   transition: transform 1s ease, width 1s ease, height 1s ease, margin 1s ease, left 1s ease top 1s ease;
@@ -101,7 +101,7 @@
   right: 18vw;  /* Position to the right */
 }
 .greenGlow .ringHeader {
-  background-image: linear-gradient(to right, rgb(0, 167, 56), #65ffc7);
+  background-image: linear-gradient(to right, rgb(0, 167, 56), #a1ff92);
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
@@ -128,20 +128,11 @@
   background-clip: text;
   display: inline;
 }
-.ringText{
-
-}
 
 @keyframes pulsateGreen {
-  0% {
-      box-shadow: 0 0 35px #00f38a;
-  }
-  50% {
-      box-shadow: 0 0 130px #00f38a;
-  }
-  100% {
-      box-shadow: 0 0 35px #00f38a;
-  }
+  0% {box-shadow: 0 0 35px #00f38a;}
+  50% { box-shadow: 0 0 130px #00f38a;}
+  100% { box-shadow: 0 0 35px #00f38a; }
 }
 
 @keyframes pulsateRed {
@@ -178,4 +169,93 @@
   100% {
       box-shadow: 0 0 35px #fffb0f;
   }
+}
+.zoom-in {
+  transform: scale(1.1);
+  transition: transform 300ms ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in-text {
+  animation: fadeIn 0.2s forwards;
+  animation-delay: 0.7s; /* This delay will ensure it starts after any other transition is likely complete. Adjust as needed */
+  opacity: 0; /* Initially hidden */
+}
+
+@media (max-width: 768px) {
+  .ring {
+    /* font-size: 1.5rem; */
+  }
+  .activeRing {
+    position: absolute;
+    top: 15%;
+    left: 13%;
+    width: 75vw;
+    height: 75vw;
+    font-size: 1rem;
+  }
+  .activeRing p h2 {
+    font-size: .25;
+  }
+  .inactiveLeft {
+    position: absolute;
+    top: 28%;
+    left: -25%;
+    width: 30vw;
+    height: 30vw;
+    font-size: 1rem;
+    transform: translate(0%, 0%);
+  }
+  .inactiveLeft .ringheader {
+    font-size: 0rem;
+  }
+  .inactiveRight {
+    position: absolute;
+    top: 28%;
+    left: 88%;
+    width: 30vw;
+    height: 30vw;
+    font-size: .25rem;
+    margin-left: 7.5vw;
+    margin-right: -7vw;
+  }
+  .inactiveRight p h2 {
+    font-size: .25rem;
+  }
+  .leftNav, .rightNav {
+    position: absolute;    /* Use absolute positioning */
+    top: 75%;              /* Center vertically */
+    font-size: 3rem;
+    color: white;
+  }
+  .leftNav {
+    left: 15vw;   /* Position to the left */
+  }
+  .rightNav {
+    right: 15vw;  /* Position to the right */
+  }
+  .ringHeader {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+  .ringText{
+    font-size: 1.5rem;
+  }
+  .inactiveRight .ringText,
+.inactiveLeft .ringText {
+    font-size: 0.5rem;  /* Adjust as needed */
+}
+
+.inactiveRight .ringHeader,
+.inactiveLeft .ringHeader {
+    font-size: 0.75rem;  /* Adjust as needed */
+}
+
 }

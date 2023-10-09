@@ -2,8 +2,9 @@ import './globals.css';
 import background from '../../public/images/portfolio-background.svg';
 import Image from 'next/image';
 import { Josefin_Sans } from '@next/font/google';
+import Link from 'next/link';
 import { config } from "@fortawesome/fontawesome-svg-core";
-import "@fortawesome/fontawesome-svg-core/styles.css"; // Import the CSS
+import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 
 
@@ -35,12 +36,12 @@ export default function RootLayout({ children }) {
             <a href='' className='card'>
               <h2>RESUME</h2>
             </a>
-            <a href='' className='card'>
+            <Link href='/About' className='card'>
               <h2>ABOUT ME</h2>
-            </a>
-            <a href='' className='card'>
-              <h2>CONNECT</h2>
-            </a>
+            </Link>
+            <Link href='/Connect' className='card'>
+                <h2>CONNECT</h2>
+            </Link>
           </div>
 
         </div>

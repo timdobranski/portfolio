@@ -3,35 +3,53 @@
 import styles from './Home.module.css'
 import Image from 'next/image'
 import me from '../../public/images/Me-2.jpg'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
-
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 
 export default function Home() {
-  const [ activeRing, setActiveRing ] = useState(1)
+  const [activeRing, setActiveRing] = useState(1);
+  const [zoomClass, setZoomClass] = useState('');
+
+
+  const handleNavigation = (e, link) => {
+      e.preventDefault();  // Prevent the link from navigating immediately
+      setZoomClass(styles['zoom-in']);
+      setTimeout(() => {
+          router.push(link);
+      }, 300);
+  };
+
+
 
   const rings = [
     {
       header: 'CONNECT',
       text: 'To connect with me, click on the connect tab above',
-      color: 'yellowGlow'
+      color: 'yellowGlow',
+      link: '/Connect'
     },
     {
       header: 'WELCOME!',
       text: 'My name is Tim, and I develop websites and apps',
-      color: 'greenGlow'
+      color: 'greenGlow',
+      link: '/Resume'
+
     },
     {
       header: 'MY WORK',
       text: 'To see more of my work, click on the projects tab above',
-      color: 'redGlow'
+      color: 'redGlow',
+      link: '/Projects'
     },
     {
       header: 'ABOUT ME',
       text: 'To learn more about me and my background, click on the about me tab above',
-      color: 'blueGlow'
+      color: 'blueGlow',
+      link: '/About'
     },
   ]
 
@@ -51,24 +69,29 @@ const handlePreviousRing = () => {
     <FontAwesomeIcon icon={faChevronRight} className={styles.rightNav} onClick={handleNextRing} />
 
     {rings.map((ring, index) => {
-        let ringClass;
-        if (index === activeRing) {
-            ringClass = styles.activeRing;
-        } else if (index === (activeRing + 1) % rings.length) {
-            ringClass = styles.inactiveRight;
-        } else if (index === (activeRing - 1 + rings.length) % rings.length) {
-            ringClass = styles.inactiveLeft;
-        } else {
-            ringClass = styles.hidden; // For rings that are not in the immediate view
-        }
+          let ringClass;
+          let textClass = "";  // Initialize an empty string for text class
 
-        return (
-            <div className={`${styles.ring} ${styles[ring.color]} ${ringClass}`} key={index}>
-                <h1 className={styles.ringHeader}>{ring.header}</h1>
-                <p className={styles.ringText}>{ring.text}</p>
-            </div>
-        );
-    })}
-</main>
+          if (index === activeRing) {
+              ringClass = styles.activeRing;
+              textClass = styles['fade-in-text'];  // Assign the fade-in-text class to active ring
+          } else if (index === (activeRing + 1) % rings.length) {
+              ringClass = styles.inactiveRight;
+          } else if (index === (activeRing - 1 + rings.length) % rings.length) {
+              ringClass = styles.inactiveLeft;
+          } else {
+              ringClass = styles.hidden;
+          }
+
+          return (
+            <Link href={ring.link} key={index}>
+              <div className={`${styles.ring} ${styles[ring.color]} ${ringClass}`}>
+                <h1 className={`${styles.ringHeader} ${textClass}`}>{ring.header}</h1>
+                <p className={`${styles.ringText} ${textClass}`}>{ring.text}</p>
+              </div>
+            </Link>
+          );
+      })}
+    </main>
 )
 }
