@@ -31,6 +31,17 @@
   font-size: 2rem;
   border-radius: 50%;
   background-color: black;
+  transition: transform 1s ease, width 1s ease, height 1s ease, margin 1s ease;
+}
+.moveLeft {
+  transform: translateX(-100%);
+}
+
+.moveRight {
+  transform: translateX(100%);
+}
+.inactiveLeft, .inactiveRight, .activeRing {
+  transform: scale(1); /* Resets any previous transform */
 }
 .activeRing {
   width: 30vw;
@@ -47,29 +58,50 @@
   animation: pulsateBlue 3s infinite;
 }
 .yellowGlow {
-  border: 4px solid #00f38a;
-  box-shadow: 0 0 35px #00f38a;
+  border: 4px solid #ffd000;
+  box-shadow: 0 0 35px #fffb0f;
+  animation: pulsateYellow 3s infinite;
 }
 .redGlow {
-  border: 4px solid #fe9292;
-  box-shadow: 0 0 100px #ff0000;
+  border: 4px solid #fb0019;
+  box-shadow: 0 0 100px #ea0027;
   animation: pulsateRed 3s infinite;
 }
 .inactiveLeft {
   width: 15vw;
   height: 15vw;
+  font-size: 1rem;
   margin-right: 7.5vw;  /* half the width */
   margin-left: -8vw;  /* negative width including half of its size */
+
+
 }
 
 .inactiveRight {
   width: 15vw;
   height: 15vw;
+  font-size: 1rem;
   margin-left: 7.5vw;  /* half the width */
-  margin-right: -8vw;  /* negative width including half of its size */
+  margin-right: -7vw;  /* negative width including half of its size */
+  /* transform: translateX(100%); */
 }
-.hidden {
-  display: none;
+.leftNav, .rightNav {
+  position: absolute;    /* Use absolute positioning */
+  top: 50%;              /* Center vertically */
+  font-size: 8rem;
+  color: white;
+}
+.leftNav {
+  left: 18vw;   /* Position to the left */
+}
+.rightNav {
+  right: 18vw;  /* Position to the right */
+}
+.ringHeader {
+
+}
+.ringText{
+
 }
 
 @keyframes pulsateGreen {
@@ -86,13 +118,13 @@
 
 @keyframes pulsateRed {
   0% {
-      box-shadow: 0 0 35px #ff0000;
+      box-shadow: 0 0 35px #ea005a;
   }
   50% {
-      box-shadow: 0 0 75px #ff0000;
+      box-shadow: 0 0 130px #ea005a;
   }
   100% {
-      box-shadow: 0 0 35px #ff0000;
+      box-shadow: 0 0 35px #ea005a;
   }
 }
 
@@ -101,9 +133,21 @@
       box-shadow: 0 0 35px #00ccff;
   }
   50% {
-      box-shadow: 0 0 100px #00ccff;
+      box-shadow: 0 0 130px #00ccff;
   }
   100% {
       box-shadow: 0 0 35px #00ccff;
+  }
+}
+
+@keyframes pulsateYellow {
+  0% {
+      box-shadow: 0 0 35px #fffb0f;
+  }
+  50% {
+      box-shadow: 0 0 130px #fffb0f;
+  }
+  100% {
+      box-shadow: 0 0 35px #fffb0f;
   }
 }

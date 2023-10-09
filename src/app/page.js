@@ -4,29 +4,30 @@ import styles from './Home.module.css'
 import Image from 'next/image'
 import me from '../../public/images/Me-2.jpg'
 import { useState } from 'react'
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
-  const [ activeRing, setActiveRing ] = useState(1)
+  const [ activeRing, setActiveRing ] = useState(0)
 
   const rings = [
-    {
-      header: '0',
-      text: 'To learn more about me and my background, click on the about me tab above',
-      color: 'blueGlow'
-    },
     {
       header: 'WELCOME!',
       text: 'My name is Tim, and I develop websites and apps',
       color: 'greenGlow'
     },
     {
-      header: '2',
-      text: 'To see more of my work, click on the projects tab above',
-      color: 'redGlow'
+      header: 'ABOUT ME',
+      text: 'To learn more about me and my background, click on the about me tab above',
+      color: 'blueGlow'
     },
     {
-      header: '3',
+      header: 'CONNECT',
+      text: 'To connect with me, click on the connect tab above',
+      color: 'yellowGlow'
+    },
+    {
+      header: 'MY WORK',
       text: 'To see more of my work, click on the projects tab above',
       color: 'redGlow'
     },
@@ -51,31 +52,43 @@ export default function Home() {
 
   return (
     <main id={styles.home}>
-        {rings.map((ring, i) => {
-            // Determine the class for the ring
-            let ringClass = '';
-            if (i === activeRing) {
-                ringClass = styles.activeRing;
-            } else if (i === activeRing + 1) {
-                ringClass = styles.inactiveRight;
-            } else if (i === activeRing - 1) {
-                ringClass = styles.inactiveLeft;
-            } else {
-                return null; // Skip rendering if it's not one of the desired rings
-            }
+        <FontAwesomeIcon icon={faChevronLeft} className={styles.leftNav} onClick={handlePreviousRing}/>
+        <FontAwesomeIcon icon={faChevronRight} className={styles.rightNav} onClick={handleNextRing} />
 
-            // Render the ring
+        {/* Previous Ring */}
+        {(() => {
+            const i = (activeRing - 1 + rings.length) % rings.length;
+            const ring = rings[i];
             return (
-                <div className={`${styles.ring} ${styles[ring.color]} ${ringClass}`} key={i}>
-                    {i === activeRing ?
-                    <>
-                        <h1>{ring.header}</h1>
-                        <p>{ring.text}</p>
-                    </>
-                    : ''}
+                <div className={`${styles.ring} ${styles[ring.color]} ${styles.inactiveLeft}`} key={i}>
+                    <h1>{ring.header}</h1>
+                    <p>{ring.text}</p>
                 </div>
             );
-        })}
+        })()}
+
+        {/* Active Ring */}
+        {(() => {
+            const ring = rings[activeRing];
+            return (
+                <div className={`${styles.ring} ${styles[ring.color]} ${styles.activeRing}`} key={activeRing}>
+                    <h1 className={styles.ringHeader} >{ring.header} </h1>
+                    <p className={styles.ringText} >{ring.text}</p>
+                </div>
+            );
+        })()}
+
+        {/* Next Ring */}
+        {(() => {
+            const i = (activeRing + 1) % rings.length;
+            const ring = rings[i];
+            return (
+                <div className={`${styles.ring} ${styles[ring.color]} ${styles.inactiveRight}`} key={i}>
+                    <h1>{ring.header}</h1>
+                    <p>{ring.text}</p>
+                </div>
+            );
+        })()}
     </main>
-  )
+)
 }
