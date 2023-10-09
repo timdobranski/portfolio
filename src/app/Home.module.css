@@ -65,6 +65,7 @@
   opacity: 0;
   display: hidden;
   left: 150%;
+  z-index: -1;
   transition: transform 1s ease, width 1s ease, height 1s ease, margin 1s ease, left 1s ease top 1s ease;
 }
 .greenGlow {
@@ -99,8 +100,33 @@
 .rightNav {
   right: 18vw;  /* Position to the right */
 }
-.ringHeader {
-
+.greenGlow .ringHeader {
+  background-image: linear-gradient(to right, rgb(0, 167, 56), #65ffc7);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline;
+}
+.redGlow .ringHeader {
+  background-image: linear-gradient(to right, rgb(255, 0, 30), #ff8baa);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline;
+}
+.blueGlow .ringHeader {
+  background-image: linear-gradient(to right, rgb(0, 221, 255), #006398);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline;
+}
+.yellowGlow .ringHeader {
+  background-image: linear-gradient(to right, rgb(255, 253, 157), #ffc400);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline;
 }
 .ringText{
 
