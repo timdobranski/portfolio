@@ -84,7 +84,7 @@ const handlePreviousRing = () => {
           }
 
           return (
-            <Link href={ring.link} key={index}>
+            <Link href={ring.link} key={index} className={styles.link}>
               <div className={`${styles.ring} ${styles[ring.color]} ${ringClass}`}>
                 <h1 className={`${styles.ringHeader} ${textClass}`}>{ring.header}</h1>
                 <p className={`${styles.ringText} ${textClass}`}>{ring.text}</p>
