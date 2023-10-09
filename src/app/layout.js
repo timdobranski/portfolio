@@ -13,7 +13,7 @@ const josefin = Josefin_Sans({
 export const metadata = {
     title: 'Tim Dobranski',
     description: 'A collection of projects and professional accomplishments',
-    url: 'TimDobranski.com',
+    metadataBase: new URL('http://3.23.230.122/'),
     locale: 'en_US',
     type: 'website',
 };
