@@ -1,0 +1,76 @@
+
+.projectsContainer {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 70%;
+  width: 65%;
+  min-width: 500px;
+  background: rgba(255, 255, 255, .5);
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.projectsContainer h1 {
+  color: black;
+  font-size: 4rem;
+  margin: 0;
+  margin-top: 1rem;
+}
+.projectsContainer p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  /* outline: solid 1px black; */
+}
+.projectsGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 3fr 1fr 3fr 1fr;
+  height: 80%;
+  object-fit: cover;
+}
+
+.projectsGridItem {
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  object-fit: cover;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.unfinished:hover .projectThumb img {
+  filter: brightness(0.7);
+}
+
+
+.unfinished:hover .hoverText {
+  display: block;
+}
+
+.hoverText {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.unfinished:hover .hoverText {
+  display: block;
+}
+

@@ -34,16 +34,16 @@ export default function Home() {
     },
     {
       header: 'WELCOME!',
-      text: 'My name is Tim, and I develop websites and apps',
+      text: 'My name is Tim, and I develop websites and apps. Click here to see some of my work',
       color: 'greenGlow',
-      link: '/Resume'
+      link: '/Projects'
 
     },
     {
-      header: 'MY WORK',
-      text: 'To see more of my work, click on the projects tab above',
+      header: 'RESUME',
+      text: 'Click here to see my expanded resume',
       color: 'redGlow',
-      link: '/Projects'
+      link: '/Resume'
     },
     {
       header: 'ABOUT ME',
