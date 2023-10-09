@@ -2,7 +2,9 @@ import './globals.css';
 import background from '../../public/images/portfolio-background.svg';
 import Image from 'next/image';
 import { Josefin_Sans } from '@next/font/google';
-
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css"; // Import the CSS
+config.autoAddCss = false;
 
 
 const josefin = Josefin_Sans({
@@ -22,6 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body id='app' className={josefin.className}>
+
         <div id='header-container'>
           <h1 className='title '>TIM DOBRANSKI</h1>
           <p className='description '>Software developer, musician, educator, and dog dad to Aria</p>
