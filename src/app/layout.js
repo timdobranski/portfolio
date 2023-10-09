@@ -29,6 +29,9 @@ export default function RootLayout({ children }) {
         <div id='header-container'>
           <h1 className='title '>TIM DOBRANSKI</h1>
           <p className='description '>Software developer, musician, educator, and dog dad to Aria</p>
+
+        </div>
+        {children}
           <div className='grid '>
             <a href='' className='card'>
               <h2>PROJECTS</h2>
@@ -43,9 +46,6 @@ export default function RootLayout({ children }) {
                 <h2>CONNECT</h2>
             </Link>
           </div>
-
-        </div>
-        {children}
       </body>
     </html>
   )

@@ -1,6 +1,6 @@
 #home {
   position: relative;
-  height: 75vh;
+  height: 71vh;
   overflow: hidden;
   /* background: linear-gradient(to bottom right, rgb(0, 156, 162), rgb(0, 33, 83)); */
 }
@@ -62,8 +62,8 @@
   margin-right: -7vw;
 }
 .hidden {
-  /* opacity: 0;
-  display: hidden; */
+  opacity: 0;
+  display: hidden;
   left: 150%;
   z-index: -1;
   transition: transform 1s ease, width 1s ease, height 1s ease, margin 1s ease, left 1s ease top 1s ease;
@@ -174,22 +174,23 @@
   transform: scale(1.1);
   transition: transform 300ms ease-in-out;
 }
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 
-.fade-in-text {
-  animation: fadeIn 0.2s forwards;
-  animation-delay: 0.7s; /* This delay will ensure it starts after any other transition is likely complete. Adjust as needed */
-  opacity: 0; /* Initially hidden */
-}
 
 @media (max-width: 768px) {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fade-in-text {
+    animation: fadeIn 0.2s forwards;
+    animation-delay: 0.7s; /* This delay will ensure it starts after any other transition is likely complete. Adjust as needed */
+    opacity: 0; /* Initially hidden */
+  }
   .ring {
     /* font-size: 1.5rem; */
   }
