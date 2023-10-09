@@ -2,7 +2,7 @@ import styles from './Projects.module.css'
 import Image from 'next/image';
 import atelierApparel from '../../../public/images/projects/atelier-apparel/light-mode.png';
 import atelierDesign from '../../../public/images/projects/atelier-design/atelier-design.png';
-import songwriter from '../../../public/images/projects/songwriter/songwriter.jpeg';
+// import songwriter from '../../../public/images/projects/songwriter/songwriter.jpeg';
 import stringSchool from '../../../public/images/projects/string-school/string-school.png';
 import timioBros from '../../../public/images/projects/super-timio-bros/super-timio-bros.jpeg';
 import fitPass from '../../../public/images/projects/fitpass/fitpass.png';
@@ -21,7 +21,7 @@ export default function Projects() {
             </a>
           </div>
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} >
-            <Image className={styles.projectThumb} src={songwriter} fill='true' alt='tool to aid songwriting'/>
+            <Image className={styles.projectThumb} src='/images/projects/songwriter/songwriter.jpeg' fill='true' alt='tool to aid songwriting'/>
             <div className={styles.hoverText}>This project is not yet complete. Check back soon!</div>
           </div>
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`}>
