@@ -90,7 +90,7 @@
 }
 .leftNav, .rightNav {
   position: absolute;    /* Use absolute positioning */
-  top: 50%;              /* Center vertically */
+  top: 35%;              /* Center vertically */
   font-size: 8rem;
   color: white;
 }
