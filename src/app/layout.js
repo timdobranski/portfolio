@@ -33,7 +33,10 @@ export default function RootLayout({ children }) {
         </div>
         {children}
           <div className='grid '>
-            <a href='' className='card'>
+          <Link href='/' className='card'>
+                <h2>HOME</h2>
+            </Link>
+            <a href='/Projects' className='card'>
               <h2>PROJECTS</h2>
             </a>
             <a href='' className='card'>
