@@ -11,29 +11,17 @@ const josefin = Josefin_Sans({
 });
 
 export const metadata = {
-  openGraph: {
-    title: 'Next.js',
-    description: 'The React Framework for the Web',
-    url: 'https://nextjs.org',
-    siteName: 'Next.js',
-    images: [
-      {
-        url: 'http://3.23.230.122/public/images/preview.png',
-        width: 800,
-        height: 600,
-        alt: 'Description of the image', // Optional, but good for accessibility.
-      }
-    ],
+    title: 'Tim Dobranski',
+    description: 'A collection of projects and professional accomplishments',
+    url: 'TimDobranski.com',
     locale: 'en_US',
     type: 'website',
-  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body id='app' className={josefin.className}>
-        {/* <Image src={background} alt='Tim Dobranski' className='background' /> */}
         <div id='header-container'>
           <h1 className='title '>TIM DOBRANSKI</h1>
           <p className='description '>Software developer, musician, educator, and dog dad to Aria</p>
