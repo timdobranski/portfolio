@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
             <a href='/Projects' className='card'>
               <h2>PROJECTS</h2>
             </a>
-            <a href='' className='card'>
+            <a href='/Resume' className='card'>
               <h2>RESUME</h2>
             </a>
             <Link href='/About' className='card'>
