@@ -21,7 +21,7 @@ export default function Projects() {
             </a>
           </div>
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} >
-            <Image className={styles.projectThumb} src='/images/projects/songwriter/songwriter.jpeg' fill='true' alt='tool to aid songwriting'/>
+            <Image className={styles.projectThumb} src='/images/projects/songwriter/songwriter.jpeg' layout='fill' alt='tool to aid songwriting'/>
             <div className={styles.hoverText}>This project is not yet complete. Check back soon!</div>
           </div>
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`}>
@@ -35,7 +35,7 @@ export default function Projects() {
             <h2 className={[styles.projectsGridItem, styles.projectHeader]}>String School</h2>
           </div>
           <div className={[styles.projectsGridItem, styles.projectDescription]}>
-            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Songwriter</h2>
+            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Songsmith</h2>
           </div>
           <div className={[styles.projectsGridItem, styles.projectDescription]}>
             <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Atelier Design</h2>
@@ -60,7 +60,7 @@ export default function Projects() {
             <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Atelier Apparel</h2>
           </div>
           <div className={[styles.projectsGridItem, styles.projectDescription]}>
-            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Super Timio Bros</h2>
+            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Super Timmyo Bros</h2>
           </div>
       </div>
     </div>
