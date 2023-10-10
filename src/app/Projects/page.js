@@ -16,7 +16,7 @@ export default function Projects() {
       <p>Click on a project below to learn more about it</p>
       <div className={styles.projectsGrid}>
             <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`}>
-              <Image className={[styles.projectThumb]} src={stringSchool} fill='true' alt='mobile app for music students'/>
+              <Image className={styles.projectThumb} src={stringSchool} fill='true' alt='mobile app for music students'/>
           <Link href='/Projects/string-school' >
             <div className={styles.hoverText}>Web & mobile app for music students with scheduling, progress-tracking and more</div>
           </Link>
@@ -33,12 +33,12 @@ export default function Projects() {
 
           </div>
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`}>
-            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>String School</h2>
+            <h2 className={`${styles.projectHeader}`}>String School</h2>
           </div>
-          <div className={[styles.projectsGridItem, styles.projectDescription]}>
-            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Songsmith</h2>
+          <div className={`${styles.projectsGridItem} ${styles.projectDescription}`}>
+            <h2 className={` ${styles.projectHeader}`}>Songsmith</h2>
           </div>
-          <div className={[styles.projectsGridItem, styles.projectDescription]}>
+          <div className={`${styles.projectsGridItem} ${styles.projectDescription}`}>
             <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Atelier Design</h2>
           </div>
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`}>
@@ -54,13 +54,13 @@ export default function Projects() {
             <Image className={[styles.projectThumb]} src={timioBros} fill='true' alt='a side-scroller video game'/>
             <div className={styles.hoverText}>This project is not yet complete. Check back soon!</div>
           </div>
-          <div className={[styles.projectsGridItem, styles.projectDescription]}>
+             <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`}>
             <h2 className={[styles.projectsGridItem, styles.projectHeader]}>FitPass</h2>
           </div>
-          <div className={[styles.projectsGridItem, styles.projectDescription]}>
+          <div className={`${styles.projectsGridItem} ${styles.projectDescription}`}>
             <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Atelier Apparel</h2>
           </div>
-          <div className={[styles.projectsGridItem, styles.projectDescription]}>
+          <div className={`${styles.projectsGridItem} ${styles.projectDescription}`}>
             <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Super Tim-io Bros</h2>
           </div>
       </div>

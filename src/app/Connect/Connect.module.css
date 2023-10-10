@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 55%;
+  height: 65%;
   width: 50%;
   min-width: 500px;
   background: rgba(255, 255, 255, .5);
@@ -16,13 +16,13 @@
 }
 .connectContainer h1 {
   color: black;
-  font-size: 5rem;
+  font-size: 4rem;
   margin: 0;
   margin: 2rem;
 }
 .connectContainer p {
   color: black;
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: bold;
   margin: 0rem;
   margin-left: 2rem;
@@ -35,26 +35,10 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  width: 100%;
+  width: 80%;
   height: 50%;
 }
 .contactInfoContainer p {
   margin: 1rem;
 }
 
-/* .oversizedYellowRing {
-  height:200vh;
-  width: 95vw;
-  background-color: black;
-  border: solid 35px #f3db00;
-  border-radius: 50%;
-  box-shadow: 0 0 75px #fffb0f;
-  animation: pulsateYellow 3s infinite;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
