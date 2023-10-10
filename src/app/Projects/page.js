@@ -1,9 +1,9 @@
 import styles from './Projects.module.css'
 import Image from 'next/image';
-import atelierApparel from '../../../public/images/projects/atelier-apparel/light-mode.png';
+import atelierApparel from '../../../public/images/projects/atelier-apparel/atelier-logo.png';
 import atelierDesign from '../../../public/images/projects/atelier-design/atelier-design.png';
-// import songwriter from '../../../public/images/projects/songwriter/songwriter.jpeg';
-import stringSchool from '../../../public/images/projects/string-school/string-school.png';
+import songwriter from '../../../public/images/projects/songwriter/songsmith.jpeg';
+import stringSchool from '../../../public/images/projects/string-school/lmss-banner.jpg';
 import timioBros from '../../../public/images/projects/super-timio-bros/super-timio-bros.jpeg';
 import fitPass from '../../../public/images/projects/fitpass/fitpass.png';
 import Link from 'next/link';
@@ -12,7 +12,7 @@ export default function Projects() {
 
   return (
     <div className={styles.projectsContainer}>
-      <h1>PROJECTS</h1>
+      <h1 className={styles.projectsHeader}>PROJECTS</h1>
       <p>Click on a project below to learn more about it</p>
       <div className={styles.projectsGrid}>
             <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`}>
@@ -22,7 +22,7 @@ export default function Projects() {
           </Link>
           </div>
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} >
-            <Image className={styles.projectThumb} src='/images/projects/songwriter/songwriter.jpeg' layout='fill' alt='tool to aid songwriting'/>
+            <Image className={styles.projectThumb} src={songwriter} layout='fill' alt='tool to aid songwriting'/>
             <div className={styles.hoverText}>This project is not yet complete. Check back soon!</div>
           </div>
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`}>

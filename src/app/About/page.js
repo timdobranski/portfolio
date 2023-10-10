@@ -25,7 +25,7 @@ export default function About() {
             <Image className={styles.ariaImage} src={aria} alt='Tim Dobranski'/>
           </div>
             <p>{`In my free time, I can be found playing, writing, & recording music, reading or binge watching the latest show, and spending time exploring San Diego
-            with my dog, Aria. I'm currently working my way through Isaac Asimov's considerable body of fiction, and playing Aria's favorite game, called 'Chew on Tim's arm'.`}</p>
+            with my dog, Aria. I'm currently working my way through Isaac Asimov's considerable body of fiction, and playing Aria's favorite new game, called 'Chew on Tim's arm'.`}</p>
           </div>
 
     </div>

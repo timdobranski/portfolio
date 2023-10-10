@@ -1,4 +1,5 @@
-import styles from './StringSchool.module.css'
+import styles from './StringSchool.module.css';
+// import lmssVideo from '../../../../public/LMSS.mov';
 
 export default function StringSchool() {
   return (
