@@ -1,6 +1,6 @@
 #home {
   position: relative;
-  height: 73vh;
+  height: 74vh;
   overflow: hidden;
 
   /* background: linear-gradient(to bottom right, rgb(0, 156, 162), rgb(0, 33, 83)); */
@@ -98,6 +98,9 @@
   top: 35%;              /* Center vertically */
   font-size: 8rem;
   color: white;
+}
+.leftNav, .rightNav:hover {
+  cursor: pointer;
 }
 .leftNav {
   left: 18vw;   /* Position to the left */

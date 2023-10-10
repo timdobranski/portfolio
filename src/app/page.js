@@ -15,13 +15,13 @@ export default function Home() {
   const [zoomClass, setZoomClass] = useState('');
 
 
-  const handleNavigation = (e, link) => {
-      e.preventDefault();  // Prevent the link from navigating immediately
-      setZoomClass(styles['zoom-in']);
-      setTimeout(() => {
-          router.push(link);
-      }, 300);
-  };
+  // const handleNavigation = (e, link) => {
+  //     e.preventDefault();  // Prevent the link from navigating immediately
+  //     setZoomClass(styles['zoom-in']);
+  //     setTimeout(() => {
+  //         router.push(link);
+  //     }, 300);
+  // };
 
 
 
