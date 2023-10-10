@@ -72,6 +72,7 @@ export default function Home() {
 
   return (
     <main id={styles.home}>
+      <div className={styles.homeContainer}>
     <FontAwesomeIcon icon={faChevronLeft} className={styles.leftNav} onClick={handlePreviousRing}/>
     <FontAwesomeIcon icon={faChevronRight} className={styles.rightNav} onClick={handleNextRing} />
 
@@ -99,6 +100,7 @@ export default function Home() {
             </Link>
           );
       })}
+      </div>
     </main>
 )
 }

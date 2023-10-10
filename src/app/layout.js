@@ -29,20 +29,20 @@ export default function RootLayout({ children }) {
 
           <Header />
         {children}
-          <div className='grid '>
-          <Link href='/' className='card'>
+          <div className='footerGrid '>
+          <Link href='/' className='footerLink'>
                 <h2>HOME</h2>
             </Link>
-            <a href='/Projects' className='card'>
+            <a href='/Projects' className='footerLink'>
               <h2>PROJECTS</h2>
             </a>
-            <a href='/Resume' className='card'>
+            <a href='/Resume' className='footerLink'>
               <h2>RESUME</h2>
             </a>
-            <Link href='/About' className='card'>
+            <Link href='/About' className='footerLink'>
               <h2>ABOUT ME</h2>
             </Link>
-            <Link href='/Connect' className='card'>
+            <Link href='/Connect' className='footerLink'>
                 <h2>CONNECT</h2>
             </Link>
           </div>

@@ -1,9 +1,16 @@
 #home {
   position: relative;
-  height: 74vh;
+  /* height: 76vh; */
+  height: auto;
   overflow: hidden;
+  /* border: solid blue 4px; */
 
   /* background: linear-gradient(to bottom right, rgb(0, 156, 162), rgb(0, 33, 83)); */
+}
+.homeContainer {
+  position: fixed;
+  height: 100%;
+  width: 100%;
 }
 .welcomeHeader {
   font-size: 3rem;
@@ -27,7 +34,7 @@
   align-items: center;
   padding-left: 3vw;
   padding-right: 3vw;
-  padding-bottom: 3vw;
+  /* padding-bottom: 3vw; */
   color: white;
   font-size: 2rem;
   border-radius: 50%;
@@ -40,11 +47,11 @@
 }
 .activeRing {
   position: absolute;
-  top: 50%;
+  top: 38%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 30vw;
-  height: 30vw;
+  width: 35rem;
+  height: 35rem;
 }
 .inactiveLeft {
   position: absolute;
