@@ -199,9 +199,7 @@
     animation-delay: 0.7s; /* This delay will ensure it starts after any other transition is likely complete. Adjust as needed */
     opacity: 0; /* Initially hidden */
   }
-  .ring {
-    /* font-size: 1.5rem; */
-  }
+
   .activeRing {
     position: absolute;
     top: 15%;

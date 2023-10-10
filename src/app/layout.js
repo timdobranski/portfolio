@@ -1,4 +1,5 @@
 import './globals.css';
+import Header from './Header.js';
 import background from '../../public/images/portfolio-background.svg';
 import Image from 'next/image';
 import { Josefin_Sans } from '@next/font/google';
@@ -26,11 +27,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body id='app' className={josefin.className}>
 
-        <div id='header-container'>
-          <h1 className='title '>TIM DOBRANSKI</h1>
-          <p className='description '>Software developer, musician, educator, and dog dad to Aria</p>
-
-        </div>
+          <Header />
         {children}
           <div className='grid '>
           <Link href='/' className='card'>

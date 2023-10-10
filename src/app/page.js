@@ -14,16 +14,23 @@ export default function Home() {
   const [activeRing, setActiveRing] = useState(1);
   const [zoomClass, setZoomClass] = useState('');
 
+  // Event listeners for arrow keys
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.key === "ArrowRight" || event.keyCode === 39) {
+        handleNextRing();
+      } else if (event.key === "ArrowLeft" || event.keyCode === 37) {
+        handlePreviousRing();
+      }
+    };
 
-  // const handleNavigation = (e, link) => {
-  //     e.preventDefault();  // Prevent the link from navigating immediately
-  //     setZoomClass(styles['zoom-in']);
-  //     setTimeout(() => {
-  //         router.push(link);
-  //     }, 300);
-  // };
+    window.addEventListener('keydown', handleKeyPress);
 
-
+    // Cleanup listener on component unmount
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
+  }, []);
 
   const rings = [
     {
@@ -56,11 +63,11 @@ export default function Home() {
 
   const handleNextRing = () => {
     setActiveRing((prevRing) => (prevRing + 1) % rings.length);
-}
+  }
 
-const handlePreviousRing = () => {
-    setActiveRing((prevRing) => (prevRing - 1 + rings.length) % rings.length);
-}
+  const handlePreviousRing = () => {
+      setActiveRing((prevRing) => (prevRing - 1 + rings.length) % rings.length);
+  }
 
 
   return (

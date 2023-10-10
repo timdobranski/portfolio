@@ -1,0 +1,37 @@
+.resumeContainer {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 65%;
+  width: 65%;
+  min-width: 500px;
+  background: rgba(255, 255, 255, .5);
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.resumeContainer h1 {
+  color: black;
+  font-size: 4rem;
+  margin: 0;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+.resumeContainer p {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 0;
+}
+.resumeLink {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  transition: color 1s ease;
+}
