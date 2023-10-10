@@ -1,13 +1,15 @@
 .aboutContainer {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 7rem;
+  top: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 65%;
+  height: auto;
+  overflow-y: auto;
   width: 65%;
   min-width: 500px;
   background: rgba(255, 255, 255, .5);
@@ -25,46 +27,40 @@
   font-size: 1rem;
   font-weight: bold;
   margin-top: 0;
-  /* margin-bottom: 1rem; */
-}
-.aboutGrid{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 80%;
 
+}
+
+.aboutImage {
+  position: relative;
+  width: 60%;
+  height: auto;
+  border-radius: 20px;
 }
 .meImageContainer {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding-top: 2rem;
-
+  margin: 0;
 }
-.aboutImage {
-  position: absolute;
-  top: 50;
-  left: 50;
-  width: 80%;
+.ariaImage {
+  width: 60%;
   height: auto;
-  object-fit: cover;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   border-radius: 20px;
 }
 .bioContainer {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  margin: 1rem 3rem 1rem 3rem;
+  /* border: solid black 3px; */
 
 }
 .bioContainer p {
   font-size: 1.5rem;
+  line-height: 1.3;
   font-weight: bold;
-  margin: 0;
-  margin-right: 2rem;
-  margin-bottom: 2rem;
+  margin: 1rem;
+
+
 
 }

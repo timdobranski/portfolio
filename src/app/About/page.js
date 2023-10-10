@@ -8,7 +8,7 @@ export default function About() {
   return (
     <div className={styles.aboutContainer}>
       <h1>About Me</h1>
-        <div className={styles.aboutGrid}>
+
           <div className={styles.meImageContainer}>
             <Image className={styles.aboutImage} src={me} alt='Tim Dobranski'/>
           </div>
@@ -19,9 +19,15 @@ export default function About() {
             I then attended Hack Reactor's software engineering immersive, which I completed in July 2023.`}</p>
             <p>{`Currently I'm continuing to teach music and looking for a role as a software developer. I enjoy the creative outlet that front-end
             roles offer, but I'm open to any opportunity to learn and grow as a developer.`}</p>
-            <p>{`In my free time, I enjoy playing, writing, & recording music, reading, and spending time with my dog, Aria.`}</p>
+            <p>{`I believe wholeheartedly in the honest exchange of hard work and great results in exchange for good compensation and a positive work environment,
+            and I hope to find a position in an environment that matches those values.`}</p>
+          <div className={styles.meImageContainer}>
+            <Image className={styles.ariaImage} src={aria} alt='Tim Dobranski'/>
           </div>
-      </div>
+            <p>{`In my free time, I can be found playing, writing, & recording music, reading or binge watching the latest show, and spending time exploring San Diego
+            with my dog, Aria. I'm currently working my way through Isaac Asimov's considerable body of fiction, and playing Aria's favorite game, called 'Chew on Tim's arm'.`}</p>
+          </div>
+
     </div>
   )
 }
