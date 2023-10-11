@@ -240,7 +240,8 @@
     font-size: 1rem;
   }
   .activeRing p h2 {
-    font-size: .25;
+    font-size: 1rem;
+    margin: 3rem;
   }
   .inactiveLeft {
     position: absolute;
@@ -268,16 +269,16 @@
     font-size: .25rem;
   }
   .leftNav, .rightNav {
-    position: absolute;    /* Use absolute positioning */
-    top: 75%;              /* Center vertically */
-    font-size: 3rem;
+    position: absolute;
+    top: 55%;
+    font-size: 30vw;
     color: white;
   }
   .leftNav {
-    left: 15vw;   /* Position to the left */
+    left: 15vw;
   }
   .rightNav {
-    right: 15vw;  /* Position to the right */
+    right: 15vw;
   }
   .ringHeader {
     font-size: 1.5rem;

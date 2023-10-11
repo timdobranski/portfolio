@@ -87,18 +87,18 @@ overflow: hidden;
     height: 18vh;
   }
   .title {
-    font-size: 2rem;
+    font-size: 10vw;
     letter-spacing: 2px;
   }
   .description {
     margin-top: 1rem;
     font-size: 1.25rem;
   }
-  .card {
+  .footerLink {
     /* margin-top: 1.25rem; */
   }
-  .card h2 {
-    font-size: .75rem;
+  .footerLink h2 {
+    font-size: 3vw;
   }
   .grid {
     position: absolute;
@@ -106,15 +106,9 @@ overflow: hidden;
     width: 100vw;
     height: 20vw;
   }
-}
-.icon {
-  position: absolute;
-  width: 5%;
-  height: 5%;
-  top: 1rem;
-  right: 1rem;
-  background-color: white;
-  fill: white;
-  /* border: solid white; */
-  transition: transform 1s ease;
+
+  .footerGrid {
+    height: 12vw;
+  }
+
 }
