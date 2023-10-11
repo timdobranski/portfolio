@@ -7,7 +7,7 @@ export default function About() {
 
   return (
     <div className={styles.aboutContainer}>
-      <h1>About Me</h1>
+      <h1 className={styles.aboutHeader}>ABOUT ME</h1>
 
           <div className={styles.meImageContainer}>
             <Image className={styles.aboutImage} src={me} alt='Tim Dobranski'/>

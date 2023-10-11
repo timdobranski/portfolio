@@ -12,25 +12,7 @@ import { useRouter } from 'next/router';
 
 export default function Home() {
   const [activeRing, setActiveRing] = useState(1);
-  // const [zoomClass, setZoomClass] = useState('');
 
-  // Event listeners for arrow keys
-  // useEffect(() => {
-  //   const handleKeyPress = (event) => {
-  //     if (event.key === "ArrowRight" || event.keyCode === 39) {
-  //       handleNextRing();
-  //     } else if (event.key === "ArrowLeft" || event.keyCode === 37) {
-  //       handlePreviousRing();
-  //     }
-  //   };
-
-  //   window.addEventListener('keydown', handleKeyPress);
-
-  //   // Cleanup listener on component unmount
-  //   return () => {
-  //     window.removeEventListener('keydown', handleKeyPress);
-  //   };
-  // }, []);
 
   const rings = [
     {

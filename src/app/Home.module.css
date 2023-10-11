@@ -11,6 +11,10 @@
   position: fixed;
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 .welcomeHeader {
   font-size: 3rem;
@@ -32,52 +36,56 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-left: 3vw;
-  padding-right: 3vw;
-  /* padding-bottom: 3vw; */
+  /* padding-left: 3rem;
+  padding-right: 3rem; */
   color: white;
-  font-size: 2rem;
   border-radius: 50%;
   background-color: black;
   transition: transform 1s ease, width 1s ease, height 1s ease, margin 1s ease, left 1s ease, top 1s ease, font-size 1s ease;
+  transform: scale(1);
   position: absolute;
 }
-.inactiveLeft, .inactiveRight, .activeRing {
-  transform: scale(1);
+.ring:hover {
+  transform: scale(1.1);
 }
 .activeRing {
-  position: absolute;
-  top: 38%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 35rem;
-  height: 35rem;
+  font-size: 2rem;
+  top: 8%;
+  left: 37%;
+  width: 60vmin;
+  height: 60vmin;
+  padding-left: 3%;
+  padding-right: 3%;
 }
-
-  .activeRing:hover {
-    transform: translate(-50%, -50%) scale(1.2);
-  }
-
 .inactiveLeft {
   position: absolute;
-  top: 25%;
+  top: 22%;
   left: -8%;
   width: 15vw;
   height: 15vw;
   font-size: 1rem;
   transform: translate(0%, 0%);
-
+  padding-left: 3%;
+  padding-right: 3%;
 }
+
 .inactiveRight {
   position: absolute;
-  top: 25%;
+  top: 22%;
   left: 85%;
-  width: 15vw;
-  height: 15vw;
+  width: 30vmin;
+  height: 30vmin;
   font-size: 1rem;
   margin-left: 7.5vw;
   margin-right: -7vw;
+  padding-left: 1.5%;
+  padding-right: 1.5%;
 }
+.inactiveRight p, .inactiveLeft p {
+
+}
+
+
 .hidden {
   opacity: 0;
   display: hidden;
@@ -107,12 +115,23 @@
 }
 .leftNav, .rightNav {
   position: absolute;    /* Use absolute positioning */
-  top: 35%;              /* Center vertically */
-  font-size: 8rem;
+  top: 32%;              /* Center vertically */
+  font-size: 6rem;
   color: white;
+  width: 6rem;
+  height: 6rem;
+  padding: 1rem;
+  border-radius: 50%;
+  transition: background-color .5s ease, transform 1s ease;
+
 }
-.leftNav, .rightNav:hover {
+.leftNav:hover, .rightNav:hover {
   cursor: pointer;
+  transform:scale(1.1);
+  /* color:#00f38a; */
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, .2);
+  transition: background-color .5s ease, transform 1s ease;
 }
 .leftNav {
   left: 18vw;   /* Position to the left */
