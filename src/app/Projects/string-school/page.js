@@ -1,15 +1,25 @@
 import styles from './StringSchool.module.css';
-// import lmssVideo from '../../../../public/LMSS.mov';
+import Project from '../../../components/Project/Project';
+import stringSchool from '../../../../public/images/projects/string-school/string-school.png';
+import lmssBanner from '../../../../public/images/projects/string-school/lmss-banner.jpg';
+import lmssBanner2 from '../../../../public/images/projects/string-school/lmss-banner.png';
 
 export default function StringSchool() {
-  return (
-    <div className={styles.stringSchoolContainer}>
-      <h1>String School</h1>
-      <p>{`String School is a web application designed to help string students and teachers manage their
-        practice time. It allows students to create a practice schedule, log their practice time, and
-        view their progress over time. It allows teachers to create assignments for their students, track their students' progress, and communicate with their students`}.</p>
-      <p>String School was built using React, Redux, and Firebase. It is currently in development.</p>
 
-    </div>
+  const projectData = {
+    name: 'STRING SCHOOL',
+    date: 'Summer 2023',
+    description: [`This is a mobile app for iOS and Android for guitar students. Features include Google sign-in, scheduling/rescheduling, payment tracking,
+     progress tracking, access to sheet music and other online resources, practice-logging, and instructor sign-in to manage student accounts. `, `Challenges of
+     this project were accounting for many different account edge cases, including students who share an email address with a parent, students who have multiple parent contacts,
+     parents who have multiple students, and adult students who have no parent contact.`],
+    tech: ['React Native', 'Node.js', 'Express', 'PostgreSQL', 'AWS'],
+    images: [lmssBanner, stringSchool, lmssBanner2],
+    link: 'http://www.lamesastringschool.com'
+
+  }
+
+  return (
+    <Project data={projectData}/>
   )
 }
