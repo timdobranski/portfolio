@@ -58,6 +58,12 @@ export default function Home() {
     <FontAwesomeIcon icon={faChevronLeft} className={styles.leftNav} onClick={handlePreviousRing}/>
     <FontAwesomeIcon icon={faChevronRight} className={styles.rightNav} onClick={handleNextRing} />
 
+              <div className='backgroundRing  yellowGlow m c1'></div>
+              <div className='backgroundRing  blueGlow m c2'></div>
+              <div className='backgroundRing  redGlow l c3'></div>
+              <div className='backgroundRing  greenGlow m c4'></div>
+              <div className='backgroundRing  blueGlow m c5'></div>
+
     {rings.map((ring, index) => {
           let ringClass;
           let textClass = "";  // Initialize an empty string for text class

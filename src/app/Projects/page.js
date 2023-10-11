@@ -6,12 +6,14 @@ import songwriter from '../../../public/images/projects/songwriter/songsmith.jpe
 import stringSchool from '../../../public/images/projects/string-school/lmss-banner.jpg';
 import timioBros from '../../../public/images/projects/super-timio-bros/super-timio-bros.jpeg';
 import fitPass from '../../../public/images/projects/fitpass/fitpass.png';
+import BackgroundRings from '../../components/BackgroundRings/BackgroundRings.js'
 import Link from 'next/link';
 
 export default function Projects() {
 
   return (
     <div className={styles.projectsContainer}>
+      <BackgroundRings />
       <h1 className={styles.projectsHeader}>PROJECTS</h1>
       <p>Click on a project below to learn more about it</p>
       <div className={styles.projectsGrid}>

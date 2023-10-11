@@ -36,8 +36,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* padding-left: 3rem;
-  padding-right: 3rem; */
   color: white;
   border-radius: 50%;
   background-color: black;
@@ -175,39 +173,21 @@
 }
 
 @keyframes pulsateRed {
-  0% {
-      box-shadow: 0 0 35px #ea005a;
-  }
-  50% {
-      box-shadow: 0 0 150px #ea3700;
-  }
-  100% {
-      box-shadow: 0 0 35px #ea005a;
-  }
+  0% { box-shadow: 0 0 35px #ea005a; }
+  50% { box-shadow: 0 0 150px #ea3700; }
+  100% { box-shadow: 0 0 35px #ea005a; }
 }
 
 @keyframes pulsateBlue {
-  0% {
-      box-shadow: 0 0 35px #00ccff;
-  }
-  50% {
-      box-shadow: 0 0 130px #00ccff;
-  }
-  100% {
-      box-shadow: 0 0 35px #00ccff;
-  }
+  0% { box-shadow: 0 0 35px #00ccff; }
+  50% { box-shadow: 0 0 130px #00ccff; }
+  100% { box-shadow: 0 0 35px #00ccff; }
 }
 
 @keyframes pulsateYellow {
-  0% {
-      box-shadow: 0 0 35px #ffc70f;
-  }
-  50% {
-      box-shadow: 0 0 130px #ffc70f;
-  }
-  100% {
-      box-shadow: 0 0 35px #ffc70f;
-  }
+  0% { box-shadow: 0 0 35px #ffc70f; }
+  50% { box-shadow: 0 0 130px #ffc70f; }
+  100% { box-shadow: 0 0 35px #ffc70f; }
 }
 .zoom-in {
   transform: scale(1.1);

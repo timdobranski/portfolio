@@ -1,12 +1,15 @@
 import styles from './About.module.css';
 import me from '../../../public/images/Me-2.jpg';
 import aria from '../../../public/images/aria3.jpg';
+import BackgroundRings from '../../components/BackgroundRings/BackgroundRings.js'
+
 import Image from 'next/image';
 
 export default function About() {
 
   return (
     <div className={styles.aboutContainer}>
+      <BackgroundRings />
       <h1 className={styles.aboutHeader}>ABOUT ME</h1>
 
           <div className={styles.meImageContainer}>

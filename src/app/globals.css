@@ -127,3 +127,139 @@ overflow: hidden;
   }
 
 }
+
+.backgroundRing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 50%;
+  background-color: black;
+  transition: transform 1s ease, width 1s ease, height 1s ease, margin 1s ease, left 1s ease, top 1s ease, font-size 1s ease;
+  position: fixed;
+  transform: translateY(0);
+  animation: pulsate 3s infinite;
+  animation-name: pulsate;
+  z-index: -1;
+  filter: blur(5px);
+}
+.l {
+  width: 5vw;
+  height: 5vw;
+}
+.m {
+  width: 3vw;
+  height: 3vw;
+  border-width: 3px;
+}
+.s {
+  width: 1.5vw;
+  height: 1.5vw;
+  border-width: 1px;
+}
+.l1 {
+  top: 22%;
+  left: 10%;
+
+}
+.l2 {
+  top: 65%;
+  left: 14%;
+}
+.l3 {
+  top: 85%;
+  left: 5%;
+}
+.l4 {
+  top:50%;
+  left: 3%;
+}
+.c1 {
+  top: 35%;
+  left: 80%;
+}
+.c2 {
+  top: 78%;
+  left: 75%;
+}
+.c3 {
+  top: 78%;
+  left: 25%;
+}
+.c4 {
+  top: 25%;
+  left: 15%;
+}
+.c5 {
+  top: 34%;
+  left: 28%;
+}
+.r1 {
+  top: 34%;
+  left: 85%;
+}
+.r2 {
+  top: 75%;
+  left: 88%;
+}
+.r3 {
+  top: 45%;
+  left: 92%;
+}
+.r4 {
+  top: 25%;
+  left: 95%;
+}
+@keyframes pulsate {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* Adjust the vertical movement */
+  }
+}
+
+@keyframes pulsateGreen {
+  0% {box-shadow: 0 0 35px #00f38a;}
+  50% { box-shadow: 0 0 130px #00f38a;}
+  100% { box-shadow: 0 0 35px #00f38a; }
+}
+
+@keyframes pulsateRed {
+  0% { box-shadow: 0 0 35px #ea005a; }
+  50% { box-shadow: 0 0 150px #ea3700; }
+  100% { box-shadow: 0 0 35px #ea005a; }
+}
+
+@keyframes pulsateBlue {
+  0% { box-shadow: 0 0 35px #00ccff; }
+  50% { box-shadow: 0 0 130px #00ccff; }
+  100% { box-shadow: 0 0 35px #00ccff; }
+}
+
+@keyframes pulsateYellow {
+  0% { box-shadow: 0 0 35px #ffc70f; }
+  50% { box-shadow: 0 0 130px #ffc70f; }
+  100% { box-shadow: 0 0 35px #ffc70f; }
+}
+.greenGlow {
+  border: solid #00f38a;
+  box-shadow: 0 0 35px #00f38a;
+  animation: pulsateGreen 3s infinite, pulsate 5s infinite;
+}
+.blueGlow {
+  border: solid #00ccff;
+  box-shadow: 0 0 100px #004063;
+  animation: pulsateBlue 3s infinite, pulsate 4s infinite;
+}
+.yellowGlow {
+  border: solid #ffd000;
+  box-shadow: 0 0 35px #ffc70f;
+  animation: pulsateYellow 3s infinite, pulsate 6s infinite;
+}
+.redGlow {
+  border: solid #fb0019;
+  box-shadow: 0 0 100px #ea0027;
+  animation: pulsateRed 3s infinite, pulsate 7s infinite;
+}
