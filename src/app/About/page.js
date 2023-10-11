@@ -21,11 +21,11 @@ export default function About() {
             roles offer, but I'm open to any opportunity to learn and grow as a developer.`}</p>
             <p>{`I believe wholeheartedly in the honest exchange of hard work and great results in exchange for good compensation and a positive work environment,
             and I hope to find a position in an environment that matches those values.`}</p>
+            <p>{`In my free time, I can be found playing, writing, & recording music, reading or binge watching the latest show, and spending time exploring San Diego
+          with my dog, Aria. I'm currently working my way through Isaac Asimov's considerable body of fiction, and playing Aria's favorite new game, called 'Chew on Tim's arm'.`}</p>
           <div className={styles.meImageContainer}>
             <Image className={styles.ariaImage} src={aria} alt='Tim Dobranski'/>
           </div>
-            <p>{`In my free time, I can be found playing, writing, & recording music, reading or binge watching the latest show, and spending time exploring San Diego
-            with my dog, Aria. I'm currently working my way through Isaac Asimov's considerable body of fiction, and playing Aria's favorite new game, called 'Chew on Tim's arm'.`}</p>
           </div>
 
     </div>

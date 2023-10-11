@@ -48,9 +48,10 @@ export default function Projects() {
           </Link>
           </div>
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`}>
+          <Link href={`Projects/atelier-apparel`}>
             <Image className={[styles.projectThumb]} src={atelierApparel} fill='true' alt='fictional apparel company'/>
             <div className={styles.hoverText}>Ecommerce portal for a fictional apparel company</div>
-
+          </Link>
            </div>
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`}>
             <Image className={[styles.projectThumb]} src={timioBros} fill='true' alt='a side-scroller video game'/>
