@@ -11,8 +11,8 @@
   height: auto;
   overflow-y: auto;
   width: 65%;
-  min-width: 500px;
-  background: rgba(255, 255, 255, .5);
+  min-width: 1200px;
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 30px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
@@ -20,8 +20,8 @@
   color: black;
   font-size: 4rem;
   margin: 0;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 .resumeContainer p {
   font-size: 2rem;
@@ -29,11 +29,81 @@
   margin-top: 0;
 }
 .resumeLink {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: bold;
-  color: black;
+  color: white;
   text-decoration: none;
   transition: color 1s ease;
+  background-color: rgb(0, 74, 153);
+  background: linear-gradient(to bottom right, rgb(0, 154, 165), rgb(0, 33, 83));
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+.resumeLink:hover {
+  transform: scale(1.1);
+}
+.resumeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr 1fr;
+  grid-template-rows: 4;
+  /* margin: 2rem; */
+  width: 90%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 20px;
+  background-color: rgba(0, 92, 142, 0.245);
+
+}
+.resumeGrid li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.75rem;
+  line-height: 1.4;
+}
+.resumeGridItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right: 40px;
+  margin: 0;
+}
+.resumeGridItem h2 {
+  margin-bottom: 0;
+  margin-left: 40px;
+  font-size: 1.75rem;
+  text-decoration: underline;
+}
+.skillsLabel {
+  margin:2rem;;
+  font-size: 4rem;
+  grid-row: 1;
+  grid-column: 1 / 5;
+  line-height: 1.1;
+}
+
+.accomplishmentsGridItem {
+  grid-row: 2;
+  grid-column: 1 / 5;
+  margin-bottom: 0;
+  margin-left: 40px;
+  font-size: 2rem;
+  text-align: left;
+}
+.accomplishmentsGridItem li {
+  margin-right: 60px;
+  font-size: 1.5rem;
+  line-height: 2;
+  text-align: left;
+}
+.philosophy {
+  display: inline-block;
+  margin: 2rem;
+  grid-column: 1 / 5;
+  text-align: center;
+  font-size: 1.75rem;
 }

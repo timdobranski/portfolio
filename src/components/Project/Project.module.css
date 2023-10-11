@@ -51,6 +51,9 @@
   width: 65%;
   margin: 0 auto;
   margin-top: 1rem;
+  transition: color 1s ease;
+  background: linear-gradient(to bottom right, rgb(0, 154, 165), rgb(0, 33, 83));
+  transition: transform 0.3s ease;
 }
 .projectLink:hover {
 

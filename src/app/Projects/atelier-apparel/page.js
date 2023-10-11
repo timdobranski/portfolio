@@ -7,7 +7,7 @@ import darkMode from '../../../../public/images/projects/atelier-apparel/dark-mo
 export default function AtelierApparel() {
   const projectData = {
     name: 'ATELIER APPAREL',
-    date: 'SPRING 2023',
+    date: 'Spring 2023',
     description: [`This project is a front-end e-commerce website for a fictional clothing retailer. It was build in a team of three,
     with each team member handling a different section of the site.`, `My responsibilities included the related products carousel and a
     'My Outfit' carousel for users to add and save their favorite items. As a stretch goal, I was also able to implement a dark mode
