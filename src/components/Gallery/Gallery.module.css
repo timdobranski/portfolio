@@ -5,7 +5,7 @@
 .mainImageContainer {
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 300px;
   margin-bottom: 20px;
   overflow: hidden; /* This will ensure the image is constrained by the container */
   border-radius: 20px;
@@ -15,11 +15,16 @@
   /* background-color: rgba(0, 92, 142, 0.245); */
 
 }
-
+.mainImageContainer img {
+  cursor: pointer;
+}
 .thumbnails {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+}
+.thumbnails img:hover {
+  cursor: pointer;
 }
 
 .thumbnailContainer {

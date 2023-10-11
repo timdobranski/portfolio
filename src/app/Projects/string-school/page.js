@@ -15,8 +15,8 @@ export default function StringSchool() {
      parents who have multiple students, and adult students who have no parent contact.`],
     tech: ['React Native', 'Node.js', 'Express', 'PostgreSQL', 'AWS'],
     images: [lmssBanner, stringSchool, lmssBanner2],
-    link: 'http://www.lamesastringschool.com'
-
+    deployLink: { url: 'http://www.lamesastringschool.com', 'text': 'LaMesaStringSchool.com'},
+    repoLink: { url: 'https://github.com/timdobranski/la-mesa-string-school', text: 'View Repo On Github' }
   }
 
   return (

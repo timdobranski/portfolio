@@ -47,7 +47,14 @@
   padding: .5rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  display: inline;
+  display: block;
+  width: 65%;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+.projectLink:hover {
+
+  cursor: pointer;
 }
 .projectGrid {
   display: grid;
@@ -97,11 +104,13 @@
 }
 .techLabel {
   text-align: center;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   padding-left: 35px;
   margin-bottom: 0;
   text-decoration: underline;
+  padding-top: 0;
+  margin-top: 1rem;
 
 }
 .techStack {

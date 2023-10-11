@@ -12,22 +12,24 @@ export default function Project({ data }) {
   const description = data.description;
   const tech = data.tech;
   const images = data.images;
-  const link = data.link;
+  const deployLink = data.deployLink;
+  const repoLink = data.repoLink;
 
   return (
     <div className={styles.projectContainer}>
       <h2 className={styles.title}>{name}</h2>
       <p className={styles.date}>{date}</p>
       <div className={styles.projectGrid}>
-        {/* <div className={`${styles.imageContainer} ${styles.gridItem}`}>
-          <Image src={images[0]} alt={name} className={styles.mainImage} fill='true'/>
-        </div> */}
-
         <Gallery images={images} />
 
         <div className={`${styles.textContainer} ${styles.gridItem}`}>
-          <Link href={link}>
-            <p className={styles.projectLink}>LaMesaStringSchool.com</p>
+          {deployLink.url.length > 0 ?
+          <Link href={deployLink.url}>
+            <p className={styles.projectLink}>{deployLink.text}</p>
+          </Link> :
+          null}
+          <Link href={repoLink.url}>
+            <p className={styles.projectLink}>View Repo on Github</p>
           </Link>
           {description.map((p, i) => {
             return <p className={styles.description} key={i}>{p}</p>
