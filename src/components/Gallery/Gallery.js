@@ -25,7 +25,7 @@ export default function Gallery({ images }) {
       {isModalOpen && (
         <div className={styles.modalOverlay} onClick={()=>{setIsModalOpen(false)}}>
           <div className={styles.modalContent}>
-            <Image src={mainImage} alt="Modal View" layout="fill" objectFit="cover" />
+          <Image src={mainImage} alt="Modal View" layout="fill" objectFit="contain" />
             <button onClick={() => setIsModalOpen(false)}>Close</button>
           </div>
         </div>
