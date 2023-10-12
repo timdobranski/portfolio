@@ -43,13 +43,23 @@
   transform: scale(1);
   position: absolute;
 }
+.ring p, .ring h1 {
+  margin: 0;
+  white-space: nowrap;
+}
+.ring p {
+  margin: 0;
+}
+.ring h1 {
+  margin: 1vw;
+}
 .ring:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
 .activeRing {
   position: absolute;
-  font-size: 1.75vw;
+  font-size: 35px;
   top: 2.5vw;
   left: 37%;
   /* top: 50%;
@@ -59,6 +69,7 @@
   height: 28vw;
   padding-left: 3%;
   padding-right: 3%;
+  overflow: hidden;
 }
 .inactiveLeft {
   position: absolute;
@@ -68,8 +79,8 @@
   height: 15vw;
   /* font-size: 1rem; */
   transform: translate(0%, 0%);
-  padding-left: 3%;
-  padding-right: 3%;
+  padding-left: 0%;
+  padding-right: 0%;
 }
 
 .inactiveRight {
@@ -81,8 +92,8 @@
   /* font-size: 1rem; */
   margin-left: 7.5vw;
   margin-right: -7vw;
-  padding-left: 1.5%;
-  padding-right: 1.5%;
+  padding-left: 0%;
+  padding-right: 0%;
 }
 .inactiveRight p, .inactiveLeft p {
 
@@ -171,7 +182,7 @@
   display: inline;
 }
 
-@keyframes pulsateGreen {
+/* @keyframes pulsateGreen {
   0% {box-shadow: 0 0 35px #00f38a;}
   50% { box-shadow: 0 0 130px #00f38a;}
   100% { box-shadow: 0 0 35px #00f38a; }
@@ -193,7 +204,7 @@
   0% { box-shadow: 0 0 35px #ffc70f; }
   50% { box-shadow: 0 0 130px #ffc70f; }
   100% { box-shadow: 0 0 35px #ffc70f; }
-}
+} */
 .zoom-in {
   transform: scale(1.1);
   transition: transform 300ms ease-in-out;

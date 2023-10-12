@@ -9,8 +9,8 @@ import stringSchool from '../../../../public/images/projects/string-school/lmss-
 import timioBros from '../../../../public/images/projects/super-timio-bros/super-timio-bros.jpeg';
 import fitPass from '../../../../public/images/projects/fitpass/fitpass.png';
 import Link from 'next/link';
-import { AnimatePresence } from 'framer-motion';
-import { motion } from 'framer-motion';
+// import { AnimatePresence } from 'framer-motion';
+// import { motion } from 'framer-motion';
 
 export default function Projects() {
 
@@ -20,7 +20,7 @@ export default function Projects() {
       scale: 0.1
     },
     in: {
-      backgroundColor: 'transparent', // or your desired final color
+      backgroundColor: 'transparent',
       scale: 1
     },
     out: {
@@ -43,16 +43,7 @@ export default function Projects() {
     }
   };
 
-
   return (
-    <AnimatePresence mode='wait'>
-    <motion.div
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={pageVariants}
-      transition={{ duration: 1 }}
-    >
     <div className={styles.projectsContainer}>
       <h1 className={styles.projectsHeader}>PROJECTS</h1>
       <p>Click on a project below to learn more about it</p>
@@ -64,7 +55,7 @@ export default function Projects() {
           </Link>
           </div>
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} >
-            <Image className={styles.projectThumb} src={songwriter} layout='fill' alt='tool to aid songwriting'/>
+            <Image className={styles.projectThumb} src={songwriter} fill='true' alt='tool to aid songwriting'/>
             <div className={styles.hoverText}>This project is not yet complete. Check back soon!</div>
           </div>
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`}>
@@ -72,7 +63,6 @@ export default function Projects() {
             <Image className={[styles.projectThumb]} src={atelierDesign}  fill='true' alt='fictional web development firm'/>
               <div className={styles.hoverText}>Promo site for a fictional web development firm</div>
             </Link>
-
           </div>
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`}>
             <h2 className={`${styles.projectHeader}`}>String School</h2>
@@ -110,16 +100,5 @@ export default function Projects() {
           </div>
       </div>
     </div>
-
-    </motion.div>
-    <motion.div
-      className={styles.overlay}
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={overlayVariants}
-      transition={{ duration: 1 }}
-    ></motion.div>
-    </AnimatePresence>
   )
 }

@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './Connect.module.css'
 
 export default function Connect() {

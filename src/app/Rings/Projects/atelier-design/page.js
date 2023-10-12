@@ -10,7 +10,7 @@ import atelierDesign6 from '../../../../../public/images/projects/atelier-design
 export default function AtelierDesign() {
   const projectData = {
     name: 'ATELIER DESIGN',
-    date: 'FALL 2023',
+    date: 'Fall 2023',
     description: [`This is a promotional website for a fictional web development firm. Features include a full-screen fade-in effect,
     a responsive grid layout, and a signup form that sends a confirmation email to the user via a node express server and the Twilio sendgrid API.`,
     `Challenges of this project were learning how to create a mobile-responsive grid layout that rendered consistently across different browsers,

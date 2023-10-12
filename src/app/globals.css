@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   overflow: hidden;
+  line-height: 1.1;
   /* border: solid red 1px; */
 }
 a {
@@ -68,7 +69,7 @@ overflow: hidden;
   color: white;
   text-decoration: none;
   font-size: 1.5rem;
-
+  transition: ease .5s;
   padding: .25rem;
   padding-bottom: 0;
 
@@ -78,9 +79,10 @@ overflow: hidden;
   color: #00f38a;
   text-decoration: underline;
   transform:scale(1.1);
+  transition: ease .5s;
 }
 
-.appButton {
+/* .appButton {
   font-size: 1.75rem;
   font-weight: bold;
   color: white;
@@ -94,7 +96,7 @@ overflow: hidden;
 }
 .appButton:hover {
   transform: scale(1.1);
-}
+} */
 
 
 @media (max-width: 768px) {
@@ -262,4 +264,14 @@ overflow: hidden;
   border: solid #fb0019;
   box-shadow: 0 0 100px #ea0027;
   animation: pulsateRed 3s infinite, pulsate 7s infinite;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 10;
+  pointer-events: none;
 }

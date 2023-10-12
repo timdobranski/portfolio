@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './About.module.css';
 import me from '../../../../public/images/Me-2.jpg';
 import aria from '../../../../public/images/aria3.jpg';

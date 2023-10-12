@@ -11,7 +11,6 @@ import { motion } from 'framer-motion';
 import { AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 
-
 export default function Home() {
   const [activeRing, setActiveRing] = useState(1);
   const [zoomedRing, setZoomedRing] = useState(null);
@@ -19,28 +18,28 @@ export default function Home() {
   const rings = [
     {
       header: 'CONNECT',
-      text: 'To connect with me, click on the connect tab above',
+      text: ['Click on this ring to', 'connect with me'],
       color: 'yellowGlow',
       link: '/Rings/Connect',
       id: 'ring0'
     },
     {
       header: 'WELCOME!',
-      text: 'My name is Tim, and I develop websites and apps. Click here to see some of my work',
+      text: ['My name is Tim and I', ' develop websites & apps.', ' Click here to see my work', '  or browse the rings', ' for more choices'],
       color: 'greenGlow',
       link: '/Rings/Projects',
       id: 'ring1'
     },
     {
       header: 'RESUME',
-      text: 'Click here to see my expanded resume',
+      text: ['Click on this ring to see my ', 'expanded resume'],
       color: 'redGlow',
       link: '/Rings/Resume',
       id: 'ring2'
     },
     {
       header: 'ABOUT ME',
-      text: 'To learn more about me and my background, click on the about me tab above',
+      text: ['Click on this ring to learn more', 'about my background'],
       color: 'blueGlow',
       link: '/Rings/About',
       id: 'ring3'
@@ -54,12 +53,9 @@ export default function Home() {
       setZoomedRing(null);
       router.events.off('routeChangeStart', handleRouteChange);
   }
-
-
     setTimeout(() => {
-        // Reset the zoomed ring
         router.push(url);
-    }, 750);
+    }, 500);
  }
 
   const handleNextRing = () => {
@@ -71,32 +67,25 @@ export default function Home() {
   }
   const pageVariants = {
     initial: {
-      opacity: 0,
-      scale: 0.9
+      opacity: 1,
+      scale: 2
     },
     in: {
       opacity: 1,
       scale: 1
     },
     out: {
-      // opacity: 0,
-      scale: 2
+      opacity: 1,
+      scale: 1.5
     }
   };
 
   return (
-    // <AnimatePresence mode='wait'>
-    //   <motion.div
-    //     initial="initial"
-    //     animate="in"
-    //     exit="out"
-    //     variants={pageVariants}
-    //   >
     <main id={styles.home}>
-      <div className={styles.homeContainer}>
+          <AnimatePresence >
+      <div className={styles.homeContainer} key='homeContainer'>
     <FontAwesomeIcon icon={faChevronLeft} className={styles.leftNav} onClick={handlePreviousRing}/>
     <FontAwesomeIcon icon={faChevronRight} className={styles.rightNav} onClick={handleNextRing} />
-
               <div className='backgroundRing  yellowGlow m c1'></div>
               <div className='backgroundRing  blueGlow m c2'></div>
               <div className='backgroundRing  redGlow l c3'></div>
@@ -126,14 +115,18 @@ export default function Home() {
             id={ring.id}>
 
               <h1 className={`${styles.ringHeader} ${textClass}`}>{ring.header}</h1>
-              <p className={`${styles.ringText} ${textClass}`}>{ring.text}</p>
+              {ring.text.map((text, i) => {
+                return (
+                  <p className={`${styles.ringText} ${textClass}`} key={i}>{text}</p>
+                )
+              })}
             </div>
           );
       })}
         </div>
       </div>
+    </AnimatePresence>
     </main>
-    // </motion.div>
-    // </AnimatePresence>
+
   )
 }

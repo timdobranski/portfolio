@@ -33,12 +33,12 @@ export default function RootLayout({ children }) {
           <Link href='/' className='footerLink'>
                 <h2>HOME</h2>
             </Link>
-            <a href='/Rings/Projects' className='footerLink'>
+            <Link href='/Rings/Projects' className='footerLink'>
               <h2>PROJECTS</h2>
-            </a>
-            <a href='/Rings/Resume' className='footerLink'>
+            </Link>
+            <Link href='/Rings/Resume' className='footerLink'>
               <h2>RESUME</h2>
-            </a>
+            </Link>
             <Link href='/Rings/About' className='footerLink'>
               <h2>ABOUT ME</h2>
             </Link>
