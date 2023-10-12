@@ -4,10 +4,11 @@ import styles from './Projects.module.css'
 import Image from 'next/image';
 import atelierApparel from '../../../../public/images/projects/atelier-apparel/atelier-logo.png';
 import atelierDesign from '../../../../public/images/projects/atelier-design/atelier-design.png';
-import songwriter from '../../../../public/images/projects/songwriter/songsmith.jpeg';
+import songsmith from '../../../../public/images/projects/songsmith/songsmith.jpeg';
 import stringSchool from '../../../../public/images/projects/string-school/lmss-banner.jpg';
-import timioBros from '../../../../public/images/projects/super-timio-bros/super-timio-bros.jpeg';
+// import timioBros from '../../../../public/images/projects/super-timio-bros/super-timio-bros.jpeg';
 import fitPass from '../../../../public/images/projects/fitpass/fitpass.png';
+import portfolioPreview from '../../../../public/images/projects/portfolio/portfolio-preview-2.png';
 import Link from 'next/link';
 // import { AnimatePresence } from 'framer-motion';
 // import { motion } from 'framer-motion';
@@ -55,8 +56,10 @@ export default function Projects() {
           </Link>
           </div>
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} >
-            <Image className={styles.projectThumb} src={songwriter} fill='true' alt='tool to aid songwriting'/>
-            <div className={styles.hoverText}>This project is not yet complete. Check back soon!</div>
+          <Link href={`Projects/songsmith`}>
+            <Image className={styles.projectThumb} src={songsmith} fill='true' alt='tool to aid songwriting'/>
+            <div className={styles.hoverText}>Not complete yet, but on the way soon. Check it out!</div>
+            </Link>
           </div>
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`}>
             <Link href={`Projects/atelier-design`}>
@@ -86,8 +89,10 @@ export default function Projects() {
           </Link>
            </div>
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`}>
-            <Image className={[styles.projectThumb]} src={timioBros} fill='true' alt='a side-scroller video game'/>
-            <div className={styles.hoverText}>This project is not yet complete. Check back soon!</div>
+          <Link href={`Projects/portfolio`}>
+            <Image className={[styles.projectThumb]} src={portfolioPreview} fill='true' alt='a preview image of this website'/>
+            <div className={styles.hoverText}>This page!</div>
+            </Link>
           </div>
              <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`}>
             <h2 className={[styles.projectsGridItem, styles.projectHeader]}>FitPass</h2>
@@ -96,7 +101,7 @@ export default function Projects() {
             <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Atelier Apparel</h2>
           </div>
           <div className={`${styles.projectsGridItem} ${styles.projectDescription}`}>
-            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Super Tim-io Bros</h2>
+            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Portfolio</h2>
           </div>
       </div>
     </div>

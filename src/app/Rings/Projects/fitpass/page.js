@@ -9,7 +9,7 @@ export default function Fitpass() {
 
   const projectData = {
     name: 'FITPASS',
-    date: 'SPRING 2023',
+    date: 'Spring 2023',
     description: [`This is a mobile-first web app for users to connect with local fitness studio classes. Users or fitness studios can both sign
     up to either host or attend classes. Features include a search function, a map with geolocation, a calendar, and a booking system.`, `This project
     was developed in a team of seven, and each team member worked on crucial front-end and back-end features.`, `My responsibilities included the

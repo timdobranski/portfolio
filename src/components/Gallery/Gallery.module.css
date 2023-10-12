@@ -27,9 +27,10 @@
 
 .thumbnailContainer {
   position: relative;
-  height: 150px;
+  height: 120px;
   overflow: hidden;
   border-radius: 8px;
+
 }
 .thumbnailContainer:hover {
   transform: scale(.9);
