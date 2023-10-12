@@ -31,12 +31,13 @@ export default function Project({ data }) {
           <Link href={repoLink.url}>
             <p className={styles.projectLink}>View Repo on Github</p>
           </Link>
-          {description.map((p, i) => {
-            return <p className={styles.description} key={i}>{p}</p>
-          })}
-
-          <div className={styles.techContainer}>
-            <p className={styles.techLabel}>Tech:</p>
+          <div className={styles.sectionContainer}>
+            {description.map((p, i) => {
+              return <p className={styles.description} key={i}>{p}</p>
+            })}
+          </div>
+          <div className={styles.sectionContainer}>
+            <p className={styles.techLabel}>TECH</p>
             <ul>
               {tech.map((tech) => {
                 return <li className={styles.techStack}key={tech}>{tech}</li>
