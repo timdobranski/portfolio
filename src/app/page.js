@@ -55,7 +55,7 @@ export default function Home() {
   }
     setTimeout(() => {
         router.push(url);
-    }, 500);
+    }, 1000);
  }
 
   const handleNextRing = () => {
