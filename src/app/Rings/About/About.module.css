@@ -29,15 +29,21 @@
   margin-top: 0;
 
 }
-
+.imageGrid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0;
+  align-items: center;
+}
+.meImageContainer {
+  margin: 0;
+}
 .aboutImage {
   position: relative;
   width: 60%;
   height: auto;
   border-radius: 20px;
-}
-.meImageContainer {
-  margin: 0;
 }
 .ariaImage {
   width: 60%;
@@ -52,8 +58,9 @@
   justify-content: space-around;
   align-items: center;
   margin: 1rem 3rem 1rem 3rem;
-  /* border: solid black 3px; */
-
+  background-color: rgba(0, 92, 142, 0.245);
+  border-radius: 30px;
+  padding: 2rem;
 }
 .bioContainer p {
   font-size: 1.5rem;
