@@ -45,13 +45,18 @@
 }
 .ring:hover {
   transform: scale(1.1);
+  cursor: pointer;
 }
 .activeRing {
-  font-size: 2rem;
-  top: 8%;
-  left: 35%;
-  width: 60vmin;
-  height: 60vmin;
+  position: absolute;
+  font-size: 1.75vw;
+  top: 2.5vw;
+  left: 37%;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%); */
+  width: 28vw;
+  height: 28vw;
   padding-left: 3%;
   padding-right: 3%;
 }
@@ -70,9 +75,9 @@
 .inactiveRight {
   position: absolute;
   top: 22%;
-  left: 85%;
-  width: 30vmin;
-  height: 30vmin;
+  left: 86%;
+  width: 15vw;
+  height: 15vw;
   /* font-size: 1rem; */
   margin-left: 7.5vw;
   margin-right: -7vw;
@@ -277,4 +282,16 @@
     font-size: 0.75rem;  /* Adjust as needed */
 }
 
+}
+
+.ringZoom {
+  transform: scale(6) !important;
+  transition: transform 2.5s ease !important;
+}
+
+/* Hide the text inside the ring when it zooms */
+.ringZoom .ringHeader,
+.ringZoom .ringText {
+  opacity: 0;
+  /* transition: opacity 1s ease; */
 }

@@ -1,7 +1,7 @@
-import Project from '../../../components/Project/Project';
-import atelierLogo from '../../../../public/images/projects/atelier-apparel/atelier-logo.png';
-import lightMode from '../../../../public/images/projects/atelier-apparel/light-mode.png';
-import darkMode from '../../../../public/images/projects/atelier-apparel/dark-mode.png';
+import Project from '../../../../components/Project/Project';
+import atelierLogo from '../../../../../public/images/projects/atelier-apparel/atelier-logo.png';
+import lightMode from '../../../../../public/images/projects/atelier-apparel/light-mode.png';
+import darkMode from '../../../../../public/images/projects/atelier-apparel/dark-mode.png';
 
 
 export default function AtelierApparel() {

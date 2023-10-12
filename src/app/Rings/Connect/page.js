@@ -1,10 +1,8 @@
 import styles from './Connect.module.css'
-import BackgroundRings from '../../components/BackgroundRings/BackgroundRings.js';
 
 export default function Connect() {
   return (
     <div>
-      <BackgroundRings />
       <div className={styles.connectContainer}>
       <h1>CONNECT</h1>
       <p>{`I'm always happy to make a new connection.`}</p>

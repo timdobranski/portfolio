@@ -1,8 +1,8 @@
-import Project from '../../../components/Project/Project';
-import fitpass5 from '../../../../public/images/projects/fitpass/fitpass-5.png';
-import fitpass6 from '../../../../public/images/projects/fitpass/fitpass-6.png';
-import fitpass7 from '../../../../public/images/projects/fitpass/fitpass-7.png';
-import fitpass8 from '../../../../public/images/projects/fitpass/fitpass-8.png';
+import Project from '../../../../components/Project/Project';
+import fitpass5 from '../../../../../public/images/projects/fitpass/fitpass-5.png';
+import fitpass6 from '../../../../../public/images/projects/fitpass/fitpass-6.png';
+import fitpass7 from '../../../../../public/images/projects/fitpass/fitpass-7.png';
+import fitpass8 from '../../../../../public/images/projects/fitpass/fitpass-8.png';
 
 
 export default function Fitpass() {

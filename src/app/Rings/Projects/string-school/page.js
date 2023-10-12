@@ -1,8 +1,8 @@
 import styles from './StringSchool.module.css';
-import Project from '../../../components/Project/Project';
-import stringSchool from '../../../../public/images/projects/string-school/string-school.png';
-import lmssBanner from '../../../../public/images/projects/string-school/lmss-banner.jpg';
-import lmssBanner2 from '../../../../public/images/projects/string-school/lmss-banner.png';
+import Project from '../../../../components/Project/Project';
+import stringSchool from '../../../../../public/images/projects/string-school/string-school.png';
+import lmssBanner from '../../../../../public/images/projects/string-school/lmss-banner.jpg';
+import lmssBanner2 from '../../../../../public/images/projects/string-school/lmss-banner.png';
 
 export default function StringSchool() {
 

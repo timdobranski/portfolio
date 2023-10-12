@@ -1,19 +1,59 @@
+'use client';
+
 import styles from './Projects.module.css'
 import Image from 'next/image';
-import atelierApparel from '../../../public/images/projects/atelier-apparel/atelier-logo.png';
-import atelierDesign from '../../../public/images/projects/atelier-design/atelier-design.png';
-import songwriter from '../../../public/images/projects/songwriter/songsmith.jpeg';
-import stringSchool from '../../../public/images/projects/string-school/lmss-banner.jpg';
-import timioBros from '../../../public/images/projects/super-timio-bros/super-timio-bros.jpeg';
-import fitPass from '../../../public/images/projects/fitpass/fitpass.png';
-import BackgroundRings from '../../components/BackgroundRings/BackgroundRings.js'
+import atelierApparel from '../../../../public/images/projects/atelier-apparel/atelier-logo.png';
+import atelierDesign from '../../../../public/images/projects/atelier-design/atelier-design.png';
+import songwriter from '../../../../public/images/projects/songwriter/songsmith.jpeg';
+import stringSchool from '../../../../public/images/projects/string-school/lmss-banner.jpg';
+import timioBros from '../../../../public/images/projects/super-timio-bros/super-timio-bros.jpeg';
+import fitPass from '../../../../public/images/projects/fitpass/fitpass.png';
 import Link from 'next/link';
+import { AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export default function Projects() {
 
+  const pageVariants = {
+    initial: {
+      backgroundColor: 'black',
+      scale: 0.1
+    },
+    in: {
+      backgroundColor: 'transparent', // or your desired final color
+      scale: 1
+    },
+    out: {
+      backgroundColor: 'black',
+      scale: 1.1
+    }
+  };
+  const overlayVariants = {
+    initial: {
+      opacity: 1,
+      pointerEvents: 'all'
+    },
+    in: {
+      opacity: 0,
+      pointerEvents: 'none'
+    },
+    out: {
+      opacity: 1,
+      pointerEvents: 'all'
+    }
+  };
+
+
   return (
+    <AnimatePresence mode='wait'>
+    <motion.div
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      transition={{ duration: 1 }}
+    >
     <div className={styles.projectsContainer}>
-      <BackgroundRings />
       <h1 className={styles.projectsHeader}>PROJECTS</h1>
       <p>Click on a project below to learn more about it</p>
       <div className={styles.projectsGrid}>
@@ -70,5 +110,16 @@ export default function Projects() {
           </div>
       </div>
     </div>
+
+    </motion.div>
+    <motion.div
+      className={styles.overlay}
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={overlayVariants}
+      transition={{ duration: 1 }}
+    ></motion.div>
+    </AnimatePresence>
   )
 }

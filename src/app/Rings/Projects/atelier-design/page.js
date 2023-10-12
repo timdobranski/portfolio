@@ -1,10 +1,10 @@
-import Project from '../../../components/Project/Project';
-import atelierDesign from '../../../../public/images/projects/atelier-design/atelier-design.png';
-import atelierDesign2 from '../../../../public/images/projects/atelier-design/atelier-design-2.png';
-import atelierDesign3 from '../../../../public/images/projects/atelier-design/atelier-design-3.png';
-import atelierDesign4 from '../../../../public/images/projects/atelier-design/atelier-design-4.png';
-import atelierDesign5 from '../../../../public/images/projects/atelier-design/atelier-design-5.png';
-import atelierDesign6 from '../../../../public/images/projects/atelier-design/atelier-design-6.png';
+import Project from '../../../../components/Project/Project';
+import atelierDesign from '../../../../../public/images/projects/atelier-design/atelier-design.png';
+import atelierDesign2 from '../../../../../public/images/projects/atelier-design/atelier-design-2.png';
+import atelierDesign3 from '../../../../../public/images/projects/atelier-design/atelier-design-3.png';
+import atelierDesign4 from '../../../../../public/images/projects/atelier-design/atelier-design-4.png';
+import atelierDesign5 from '../../../../../public/images/projects/atelier-design/atelier-design-5.png';
+import atelierDesign6 from '../../../../../public/images/projects/atelier-design/atelier-design-6.png';
 
 
 export default function AtelierDesign() {
