@@ -36,6 +36,7 @@
 }
 .ring h1 {
   margin: 1vw;
+  /* font-size: 5vw; */
 }
 .ring:hover {
   transform: scale(1.1);
@@ -60,7 +61,7 @@
 
 }
 .activeRing h1 {
-  font-size: 3vw;
+  /* font-size: 3vw; */
   margin: 0;
   margin-bottom: 1rem;
 }
@@ -145,7 +146,6 @@
 .leftNav, .rightNav {
   position: absolute;
   top: 32%;
-  font-size: 6rem;
   color: white;
   width: 6rem;
   height: 6rem;
@@ -163,7 +163,7 @@
   transition: background-color .5s ease, transform 1s ease;
 }
 .leftNav {
-  left: 18vw;
+  left: 15vw;
 }
 .rightNav {
   right: 18vw;
@@ -188,7 +188,7 @@
   display: inline;
 }
 .blueGlow .ringHeader {
-  background-image: linear-gradient(to right, rgb(0, 221, 255), #006398);
+  background-image: linear-gradient(to right, #0078b9, rgb(0, 184, 212));
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
@@ -214,14 +214,9 @@
 
 @media (max-width: 768px) {
   @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
-
   .fade-in-text {
     animation: fadeIn 0.2s forwards;
     animation-delay: 0.7s;
@@ -230,19 +225,14 @@
 
   .activeRing {
     position: absolute;
-    top: 10%;
-    left: 13%;
+    top: 15%;
+    left: 27%;
     width: 75vw;
     height: 75vw;
-
-  }
-  .activeRing p h2 {
-    font-size: .5rem;
-    margin: 3rem;
   }
   .inactiveLeft {
     position: absolute;
-    top: 20%;
+    top: 22%;
     left: -25%;
     width: 30vw;
     height: 30vw;
@@ -254,7 +244,7 @@
   }
   .inactiveRight {
     position: absolute;
-    top: 28%;
+    top: 22%;
     left: 88%;
     width: 30vw;
     height: 30vw;
@@ -268,31 +258,33 @@
   .leftNav, .rightNav {
     position: absolute;
     top: 55%;
-    font-size: 30vw;
+    width: 8vw;
+    height: 8vw;
     color: white;
   }
   .leftNav {
-    left: 15vw;
+    left: 20vw;
   }
   .rightNav {
-    right: 15vw;
+    right: 20vw;
   }
   .ringHeader {
-    font-size: 1.5rem;
-    margin-bottom: 0;
+    font-size: 8vw;
+    margin: 0;
   }
   .ringText{
     font-size: 1.25rem;
+    margin-top: -16;
   }
   .inactiveRight .ringText,
-.inactiveLeft .ringText {
-    font-size: 0.5rem;
-}
+  .inactiveLeft .ringText {
+      font-size: 0rem;
+  }
 
-.inactiveRight .ringHeader,
-.inactiveLeft .ringHeader {
-    font-size: 0.75rem;
-}
+  .inactiveRight .ringHeader,
+  .inactiveLeft .ringHeader {
+      font-size: 0.75rem;
+  }
 
 }
 
