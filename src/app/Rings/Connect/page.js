@@ -11,16 +11,20 @@ export default function Connect() {
       <p>{`Feel free to reach out in the following ways:`}</p>
       <div className={styles.contactInfoContainer}>
         <div className={styles.contactHeaders}>
-          <p>Email</p>
-          <p>Phone</p>
-          <p>LinkedIn</p>
-          <p>Github</p>
+          <p id={styles.emailLabel}>Email</p>
+          <p id={styles.phoneLabel}>Phone</p>
+          <p id={styles.linkedLabel}>LinkedIn</p>
+          <p id={styles.githubLabel}>Github</p>
         </div>
         <div className={styles.contactInfo}>
-          <p>timdobranski@gmail.com</p>
-          <p>{'(619) 820-6213'}</p>
-          <p>linkedin.com/in/timdobranski</p>
-          <p>github.com/timdobranski</p>
+          <p id={styles.email}>timdobranski@gmail.com</p>
+          <p id={styles.phone}>{'(619) 820-6213'}</p>
+          <a href='http://www.linkedin.com/in/timdobranski' target='_blank' rel='noreferrer'>
+            <p id={styles.linkedIn}>linkedin.com/in/timdobranski</p>
+          </a>
+          <a href='http://www.github.com/timdobranski' target='_blank' rel='noreferrer'>
+            <p id={styles.github}>github.com/timdobranski</p>
+          </a>
         </div>
       </div>
     </div>
