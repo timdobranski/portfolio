@@ -12,8 +12,8 @@ export default function Songsmith() {
     come on this project soon!`],
     tech: ['Next.js', 'AWS'],
     images: [songsmith],
-    deployLink: { url: 'http://www.lamesastringschool.com', 'text': 'LaMesaStringSchool.com'},
-    repoLink: { url: 'https://github.com/timdobranski/la-mesa-string-school', text: 'View Repo On Github' }
+    deployLink: { url: '', 'text': 'LaMesaStringSchool.com'},
+    repoLink: { url: 'https://github.com/timdobranski/songsmith.git', text: 'View Repo On Github' }
   }
 
   return (

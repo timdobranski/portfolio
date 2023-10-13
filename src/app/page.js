@@ -39,7 +39,7 @@ export default function Home() {
     },
     {
       header: 'ABOUT ME',
-      text: ['Click on this ring to learn more', 'about my background'],
+      text: ['Click on this ring to learn', 'more about my', 'background'],
       color: 'blueGlow',
       link: '/Rings/About',
       id: 'ring3'

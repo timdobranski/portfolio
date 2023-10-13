@@ -31,17 +31,14 @@
   font-weight: bold;
   margin-top: 0;
   margin-bottom: 2rem;
-  /* outline: solid 1px black; */
 }
 .projectsGrid{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 3fr 1fr 3fr 1fr;
   object-fit: cover;
-  /* border: solid red 1px; */
   width: 100%;
 }
-
 .projectsGridItem {
   border-radius: 20px;
   display: flex;
@@ -55,7 +52,6 @@
   margin-right: 1.5rem;
   width: 90%;
   min-width: 250px;
-
 }
 .projectsGridItem img {
   width: 500px;
@@ -64,15 +60,12 @@
   position: relative;
   top: -30px;
 }
-
 .hoverMessage:hover .projectThumb img {
   filter: brightness(0.7);
 }
-
 .hoverMessage:hover .hoverText {
   display: block;
 }
-
 .hoverText {
   position: absolute;
   width: 100%;
@@ -84,7 +77,6 @@
   padding: 30px;
   background-color: rgba(0, 0, 0, 0.8);
 }
-
 .hoverMessage:hover .hoverText {
   display: flex;
   flex-direction: column;
@@ -106,4 +98,95 @@
   background-color: black;
   z-index: 10;
   pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .projectsContainer {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7rem;
+    top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    overflow-y: auto;
+    width: 90%;
+    background: rgba(255, 255, 255, .5);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    min-width: 0px;
+  }
+  .projectsContainer h1 {
+    color: black;
+    font-size: 3.5rem;
+    margin: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .projectsContainer p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+  .projectsGrid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr;
+    object-fit: cover;
+    width: 100%;
+  }
+  .projectsGridItem {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    object-fit: cover;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    width: 90%;
+    min-width: 250px;
+  }
+  #stringSchoolThumb{
+    grid-row: 1
+  }
+  #stringSchoolLabel{
+    grid-row: 2
+  }
+  #songsmithThumb{
+    grid-row: 3
+  }
+  #songsmithLabel{
+    grid-row: 4
+  }
+  #atelierDesignThumb{
+    grid-row: 5;
+    border: solid-red-4px;
+  }
+  #atelierDesignLabel{
+    grid-row: 6
+  }
+  #fitpassThumb{
+    grid-row: 7
+  }
+  #fitpassLabel{
+    grid-row: 8
+  }
+  #atelierApparelThumb{
+    grid-row: 9
+  }
+  #atelierApparelLabel{
+    grid-row: 10
+  }
+#portfolioThumb {
+  grid-row: 11
+}
+#portfolioLabel{
+  grid-row: 12
+}
 }
