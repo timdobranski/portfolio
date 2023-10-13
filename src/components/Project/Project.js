@@ -1,4 +1,4 @@
-// 'use client';
+'use client';
 
 import styles from './Project.module.css';
 import Image from 'next/image';
@@ -48,5 +48,4 @@ export default function Project({ data }) {
       </div>
     </div>
   )
-
 }
