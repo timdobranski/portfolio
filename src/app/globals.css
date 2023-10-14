@@ -23,7 +23,8 @@ a {
 #header-container {
 display: fixed;
 width: 100%;
-min-height: 18vh;
+height: 20%;
+min-height: 160px;
 background-color: rgb(0, 0, 0);
 overflow: hidden;
 }
@@ -97,6 +98,7 @@ overflow: hidden;
   animation-name: pulsate;
   z-index: -1;
   filter: blur(5px);
+
 }
 .l {
   width: 5vw;
@@ -250,24 +252,22 @@ MOBILE STYLING
   .footerLink h2 {
     font-size: 3vw;
   }
-  /* .grid {
-    position: absolute;
-    bottom: 0;
-    width: 100vw;
-    height: 20vw;
-  } */
   #header-container {
     display: fixed;
     padding-left: 6vw;
     padding-right: 6vw;
     width: 100%;
     /* height: 16vh; */
-    min-height: 15vh;
+    min-height: 16vh;
     height: 16vw;
     background-color: rgb(0, 0, 0);
     overflow: hidden;
     }
   .footerGrid {
     height: 12vw;
+  }
+  .backgroundRing {
+    display: none;
+
   }
 }

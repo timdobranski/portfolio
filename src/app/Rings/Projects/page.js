@@ -4,14 +4,12 @@ import styles from './Projects.module.css'
 import Image from 'next/image';
 import atelierApparel from '../../../../public/images/projects/atelier-apparel/atelier-logo.png';
 import atelierDesign from '../../../../public/images/projects/atelier-design/atelier-design.png';
-import songsmith from '../../../../public/images/projects/songsmith/songsmith.jpeg';
+import songsmith3 from '../../../../public/images/projects/songsmith/songsmith-3.png';
 import stringSchool from '../../../../public/images/projects/string-school/lmss-banner.jpg';
-// import timioBros from '../../../../public/images/projects/super-timio-bros/super-timio-bros.jpeg';
 import fitPass from '../../../../public/images/projects/fitpass/fitpass.png';
 import portfolioPreview from '../../../../public/images/projects/portfolio/portfolio-preview-2.png';
 import Link from 'next/link';
-// import { AnimatePresence } from 'framer-motion';
-// import { motion } from 'framer-motion';
+
 
 export default function Projects() {
 
@@ -57,7 +55,7 @@ export default function Projects() {
         </div>
         <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.songsmithThumb}>
           <Link href={`Projects/songsmith`}>
-            <Image className={styles.projectThumb} src={songsmith} fill='true' alt='tool to aid songwriting'/>
+            <Image className={styles.projectThumb} src={songsmith3} fill='true' alt='tool to aid songwriting'/>
               <div className={styles.hoverText}>Not complete yet, but on the way soon. Check it out!</div>
             </Link>
           </div>

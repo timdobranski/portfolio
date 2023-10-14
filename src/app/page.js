@@ -25,7 +25,7 @@ export default function Home() {
     },
     {
       header: 'WELCOME!',
-      text: ['My name is Tim and I', ' develop websites & apps.', ' Click here to see my work', '  or browse the rings', ' for more choices'],
+      text: ['I\'m Tim and I develop', ' websites & apps. Click', 'here to see my work'],
       color: 'greenGlow',
       link: '/Rings/Projects',
       id: 'ring1'
@@ -86,11 +86,11 @@ export default function Home() {
       <div className={styles.homeContainer} key='homeContainer'>
     <FontAwesomeIcon icon={faChevronLeft} className={styles.leftNav} onClick={handlePreviousRing}/>
     <FontAwesomeIcon icon={faChevronRight} className={styles.rightNav} onClick={handleNextRing} />
-              <div className='backgroundRing  yellowGlow m c1'></div>
-              <div className='backgroundRing  blueGlow m c2'></div>
-              <div className='backgroundRing  redGlow l c3'></div>
-              <div className='backgroundRing  greenGlow m c4'></div>
-              <div className='backgroundRing  blueGlow m c5'></div>
+              <div className='backgroundRing yellowGlow m c1'></div>
+              <div className='backgroundRing blueGlow m c2'></div>
+              <div className='backgroundRing redGlow l c3'></div>
+              <div className='backgroundRing greenGlow m c4'></div>
+              <div className='backgroundRing blueGlow m c5'></div>
     <div className={styles.ringGrid}>
 
 
