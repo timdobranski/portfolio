@@ -4,7 +4,7 @@ import styles from './Projects.module.css'
 import Image from 'next/image';
 import atelierApparel from '../../../../public/images/projects/atelier-apparel/atelier-logo.png';
 import atelierDesign from '../../../../public/images/projects/atelier-design/atelier-design.png';
-import songsmith3 from '../../../../public/images/projects/songsmith/songsmith-3.png';
+import songsmith4 from '../../../../public/images/projects/songsmith/songsmith-4.png';
 import stringSchool from '../../../../public/images/projects/string-school/lmss-banner.jpg';
 import fitPass from '../../../../public/images/projects/fitpass/fitpass.png';
 import portfolioPreview from '../../../../public/images/projects/portfolio/portfolio-preview-2.png';
@@ -75,7 +75,7 @@ export default function Projects() {
             <h2 className={`${styles.projectHeader}`}>String School</h2>
           </div>
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.parkwayLabel}>
-            <h2 className={`${styles.projectHeader}`}>String School</h2>
+            <h2 className={`${styles.projectHeader}`}>Parkway Academy</h2>
           </div>
 
           <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.atelierDesignLabel}>
@@ -85,7 +85,7 @@ export default function Projects() {
 
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.songsmithThumb}>
           <Link href={`Projects/songsmith`}>
-            <Image className={styles.projectThumb} src={songsmith3} fill='true' alt='tool to aid songwriting'/>
+            <Image className={styles.projectThumb} src={songsmith4} fill='true' alt='tool to aid songwriting'/>
               <div className={styles.hoverText}>Not complete yet, but on the way soon. Check it out!</div>
             </Link>
           </div>
@@ -121,7 +121,8 @@ export default function Projects() {
             <div className={styles.hoverText}>This page!</div>
             </Link>
           </div>
-
+          <div></div>
+          <div></div>
           <div className={`${styles.projectsGridItem} ${styles.projectDescription}`}>
             <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Portfolio</h2>
           </div>
