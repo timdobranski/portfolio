@@ -8,6 +8,7 @@ import songsmith3 from '../../../../public/images/projects/songsmith/songsmith-3
 import stringSchool from '../../../../public/images/projects/string-school/lmss-banner.jpg';
 import fitPass from '../../../../public/images/projects/fitpass/fitpass.png';
 import portfolioPreview from '../../../../public/images/projects/portfolio/portfolio-preview-2.png';
+import parkway from '../../../../public/images/projects/parkway/parkway.png';
 import Link from 'next/link';
 
 
@@ -53,51 +54,74 @@ export default function Projects() {
             <div className={styles.hoverText}>Web & mobile app for music students with scheduling, progress-tracking and more</div>
           </Link>
         </div>
-        <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.songsmithThumb}>
-          <Link href={`Projects/songsmith`}>
-            <Image className={styles.projectThumb} src={songsmith3} fill='true' alt='tool to aid songwriting'/>
-              <div className={styles.hoverText}>Not complete yet, but on the way soon. Check it out!</div>
+
+        <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.parkwayThumb}>
+          <Link href={`Projects/parkway`}>
+            <Image className={styles.projectThumb} src={parkway} fill='true' alt='thumbnail of the parkway project home page'/>
+              <div className={styles.hoverText}>A mobile-responsive web app for a local middle school</div>
             </Link>
           </div>
+
+
+
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.atelierDesignThumb}>
             <Link href={`Projects/atelier-design`}>
             <Image className={[styles.projectThumb]} src={atelierDesign}  fill='true' alt='fictional web development firm'/>
               <div className={styles.hoverText}>Promo site for a fictional web development firm</div>
             </Link>
           </div>
+
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.stringSchoolLabel}>
             <h2 className={`${styles.projectHeader}`}>String School</h2>
           </div>
-          <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.songsmithLabel}>
-            <h2 className={` ${styles.projectHeader}`}>Songsmith</h2>
+          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.parkwayLabel}>
+            <h2 className={`${styles.projectHeader}`}>String School</h2>
           </div>
+
           <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.atelierDesignLabel}>
             <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Atelier Design</h2>
           </div>
+
+
+          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.songsmithThumb}>
+          <Link href={`Projects/songsmith`}>
+            <Image className={styles.projectThumb} src={songsmith3} fill='true' alt='tool to aid songwriting'/>
+              <div className={styles.hoverText}>Not complete yet, but on the way soon. Check it out!</div>
+            </Link>
+          </div>
+
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.fitpassThumb}>
           <Link href={`Projects/fitpass`}>
             <Image className={[styles.projectThumb]} src={fitPass}  fill='true' alt='mobile web app to connect users to gym classes'/>
             <div className={styles.hoverText}>Mobile web app to connect users to local fitness studio classes</div>
           </Link>
           </div>
+
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.atelierApparelThumb}>
           <Link href={`Projects/atelier-apparel`}>
             <Image className={[styles.projectThumb]} src={atelierApparel} fill='true' alt='fictional apparel company'/>
             <div className={styles.hoverText}>Ecommerce portal for a fictional apparel company</div>
           </Link>
            </div>
+
+           <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.songsmithLabel}>
+            <h2 className={` ${styles.projectHeader}`}>Songsmith</h2>
+          </div>
+          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`}>
+            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>FitPass</h2>
+          </div>
+          <div className={`${styles.projectsGridItem} ${styles.projectDescription}`}>
+            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Atelier Apparel</h2>
+          </div>
+
+
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.portfolioThumb}>
           <Link href={`Projects/portfolio`}>
             <Image className={[styles.projectThumb]} src={portfolioPreview} fill='true' alt='a preview image of this website'/>
             <div className={styles.hoverText}>This page!</div>
             </Link>
           </div>
-             <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`}>
-            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>FitPass</h2>
-          </div>
-          <div className={`${styles.projectsGridItem} ${styles.projectDescription}`}>
-            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Atelier Apparel</h2>
-          </div>
+
           <div className={`${styles.projectsGridItem} ${styles.projectDescription}`}>
             <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Portfolio</h2>
           </div>
