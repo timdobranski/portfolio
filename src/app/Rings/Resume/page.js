@@ -1,6 +1,8 @@
-// 'use client'
+'use client'
 
 import styles from './Resume.module.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 export default function Resume() {
 
@@ -81,12 +83,16 @@ export default function Resume() {
         <h2 className={styles.skillsLabel}>Professional Accomplishments</h2>
         <div className={`${styles.accomplishmentsGridItem}`}>
           <ul>
-            <li>* Founded and sustained a Yelp 5-star small business over 14+ years, the La Mesa String School
-            </li>
-            <li>* Designed & implemented lesson plans for students of various skills, ages, & musical preferences</li>
-            <li>* Published 2 editions of original textbook, The String School Guitar Method</li>
-            <li>* Organized & held biannual student concerts for families</li>
-            <li>* Developed & fostered positive relationships & communication with 35-45 weekly students & families</li>
+            <FontAwesomeIcon icon={faCheckCircle} className={styles.checkIcon} />
+              <li>Founded and sustained a Yelp 5-star small business over 14+ years, the La Mesa String School</li>
+              <FontAwesomeIcon icon={faCheckCircle} className={styles.checkIcon} />
+            <li>Designed & implemented lesson plans for students of various skills, ages, & musical preferences</li>
+            <FontAwesomeIcon icon={faCheckCircle} className={styles.checkIcon} />
+            <li>Published 2 editions of original textbook, The String School Guitar Method</li>
+            <FontAwesomeIcon icon={faCheckCircle} className={styles.checkIcon} />
+            <li>Organized & held biannual student concerts for families</li>
+            <FontAwesomeIcon icon={faCheckCircle} className={styles.checkIcon} />
+            <li>Developed & fostered positive relationships & communication with 35-45 weekly students & families</li>
           </ul>
         </div>
       </div>

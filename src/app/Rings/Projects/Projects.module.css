@@ -134,7 +134,7 @@
   .projectsGrid{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr;
+    grid-template-rows: 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr ;
     object-fit: cover;
     width: 100%;
   }
@@ -158,35 +158,42 @@
   #stringSchoolLabel{
     grid-row: 2
   }
-  #songsmithThumb{
+  #parkwayThumb {
     grid-row: 3
   }
-  #songsmithLabel{
+  #parkwayLabel{
     grid-row: 4
   }
+  #songsmithThumb{
+    grid-row: 5
+  }
+  #songsmithLabel{
+    grid-row: 6
+  }
   #atelierDesignThumb{
-    grid-row: 5;
+    grid-row: 7;
     border: solid-red-4px;
   }
   #atelierDesignLabel{
-    grid-row: 6
-  }
-  #fitpassThumb{
-    grid-row: 7
-  }
-  #fitpassLabel{
     grid-row: 8
   }
-  #atelierApparelThumb{
+  #fitpassThumb{
     grid-row: 9
   }
-  #atelierApparelLabel{
+  #fitpassLabel{
     grid-row: 10
   }
+  #atelierApparelThumb{
+    grid-row: 11
+  }
+  #atelierApparelLabel{
+    grid-row: 12
+  }
 #portfolioThumb {
-  grid-row: 11
+  grid-row: 13
 }
 #portfolioLabel{
-  grid-row: 12
+  grid-row: 14
 }
+
 }
