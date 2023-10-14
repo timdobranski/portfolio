@@ -71,3 +71,48 @@
   font-weight: bold;
   margin: 1rem;
 }
+@media (max-width: 768px) {
+  .aboutContainer {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7rem;
+    top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    overflow-y: auto;
+    width: 95%;
+    background: rgba(255, 255, 255, .5);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    min-width: 0px;
+  }
+  .bioContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: .5rem;
+    background-color: rgba(0, 92, 142, 0.245);
+    border-radius: 30px;
+    padding: .5rem;
+  }
+  .bioContainer p {
+    font-size: 1.25rem;
+
+  }
+  .aboutImage {
+    margin-bottom: 1rem;
+    width: 80%;
+
+  }
+  .ariaImage {
+    width: 80%;
+    height: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 20px;
+  }
+}
