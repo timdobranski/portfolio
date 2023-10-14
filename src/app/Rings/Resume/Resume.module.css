@@ -109,3 +109,89 @@
   text-align: center;
   font-size: 1.75rem;
 }
+
+@media (max-width: 768px) {
+  .resumeContainer {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7rem;
+    top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 95%;
+    min-width: 0px;
+  }
+  .resumeContainer p {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+  .resumeGrid {
+    grid-template-rows: 4;
+    grid-template-columns: 1fr 1fr;
+  }
+  .skillsLabel {
+    font-size: 2.5rem;
+    grid-row: 1;
+    grid-column: 1 / 3;
+  }
+  .resumeGridItem {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    padding-right: 8vw;
+
+  }
+  .resumeGrid li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.75rem;
+  }
+  .resumeGrid p {
+    padding: 1rem;
+    margin: 0;
+  }
+  .frontEnd {
+    grid-row: 2;
+    grid-column: 1;
+  }
+  .backEnd {
+    grid-row: 2;
+    grid-column: 2;
+  }
+  .testingDeployment {
+    grid-row: 3;
+    grid-column: 1;
+  }
+  .tools {
+    grid-row: 3;
+    grid-column: 2;
+  }
+  .accomplishmentsGridItem {
+    margin-bottom: 0;
+    padding: 0;
+    margin: 0;
+    padding-right:2vw;
+    font-size: 1.75rem;
+    line-height: 1;
+
+  }
+  .accomplishmentsGridItem li {
+    /* margin-right: 60px; */
+    font-size: 1.5rem;
+    line-height: 1;
+    text-align: left;
+    margin-bottom: 1.5rem;
+  }
+
+}

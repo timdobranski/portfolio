@@ -41,7 +41,7 @@ export default function Resume() {
           </ul>
         </div>
         <div className={`${styles.testingDeployment} ${styles.resumeGridItem}`}>
-          <h2>Testing/Deployment</h2>
+          <h2>Test/Deploy</h2>
           <ul>
             <li>Jest</li>
             <li>Mocha/Chai</li>
@@ -63,6 +63,19 @@ export default function Resume() {
         </div>
       </div>
 
+      <div className={styles.resumeGrid}>
+        <h2 className={styles.skillsLabel}>History</h2>
+        <p className={styles.philosophy}>{`I've spent most of my professional career as a music teacher. I founded the La Mesa String School
+        in 2009, and since then I've been building on its successes with innovative new ideas to teach and explore music. My experiences
+        with the string school have also taught me about the importance of organization, planning, and communication in my workflow. At its
+        peak, I was teaching 35-45 students per week, and I had to be able to keep track of each student's progress, goals, and challenges.
+        One of my proudest accomplishments was publishing my own textbook, The String School Guitar Method, which I used to teach my students
+        for several years. Other noteworthy accomplishments include organizing biannual student concerts, and developing a curriculum that
+        was flexible enough to accommodate students of all ages, skill levels, and musical preferences.`}</p> <p className={styles.philosophy}>{`
+        In the summer of 2020, I began to consider a career change and took my first programming class at the local community college.
+        I knew I loved it, and continued to self study in my spare time. Eventually, I enrolled and completed the Hack Reactor software
+        engineering immersive, and now I'm using and growing my skills wherever I can.`}</p>
+      </div>
 
       <div className={styles.resumeGrid}>
         <h2 className={styles.skillsLabel}>Professional Accomplishments</h2>
@@ -77,6 +90,7 @@ export default function Resume() {
           </ul>
         </div>
       </div>
+
 
       <div className={styles.resumeGrid}>
         <h2 className={styles.skillsLabel}>Philosophy</h2>
