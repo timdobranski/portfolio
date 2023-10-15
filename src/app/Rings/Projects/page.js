@@ -50,14 +50,14 @@ export default function Projects() {
       <div className={styles.projectsGrid}>
         <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.stringSchoolThumb}>
           <Link href={`Projects/string-school`}>
-              <Image className={styles.projectThumb} src={stringSchool} fill='true' alt='mobile app for music students'/>
+              <Image className={styles.projectThumb} src={stringSchool} fill='true' priority='true'  alt='mobile app for music students'/>
             <div className={styles.hoverText}>Web & mobile app for music students with scheduling, progress-tracking and more</div>
           </Link>
         </div>
 
         <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.parkwayThumb}>
           <Link href={`Projects/parkway`}>
-            <Image className={styles.projectThumb} src={parkway} fill='true' alt='thumbnail of the parkway project home page'/>
+            <Image className={styles.projectThumb} src={parkway} fill='true' priority='true'  alt='thumbnail of the parkway project home page'/>
               <div className={styles.hoverText}>A mobile-responsive web app for a local middle school</div>
             </Link>
           </div>
@@ -66,7 +66,7 @@ export default function Projects() {
 
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.atelierDesignThumb}>
             <Link href={`Projects/atelier-design`}>
-            <Image className={[styles.projectThumb]} src={atelierDesign}  fill='true' alt='fictional web development firm'/>
+            <Image className={[styles.projectThumb]} src={atelierDesign}  priority='true' fill='true' alt='fictional web development firm'/>
               <div className={styles.hoverText}>Promo site for a fictional web development firm</div>
             </Link>
           </div>
@@ -85,21 +85,21 @@ export default function Projects() {
 
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.songsmithThumb}>
           <Link href={`Projects/songsmith`}>
-            <Image className={styles.projectThumb} src={songsmith4} fill='true' alt='tool to aid songwriting'/>
+            <Image className={styles.projectThumb} src={songsmith4} fill='true' priority='true'  alt='tool to aid songwriting'/>
               <div className={styles.hoverText}>Not complete yet, but on the way soon. Check it out!</div>
             </Link>
           </div>
 
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.fitpassThumb}>
           <Link href={`Projects/fitpass`}>
-            <Image className={[styles.projectThumb]} src={fitPass}  fill='true' alt='mobile web app to connect users to gym classes'/>
+            <Image className={[styles.projectThumb]} src={fitPass}  fill='true' priority='true'  alt='mobile web app to connect users to gym classes'/>
             <div className={styles.hoverText}>Mobile web app to connect users to local fitness studio classes</div>
           </Link>
           </div>
 
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.atelierApparelThumb}>
           <Link href={`Projects/atelier-apparel`}>
-            <Image className={[styles.projectThumb]} src={atelierApparel} fill='true' alt='fictional apparel company'/>
+            <Image className={[styles.projectThumb]} src={atelierApparel} fill='true' priority='true'  alt='fictional apparel company'/>
             <div className={styles.hoverText}>Ecommerce portal for a fictional apparel company</div>
           </Link>
            </div>
@@ -117,7 +117,7 @@ export default function Projects() {
 
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.portfolioThumb}>
           <Link href={`Projects/portfolio`}>
-            <Image className={[styles.projectThumb]} src={portfolioPreview} fill='true' alt='a preview image of this website'/>
+            <Image className={[styles.projectThumb]} src={portfolioPreview} fill='true' priority='true' alt='a preview image of this website'/>
             <div className={styles.hoverText}>This page!</div>
             </Link>
           </div>
