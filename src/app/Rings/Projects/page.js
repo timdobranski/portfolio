@@ -50,15 +50,15 @@ export default function Projects() {
       <div className={styles.projectsGrid}>
         <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.stringSchoolThumb}>
           <Link href={`Projects/string-school`}>
-              <Image className={styles.projectThumb} src={stringSchool} fill='true' priority='true'  alt='mobile app for music students'/>
+              <Image className={styles.projectThumb} src={stringSchool} fill='true' priority='true'  alt='animated guitar'/>
             <div className={styles.hoverText}>Web & mobile app for music students with scheduling, progress-tracking and more</div>
           </Link>
         </div>
 
         <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.parkwayThumb}>
           <Link href={`Projects/parkway`}>
-            <Image className={styles.projectThumb} src={parkway} fill='true' priority='true'  alt='thumbnail of the parkway project home page'/>
-              <div className={styles.hoverText}>A mobile-responsive web app for a local middle school</div>
+            <Image className={styles.projectThumb} src={parkway} fill='true' priority='true'  alt='palm trees and a sunset'/>
+              <div className={styles.hoverText}>A mobile-responsive web app for the school I work at</div>
             </Link>
           </div>
 
@@ -66,7 +66,7 @@ export default function Projects() {
 
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.atelierDesignThumb}>
             <Link href={`Projects/atelier-design`}>
-            <Image className={[styles.projectThumb]} src={atelierDesign}  priority='true' fill='true' alt='fictional web development firm'/>
+            <Image className={[styles.projectThumb]} src={atelierDesign}  priority='true' fill='true' alt='golden gate bridge at sunset'/>
               <div className={styles.hoverText}>Promo site for a fictional web development firm</div>
             </Link>
           </div>

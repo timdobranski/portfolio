@@ -33,6 +33,7 @@
 }
 .ring p {
   margin: 0;
+  font-weight: bold;
 }
 .ring h1 {
   margin: 1vw;
@@ -55,15 +56,31 @@
   height: 28vw;
   margin-top: -14vw;
   margin-left: -14vw;
-  padding-left: 3%;
-  padding-right: 3%;
+  /* padding-left: 3%;
+  padding-right: 3%; */
   overflow: hidden;
-
 }
 .activeRing h1 {
   /* font-size: 3vw; */
   margin: 0;
   margin-bottom: 1rem;
+}
+.ringContainer {
+  display: absolute;
+  height: 100%;
+  border-radius: 50%;
+  width: 100%;
+  padding-left: 3%;
+  padding-right: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+ .ringContainer:hover {
+  /* filter: url(#water); */
+  /* -webkit-filter: blur(2px); */
+  transition: filter 2s ease;
 }
 .inactiveLeft {
   position: absolute;
@@ -93,6 +110,9 @@
   transition: transform 1s ease, width 1s ease, height 1s ease, margin 1s ease, left 1s ease top 1s ease;
 }
 
+.animateRing {
+  animation: slideDownAcrossUp 2s ease forwards;
+}
 /*-----------------------------------------
   RING GLOW & PULSATE ANIMATION
 ------------------------------------------*/
@@ -122,7 +142,7 @@
 .greenGlow {
   border: 4px solid #00f38a;
   box-shadow: 0 0 35px #00f38a;
-  animation: pulsateGreen 3s infinite;
+  animation: pulsateGreen 4s infinite;
 }
 .blueGlow {
   border: 4px solid #00ccff;
@@ -132,14 +152,37 @@
 .yellowGlow {
   border: 4px solid #ffd000;
   box-shadow: 0 0 35px #ffc70f;
-  animation: pulsateYellow 3s infinite;
+  animation: pulsateYellow 3.5s infinite;
 }
 .redGlow {
   border: 4px solid #fb0019;
   box-shadow: 0 0 100px #ea0027;
-  animation: pulsateRed 3s infinite;
+  animation: pulsateRed 4.5s infinite;
 }
-
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+@keyframes slideDownAcrossUp {
+  0% {
+    transform: translateY(0);
+  }
+  33% {
+    transform: translateY(100vh); /* Move down below the viewport */
+  }
+  66% {
+    transform: translateY(100vh) translateX(-150%); /* Move across to the left */
+  }
+  100% {
+    transform: translateY(0) translateX(-150%); /* Move up into view */
+  }
+}
 /*-----------------------------------------
   NAV ICONS
 ------------------------------------------*/
@@ -213,16 +256,6 @@
 ------------------------------------------*/
 
 @media (max-width: 768px) {
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  .fade-in-text {
-    animation: fadeIn 0.2s forwards;
-    animation-delay: 0.7s;
-    opacity: 0;
-  }
-
   .activeRing {
     position: absolute;
     top: 15%;

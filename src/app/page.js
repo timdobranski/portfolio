@@ -3,7 +3,7 @@
 import styles from './Home.module.css'
 import Image from 'next/image'
 import me from '../../public/images/Me-2.jpg'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import Link from 'next/link';
@@ -14,6 +14,10 @@ import { useRouter } from 'next/navigation';
 export default function Home() {
   const [activeRing, setActiveRing] = useState(1);
   const [zoomedRing, setZoomedRing] = useState(null);
+
+
+  const prevActiveRingRef = useRef();
+
   const router = useRouter();
   const rings = [
     {
@@ -45,6 +49,7 @@ export default function Home() {
       id: 'ring3'
     },
   ]
+
 
   const handleRingClick = (ringElement, url) => {
     setZoomedRing(ringElement);
@@ -83,6 +88,15 @@ export default function Home() {
   return (
     <main id={styles.home}>
           <AnimatePresence >
+
+          <svg style={{position: 'absolute', width: 0, height: 0}}>
+                <filter id="water">
+                    <feTurbulence  id='sea-filter' baseFrequency='0.005' numOctaves="5" seed='0' />
+                    <feDisplacementMap  id='displacement' in="SourceGraphic" in2='noise' scale="7"/>
+                </filter>
+                <animate xlinkHref="#sea-filter" attributeName="baseFrequency" dur="90s" keyTimes="0;0.5;1" values="0.02 0.02;0.03 0.03;0.02 0.02" repeatCount="indefinite"/>
+
+        </svg>
       <div className={styles.homeContainer} key='homeContainer'>
     <FontAwesomeIcon icon={faChevronLeft} className={styles.leftNav} onClick={handlePreviousRing}/>
     <FontAwesomeIcon icon={faChevronRight} className={styles.rightNav} onClick={handleNextRing} />
@@ -110,16 +124,18 @@ export default function Home() {
           }
 
           return (
+
             <div onClick={() => handleRingClick(ring.id, ring.link)} key={ring.link}
             className={`${styles.ring} ${styles[ring.color]} ${ringClass} ${zoomedRing === ring.id ? styles.ringZoom : ''}`}
             id={ring.id}>
-
+              <div className={styles.ringContainer}>
               <h1 className={`${styles.ringHeader} ${textClass}`}>{ring.header}</h1>
               {ring.text.map((text, i) => {
                 return (
                   <p className={`${styles.ringText} ${textClass}`} key={i}>{text}</p>
                 )
               })}
+              </div>
             </div>
           );
       })}
@@ -127,6 +143,5 @@ export default function Home() {
       </div>
     </AnimatePresence>
     </main>
-
   )
 }
