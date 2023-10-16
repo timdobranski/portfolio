@@ -86,7 +86,7 @@ export default function Projects() {
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.songsmithThumb}>
           <Link href={`Projects/songsmith`}>
             <Image className={styles.projectThumb} src={songsmith4} fill='true' priority='true'  alt='tool to aid songwriting'/>
-              <div className={styles.hoverText}>Not complete yet, but on the way soon. Check it out!</div>
+              <div className={styles.hoverText}>A unique tool to teach music theory through songwriting. Not complete yet!</div>
             </Link>
           </div>
 
