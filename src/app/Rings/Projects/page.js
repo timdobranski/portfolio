@@ -3,12 +3,12 @@
 import styles from './Projects.module.css'
 import Image from 'next/image';
 import atelierApparel from '../../../../public/images/projects/atelier-apparel/atelier-logo.png';
-import atelierDesign from '../../../../public/images/projects/atelier-design/atelier-design.png';
-import songsmith4 from '../../../../public/images/projects/songsmith/songsmith-4.png';
+import atelierDesign from '../../../../public/images/projects/atelier-design/atelier-design.jpg';
+import songsmith4 from '../../../../public/images/projects/songsmith/songsmith-4.jpg';
 import stringSchool from '../../../../public/images/projects/string-school/lmss-banner.jpg';
 import fitPass from '../../../../public/images/projects/fitpass/fitpass.png';
 import portfolioPreview from '../../../../public/images/projects/portfolio/portfolio-preview-2.png';
-import parkway from '../../../../public/images/projects/parkway/parkway.png';
+import parkway from '../../../../public/images/projects/parkway/parkway.jpg';
 import Link from 'next/link';
 
 
@@ -71,15 +71,15 @@ export default function Projects() {
             </Link>
           </div>
 
-          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.stringSchoolLabel}>
+          <div className={` `} id={styles.stringSchoolLabel}>
             <h2 className={`${styles.projectHeader}`}>String School</h2>
           </div>
-          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.parkwayLabel}>
+          <div className={` `} id={styles.parkwayLabel}>
             <h2 className={`${styles.projectHeader}`}>Parkway Academy</h2>
           </div>
 
-          <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.atelierDesignLabel}>
-            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Atelier Design</h2>
+          <div className={` ${styles.projectDescription}`} id={styles.atelierDesignLabel}>
+            <h2 className={styles.projectHeader}>Atelier Design</h2>
           </div>
 
 
@@ -107,15 +107,15 @@ export default function Projects() {
            <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.songsmithLabel}>
             <h2 className={` ${styles.projectHeader}`}>Songsmith</h2>
           </div>
-          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`}>
-            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>FitPass</h2>
+          <div className={`${styles.projectsGridItem} `}>
+            <h2 className={styles.projectHeader}>FitPass</h2>
           </div>
           <div className={`${styles.projectsGridItem} ${styles.projectDescription}`}>
-            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Atelier Apparel</h2>
+            <h2 className={styles.projectHeader}>Atelier Apparel</h2>
           </div>
 
 
-          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.portfolioThumb}>
+          <div className={`${styles.projectsGridItem}`} id={styles.portfolioThumb}>
           <Link href={`Projects/portfolio`}>
             <Image className={[styles.projectThumb]} src={portfolioPreview} fill='true' priority='true' alt='a preview image of this website'/>
             <div className={styles.hoverText}>This page!</div>
@@ -124,7 +124,7 @@ export default function Projects() {
           <div></div>
           <div></div>
           <div className={`${styles.projectsGridItem} ${styles.projectDescription}`}>
-            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Portfolio</h2>
+            <h2 className={styles.projectHeader}>Portfolio</h2>
           </div>
       </div>
     </div>
