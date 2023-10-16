@@ -1,5 +1,5 @@
 import Project from '../../../../components/Project/Project';
-import parkway from '../../../../../public/images/projects/parkway/parkway.png';
+import parkway from '../../../../../public/images/projects/parkway/parkway.jpg';
 
 export default function Parkway() {
   const projectData = {
