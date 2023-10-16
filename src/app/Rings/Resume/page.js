@@ -10,7 +10,7 @@ export default function Resume() {
   return (
     <div className={styles.resumeContainer}>
       <h1 >RESUME</h1>
-      <p>Download my resume, or browse my skills, accomplishments, & work philosophy below</p>
+      <p>Download my resume, or browse my skills, history, accomplishments, & work values below</p>
       <a className={styles.resumeLink}href='https://docs.google.com/document/d/1W2uhSpW7nABS7ghYJyMSFq4B4OewsUBZX-lPDuYDrVk/edit?usp=sharing' target='_blank' rel='noreferrer'>
         <div >Download Resume</div>
       </a>
@@ -67,16 +67,20 @@ export default function Resume() {
 
       <div className={styles.resumeGrid}>
         <h2 className={styles.skillsLabel}>History</h2>
-        <p className={styles.philosophy}>{`I've spent most of my professional career as a music teacher. I founded the La Mesa String School
+        <p className={styles.philosophy}>{`I've spent most of my professional life as a music teacher. I founded the La Mesa String School
         in 2009, and since then I've been building on its successes with innovative new ideas to teach and explore music. My experiences
-        with the string school have also taught me about the importance of organization, planning, and communication in my workflow. At its
-        peak, I was teaching 35-45 students per week, and I had to be able to keep track of each student's progress, goals, and challenges.
-        One of my proudest accomplishments was publishing my own textbook, The String School Guitar Method, which I used to teach my students
-        for several years. Other noteworthy accomplishments include organizing biannual student concerts, and developing a curriculum that
-        was flexible enough to accommodate students of all ages, skill levels, and musical preferences.`}</p> <p className={styles.philosophy}>{`
+        with the String School have also taught me about the importance of organization, planning, and communication in my workflow. At its
+        peak, I was teaching 35-45 students per week, and I had to be able to keep track of each student's progress, goals, and challenges.`}</p>
+         <p className={styles.philosophy}>{`One of my proudest accomplishments was publishing my own textbook, The String School Guitar Method, which I have used to teach my students
+        for several years. My approach to teaching blends foundational methods of modern music pedagogy with innovative and effective tools
+        and technology to make learning to play music more accessable and more rewarding than ever before. Other noteworthy accomplishments
+        include organizing biannual student concerts, and developing a curriculum flexible enough to accommodate students of all ages, skill levels, and musical preferences.`}</p>
+        <p className={styles.philosophy}>{`
         In the summer of 2020, I began to consider a career change and took my first programming class at the local community college.
         I knew I loved it, and continued to self study in my spare time. Eventually, I enrolled and completed the Hack Reactor software
-        engineering immersive, and now I'm using and growing my skills wherever I can.`}</p>
+        engineering immersive, which consisted of over 1,000 hours of software engineering projects and challenges with an emphasis on
+        autonomous problem-solving. Now I'm searching for a new role as a software engineer, while using and growing my skills wherever
+        I can by building projects for myself and as freelance work.`}</p>
       </div>
 
       <div className={styles.resumeGrid}>
@@ -99,7 +103,7 @@ export default function Resume() {
 
 
       <div className={styles.resumeGrid}>
-        <h2 className={styles.skillsLabel}>Philosophy</h2>
+        <h2 className={styles.skillsLabel}>Values</h2>
         <p className={styles.philosophy}>{`I believe in personal growth both in and outside of the workplace. I strive to be a
         lifelong learner, and I genuinely enjoy the experience of accumulating new skills and experiences. I also value
         downtime, work-life balance and the opportunity to refresh and regroup at my peak ability. I work best in an environment
