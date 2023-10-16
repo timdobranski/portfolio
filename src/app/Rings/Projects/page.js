@@ -8,7 +8,7 @@ import songsmith4 from '../../../../public/images/projects/songsmith/songsmith-4
 import stringSchool from '../../../../public/images/projects/string-school/lmss-banner.jpg';
 import fitPass from '../../../../public/images/projects/fitpass/fitpass.png';
 import portfolioPreview from '../../../../public/images/projects/portfolio/portfolio-preview-2.png';
-import parkway from '../../../../public/images/projects/parkway/parkway.png';
+import parkway from '../../../../public/images/projects/parkway/atelier-vacations.jpg';
 import Link from 'next/link';
 
 
@@ -75,7 +75,7 @@ export default function Projects() {
             <h2 className={`${styles.projectHeader}`}>String School</h2>
           </div>
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.parkwayLabel}>
-            <h2 className={`${styles.projectHeader}`}>Parkway Academy</h2>
+            <h2 className={`${styles.projectHeader}`}>Atelier Vacations</h2>
           </div>
 
           <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.atelierDesignLabel}>
