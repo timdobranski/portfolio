@@ -17,15 +17,12 @@ export default function About() {
             <Image className={styles.aboutImage} src={me} alt='Tim Dobranski'/>
           </div>
           <div className={styles.bioContainer}>
-            <p>{`I'm a native of La Mesa, California, just outside of San Diego. In 2009 I opened the La Mesa String School, my
-              music studio, and I've taught guitar there ever since. `}</p>
-            <p>{`In 2020, I returned to school to consider a pivot to software development. After one introductory summer class, I was hooked.
-            I then attended Hack Reactor's software engineering immersive, which I completed in July 2023.`}</p>
-            <p>{`Currently I'm continuing to teach music and looking for a role as a software developer. I enjoy the creative outlet that front-end
-            roles offer, but I'm open to any opportunity to learn and grow as a developer.`}</p>
-            <p>{`I believe wholeheartedly in the honest exchange of hard work and great results in exchange for good compensation and a positive work environment,
-            and I hope to find a position in an environment that matches those values.`}</p>
-            <p>{`In my free time, I can be found playing, writing, & recording music, reading or binge watching the latest show, and spending time exploring San Diego
+            <p>{`I'm a native of La Mesa, California, just outside of San Diego. I've been playing the guitar and writing/recording music
+            for most of my life. I grew up on rock, and as I've progressed I've ventured into blues and more recently jazz.`}</p>
+          <p>{`In high school, I started a rock band, and we were fortunate enough to sign a record contract just as I started college. We wrote and
+          recorded the first album, then promptly broke up after that.`}</p>
+          <p>{`In 2009 I opened the La Mesa String School, my music studio, and I've taught guitar there ever since. `}</p>
+          <p>{`In my free time, I can be found playing music, reading or binge watching the latest show, and spending time exploring San Diego
           with my dog, Aria. I'm currently working my way through Isaac Asimov's considerable body of fiction, and playing Aria's favorite new game, called 'Chew on Tim's arm'.`}</p>
           </div>
           <div className={styles.meImageContainer}>
