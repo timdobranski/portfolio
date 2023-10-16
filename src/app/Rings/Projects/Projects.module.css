@@ -15,7 +15,7 @@
   background: rgba(255, 255, 255, .5);
   border-radius: 30px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-  min-width: 1200px;
+  min-width: 750px;
 }
 .projectsContainer h1 {
   color: black;
@@ -117,7 +117,8 @@
     align-items: center;
     height: auto;
     overflow-y: auto;
-    width: 90%;
+    width: 95%;
+    max-width: 500px;
     background: rgba(255, 255, 255, .5);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     min-width: 0px;
@@ -151,10 +152,12 @@
     position: relative;
     overflow: hidden;
     object-fit: cover;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-    width: 90%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 100%;
+    max-width: 350px;
     min-width: 250px;
+    margin: 0 auto;
   }
   #stringSchoolThumb{
     grid-row: 1
