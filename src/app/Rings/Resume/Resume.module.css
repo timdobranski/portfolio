@@ -81,7 +81,7 @@
   text-decoration: underline;
 }
 .skillsLabel {
-  margin:2rem;;
+  margin:2rem 0 0 0;
   font-size: 4rem;
   grid-row: 1;
   grid-column: 1 / 5;
@@ -92,15 +92,17 @@
   grid-row: 2;
   grid-column: 1 / 5;
   margin-bottom: 0;
-  margin-left: 40px;
   font-size: 2rem;
   text-align: center;
 }
-.accomplishmentsGridItem li {
-  margin-right: 60px;
-  margin-bottom: 1rem;
+.accomplishmentsGridItem ul {
   font-size: 1.75rem;
-  line-height: 2;
+  text-align: center;
+  padding: 0 2rem 0 2rem;
+}
+.accomplishmentsGridItem li {
+  font-size: 1.75rem;
+  line-height: 1;
   text-align: center;
 }
 .philosophy {
@@ -116,8 +118,7 @@
   position: relative;
   display: inline-block;
   color: rgb(0, 45, 88);
-  margin-bottom: 1rem;
-  /* border: solid red 4px; */
+  margin: 2rem 0 1rem 0;
 }
 
 @media (max-width: 768px) {
@@ -188,10 +189,7 @@
     grid-column: 2;
   }
   .accomplishmentsGridItem {
-    margin-bottom: 0;
-    padding: 0;
-    margin: 0;
-    padding-right:2vw;
+    padding: 1rem;
     font-size: 1.75rem;
     line-height: 1;
   }
