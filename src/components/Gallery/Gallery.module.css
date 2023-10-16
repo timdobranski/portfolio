@@ -48,11 +48,8 @@
   z-index: 1000;
 }
 
-.modalContent {
+.modal {
   position: relative;
-  width: 70%;
-  height: 70%;
-  border-radius: 10px;
   overflow: hidden;
 }
 
