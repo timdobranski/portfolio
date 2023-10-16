@@ -58,7 +58,7 @@ export default function Projects() {
         <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.parkwayThumb}>
           <Link href={`Projects/parkway`}>
             <Image className={styles.projectThumb} src={parkway} fill='true' priority='true'  alt='palm trees and a sunset'/>
-              <div className={styles.hoverText}>A mobile-responsive web app for the school I work at</div>
+              <div className={styles.hoverText}>A mobile-responsive landing page with a focus on design & styling</div>
             </Link>
           </div>
 

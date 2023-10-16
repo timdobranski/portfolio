@@ -6,7 +6,7 @@ export default function Parkway() {
     name: 'PARKWAY ACADEMY',
     date: 'Fall 2023',
     description: [`This projects represents my continued efforts to improve my CSS skills and design creativity. It's a mobile-responsive
-    website for the school I work at.`, `Thus far styling and design has been the primary focus, but features will be added as needed
+    front-end without a use yet.`, `Thus far styling and design has been the primary focus, but features will be added as needed
     in the future.`, `A major styling challenge for this project was learning how to display portions of the
     same image in multiple places on the page. There are libraries that can accomplish this relatively easily, but I wanted to learn how to do
     so while familiarizing myself with advanced CSS.`],
