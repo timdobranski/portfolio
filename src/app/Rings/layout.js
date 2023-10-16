@@ -14,15 +14,17 @@ export default function Background({children}) {
   const pageVariants = {
     initial: {
       backgroundColor: 'black',
-      scale: 0.5
+      scale: 0.005,
+      opacity: 0,
     },
     in: {
-      backgroundColor: 'transparent', // or your desired final color
-      scale: 1
+      backgroundColor: 'transparent',
+      scale: 1,
+      opacity: 1,
     },
     out: {
       backgroundColor: 'black',
-      scale: 1.1
+      scale: 0.5
     }
   };
   const overlayVariants = {
@@ -32,7 +34,7 @@ export default function Background({children}) {
     },
     in: {
       opacity: 0,
-      pointerEvents: 'none'
+      pointerEvents: 'none',
     },
     out: {
       opacity: 1,
@@ -50,9 +52,10 @@ export default function Background({children}) {
         animate="in"
         exit="out"
         variants={pageVariants}
-        transition={{ duration: .5 }}
+        transition={{ duration: 1.5, ease: [0.05, 0.85, 0.25, 1]}}
         style={{ transformOrigin: "top center" }}
         key={'zoomTransition'}
+        className='transitionContainer'
         >
         {children}
         </motion.div>
@@ -65,7 +68,7 @@ export default function Background({children}) {
             animate="in"
             exit="out"
             variants={overlayVariants}
-            transition={{ duration: .5 }}
+            transition={{ duration: .5, delay: .5 }}
             key={'fadeTransition'}
           ></motion.div>
         {/* )
