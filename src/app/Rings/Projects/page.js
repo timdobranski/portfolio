@@ -9,6 +9,7 @@ import stringSchool from '../../../../public/images/projects/string-school/lmss-
 import fitPass from '../../../../public/images/projects/fitpass/fitpass.png';
 import portfolioPreview from '../../../../public/images/projects/portfolio/portfolio-preview-2.png';
 import parkway from '../../../../public/images/projects/parkway/atelier-vacations.jpg';
+import lockLearner from '../../../../public/images/projects/lock-learner/lock-learner.jpg';
 import Link from 'next/link';
 
 
@@ -115,14 +116,24 @@ export default function Projects() {
           </div>
 
 
+          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.lockLearnerThumb}>
+          <Link href={`Projects/lock-learner`}>
+            <Image className={[styles.projectThumb]} src={lockLearner} fill='true' priority='true' alt='a preview image of this website'/>
+            <div className={styles.hoverText}>A Javascript game to teach PE students to use a combination lock</div>
+            </Link>
+          </div>
+
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.portfolioThumb}>
           <Link href={`Projects/portfolio`}>
-            <Image className={[styles.projectThumb]} src={portfolioPreview} fill='true' priority='true' alt='a preview image of this website'/>
+            <Image className={styles.projectThumb} src={portfolioPreview} fill='true' priority='true' alt='this page'/>
             <div className={styles.hoverText}>This page!</div>
             </Link>
           </div>
+
           <div></div>
-          <div></div>
+          <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.lockLearnerLabel}>
+            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Lock Learner</h2>
+          </div>
           <div className={`${styles.projectsGridItem} ${styles.projectDescription}`}>
             <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Portfolio</h2>
           </div>

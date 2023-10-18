@@ -12,7 +12,7 @@ export default function Songsmith() {
     come on this project soon!`],
     tech: ['Next.js', 'AWS'],
     images: [songsmith4],
-    deployLink: { url: 'https://songsmith.vercel.app/', text: 'See It Deployed Here'},
+    deployLink: { url: 'https://songsmith.vercel.app/', text: 'See It In Action'},
     repoLink: { url: 'https://github.com/timdobranski/songsmith.git', text: 'View Repo On Github' }
   }
 

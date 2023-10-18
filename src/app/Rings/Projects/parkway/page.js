@@ -12,7 +12,7 @@ export default function Parkway() {
     so while familiarizing myself with advanced CSS.`],
     tech: ['Next.js', 'AWS'],
     images: [parkway],
-    deployLink: {url:'https://parkway-three.vercel.app/', text: 'See It Deployed Here'},
+    deployLink: {url:'https://parkway-three.vercel.app/', text: 'See It In Action'},
     repoLink: {url:'https://github.com/timdobranski/parkway.git', text: 'View Repo On Github'}
   }
 
