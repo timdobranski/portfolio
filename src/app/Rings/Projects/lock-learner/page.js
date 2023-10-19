@@ -1,5 +1,5 @@
 import Project from '../../../../components/Project/Project';
-import lockLearner from '../../../../../public/images/projects/lock-learner/lock-learner.jpg';
+import lockLearner from '../../../../../public/images/projects/lock-learner/lock-learner.png';
 
 
 export default function LockLearner() {
