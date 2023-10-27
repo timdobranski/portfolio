@@ -90,12 +90,30 @@ export default function Projects() {
               <div className={styles.hoverText}>A unique tool to teach music theory through songwriting. Not complete yet!</div>
             </Link>
           </div>
+          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.lockLearnerThumb}>
+          <Link href={`Projects/lock-learner`}>
+            <Image className={[styles.projectThumb]} src={lockLearner} fill='true' priority='true' alt='a preview image of this website'/>
+            <div className={styles.hoverText}>A Javascript game to teach PE students to use a combination lock</div>
+            </Link>
+          </div>
 
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.fitpassThumb}>
           <Link href={`Projects/fitpass`}>
             <Image className={[styles.projectThumb]} src={fitPass}  fill='true' priority='true'  alt='mobile web app to connect users to gym classes'/>
             <div className={styles.hoverText}>Mobile web app to connect users to local fitness studio classes</div>
           </Link>
+          </div>
+
+           <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.songsmithLabel}>
+            <h2 className={` ${styles.projectHeader}`}>Songsmith</h2>
+          </div>
+
+          <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.lockLearnerLabel}>
+            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Lock Learner</h2>
+          </div>
+
+          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`}>
+            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>FitPass</h2>
           </div>
 
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.atelierApparelThumb}>
@@ -105,24 +123,6 @@ export default function Projects() {
           </Link>
            </div>
 
-           <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.songsmithLabel}>
-            <h2 className={` ${styles.projectHeader}`}>Songsmith</h2>
-          </div>
-          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`}>
-            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>FitPass</h2>
-          </div>
-          <div className={`${styles.projectsGridItem} ${styles.projectDescription}`}>
-            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Atelier Apparel</h2>
-          </div>
-
-
-          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.lockLearnerThumb}>
-          <Link href={`Projects/lock-learner`}>
-            <Image className={[styles.projectThumb]} src={lockLearner} fill='true' priority='true' alt='a preview image of this website'/>
-            <div className={styles.hoverText}>A Javascript game to teach PE students to use a combination lock</div>
-            </Link>
-          </div>
-
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.portfolioThumb}>
           <Link href={`Projects/portfolio`}>
             <Image className={styles.projectThumb} src={portfolioPreview} fill='true' priority='true' alt='this page'/>
@@ -131,9 +131,11 @@ export default function Projects() {
           </div>
 
           <div></div>
-          <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.lockLearnerLabel}>
-            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Lock Learner</h2>
+
+          <div className={`${styles.projectsGridItem} ${styles.projectDescription}`}>
+            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Atelier Apparel</h2>
           </div>
+
           <div className={`${styles.projectsGridItem} ${styles.projectDescription}`}>
             <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Portfolio</h2>
           </div>
