@@ -1,5 +1,5 @@
 import Project from '../../../../components/Project/Project';
-import parkway from '../../../../../public/images/projects/parkway/atelier-vacations.jpg';
+import atelierVacations from '../../../../../public/images/projects/atelier-vacations/atelier-vacations.jpg';
 
 export default function Parkway() {
   const projectData = {
@@ -11,7 +11,7 @@ export default function Parkway() {
     same image in multiple places on the page. There are libraries that can accomplish this, but I wanted to learn how to do
     so while familiarizing myself with advanced CSS.`],
     tech: ['Next.js', 'AWS'],
-    images: [parkway],
+    images: [atelierVacations],
     deployLink: {url:'https://parkway-three.vercel.app/', text: 'See It In Action'},
     repoLink: {url:'https://github.com/timdobranski/parkway.git', text: 'View Repo On Github'}
   }
