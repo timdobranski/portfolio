@@ -13,7 +13,7 @@ export default function Portfolio() {
     to conditionally render transitions.`],
     tech: ['Next.js', 'Framer Motion'],
     images: [portfolioPreview],
-    deployLink: {url:'timdobranski.com', text: 'TimDobranski.com'},
+    deployLink: {url:'/', text: 'TimDobranski.com'},
     repoLink: {url:'https://github.com/timdobranski/portfolio.git', text: ''}
   }
 
