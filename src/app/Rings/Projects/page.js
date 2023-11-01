@@ -59,7 +59,7 @@ export default function Projects() {
           </Link>
         </div>
 
-        <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.parkwayThumb}>
+        <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.atelierVacationsThumb}>
           <Link href={`Projects/atelier-vacations`}>
             <Image className={styles.projectThumb} src={atelierVacations} fill='true' priority='true'  alt='palm trees and a sunset'/>
               <div className={styles.hoverText}>A mobile-responsive landing page with a focus on design & styling</div>
@@ -76,7 +76,7 @@ export default function Projects() {
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.stringSchoolLabel}>
             <h2 className={`${styles.projectHeader}`}>String School</h2>
           </div>
-          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.parkwayLabel}>
+          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.atelierVacationsLabel}>
             <h2 className={`${styles.projectHeader}`}>Atelier Vacations</h2>
           </div>
 
@@ -92,7 +92,7 @@ export default function Projects() {
             </Link>
           </div>
 
-          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.fitpassThumb}>
+          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.periodicalThumb}>
           <Link href={`Projects/parkway-periodical`}>
             <Image className={[styles.projectThumb]} src={parkwayPeriodical}  fill='true' priority='true'  alt='mobile web app to connect users to gym classes'/>
             <div className={styles.hoverText}>{`Redesigned school blog that fetches, caches and transforms the original blog posts (still in progress)`}</div>
@@ -109,7 +109,7 @@ export default function Projects() {
            <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.songsmithLabel}>
             <h2 className={` ${styles.projectHeader}`}>Songsmith</h2>
           </div>
-          <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.songsmithLabel}>
+          <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.periodicalLabel}>
             <h2 className={` ${styles.projectHeader}`}>Parkway Periodical Blog</h2>
           </div>
           <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.lockLearnerLabel}>
