@@ -17,7 +17,7 @@ export default function AtelierDesign() {
     aspect ratios and platforms.`],
     tech: ['React', 'Node.js', 'Express', 'AWS', 'Twilio Sendgrid API'],
     images: [atelierDesign, atelierDesign2, atelierDesign3, atelierDesign4, atelierDesign5, atelierDesign6],
-    deployLink: {url:'http://3.134.201.86/', text: 'See It In Action'},
+    deployLink: {url:'http://3.23.230.122:3002/', text: 'See It In Action'},
     repoLink: {url:'https://github.com/timdobranski/atelier-design.git'}
   }
 
