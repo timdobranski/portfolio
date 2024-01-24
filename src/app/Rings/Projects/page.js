@@ -10,7 +10,7 @@ import fitPass from '../../../../public/images/projects/fitpass/fitpass.png';
 import portfolioPreview from '../../../../public/images/projects/portfolio/portfolio-preview-2.png';
 import atelierVacations from '../../../../public/images/projects/atelier-vacations/atelier-vacations.jpg';
 import lockLearner from '../../../../public/images/projects/lock-learner/lock-learner.png';
-import parkwayPeriodical from '../../../../public/images/projects/parkway-periodical/parkway-periodical.png'
+import parkwayPeriodical from '../../../../public/images/projects/parkway-periodical/parkway-periodical.webp'
 import Link from 'next/link';
 
 

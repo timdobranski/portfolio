@@ -51,6 +51,10 @@
 .modal {
   position: relative;
   overflow: hidden;
+  width: 70vw;
+  max-height: 70vh;
+  /* border: solid white 6px; */
+  border-radius: 5px;
 }
 
 .gallery button {

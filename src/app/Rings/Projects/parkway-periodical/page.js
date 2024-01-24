@@ -1,8 +1,8 @@
 import Project from '../../../../components/Project/Project';
-import parkwayPeriodical from '../../../../../public/images/projects/parkway-periodical/parkway-periodical.png';
-import photo1 from '../../../../../public/images/projects/parkway-periodical/1.png';
-import photo2 from '../../../../../public/images/projects/parkway-periodical/2.png';
-import photo3 from '../../../../../public/images/projects/parkway-periodical/3.png';
+import parkwayPeriodical from '../../../../../public/images/projects/parkway-periodical/parkway-periodical.webp';
+import photo1 from '../../../../../public/images/projects/parkway-periodical/1.webp';
+import photo2 from '../../../../../public/images/projects/parkway-periodical/2.webp';
+import photo3 from '../../../../../public/images/projects/parkway-periodical/3.webp';
 
 export default function ParkwayPeriodical() {
 
