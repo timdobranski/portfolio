@@ -9,7 +9,7 @@ import stringSchool from '../../../../public/images/projects/string-school/lmss-
 import fitPass from '../../../../public/images/projects/fitpass/fitpass.png';
 import portfolioPreview from '../../../../public/images/projects/portfolio/portfolio-preview-2.png';
 import atelierVacations from '../../../../public/images/projects/atelier-vacations/atelier-vacations.jpg';
-import lockLearner from '../../../../public/images/projects/lock-learner/lock-learner.png';
+import lockLearner from '../../../../public/images/projects/lock-learner/lock-learner.webp';
 import parkwayPeriodical from '../../../../public/images/projects/parkway-periodical/parkway-periodical.webp'
 import canineCorners from '../../../../public/images/projects/canine-corners/3.webp';
 import Link from 'next/link';

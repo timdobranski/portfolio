@@ -1,7 +1,8 @@
 import Project from '../../../../components/Project/Project';
-import lockLearner from '../../../../../public/images/projects/lock-learner/lock-learner.png';
-import lockLearner2 from '../../../../../public/images/projects/lock-learner/lock-learner-2.jpg';
-import lockLearner3 from '../../../../../public/images/projects/lock-learner/lock-learner-3.jpg';
+import lockLearner from '../../../../../public/images/projects/lock-learner/lock-learner.webp';
+import lockLearner2 from '../../../../../public/images/projects/lock-learner/lock-learner-2.webp';
+import lockLearner3 from '../../../../../public/images/projects/lock-learner/lock-learner-3.webp';
+import lockLearner4 from '../../../../../public/images/projects/lock-learner/lock-learner-4.webp'
 
 
 export default function LockLearner() {
@@ -16,7 +17,7 @@ export default function LockLearner() {
     register circular swipe patterns to manupulate the lock face.`, `The game guides the user from setting a combination to turning the
     correct direction for all three numbers. Once the third number is reached, the lock opens and the user is congratulated.`],
     tech: ['Next.js'],
-    images: [lockLearner, lockLearner2, lockLearner3],
+    images: [lockLearner, lockLearner2, lockLearner3, lockLearner4],
     deployLink: {url:'https://lock-game.vercel.app/', text: 'See It In Action'},
     repoLink: {url:'https://github.com/timdobranski/lock-game.git', text: 'View Repo On Github'}
   }
