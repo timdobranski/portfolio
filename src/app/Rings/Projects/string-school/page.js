@@ -15,7 +15,7 @@ export default function StringSchool() {
 
   const projectData = {
     name: 'STRING SCHOOL',
-    date: 'Summer 2023',
+    date: 'Fall 2023 - Spring 2024',
     description: [`This is both a web app and a mobile app for iOS and Android for guitar students. Features include Google sign-in, scheduling/rescheduling, payment tracking,
      progress tracking, access to sheet music and other online resources, practice-logging, and instructor sign-in to manage student accounts. `, `It's grown into a gigantic app
      with twenty Postgres tables of extensive data and even has an entire companion app for Windows just to track and sync sheet music files with Supabase storage.`, `Although
