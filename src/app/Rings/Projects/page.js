@@ -11,6 +11,7 @@ import portfolioPreview from '../../../../public/images/projects/portfolio/portf
 import atelierVacations from '../../../../public/images/projects/atelier-vacations/atelier-vacations.jpg';
 import lockLearner from '../../../../public/images/projects/lock-learner/lock-learner.png';
 import parkwayPeriodical from '../../../../public/images/projects/parkway-periodical/parkway-periodical.webp'
+import canineCorners from '../../../../public/images/projects/canine-corners/3.webp';
 import Link from 'next/link';
 
 
@@ -52,6 +53,7 @@ export default function Projects() {
       <div className={styles.projectsGrid}>
 
         {/* ROW ONE */}
+        <>
         <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.stringSchoolThumb}>
           <Link href={`Projects/string-school`}>
               <Image className={styles.projectThumb} src={stringSchool} fill='true' priority='true'  alt='animated guitar'/>
@@ -59,6 +61,7 @@ export default function Projects() {
           </Link>
         </div>
 
+        </>
         <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.periodicalThumb}>
           <Link href={`Projects/parkway-periodical`}>
             <Image className={[styles.projectThumb]} src={parkwayPeriodical}  fill='true' priority='true'  alt='mobile web app to connect users to gym classes'/>
@@ -85,10 +88,10 @@ export default function Projects() {
           </div>
 
         {/* ROW TWO */}
-          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.songsmithThumb}>
-          <Link href={`Projects/songsmith`}>
-            <Image className={styles.projectThumb} src={songsmith4} fill='true' priority='true'  alt='tool to aid songwriting'/>
-              <div className={styles.hoverText}>A unique tool to teach music theory through songwriting. Not complete yet!</div>
+          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.canineCornersThumb}>
+          <Link href={`Projects/canine-corners`}>
+            <Image className={styles.projectThumb} src={canineCorners} fill='true' priority='true'  alt='tool to aid songwriting'/>
+              <div className={styles.hoverText}>A fictional social media app for my local dog park</div>
             </Link>
           </div>
 
@@ -106,8 +109,8 @@ export default function Projects() {
             </Link>
           </div>
 
-           <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.songsmithLabel}>
-            <h2 className={` ${styles.projectHeader}`}>Songsmith</h2>
+           <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.canineCornersLabel}>
+            <h2 className={` ${styles.projectHeader}`}>Canine Corners</h2>
           </div>
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.atelierVacationsLabel}>
             <h2 className={`${styles.projectHeader}`}>Atelier Vacations</h2>
@@ -134,15 +137,12 @@ export default function Projects() {
             <div className={styles.hoverText}>Ecommerce portal for a fictional apparel company</div>
           </Link>
            </div>
-
-          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.portfolioThumb}>
-          <Link href={`Projects/portfolio`}>
-            <Image className={styles.projectThumb} src={portfolioPreview} fill='true' priority='true' alt='this page'/>
-            <div className={styles.hoverText}>This page!</div>
+           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.songsmithThumb}>
+          <Link href={`Projects/songsmith`}>
+            <Image className={styles.projectThumb} src={songsmith4} fill='true' priority='true'  alt='tool to aid songwriting'/>
+              <div className={styles.hoverText}>A unique tool to teach music theory through songwriting. Not complete yet!</div>
             </Link>
           </div>
-
-
 
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`}>
             <h2 className={[styles.projectsGridItem, styles.projectHeader]}>FitPass</h2>
@@ -151,11 +151,27 @@ export default function Projects() {
           <div className={`${styles.projectsGridItem} ${styles.projectDescription}`}>
             <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Atelier Apparel</h2>
           </div>
-
-          <div className={`${styles.projectsGridItem} ${styles.projectDescription}`}>
-            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Portfolio</h2>
+          <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.songsmithLabel}>
+            <h2 className={` ${styles.projectHeader}`}>Songsmith</h2>
           </div>
+
+
+      {/* <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.portfolioThumb}>
+        <Link href={`Projects/portfolio`}>
+          <Image className={styles.projectThumb} src={portfolioPreview} fill='true' priority='true' alt='this page'/>
+          <div className={styles.hoverText}>This page!</div>
+        </Link>
       </div>
+      <div></div>
+      <div></div>
+
+      <div className={`${styles.projectsGridItem} ${styles.projectDescription}`}>
+            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Portfolio</h2>
+          </div> */}
+
+      </div>
+
+
     </div>
   )
 }
