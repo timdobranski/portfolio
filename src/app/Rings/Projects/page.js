@@ -59,7 +59,40 @@ export default function Projects() {
           </Link>
         </div>
 
-        <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.atelierVacationsThumb}>
+        <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.periodicalThumb}>
+          <Link href={`Projects/parkway-periodical`}>
+            <Image className={[styles.projectThumb]} src={parkwayPeriodical}  fill='true' priority='true'  alt='mobile web app to connect users to gym classes'/>
+            <div className={styles.hoverText}>{`Middle School blog w/intro animation and custom post editor for school administrators. Still in progress.`}</div>
+          </Link>
+          </div>
+
+          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.lockLearnerThumb}>
+          <Link href={`Projects/lock-learner`}>
+            <Image className={[styles.projectThumb]} src={lockLearner} fill='true' priority='true' alt='a preview image of this website'/>
+            <div className={styles.hoverText}>A Javascript game to teach PE students to use a combination lock</div>
+            </Link>
+          </div>
+
+          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.stringSchoolLabel}>
+            <h2 className={`${styles.projectHeader}`}>String School</h2>
+          </div>
+
+          <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.periodicalLabel}>
+            <h2 className={` ${styles.projectHeader}`}>Parkway Periodical</h2>
+          </div>
+          <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.lockLearnerLabel}>
+            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Parkway Lock Learner</h2>
+          </div>
+
+        {/* ROW TWO */}
+          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.songsmithThumb}>
+          <Link href={`Projects/songsmith`}>
+            <Image className={styles.projectThumb} src={songsmith4} fill='true' priority='true'  alt='tool to aid songwriting'/>
+              <div className={styles.hoverText}>A unique tool to teach music theory through songwriting. Not complete yet!</div>
+            </Link>
+          </div>
+
+          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.atelierVacationsThumb}>
           <Link href={`Projects/atelier-vacations`}>
             <Image className={styles.projectThumb} src={atelierVacations} fill='true' priority='true'  alt='palm trees and a sunset'/>
               <div className={styles.hoverText}>A mobile-responsive landing page with a focus on design & styling</div>
@@ -73,8 +106,8 @@ export default function Projects() {
             </Link>
           </div>
 
-          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.stringSchoolLabel}>
-            <h2 className={`${styles.projectHeader}`}>String School</h2>
+           <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.songsmithLabel}>
+            <h2 className={` ${styles.projectHeader}`}>Songsmith</h2>
           </div>
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.atelierVacationsLabel}>
             <h2 className={`${styles.projectHeader}`}>Atelier Vacations</h2>
@@ -84,37 +117,6 @@ export default function Projects() {
             <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Atelier Design</h2>
           </div>
 
-        {/* ROW TWO */}
-          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.songsmithThumb}>
-          <Link href={`Projects/songsmith`}>
-            <Image className={styles.projectThumb} src={songsmith4} fill='true' priority='true'  alt='tool to aid songwriting'/>
-              <div className={styles.hoverText}>A unique tool to teach music theory through songwriting. Not complete yet!</div>
-            </Link>
-          </div>
-
-          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.periodicalThumb}>
-          <Link href={`Projects/parkway-periodical`}>
-            <Image className={[styles.projectThumb]} src={parkwayPeriodical}  fill='true' priority='true'  alt='mobile web app to connect users to gym classes'/>
-            <div className={styles.hoverText}>{`Middle School blog w/intro animation and custom post editor for school administrators`}</div>
-          </Link>
-          </div>
-
-          <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.lockLearnerThumb}>
-          <Link href={`Projects/lock-learner`}>
-            <Image className={[styles.projectThumb]} src={lockLearner} fill='true' priority='true' alt='a preview image of this website'/>
-            <div className={styles.hoverText}>A Javascript game to teach PE students to use a combination lock</div>
-            </Link>
-          </div>
-
-           <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.songsmithLabel}>
-            <h2 className={` ${styles.projectHeader}`}>Songsmith</h2>
-          </div>
-          <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.periodicalLabel}>
-            <h2 className={` ${styles.projectHeader}`}>Parkway Periodical Blog</h2>
-          </div>
-          <div className={`${styles.projectsGridItem} ${styles.projectDescription}`} id={styles.lockLearnerLabel}>
-            <h2 className={[styles.projectsGridItem, styles.projectHeader]}>Parkway Lock Learner Game</h2>
-          </div>
 
 
         {/* ROW THREE */}
