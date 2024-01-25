@@ -95,7 +95,7 @@ export default function Projects() {
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.periodicalThumb}>
           <Link href={`Projects/parkway-periodical`}>
             <Image className={[styles.projectThumb]} src={parkwayPeriodical}  fill='true' priority='true'  alt='mobile web app to connect users to gym classes'/>
-            <div className={styles.hoverText}>{`Redesigned school blog that fetches, caches and transforms the original blog posts (still in progress)`}</div>
+            <div className={styles.hoverText}>{`Middle School blog w/intro animation and custom post editor for school administrators`}</div>
           </Link>
           </div>
 

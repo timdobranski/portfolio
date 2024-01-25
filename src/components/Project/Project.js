@@ -31,6 +31,8 @@ export default function Project({ data }) {
           <Link href={repoLink.url}>
             <p className={styles.projectLink}>View Repo on Github</p>
           </Link>
+          {data.video ? <iframe className={styles.video} src={data.video} title={name} frameBorder="0"
+        controls allowFullScreen></iframe> : null}
           <div className={styles.sectionContainer}>
             {description.map((p, i) => {
               return <p className={styles.description} key={i}>{p}</p>
