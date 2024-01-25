@@ -9,7 +9,8 @@ export default function LockLearner() {
   const projectData = {
     name: 'LOCK LEARNER',
     date: 'Fall 2023',
-    description: [`Lock Learner is a javascript web game made to teach PE students how to open their combination locks. This project
+    description: [`Lock Learner is a javascript web game made to teach PE students how to open their combination locks. It can be played
+    with a mouse, but the best experience with this app is with touch-enabled devices. This project
     represents my ongoing software engineering work for the La Mesa-Spring Valley School District. It was a lot of
     fun to build!`, `The main challenges of this project were creating the manipulatable lock images and implementing an algorithm to
     register circular swipe patterns to manupulate the lock face.`, `The game guides the user from setting a combination to turning the

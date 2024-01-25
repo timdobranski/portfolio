@@ -69,7 +69,7 @@ export default function Projects() {
           <div className={`${styles.projectsGridItem} ${styles.hoverMessage}`} id={styles.lockLearnerThumb}>
           <Link href={`Projects/lock-learner`}>
             <Image className={[styles.projectThumb]} src={lockLearner} fill='true' priority='true' alt='a preview image of this website'/>
-            <div className={styles.hoverText}>A Javascript game to teach PE students to use a combination lock</div>
+            <div className={styles.hoverText}>Touch-optimized mobile web game to teach PE students to use a combination lock</div>
             </Link>
           </div>
 
