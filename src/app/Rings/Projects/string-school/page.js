@@ -22,6 +22,7 @@ export default function StringSchool() {
      this project have been accounting for many different account edge cases, including students who share an email address with a parent, students
      who have multiple parent contacts, parents who have multiple students, and adult students who have no parent contact.`],
     tech: ['React Native', 'Node.js', 'Express', 'PostgreSQL via Supabase', 'AWS'],
+    video: 'https://www.youtube.com/embed/LTPBrOg7JbY',
     images: [lmssBanner, lmss1, lmss2, lmss3, lmss4, lmss5, lmss6, lmss7, lmss8],
     deployLink: { url: 'http://www.lamesastringschool.com', 'text': 'LaMesaStringSchool.com'},
     repoLink: { url: 'https://github.com/timdobranski/la-mesa-string-school', text: 'View Repo On Github' }
