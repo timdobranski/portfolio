@@ -30,13 +30,13 @@ export default function RootLayout({ children }) {
           <Link href='/Rings/Projects' className='footerLink'>
             <h2>PROJECTS</h2>
           </Link>
-          <Link href='/rings/resume' className='footerLink'>
+          <Link href='/Rings/Resume' className='footerLink'>
             <h2>RESUME</h2>
           </Link>
-          <Link href='/rings/about' className='footerLink'>
+          <Link href='/Rings/About' className='footerLink'>
             <h2>ABOUT ME</h2>
           </Link>
-          <Link href='/rings/connect' className='footerLink'>
+          <Link href='/Rings/Connect' className='footerLink'>
             <h2>CONNECT</h2>
           </Link>
         </div>

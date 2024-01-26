@@ -17,28 +17,28 @@ export default function Home() {
       header: 'CONNECT',
       text: ['Select this ring to', 'connect with me'],
       color: 'yellowGlow',
-      link: '/rings/connect',
+      link: '/Rings/Connect',
       id: 'ring0'
     },
     {
       header: 'WELCOME!',
       text: ['I\'m Tim and I develop', ' websites & apps. Select', 'this ring to see my work'],
       color: 'greenGlow',
-      link: '/rings/projects',
+      link: '/Rings/Projects',
       id: 'ring1'
     },
     {
       header: 'RESUME',
       text: ['Select this ring to see my ', 'expanded resume'],
       color: 'redGlow',
-      link: '/rings/resume',
+      link: '/Rings/Resume',
       id: 'ring2'
     },
     {
       header: 'ABOUT ME',
       text: ['Select this ring to learn', 'more about my', 'background'],
       color: 'blueGlow',
-      link: '/rings/about',
+      link: '/Rings/About',
       id: 'ring3'
     },
   ]
