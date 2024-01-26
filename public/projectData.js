@@ -24,7 +24,7 @@ const projectData = [
       `/images/projects/string-school/lmss8.webp`,
     ],
     deployLink: { url: 'http://www.lamesastringschool.com', 'text': 'LaMesaStringSchool.com'},
-    repoLink: { url: 'https://github.com/timdobranski/la-mesa-string-school', text: 'View On Github' }
+    repoLink: { url: 'https://github.com/timdobranski/string-school-web', text: 'View On Github' }
   },
   {
     name: 'Parkway Periodical',
