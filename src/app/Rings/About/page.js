@@ -9,7 +9,7 @@ import Image from 'next/image';
 export default function About() {
 
   return (
-    <div className={styles.aboutContainer}>
+    <div className='pageContentContainer'>
 
       <h1 className={styles.aboutHeader}>ABOUT ME</h1>
 

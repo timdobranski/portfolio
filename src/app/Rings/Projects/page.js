@@ -7,34 +7,34 @@ import projectData from 'public/projectData';
 
 export default function Projects() {
 
-  const pageVariants = {
-    initial: {
-      backgroundColor: 'black',
-      scale: 0.1
-    },
-    in: {
-      backgroundColor: 'transparent',
-      scale: 1
-    },
-    out: {
-      backgroundColor: 'black',
-      scale: 1.1
-    }
-  };
-  const overlayVariants = {
-    initial: {
-      opacity: 1,
-      pointerEvents: 'all'
-    },
-    in: {
-      opacity: 0,
-      pointerEvents: 'none'
-    },
-    out: {
-      opacity: 1,
-      pointerEvents: 'all'
-    }
-  };
+  // const pageVariants = {
+  //   initial: {
+  //     backgroundColor: 'black',
+  //     scale: 0.1
+  //   },
+  //   in: {
+  //     backgroundColor: 'transparent',
+  //     scale: 1
+  //   },
+  //   out: {
+  //     backgroundColor: 'black',
+  //     scale: 1.1
+  //   }
+  // };
+  // const overlayVariants = {
+  //   initial: {
+  //     opacity: 1,
+  //     pointerEvents: 'all'
+  //   },
+  //   in: {
+  //     opacity: 0,
+  //     pointerEvents: 'none'
+  //   },
+  //   out: {
+  //     opacity: 1,
+  //     pointerEvents: 'all'
+  //   }
+  // };
 
   if (!projectData) {
     return <div>Loading...</div>

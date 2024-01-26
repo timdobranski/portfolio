@@ -1,4 +1,4 @@
-.resumeContainer {
+/* .resumeContainer {
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -19,6 +19,7 @@
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   min-width: 1200px;
   font-size: 1em;
+  padding: 1rem;
 }
 .resumeContainer h1 {
   color: black;
@@ -29,12 +30,12 @@
 }
 .resumeContainer p {
   font-size: 2rem;
-  font-weight: bold;
   margin-top: 0;
-}
+} */
 .resumeLink {
   font-size: 1.75rem;
-  font-weight: bold;
+  /* font-weight: bold; */
+  width: 300px;
   color: white;
   text-decoration: none;
   transition: color 1s ease;
@@ -42,6 +43,7 @@
   padding: 0.5rem 1rem 0.5rem 1rem;
   border-radius: 10px;
   transition: transform 0.3s ease;
+  margin: 0 auto;
 }
 .resumeLink:hover {
   transform: scale(1.1);
@@ -50,10 +52,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1.2fr 1fr;
   grid-template-rows: 4;
-  /* margin: 2rem; */
-  width: 90%;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  width: calc(100% - 6rem);
+  margin: 3rem;
   border-radius: 20px;
   background-color: rgba(0, 92, 142, 0.245);
 
@@ -63,8 +63,7 @@
   padding: 0;
   margin: 0;
   text-align: center;
-  font-weight: bold;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   line-height: 1.4;
 }
 .resumeGridItem {
@@ -100,11 +99,13 @@
   font-size: 1.75rem;
   text-align: center;
   padding: 0 2rem 0 2rem;
+  font-weight: normal;
 }
-.accomplishmentsGridItem li {
+.accomplishmentsGridItem ul li {
   font-size: 1.75rem;
   line-height: 1;
   text-align: center;
+  font-weight: light
 }
 .philosophy {
   display: inline-block;
@@ -167,7 +168,7 @@
     margin: 0;
     text-align: center;
     font-weight: bold;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
   .resumeGrid p {
     padding: 1rem;

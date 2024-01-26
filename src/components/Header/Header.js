@@ -1,7 +1,5 @@
 import '../../app/globals.css';
-import { Josefin_Sans } from '@next/font/google';
 import Link from 'next/link';
-import Image from 'next/image';
 
 
 export default function Header() {

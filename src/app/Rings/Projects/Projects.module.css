@@ -31,7 +31,6 @@
 }
 .projectsContainer p {
   font-size: 1.5rem;
-  font-weight: bold;
   margin-top: 0;
   margin-bottom: 2rem;
 }
@@ -163,7 +162,6 @@
   }
   .projectsContainer p {
     font-size: 1.5rem;
-    font-weight: bold;
     margin-top: 0;
     margin-bottom: 2rem;
   }
