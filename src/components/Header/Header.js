@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Header() {
   return (
-    <div id='header-container'>
+    <div className='header-container'>
       <Link href='/'>
         <h1 className='title '>TIM DOBRANSKI</h1>
       </Link>

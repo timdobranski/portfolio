@@ -13,7 +13,7 @@
 a {
   text-decoration: none;
 }
-#app {
+.app {
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -25,7 +25,7 @@ a {
   overflow-y: auto;
 }
 
-#header-container {
+.header-container {
 display: fixed;
 width: 100%;
 /* height: 15%; */
@@ -248,7 +248,7 @@ ANIMATIONS
 MOBILE STYLING
 ----------------------------------*/
 @media (max-width: 768px) {
-  #header-container {
+  .header-container {
     display: fixed;
     padding-left: 6vw;
     padding-right: 6vw;
@@ -257,6 +257,15 @@ MOBILE STYLING
     min-height: 130px;
     background-color: rgb(0, 0, 0);
     overflow: hidden;
+    }
+    .pageContentContainer {
+      margin: 0 auto;
+      width: 95vw;
+      min-width: 0;
+      /* border: solid red 3px; */
+    }
+    .transitionContainer {
+      width: 100vw;
     }
   .title {
     font-size: 10vw;

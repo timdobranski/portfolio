@@ -142,6 +142,9 @@
     padding: 1rem;
   }
   .resumeGrid {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 1rem;
     grid-template-rows: 4;
     grid-template-columns: 1fr 1fr;
   }
@@ -165,10 +168,11 @@
   .resumeGrid li {
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    margin: .5rem;
     text-align: center;
-    font-weight: bold;
+    background: rgba(0, 92, 142, 0.5);
     font-size: 1.5rem;
+    border-radius: 5px;
   }
   .resumeGrid p {
     padding: 1rem;
