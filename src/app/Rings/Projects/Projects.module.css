@@ -17,6 +17,11 @@
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   min-width: 750px;
 }
+.projectTitle {
+  position: relative;
+  font-size: 1.5rem;
+  padding:.5rem;
+}
 .projectsContainer h1 {
   color: black;
   font-size: 3.5rem;
@@ -33,12 +38,11 @@
 .projectsGrid{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 3fr 1fr 3fr 1fr 3fr 1fr;
+  grid-template-rows: auto; /* Adjust based on content */
   justify-content: center;
   object-fit: cover;
   width: 100%;
   padding: 0 1rem 0 1rem;
-
 }
 .projectsGridItem {
   border-radius: 20px;
@@ -48,30 +52,57 @@
   align-content: center;
   align-items: center;
   position: relative;
-  overflow: hidden;
-  object-fit: cover;
-  /* margin-left: 1.5rem;
-  margin-right: 1.5rem; */
-  /* width: 90%; */
-  margin: 0rem 1rem 0rem 1rem;
-
+  height: 300px;
+  margin: 1rem 1rem 1rem 1rem;
 
 }
-.projectsGridItem img {
-  width: 500px;
+.projectThumb {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  object-fit: cover;
+  cursor: pointer;
+}
+.thumbnailWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  object-fit: cover;
+  cursor: pointer;
+
+}
+.projectThumb img {
+  width: 100%;
   height: auto;
   object-fit: cover;
   position: relative;
   top: -30px;
+  /* border: solid red 4px; */
+
+}
+.hoverMessage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  object-fit: cover;
+  cursor: pointer;
+
 }
 .hoverMessage:hover .projectThumb img {
-  filter: brightness(0.7);
+  filter: brightness(0.2);
 }
 .hoverMessage:hover .hoverText {
   display: block;
 }
 .hoverText {
   position: absolute;
+  top:0 !important;
   width: 100%;
   height: 100%;
   display: none;
@@ -139,8 +170,7 @@
   .projectsGrid{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr;
-    /* grid-template-rows: repeat(3fr 1fr, 12); */
+    grid-template-rows: repeat(1fr, 12);
     object-fit: cover;
     width: 100%;
   }
@@ -160,68 +190,4 @@
     min-width: 250px;
     margin: 0 auto;
   }
-  #stringSchoolThumb{
-    grid-row: 1
-  }
-  #stringSchoolLabel{
-    grid-row: 2
-  }
-  #atelierVacationsThumb {
-    grid-row: 3
-  }
-  #atelierVacationsLabel{
-    grid-row: 4
-  }
-  #atelierDesignThumb{
-    grid-row: 5;
-
-  }
-  #atelierDesignLabel{
-    grid-row: 6
-  }
-  #canineCornersThumb {
-    grid-row: 7;
-  }
-  #canineCornersLabel{
-    grid-row: 8;
-  }
-  #periodicalThumb {
-    grid-row: 9;
-  }
-  #periodicalLabel{
-    grid-row: 10
-  }
-  #lockLearnerThumb {
-    grid-row: 11
-  }
-  #lockLearnerLabel{
-    grid-row: 12
-  }
-  #fitpassThumb{
-    grid-row: 13
-  }
-  #fitpassLabel{
-    grid-row: 14
-  }
-  #atelierApparelThumb{
-    grid-row: 15
-  }
-  #atelierApparelLabel{
-    grid-row: 16
-  }
-  #songsmithThumb{
-    grid-row: 17
-  }
-  #songsmithLabel{
-    grid-row: 18
-  }
-#portfolioThumb {
-  grid-row: 19;
-}
-#portfolioLabel{
-  grid-row: 20;
-}
-
-
-
 }

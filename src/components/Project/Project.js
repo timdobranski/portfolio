@@ -7,6 +7,7 @@ import Gallery from '../Gallery/Gallery.js';
 
 
 export default function Project({ data }) {
+  console.log('project data', data)
   const name = data.name;
   const date = data.date;
   const description = data.description;
