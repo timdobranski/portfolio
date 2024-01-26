@@ -7,8 +7,7 @@ export default function Connect() {
     <div>
       <div className='pageContentContainer'>
       <h1>CONNECT</h1>
-      <p>{`I'm always happy to make a new connection.`}</p>
-      <p>{`Feel free to reach out in the following ways:`}</p>
+      <p>{`I'm always happy to make a new connection. Feel free to reach out in the following ways:`}</p>
       <div className={styles.contactInfoContainer}>
         <div className={styles.contactHeaders}>
           <p className={styles.emailLabel}>Email</p>

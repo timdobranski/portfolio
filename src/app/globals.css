@@ -262,6 +262,8 @@ MOBILE STYLING
       margin: 0 auto;
       width: 95vw;
       min-width: 0;
+      padding-bottom: 2rem;
+      margin-bottom: 6rem;
       /* border: solid red 3px; */
     }
     .transitionContainer {

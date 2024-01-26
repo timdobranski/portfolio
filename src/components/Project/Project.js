@@ -17,7 +17,7 @@ export default function Project({ data }) {
   const repoLink = data.repoLink;
 
   return (
-    <div className={styles.projectContainer}>
+    <div className='pageContentContainer'>
       <h2 className={styles.title}>{name}</h2>
       <p className={styles.date}>{date}</p>
       <div className={styles.projectGrid}>

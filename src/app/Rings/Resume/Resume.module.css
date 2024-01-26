@@ -173,6 +173,7 @@
     background: rgba(0, 92, 142, 0.5);
     font-size: 1.5rem;
     border-radius: 5px;
+    padding: .25rem;
   }
   .resumeGrid p {
     padding: 1rem;
