@@ -144,7 +144,7 @@
     object-fit: cover;
     width: 100%;
   }
-  /* .projectsGridItem {
+  .projectsGridItem {
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -159,8 +159,8 @@
     max-width: 350px;
     min-width: 250px;
     margin: 0 auto;
-  } */
-  /* #stringSchoolThumb{
+  }
+  #stringSchoolThumb{
     grid-row: 1
   }
   #stringSchoolLabel{
@@ -221,7 +221,7 @@
 #portfolioLabel{
   grid-row: 20;
 }
- */
+
 
 
 }
