@@ -50,7 +50,7 @@ export default function Projects() {
           return (
             <div className={styles.projectsGridItem} key={index}>
               <div className={`${styles.thumbnailWrapper} ${styles.hoverMessage}`} key={index}>
-                <Link href={`projects/${project.page}`}>
+                <Link href={`Projects/${project.page}`}>
                   {project.images.length && <Image className={styles.projectThumb} src={project.images[0]} fill='true' priority='true'  alt={'project homepage thumbnail'}/>}
                   <p className={styles.hoverText}>{project.summary}</p>
                 </Link>

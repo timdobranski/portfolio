@@ -40,7 +40,8 @@ const projectData = [
     tech: ['Next.js', 'Postgres', 'Node.js'],
     video: 'https://www.youtube.com/embed/-4ADdpUKpJo',
     images: [
-      `/images/projects/parkway-periodical/parkway-periodical.webp`,
+      `/images/projects/parkway-periodical/parkwayPeriodical2.webp`,
+      `/images/projects/parkway-periodical/parkwayPeriodical1.webp`,
       `/images/projects/parkway-periodical/1.webp`,
       `/images/projects/parkway-periodical/2.webp`,
       `/images/projects/parkway-periodical/3.webp`,
