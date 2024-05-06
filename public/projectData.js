@@ -38,7 +38,7 @@ const projectData = [
     I knew there were easier ways to tie into APIs for this but I wanted to learn how to do it from scratch. As of Jan 2024, the
     project is nearly complete. School administrators are very happy with the early results and I'm looking forward to finishing it up.`],
     tech: ['Next.js', 'Postgres', 'Node.js'],
-    video: 'https://youtu.be/r-iJb8_xYu0',
+    video: 'https://www.youtube.com/embed/r-iJb8_xYu0?si=RfnZDbgtbTCWGnbj',
     images: [
       `/images/projects/parkway-periodical/1.webp`,
       `/images/projects/parkway-periodical/2.webp`,
