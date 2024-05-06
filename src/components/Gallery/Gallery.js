@@ -32,7 +32,7 @@ export default function Gallery({ images }) {
       {isModalOpen && (
         <div className={styles.modalOverlay} onClick={closeModal}>
           <div className={styles.modal}>
-            <Image src={mainImage} alt="Modal Main Image" layout="responsive" width={800} height={800} />
+            <img src={mainImage} alt="Modal Main Image" layout="responsive" className={styles.modalImage} />
           </div>
         </div>
       )}

@@ -8,13 +8,21 @@ import Gallery from '../Gallery/Gallery.js';
 
 export default function Project({ data }) {
   console.log('project data', data)
-  const name = data.name;
-  const date = data.date;
-  const description = data.description;
-  const tech = data.tech;
-  const images = data.images;
-  const deployLink = data.deployLink;
-  const repoLink = data.repoLink;
+  // const name = data.name;
+  // const date = data.date;
+  // const description = data.description;
+  // const tech = data.tech;
+  // const images = data.images;
+  // const deployLink = data.deployLink;
+  // const repoLink = data.repoLink;
+
+  const { name, date, description, tech, images, deployLink, repoLink } = data;
+  // const { date } = data;
+  // const { description } = data;
+  // const { tech } = data;
+  // const { images } = data;
+  // const { deployLink } = data;
+  // const { repoLink } = data;
 
   return (
     <div className='pageContentContainer'>
