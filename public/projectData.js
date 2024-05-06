@@ -31,12 +31,13 @@ const projectData = [
     date: 'Winter 2023',
     page: 'parkway-periodical',
     summary: 'Middle School blog w/intro animation and custom post editor for school administrators. Still in progress.',
-    description: [`This project has been a unique learning experience for me. It's a redesign of the Parkway Academy school blog,
-    which was originally built with Google Sites. I created a Next.js app that features the original blog postings format, as well as
-    more robust features like an archive page and an About page which introduces the school administrators. The majority of the work
-    went into creating the post editor back end for the school administrators, which allows them to create, edit and delete posts.
-    I knew there were easier ways to tie into APIs for this but I wanted to learn how to do it from scratch. As of Jan 2024, the
-    project is nearly complete. School administrators are very happy with the early results and I'm looking forward to finishing it up.`],
+    description: [
+    `This was an incredibly fun and inspiring app to build. It's a replacement for the Parkway Academy school blog. The basic idea was to design a blog from scratch, with a complete custom post editor. The end result has all of that, plus an autosave feature, search and filter features for content discovery, an archive feature to archive content when they school year is over,  and a feature to help users maintain their uploaded content by setting expiration dates that automatically remind administrators to either update or delete expired content. This is usually most relevant at the end of a trimester or the end of the school year as new changes are made to electives, clubs, parent resource links, etc.`,
+
+    `I started with the back end, planning the types of content that would be stored and how it would be stored. I then worked more specifically on building the post editor. This was the biggest part of the project, and I found it was absolutely essential to stay organized in my thinking and avoid improvised changes when I encountered an obstacle.`,
+
+    `Once the administrator side was complete, I began working more on the public-facing user side, growing my CSS skills by adding filters, hover effects, transitions, and an animated version of the school logo. A polished and impressive design aesthetic was important here, and I'm quite happy with how the design turned out.
+    `],
     tech: ['Next.js', 'Postgres', 'Node.js'],
     video: 'https://www.youtube.com/embed/r-iJb8_xYu0?si=RfnZDbgtbTCWGnbj',
     images: [
