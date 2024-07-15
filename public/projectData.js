@@ -39,7 +39,7 @@ const projectData = [
     `Once the administrator side was complete, I began working more on the public-facing user side, growing my CSS skills by adding filters, hover effects, transitions, and an animated version of the school logo. A polished and impressive design aesthetic was important here, and I'm quite happy with how the design turned out.
     `],
     tech: ['Next.js', 'Postgres', 'Node.js'],
-    video: 'https://www.youtube.com/embed/r-iJb8_xYu0?si=RfnZDbgtbTCWGnbj',
+    // video: 'https://www.youtube.com/embed/r-iJb8_xYu0?si=RfnZDbgtbTCWGnbj',
     images: [
       `/images/projects/parkway-periodical/1.webp`,
       `/images/projects/parkway-periodical/2.webp`,
@@ -47,7 +47,7 @@ const projectData = [
       `/images/projects/parkway-periodical/4.webp`,
       `/images/projects/parkway-periodical/5.webp`,
     ],
-    deployLink: {url:'https://parkway-academy-periodical.vercel.app/', text: 'See It In Action'},
+    deployLink: {url:'https://parkway-periodical.vercel.app/', text: 'See It In Action'},
     repoLink: {url:'https://github.com/timdobranski/parkway-periodical.git', text: 'View Repo On Github'}
   },
   {
@@ -127,7 +127,7 @@ const projectData = [
       `/images/projects/atelier-design/atelier-design-3.jpg`,
       `/images/projects/atelier-design/atelier-design-4.jpg`,
     ],
-    deployLink: {url:'http://3.23.230.122:3002/', text: 'See It In Action'},
+    // deployLink: {url:'http://3.23.230.122:3002/', text: 'See It In Action'},
     repoLink: {url:'https://github.com/timdobranski/atelier-design.git'}
   },
   {
