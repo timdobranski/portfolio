@@ -127,7 +127,7 @@ const projectData = [
       `/images/projects/atelier-design/atelier-design-3.jpg`,
       `/images/projects/atelier-design/atelier-design-4.jpg`,
     ],
-    // deployLink: {url:'http://3.23.230.122:3002/', text: 'See It In Action'},
+    deployLink: {url:'', text: 'See It In Action'},
     repoLink: {url:'https://github.com/timdobranski/atelier-design.git'}
   },
   {
