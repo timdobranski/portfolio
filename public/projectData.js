@@ -1,7 +1,7 @@
 const projectData = [
   {
     name: 'String School',
-    date: 'Fall 2023 - Spring 2024',
+    date: 'Fall 2024',
     page: 'string-school',
     summary: 'Web & mobile app for music students with scheduling, progress-tracking and more',
     description: [`This is both a web app and a mobile app for iOS and Android for guitar students. Features include Google sign-in, scheduling/rescheduling, payment tracking,
@@ -28,7 +28,7 @@ const projectData = [
   },
   {
     name: 'Parkway Periodical',
-    date: 'Winter 2023',
+    date: 'Summer 2024',
     page: 'parkway-periodical',
     summary: 'Middle School blog w/intro animation and custom post editor for school administrators. Still in progress.',
     description: [
@@ -39,9 +39,9 @@ const projectData = [
     `Once the administrator side was complete, I began working more on the public-facing user side, growing my CSS skills by adding filters, hover effects, transitions, and an animated version of the school logo. A polished and impressive design aesthetic was important here, and I'm quite happy with how the design turned out.
     `],
     tech: ['Next.js', 'Postgres', 'Node.js'],
-    // video: 'https://www.youtube.com/embed/r-iJb8_xYu0?si=RfnZDbgtbTCWGnbj',
+    video: 'https://www.youtube.com/embed/f1FcKBwnNoY?si=dgpUOst870pxWGWg',
     images: [
-      `/images/projects/parkway-periodical/1.webp`,
+      `/images/projects/parkway-periodical/1.jpg`,
       `/images/projects/parkway-periodical/2.webp`,
       `/images/projects/parkway-periodical/3.webp`,
       `/images/projects/parkway-periodical/4.webp`,
@@ -178,7 +178,7 @@ const projectData = [
   },
   {
     name: 'Songsmith',
-    date: 'Spring 2024',
+    date: 'Winter 2024',
     page: 'songsmith',
     summary: 'A unique tool to teach music theory through songwriting. Not complete yet!',
     description: [`Songsmith is still in the early stages of development. It's a companion web/mobile application to aid musicians in songwriting.
