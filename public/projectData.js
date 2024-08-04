@@ -39,7 +39,7 @@ const projectData = [
     `Once the administrator side was complete, I began working more on the public-facing user side, growing my CSS skills by adding filters, hover effects, transitions, and an animated version of the school logo. A polished and impressive design aesthetic was important here, and I'm quite happy with how the design turned out.
     `],
     tech: ['Next.js', 'Postgres', 'Node.js'],
-    video: 'https://www.youtube.com/embed/f1FcKBwnNoY?si=dgpUOst870pxWGWg',
+    video: 'https://www.youtube.com/embed/BLMDxO537oQ?si=4lpd4yCpMCaUgTWm',
     images: [
       `/images/projects/parkway-periodical/1.jpg`,
       `/images/projects/parkway-periodical/2.webp`,
