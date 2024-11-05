@@ -67,7 +67,7 @@ const projectData = [
   },
   {
     name: 'String School',
-    date: 'Fall 2024',
+    date: 'Late 2024/Eary 2025',
     page: 'string-school',
     summary: 'Web & mobile app for music students with scheduling, progress-tracking and more',
     description: [`This is both a web app and a mobile app for iOS and Android for guitar students. Features include Google sign-in, scheduling/rescheduling, payment tracking,
@@ -95,16 +95,19 @@ const projectData = [
   },
   {
     name: 'Stringsmith',
-    date: 'Fall/Winter 2024',
+    date: 'Late 2024/Early 2025',
     page: 'stringsmith',
-    summary: 'A unique tool to teach music theory through songwriting. Not complete yet!',
+    summary: 'A unique tool to teach guitar & music theory through games & songwriting. Not complete yet!',
     description: [`Stringsmith is a learning platform for music students. It teaches fundamental concepts from beginner to advanced levels through
       interactive lessons, games, and progress-tracking tools. It is a standalone app, but it also integrates with my String School app to
       keep students up to date on their progress. Standout features include AI-powered pitch detection and an interactive guitar fretboard that can be
-      upgraded and customized in-game through achievements and microtransactions.`],
-    tech: ['Next.js', 'Vercel', 'Supabase', 'Electron'],
+      upgraded and customized with nearly unlimited animations and designs in-game through achievements and microtransactions.`],
+    tech: ['Next.js', 'Vercel', 'Supabase', 'Tauri', 'React Native'],
     images: [
-      '/images/projects/songsmith/songsmith-4.jpg',
+      '/images/projects/songsmith/logo.webp',
+      '/images/projects/songsmith/defaultTheme.webp',
+      '/images/projects/songsmith/metalheadTheme.webp',
+      '/images/projects/songsmith/glitterbombTheme.webp',
     ],
     deployLink: { url: 'https://stringsmith.vercel.app/fretboard', text: 'See It In Action'},
     repoLink: { url: '', text: 'Repo Is Private' },

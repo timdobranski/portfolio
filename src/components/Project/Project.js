@@ -37,9 +37,9 @@ export default function Project({ data }) {
             <p className={styles.projectLink}>{deployLink.text}</p>
           </Link> :
           null}
-          <Link href={repoLink.url}>
+          {repoLink.url ? <Link href={repoLink.url}>
             <p className={styles.projectLink}>View Repo on Github</p>
-          </Link>
+          </Link> : <p className={styles.projectLink}>Repo Is Private</p>}
           {data.video ? <iframe className={styles.video} src={data.video} title={name} frameBorder="0"
         controls allowFullScreen></iframe> : null}
           <div className={styles.sectionContainer}>
