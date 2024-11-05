@@ -1,5 +1,71 @@
 const projectData = [
   {
+    name: 'Parkway Periodical',
+    date: 'Summer 2024',
+    page: 'parkway-periodical',
+    summary: 'School blog w/intro animation and custom post editor for school administrators.',
+    description: [
+    `This was an incredibly fun and inspiring app to build. It's a replacement for the Parkway Academy school blog. The basic idea was to design a blog from scratch, with a complete custom post editor. The end result has all of that, plus an autosave/draft feature, search and filter features for content discovery, an archive feature to archive content when they school year is over,  and a feature to help users maintain their uploaded content by setting expiration dates that automatically remind administrators to either update or delete expired content. This is usually most relevant at the end of a trimester or the end of the school year as new changes are made to electives, clubs, parent resource links, etc.`,
+
+    `I started with the back end, planning the types of content that would be stored and how it would be stored. I then worked more specifically on building the post editor. This was the biggest part of the project, and I found it was absolutely essential to stay organized in my thinking and avoid improvised changes when I encountered an obstacle.`,
+
+    `Once the administrator side was complete, I began working more on the public-facing user side, growing my CSS skills by adding filters, hover effects, transitions, and an animated version of the school logo. A polished and impressive design aesthetic was important here, and I'm quite happy with how the design turned out.
+    `],
+    tech: ['Next.js', 'Postgres', 'Node.js'],
+    video: 'https://www.youtube.com/embed/xre8OCEW4XM?si=2YbNFInwtEY9vsAd',
+    images: [
+      `/images/projects/parkway-periodical/1.jpg`,
+      `/images/projects/parkway-periodical/2.webp`,
+      `/images/projects/parkway-periodical/3.webp`,
+      `/images/projects/parkway-periodical/4.webp`,
+      `/images/projects/parkway-periodical/5.webp`,
+    ],
+    deployLink: {url:'https://parkway-periodical.vercel.app/', text: 'See It In Action'},
+    repoLink: {url:'https://github.com/timdobranski/parkway-periodical.git', text: 'View Repo On Github'},
+    status: 'In Production'
+  },
+  {
+    name: 'Lock Learner',
+    date: 'Fall 2023',
+    page: 'lock-learner',
+    summary: 'Web game to teach PE students how to open their combination locks',
+    description: [`Lock Learner is a javascript web game made to teach PE students how to open their combination locks. It can be played
+    with a mouse, but the best experience with this app is with touch-enabled devices. This project
+    represents my ongoing software engineering work for the La Mesa-Spring Valley School District. It was a lot of
+    fun to build!`, `The main challenges of this project were creating the manipulatable lock images and implementing an algorithm to
+    register circular swipe patterns to manupulate the lock face.`, `The game guides the user from setting a combination to turning the
+    correct direction for all three numbers. Once the third number is reached, the lock opens and the user is congratulated.`],
+    tech: ['Next.js'],
+    images: [
+      `/images/projects/lock-learner/lockLearner1.webp`,
+      `/images/projects/lock-learner/lockLearner2.webp`,
+      `/images/projects/lock-learner/lockLearner3.webp`,
+    ],
+    deployLink: {url:'https://lock-game.vercel.app/', text: 'See It In Action'},
+    repoLink: {url:'https://github.com/timdobranski/lock-game.git', text: 'View Repo On Github'},
+    status: 'In Production'
+  },
+  {
+    name: 'Parkway Schedule',
+    date: 'Summer 2024',
+    page: 'parkway-schedule',
+    summary: 'Interactive schedule for students and staff with todos functionality',
+    description: [`The Parkway Schedule app was build when the 2024-25 school year started and it became apparent
+      that navigating the school's new schedule had become a concern.`, `The new schedule includes branching paths for
+      staff and students with different lunch periods, prep periods, etc.`, `The app allows you to input your schedule parameters
+      and generate your personalized schedule for each day of the week. From there you can add todos to your schedule, which are stored in local storage`],
+    tech: ['Next.js'],
+    images: [
+      `/images/projects/parkway-schedule/3.webp`,
+      `/images/projects/parkway-schedule/1.png`,
+      `/images/projects/parkway-schedule/2.png`,
+
+    ],
+    deployLink: {url:'https://parkwayschedule.vercel.app/', text: 'See It In Action'},
+    repoLink: {url:'https://github.com/timdobranski/lock-game.git', text: 'View Repo On Github'},
+    status: 'In Production'
+  },
+  {
     name: 'String School',
     date: 'Fall 2024',
     page: 'string-school',
@@ -24,52 +90,25 @@ const projectData = [
       `/images/projects/string-school/lmss8.webp`,
     ],
     deployLink: { url: 'http://www.lamesastringschool.com', 'text': 'LaMesaStringSchool.com'},
-    repoLink: { url: 'https://github.com/timdobranski/string-school-web', text: 'View On Github' }
+    repoLink: { url: 'https://github.com/timdobranski/string-school-web', text: 'View On Github' },
+    status: 'In Development'
   },
   {
-    name: 'Parkway Periodical',
-    date: 'Summer 2024',
-    page: 'parkway-periodical',
-    summary: 'School blog w/intro animation and custom post editor for school administrators.',
-    description: [
-    `This was an incredibly fun and inspiring app to build. It's a replacement for the Parkway Academy school blog. The basic idea was to design a blog from scratch, with a complete custom post editor. The end result has all of that, plus an autosave/draft feature, search and filter features for content discovery, an archive feature to archive content when they school year is over,  and a feature to help users maintain their uploaded content by setting expiration dates that automatically remind administrators to either update or delete expired content. This is usually most relevant at the end of a trimester or the end of the school year as new changes are made to electives, clubs, parent resource links, etc.`,
-
-    `I started with the back end, planning the types of content that would be stored and how it would be stored. I then worked more specifically on building the post editor. This was the biggest part of the project, and I found it was absolutely essential to stay organized in my thinking and avoid improvised changes when I encountered an obstacle.`,
-
-    `Once the administrator side was complete, I began working more on the public-facing user side, growing my CSS skills by adding filters, hover effects, transitions, and an animated version of the school logo. A polished and impressive design aesthetic was important here, and I'm quite happy with how the design turned out.
-    `],
-    tech: ['Next.js', 'Postgres', 'Node.js'],
-    video: 'https://www.youtube.com/embed/xre8OCEW4XM?si=2YbNFInwtEY9vsAd',
+    name: 'Stringsmith',
+    date: 'Fall/Winter 2024',
+    page: 'stringsmith',
+    summary: 'A unique tool to teach music theory through songwriting. Not complete yet!',
+    description: [`Stringsmith is a learning platform for music students. It teaches fundamental concepts from beginner to advanced levels through
+      interactive lessons, games, and progress-tracking tools. It is a standalone app, but it also integrates with my String School app to
+      keep students up to date on their progress. Standout features include AI-powered pitch detection and an interactive guitar fretboard that can be
+      upgraded and customized in-game through achievements and microtransactions.`],
+    tech: ['Next.js', 'Vercel', 'Supabase', 'Electron'],
     images: [
-      `/images/projects/parkway-periodical/1.jpg`,
-      `/images/projects/parkway-periodical/2.webp`,
-      `/images/projects/parkway-periodical/3.webp`,
-      `/images/projects/parkway-periodical/4.webp`,
-      `/images/projects/parkway-periodical/5.webp`,
+      '/images/projects/songsmith/songsmith-4.jpg',
     ],
-    deployLink: {url:'https://parkway-periodical.vercel.app/', text: 'See It In Action'},
-    repoLink: {url:'https://github.com/timdobranski/parkway-periodical.git', text: 'View Repo On Github'}
-  },
-  {
-    name: 'Lock Learner',
-    date: 'Fall 2023',
-    page: 'lock-learner',
-    summary: 'Web game to teach PE students how to open their combination locks',
-    description: [`Lock Learner is a javascript web game made to teach PE students how to open their combination locks. It can be played
-    with a mouse, but the best experience with this app is with touch-enabled devices. This project
-    represents my ongoing software engineering work for the La Mesa-Spring Valley School District. It was a lot of
-    fun to build!`, `The main challenges of this project were creating the manipulatable lock images and implementing an algorithm to
-    register circular swipe patterns to manupulate the lock face.`, `The game guides the user from setting a combination to turning the
-    correct direction for all three numbers. Once the third number is reached, the lock opens and the user is congratulated.`],
-    tech: ['Next.js'],
-    images: [
-      `/images/projects/lock-learner/lock-learner.webp`,
-      `/images/projects/lock-learner/lock-learner-2.webp`,
-      `/images/projects/lock-learner/lock-learner-3.webp`,
-      `/images/projects/lock-learner/lock-learner-4.webp`,
-    ],
-    deployLink: {url:'https://lock-game.vercel.app/', text: 'See It In Action'},
-    repoLink: {url:'https://github.com/timdobranski/lock-game.git', text: 'View Repo On Github'}
+    deployLink: { url: 'https://songsmith.vercel.app/', text: 'See It In Action'},
+    repoLink: { url: '', text: 'Repo Is Private' },
+    status: 'In Development'
   },
   {
     name: 'Canine Corners',
@@ -92,7 +131,8 @@ const projectData = [
       `/images/projects/canine-corners/6.webp`,
     ],
     deployLink: {url:'https://canine-corners.vercel.app/', text: 'See It In Action'},
-    repoLink: {url:'https://github.com/timdobranski/canine-corners', text: 'View Repo On Github'}
+    repoLink: {url:'https://github.com/timdobranski/canine-corners', text: 'View Repo On Github'},
+    status: 'Demo Project'
   },
   {
     name: 'Atelier Vacations',
@@ -109,7 +149,8 @@ const projectData = [
       `/images/projects/atelier-vacations/atelier-vacations.jpg`,
     ],
     deployLink: {url:'https://parkway-three.vercel.app/', text: 'See It In Action'},
-    repoLink: {url:'https://github.com/timdobranski/parkway.git', text: 'View Repo On Github'}
+    repoLink: {url:'https://github.com/timdobranski/parkway.git', text: 'View Repo On Github'},
+    status: 'Demo Project'
   },
   {
     name: 'Atelier Design',
@@ -128,7 +169,8 @@ const projectData = [
       `/images/projects/atelier-design/atelier-design-4.jpg`,
     ],
     deployLink: {url:'', text: 'See It In Action'},
-    repoLink: {url:'https://github.com/timdobranski/atelier-design.git'}
+    repoLink: {url:'https://github.com/timdobranski/atelier-design.git'},
+    status: 'School Project'
   },
   {
     name: 'FitPass',
@@ -155,7 +197,8 @@ const projectData = [
       '/images/projects/fitpass/fitpass-8.png',
     ],
     deployLink: {url:'', text: 'No deployment available'},
-    repoLink: {url:'https://github.com/rpp2210-BOC-Aquaforce/FitnessPass', text: 'View Repo On Github'}
+    repoLink: {url:'https://github.com/rpp2210-BOC-Aquaforce/FitnessPass', text: 'View Repo On Github'},
+    status: 'School Project'
   },
   {
     name: 'Atelier Apparel',
@@ -174,23 +217,8 @@ const projectData = [
       '/images/projects/atelier-apparel/dark-mode.webp',
     ],
     deployLink: {url:'', text: 'See It Deployed Here'},
-    repoLink: {url:'https://github.com/RPP2210-Wraith/Atelier'}
-  },
-  {
-    name: 'Songsmith',
-    date: 'Winter 2024',
-    page: 'songsmith',
-    summary: 'A unique tool to teach music theory through songwriting. Not complete yet!',
-    description: [`Songsmith is still in the early stages of development. It's a companion web/mobile application to aid musicians in songwriting.
-    The app suggests scale and chord options for the user, given a key, or even just a root note. The app is built with an emphasis on understanding
-    tonal choices, and each scale/chord progression suggested is accompanied by a description of its tonality for the user to consider.`, `More to
-    come on this project soon!`],
-    tech: ['Next.js', 'AWS'],
-    images: [
-      '/images/projects/songsmith/songsmith-4.jpg',
-    ],
-    deployLink: { url: 'https://songsmith.vercel.app/', text: 'See It In Action'},
-    repoLink: { url: 'https://github.com/timdobranski/songsmith.git', text: 'View Repo On Github' }
+    repoLink: {url:'https://github.com/RPP2210-Wraith/Atelier'},
+    status: 'School Project'
   },
   {
     name: 'Portfolio',
@@ -207,7 +235,8 @@ const projectData = [
       '/images/projects/portfolio/portfolio-preview.webp',
     ],
     deployLink: {url:'/', text: 'TimDobranski.com'},
-    repoLink: {url:'https://github.com/timdobranski/portfolio.git', text: ''}
+    repoLink: {url:'https://github.com/timdobranski/portfolio.git', text: ''},
+    status: 'In Production'
   }
 ]
 

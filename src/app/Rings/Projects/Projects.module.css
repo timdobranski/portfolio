@@ -53,6 +53,7 @@
   position: relative;
   height: 300px;
   margin: 1rem 1rem 1rem 1rem;
+  /* border: solid red 1px; */
 
 }
 .projectThumb {
@@ -63,6 +64,7 @@
   overflow: hidden;
   object-fit: cover;
   cursor: pointer;
+  /* border: solid white 1px; */
 }
 .thumbnailWrapper {
   position: relative;
@@ -132,6 +134,39 @@
   background-color: black;
   z-index: 10;
   pointer-events: none;
+}
+.projectStatus {
+  margin: 0;
+  padding: .25rem .75rem;
+  font-size: 1rem !important;
+  position: absolute;
+  bottom: -2rem;
+  right: 0;
+  background-color: rgba(0, 0, 0, .5);
+  backdrop-filter: blur(10px);
+  border-bottom-right-radius: 20px;
+  /* border-top: solid white 1px;
+  border-left: solid white 1px; */
+  box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+  font-weight: 400;
+}
+.inProduction {
+  /* background-color: rgb(255, 136, 136); */
+  color: rgb(255, 255, 255);
+  /* text-decoration: underline;
+  text-decoration-color: rgb(148, 255, 148);
+  text-underline-offset: 2px; */
+}
+.inDevelopment {
+  /* background-color: rgb(255, 136, 136); */
+  color: rgb(255, 255, 255);
+  /* text-decoration: underline;
+  text-decoration-color: rgb(255, 208, 77);
+  text-underline-offset: 2px; */
+}
+.demoProject {
+  /* background-color: rgb(255, 136, 136); */
+  color: white;
 }
 
 @media (max-width: 768px) {

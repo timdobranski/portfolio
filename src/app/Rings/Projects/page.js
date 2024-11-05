@@ -44,18 +44,38 @@ export default function Projects() {
     <div className={styles.projectsContainer}>
       <h1 className={styles.projectsHeader}>PROJECTS</h1>
       <p>Click on a project below to learn more about it</p>
+      {/* <h3 className={styles.subtitle}>IN PRODUCTION</h3> */}
       <div className={styles.projectsGrid}>
 
         {projectData.map((project, index) => {
           return (
             <div className={styles.projectsGridItem} key={index}>
               <div className={`${styles.thumbnailWrapper} ${styles.hoverMessage}`} key={index}>
+
                 <Link href={`Projects/${project.page}`}>
-                  {project.images.length && <Image className={styles.projectThumb} src={project.images[0]} fill='true' priority='true'  alt={'project homepage thumbnail'}/>}
+                  {project.images.length &&
+                  <>
+                  <Image className={styles.projectThumb} src={project.images[0]} fill='true' priority='true'  alt={'project homepage thumbnail'}/>
+                  <p className={`
+                ${styles.projectStatus}
+                ${project.status === 'In Production' && styles.inProduction}
+                ${project.status === 'In Development' && styles.inDevelopment}
+                ${(project.status === 'Demo Project' || project.status === 'School Project') && styles.demoProject}
+
+                `}>{project.status}</p>
+                  </>
+                  }
                   <p className={styles.hoverText}>{project.summary}</p>
                 </Link>
               </div>
               <h3 className={styles.projectTitle}>{project.name}</h3>
+              {/* <p className={`
+                ${styles.projectStatus}
+                ${project.status === 'In Production' && styles.inProduction}
+                ${project.status === 'In Development' && styles.inDevelopment}
+                ${project.status === 'Demo Project' || project.status === 'School Project' && styles.demoProject}
+
+                `}>{project.status}</p> */}
             </div>
           )
         })}
