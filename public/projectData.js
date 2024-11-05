@@ -173,7 +173,7 @@ const projectData = [
     ],
     deployLink: {url:'', text: 'See It In Action'},
     repoLink: {url:'https://github.com/timdobranski/atelier-design.git'},
-    status: 'School Project'
+    status: 'Demo Project'
   },
   {
     name: 'FitPass',
