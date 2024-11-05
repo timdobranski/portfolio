@@ -106,7 +106,7 @@ const projectData = [
     images: [
       '/images/projects/songsmith/songsmith-4.jpg',
     ],
-    deployLink: { url: 'https://songsmith.vercel.app/', text: 'See It In Action'},
+    deployLink: { url: 'https://stringsmith.vercel.app/fretboard', text: 'See It In Action'},
     repoLink: { url: '', text: 'Repo Is Private' },
     status: 'In Development'
   },
