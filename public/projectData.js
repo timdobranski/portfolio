@@ -37,8 +37,8 @@ const projectData = [
     correct direction for all three numbers. Once the third number is reached, the lock opens and the user is congratulated.`],
     tech: ['Next.js'],
     images: [
-      `/images/projects/lock-learner/lockLearner1.webp`,
       `/images/projects/lock-learner/lockLearner2.webp`,
+      `/images/projects/lock-learner/lockLearner1.webp`,
       `/images/projects/lock-learner/lockLearner3.webp`,
     ],
     deployLink: {url:'https://lock-game.vercel.app/', text: 'See It In Action'},
@@ -91,20 +91,20 @@ const projectData = [
     ],
     deployLink: { url: 'http://www.lamesastringschool.com', 'text': 'LaMesaStringSchool.com'},
     repoLink: { url: 'https://github.com/timdobranski/string-school-web', text: 'View On Github' },
-    status: 'In Development'
+    status: 'In Production'
   },
   {
-    name: 'Stringsmith',
-    date: 'Late 2024/Early 2025',
+    name: 'String School Toolbox',
+    date: '2025',
     page: 'stringsmith',
     summary: 'A unique tool to teach guitar & music theory through games & songwriting. Not complete yet!',
-    description: [`Stringsmith is a learning platform for music students. It teaches fundamental concepts from beginner to advanced levels through
-      interactive lessons, games, and progress-tracking tools. It is a standalone app, but it also integrates with my String School app to
-      keep students up to date on their progress. Standout features include AI-powered pitch detection and an interactive guitar fretboard that can be
-      upgraded and customized with nearly unlimited animations and designs in-game through achievements and microtransactions.`],
+    description: [`The String School toolbox is a collection of tools to help music students learn guitar and music theory through
+      games and songwriting. It includes a fretboard trainer, a chord trainer, a scale trainer, and a songwriting tool.`, `Currently
+      the toolbox is used for my students to practice their fretboard knowledge, but the goal is to expand it into a standalone learning
+      platform in the future.`],
     tech: ['Next.js', 'Vercel', 'Supabase', 'Tauri', 'React Native'],
     images: [
-      '/images/projects/songsmith/logo.webp',
+      '/images/projects/songsmith/logo.jpg',
       '/images/projects/songsmith/defaultTheme.webp',
       '/images/projects/songsmith/metalheadTheme.webp',
       '/images/projects/songsmith/glitterbombTheme.webp',
@@ -114,29 +114,49 @@ const projectData = [
     status: 'In Development'
   },
   {
-    name: 'Canine Corners',
-    date: 'Fall 2023',
-    page: 'canine-corners',
-    summary: 'A fictional social media app for my local dog park',
-    description: [`This was a small project I built to continue work on my CSS and design skills. It's a faux social media app for my local dog park.
-    Features include posts, friends lists, messages, park scheduling, and user profiles.`, `With this app I had a very specific goal in mind:
-    to practice mobile responsive styling and positioning of menus and navbars. I spent the majority of the time on this project ensuring that the
-    mobile design was responsive and clean.`, `I considered building it into a full stack app with a database
-    to enable features like posting and auth,
-    but decided against it because I wanted to focus on the front end.`, `This was built just using Next.js/React.`],
-    tech: ['Next.js'],
+    name: 'Forgotten Alibi',
+    date: '2025',
+    page: 'forgotten-alibi',
+    summary: 'Band website for my band, Forgotten Alibi',
+    description: [`This project was a special one—bringing our former band’s online presence to life in a way that
+      reflects who we are and what we care about. From showcasing music and merch to sharing stories and updates,
+      the site is built to grow alongside us. It’s not just a website—it’s part of how we connect with people who
+      believe in what we’re doing.`],
+    tech: ['Next.js', 'Vercel'],
     images: [
-      `/images/projects/canine-corners/1.webp`,
-      `/images/projects/canine-corners/2.webp`,
-      `/images/projects/canine-corners/3.webp`,
-      `/images/projects/canine-corners/4.webp`,
-      `/images/projects/canine-corners/5.webp`,
-      `/images/projects/canine-corners/6.webp`,
+      '/images/projects/forgottenalibi/fa-collage.jpg',
+      '/images/projects/forgottenalibi/home-page.jpg',
+      '/images/projects/forgottenalibi/about-page.jpg',
+      // '/images/projects/songsmith/glitterbombTheme.webp',
     ],
-    deployLink: {url:'https://canine-corners.vercel.app/', text: 'See It In Action'},
-    repoLink: {url:'https://github.com/timdobranski/canine-corners', text: 'View Repo On Github'},
-    status: 'Demo Project'
+    deployLink: { url: 'https://www.forgottenalibi.com', text: 'See It In Action'},
+    repoLink: { url: '', text: 'Repo Is Private' },
+    status: 'In Production'
   },
+  // {
+  //   name: 'Canine Corners',
+  //   date: 'Fall 2023',
+  //   page: 'canine-corners',
+  //   summary: 'A fictional social media app for my local dog park',
+  //   description: [`This was a small project I built to continue work on my CSS and design skills. It's a faux social media app for my local dog park.
+  //   Features include posts, friends lists, messages, park scheduling, and user profiles.`, `With this app I had a very specific goal in mind:
+  //   to practice mobile responsive styling and positioning of menus and navbars. I spent the majority of the time on this project ensuring that the
+  //   mobile design was responsive and clean.`, `I considered building it into a full stack app with a database
+  //   to enable features like posting and auth,
+  //   but decided against it because I wanted to focus on the front end.`, `This was built just using Next.js/React.`],
+  //   tech: ['Next.js'],
+  //   images: [
+  //     `/images/projects/canine-corners/1.webp`,
+  //     `/images/projects/canine-corners/2.webp`,
+  //     `/images/projects/canine-corners/3.webp`,
+  //     `/images/projects/canine-corners/4.webp`,
+  //     `/images/projects/canine-corners/5.webp`,
+  //     `/images/projects/canine-corners/6.webp`,
+  //   ],
+  //   deployLink: {url:'https://canine-corners.vercel.app/', text: 'See It In Action'},
+  //   repoLink: {url:'https://github.com/timdobranski/canine-corners', text: 'View Repo On Github'},
+  //   status: 'Demo Project'
+  // },
   {
     name: 'Atelier Vacations',
     date: 'Fall 2023',
