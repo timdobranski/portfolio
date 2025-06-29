@@ -3,7 +3,7 @@
 import styles from './Home.module.css'
 import { useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faChevronRight, faMusic, faCode, faGraduationCap, faWrench, faMessage } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 
@@ -18,35 +18,40 @@ export default function Home() {
       text: ['Select this ring to', 'connect with me'],
       color: 'yellowGlow',
       link: '/connect',
-      id: 'ring0'
+      id: 'ring0',
+      icon: faMessage
     },
     {
       header: 'APPS',
       text: ['Select this ring to', 'see my web and mobile', 'software projects'],
       color: 'greenGlow',
       link: '/projects',
-      id: 'ring1'
+      id: 'ring1',
+      icon: faCode
     },
     {
       header: 'MUSIC',
       text: ['Select this ring to see my ', 'musical projects'],
       color: 'redGlow',
-      link: '/resume',
-      id: 'ring2'
+      link: '/music',
+      id: 'ring2',
+      icon: faMusic
     },
     {
       header: 'TEACHING',
       text: ['Select this ring to learn', 'more about my guitar', 'lessons'],
       color: 'blueGlow',
       link: '/string-school',
-      id: 'ring3'
+      id: 'ring3',
+      icon: faGraduationCap
     },
     {
       header: '3D DESIGN',
       text: ['Select this ring to', 'see the art I create', 'from 3D models and', 'woodworking'],
       color: 'yellowGlow',
       link: '/connect',
-      id: 'ring0'
+      id: 'ring0',
+      icon: faWrench
     },
   ]
 
@@ -111,6 +116,7 @@ export default function Home() {
                   className={`${styles.ring} ${styles[ring.color]} ${ringClass} ${zoomedRing === ring.id ? styles.ringZoom : ''}`}
                   id={ring.id}>
                   <div className={styles.ringContainer}>
+                    {ring.icon && <FontAwesomeIcon icon={ring.icon} className={styles.ringIcon} />}
                     <h1 className={`${styles.ringHeader} ${textClass}`}>{ring.header}</h1>
                     {ring.text.map((text, i) => {
                       return (
