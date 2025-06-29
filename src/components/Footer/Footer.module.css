@@ -1,0 +1,42 @@
+.footerGrid {
+  display: flex;
+  position: fixed;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: black;
+  bottom: 0;
+  width: 100%;
+  height: 3.5vw;
+  min-height: 50px;
+}
+.footerLink {
+    cursor: pointer;
+}
+.footerLink h2 {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: ease .5s;
+  padding: .25rem;
+  padding-bottom: 0;
+}
+.footerLink h2:hover {
+  color: #00f38a;
+  text-decoration: underline;
+  transform:scale(1.1);
+  transition: ease .5s;
+  cursor: pointer;
+}
+
+
+
+@media (max-width: 768px) {
+   .footerLink h2 {
+    font-size: 3vw;
+  }
+  .footerGrid {
+    height: 12vw;
+    max-height: 50px;
+  }
+}

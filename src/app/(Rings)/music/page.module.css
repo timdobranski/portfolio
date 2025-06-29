@@ -1,0 +1,19 @@
+.pageWrapper {
+  /* border: solid red 2px; */
+}
+.pageContentContainer {
+  width: 1200px;
+  max-width: 90%;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.5);
+  margin-top: 1rem;
+}
+.pageTitle {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+}
+.whiteText {
+  color: white;
+  font-size: 1.25rem;
+}

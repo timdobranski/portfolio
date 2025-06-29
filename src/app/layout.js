@@ -2,6 +2,7 @@ import Header from '../components/Header/Header';
 import { Josefin_Sans } from '@next/font/google';
 import Link from 'next/link';
 import { config } from "@fortawesome/fontawesome-svg-core";
+import Footer from '../components/Footer/Footer';
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 
@@ -23,23 +24,7 @@ export default function RootLayout({ children }) {
         <Header />
 
         {children}
-        <div className='footerGrid '>
-          <Link href='/' className='footerLink'>
-            <h2>HOME</h2>
-          </Link>
-          <Link href='/Rings/Projects' className='footerLink'>
-            <h2>PROJECTS</h2>
-          </Link>
-          <Link href='/Rings/Resume' className='footerLink'>
-            <h2>RESUME</h2>
-          </Link>
-          <Link href='/Rings/About' className='footerLink'>
-            <h2>ABOUT ME</h2>
-          </Link>
-          <Link href='/Rings/Connect' className='footerLink'>
-            <h2>CONNECT</h2>
-          </Link>
-        </div>
+        <Footer />
       </body>
     </html>
   )

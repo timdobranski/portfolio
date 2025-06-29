@@ -1,0 +1,111 @@
+
+
+.contactInfoContainer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 92%;
+  height: 50%;
+  margin: 1rem 3rem 2rem 3rem;
+  /* background-color: rgba(0, 92, 142, 0.245); */
+  border-radius: 30px;
+  padding: 2rem;
+}
+.contactInfoContainer p {
+  margin: 1rem;
+}
+.contactInfo {
+
+}
+@media (max-width: 768px) {
+  .connectContainer {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7rem;
+    top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    overflow-y: auto;
+    width: 92%;
+    background: rgba(255, 255, 255, .5);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    min-width: 0px;
+  }
+  .connectContainer h1 {
+    font-size: 8vw;
+  }
+  .connectContainer p {
+    font-size: 1.5rem;
+  }
+  .contactInfoContainer {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 auto;
+    background-color: rgba(0, 92, 142, 0.245);
+    border-radius: 30px;
+    padding: 0rem;
+    /* border: solid red 2px; */
+  }
+  .contactInfoContainer p {
+    font-size: 1.5rem;
+    color: white;
+  }
+  .contactHeaders {
+    display: none;
+  }
+  .contactInfo {
+    padding-bottom: 6vw;
+  }
+  .contactInfo p {
+    font-size: 6vw;
+  }
+  .linkedIn, .github {
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    /* border: solid red 2px; */
+    font-size: 1.25rem !important;
+  }
+}
+.linkedIn, .github {
+margin-top: 1rem;
+margin-bottom: 2rem;
+font-size: 1.25rem;
+color: black;
+text-decoration: none;
+text-align: center;
+transition: color 1s ease;
+color: rgb(255, 255, 255);
+border-radius: 6px;
+background-color: black;
+padding: .5rem;
+padding-left: 2rem;
+padding-right: 2rem;
+display: block;
+width: 90%;
+margin: 0 auto;
+margin-top: .5rem;
+transition: color 1s ease;
+background-color: rgb(0, 41, 63);
+transition: transform 0.3s ease;
+}
+.linkedIn:hover, .github:hover {
+  transform: scale(1.1);
+}
+.contactHeaders p {
+  color: white;
+
+}
+.contactInfo p {
+  color: white;
+
+}

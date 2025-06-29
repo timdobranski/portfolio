@@ -16,7 +16,7 @@ export default function Project({ data }) {
   // const deployLink = data.deployLink;
   // const repoLink = data.repoLink;
 
-  const { name, date, description, tech, images, deployLink, repoLink } = data;
+  const { name, date, description, tech, images, deployLink, repoLink, titleLogo } = data;
   // const { date } = data;
   // const { description } = data;
   // const { tech } = data;
@@ -26,7 +26,7 @@ export default function Project({ data }) {
 
   return (
     <div className='pageContentContainer'>
-      <h2 className={styles.title}>{name}</h2>
+      {titleLogo ? <img src={titleLogo} className={styles.titleLogo}/> : <h2 className={'pageTitle'}>{name}</h2>}
       <p className={styles.date}>{date}</p>
       <div className={styles.projectGrid}>
         <Gallery images={images} />
@@ -40,8 +40,8 @@ export default function Project({ data }) {
           {repoLink.url ? <Link href={repoLink.url}>
             <p className={styles.projectLink}>View Repo on Github</p>
           </Link> : <p className={styles.projectLink}>Repo Is Private</p>}
-          {data.video ? <iframe className={styles.video} src={data.video} title={name} frameBorder="0"
-        controls allowFullScreen></iframe> : null}
+          {/* {data.video ? <iframe className={styles.video} src={data.video} title={name} frameBorder="0"
+        controls allowFullScreen></iframe> : null} */}
           <div className={styles.sectionContainer}>
             {description.map((p, i) => {
               return <p className={styles.description} key={i}>{p}</p>

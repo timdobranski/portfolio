@@ -1,0 +1,237 @@
+.projectsContainer {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 7rem;
+  top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: space-around;
+  height: auto;
+  overflow-y: auto;
+  width: 65%;
+  /* background-color: black !important; */
+  background: rgba(255, 255, 255, .5);
+  /* border-radius: 30px; */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  min-width: 750px;
+}
+.projectsHeader, .projectsSubheader {
+  color: white;
+}
+.projectsHeader {
+
+}
+.projectsSubheader {
+
+}
+.projectTitle {
+  position: relative;
+  font-size: 1.5rem;
+  padding:.5rem;
+  color: white;
+}
+.projectsContainer h1 {
+  color: black;
+  font-size: 3.5rem;
+  margin: 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.projectsContainer p {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+.projectsGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto; /* Adjust based on content */
+  justify-content: center;
+  object-fit: cover;
+  width: 100%;
+  padding: 0 1rem 0 1rem;
+}
+.projectsGridItem {
+  /* border-radius: 5px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  position: relative;
+  height: 300px;
+  margin: 1rem 1rem 1rem 1rem;
+  /* border: solid red 1px; */
+
+}
+.projectThumb {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  /* border-radius: 5px; */
+  overflow: hidden;
+  object-fit: cover;
+  cursor: pointer;
+  border: solid white 2px;
+}
+.thumbnailWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* border-radius: 5px; */
+  overflow: hidden;
+  object-fit: cover;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+  /* border: solid red 1px; */
+}
+.projectThumb img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  position: relative;
+  top: -30px;
+  /* border: solid red 4px; */
+
+}
+.hoverMessage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* border-radius: 20px; */
+  overflow: hidden;
+  object-fit: cover;
+  cursor: pointer;
+
+}
+.hoverMessage:hover .projectThumb img {
+  filter: brightness(0.2);
+}
+.hoverMessage:hover .hoverText {
+  display: block;
+}
+.hoverText {
+  position: absolute;
+  top:0 !important;
+  width: 100%;
+  height: 100%;
+  display: none;
+  color: white;
+  font-size: 1.75rem;
+  text-align: center;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.hoverMessage:hover .hoverText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+.link {
+  position: relative;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 10;
+  pointer-events: none;
+}
+.projectStatus {
+  margin: 0;
+  padding: .25rem .75rem;
+  font-size: 1rem !important;
+  position: absolute;
+  bottom: -2rem;
+  right: 0;
+  background-color: rgba(0, 0, 0, .5);
+  backdrop-filter: blur(10px);
+  border-bottom-right-radius: 20px;
+  /* border-top: solid white 1px;
+  border-left: solid white 1px; */
+  box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+  font-weight: 400;
+}
+.inProduction {
+  /* background-color: rgb(255, 136, 136); */
+  color: rgb(255, 255, 255);
+  /* text-decoration: underline;
+  text-decoration-color: rgb(148, 255, 148);
+  text-underline-offset: 2px; */
+}
+.inDevelopment {
+  /* background-color: rgb(255, 136, 136); */
+  color: rgb(255, 255, 255);
+  /* text-decoration: underline;
+  text-decoration-color: rgb(255, 208, 77);
+  text-underline-offset: 2px; */
+}
+.demoProject {
+  /* background-color: rgb(255, 136, 136); */
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .projectsContainer {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7rem;
+    top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    overflow-y: auto;
+    width: 95%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, .5);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    min-width: 0px;
+  }
+  .projectsContainer h1 {
+    color: black;
+    font-size: 3.5rem;
+    margin: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .projectsContainer p {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+  .projectsGrid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(1fr, 12);
+    object-fit: cover;
+    width: 100%;
+  }
+  .projectsGridItem {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    object-fit: cover;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 100%;
+    max-width: 350px;
+    min-width: 250px;
+    margin: 0 auto;
+  }
+}

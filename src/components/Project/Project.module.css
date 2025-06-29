@@ -3,10 +3,18 @@
   margin: 0;
   margin-top: 2rem;
 }
+.titleLogo {
+  max-width: 600px;
+  max-height: 120px;
+  margin: 0 auto;
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.6));
+
+}
 .date {
   font-size: 2rem;
-  margin: 1rem;
+  /* margin: 1rem; */
   margin-bottom: 0;
+  color: white;
 }
 .projectLink {
   margin: 1rem 0rem 2rem 0rem;
@@ -53,7 +61,8 @@
 }
 .description {
   font-size: 1.5rem;
-  margin-top: 2rem;;
+  margin-top: 2rem;
+  color: white;
 }
 .sectionContainer{
   margin-top: 2rem;
@@ -63,7 +72,8 @@
   flex-direction: column;
   justify-content: center;
   border-radius: 20px;
-  background-color: rgba(0, 92, 142, 0.245);
+  /* background-color: rgba(0, 92, 142, 0.245);
+  background: white; */
 }
 .sectionContainer ul {
   list-style-type: none;
@@ -78,11 +88,14 @@
   text-decoration: underline;
   padding-top: 0;
   margin-top: 1rem;
+  color: white;
+  text-decoration-color: rgb(0, 255, 166);
 }
 .techStack {
   font-size: 2rem;
-  font-weight: bold;
+  /* font-weight: bold; */
   display: inline block;
+  color: white;
 }
 .video {
   width: 100%;

@@ -1,0 +1,214 @@
+/* .resumeContainer {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 7rem;
+  top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: auto;
+  overflow-y: auto;
+  width: 65%;
+  min-width: 800px;
+  min-width: 500px;
+  background-color: black;
+  background: rgba(255, 255, 255, .8);
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  min-width: 1200px;
+  font-size: 1em;
+  padding: 1rem;
+}
+.resumeContainer h1 {
+  color: black;
+  font-size: 4rem;
+  margin: 0;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.resumeContainer p {
+  font-size: 2rem;
+  margin-top: 0;
+} */
+.resumeLink {
+  font-size: 1.75rem;
+  /* font-weight: bold; */
+  width: 300px;
+  color: white;
+  text-decoration: none;
+  transition: color 1s ease;
+  background-color: rgb(0, 41, 63);
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  margin: 0 auto;
+}
+.resumeLink:hover {
+  transform: scale(1.1);
+}
+.resumeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr 1fr;
+  grid-template-rows: 4;
+  width: calc(100% - 6rem);
+  margin: 3rem;
+  border-radius: 20px;
+  background-color: rgba(0, 92, 142, 0.245);
+
+}
+.resumeGrid li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+.resumeGridItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right: 40px;
+  margin: 0;
+}
+.resumeGridItem h2 {
+  margin-bottom: 0;
+  margin-left: 40px;
+  font-size: 1.75rem;
+  text-decoration: underline;
+}
+.skillsLabel {
+  margin:2rem 0 0 0;
+  font-size: 4rem;
+  grid-row: 1;
+  grid-column: 1 / 5;
+  line-height: 1.1;
+}
+
+.accomplishmentsGridItem {
+  grid-row: 2;
+  grid-column: 1 / 5;
+  margin-bottom: 0;
+  font-size: 2rem;
+  text-align: center;
+}
+.accomplishmentsGridItem ul {
+  font-size: 1.75rem;
+  text-align: center;
+  padding: 0 2rem 0 2rem;
+  font-weight: normal;
+}
+.accomplishmentsGridItem ul li {
+  font-size: 1.75rem;
+  line-height: 1;
+  text-align: center;
+  font-weight: light
+}
+.philosophy {
+  display: inline-block;
+  margin: 2rem;
+  grid-column: 1 / 5;
+  text-align: center;
+  font-size: 1.75rem;
+}
+.checkIcon {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  display: inline-block;
+  color: rgb(0, 45, 88);
+  margin: 2rem 0 1rem 0;
+}
+
+@media (max-width: 768px) {
+  .resumeContainer {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7rem;
+    top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 95%;
+    min-width: 0px;
+  }
+  .resumeContainer p {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+  .resumeGrid {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 1rem;
+    grid-template-rows: 4;
+    grid-template-columns: 1fr 1fr;
+  }
+  .skillsLabel {
+    font-size: 2.5rem;
+    grid-row: 1;
+    grid-column: 1 / 3;
+  }
+  .resumeGridItem {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    padding-right: 8vw;
+
+  }
+  .resumeGrid li {
+    list-style-type: none;
+    padding: 0;
+    margin: .5rem;
+    text-align: center;
+    background: rgba(0, 92, 142, 0.5);
+    font-size: 1.5rem;
+    border-radius: 5px;
+    padding: .25rem;
+  }
+  .resumeGrid p {
+    padding: 1rem;
+    margin: 0;
+  }
+  .frontEnd {
+    grid-row: 2;
+    grid-column: 1;
+  }
+  .backEnd {
+    grid-row: 2;
+    grid-column: 2;
+  }
+  .testingDeployment {
+    grid-row: 3;
+    grid-column: 1;
+  }
+  .tools {
+    grid-row: 3;
+    grid-column: 2;
+  }
+  .accomplishmentsGridItem {
+    padding: 1rem;
+    font-size: 1.75rem;
+    line-height: 1;
+  }
+  .accomplishmentsGridItem ul {
+    margin: 0;
+    padding: 0;
+  }
+  .accomplishmentsGridItem li {
+    font-size: 1.5rem;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+}

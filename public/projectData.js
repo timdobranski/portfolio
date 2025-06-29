@@ -1,6 +1,7 @@
 const projectData = [
   {
     name: 'Parkway Periodical',
+    titleLogo: '/images/projects/parkway-periodical/title-logo.png',
     date: 'Summer 2024',
     page: 'parkway-periodical',
     summary: 'School blog w/intro animation and custom post editor for school administrators.',
@@ -26,13 +27,13 @@ const projectData = [
   },
   {
     name: 'Lock Learner',
+    titleLogo: '/images/projects/lock-learner/title-logo.png',
     date: 'Fall 2023',
     page: 'lock-learner',
     summary: 'Web game to teach PE students how to open their combination locks',
     description: [`Lock Learner is a javascript web game made to teach PE students how to open their combination locks. It can be played
     with a mouse, but the best experience with this app is with touch-enabled devices. This project
-    represents my ongoing software engineering work for the La Mesa-Spring Valley School District. It was a lot of
-    fun to build!`, `The main challenges of this project were creating the manipulatable lock images and implementing an algorithm to
+    represents my ongoing software engineering work for the La Mesa-Spring Valley School District. It was a unique project and included a lot of interesting challenges.`, `The main challenges of this project were creating the manipulatable lock images and implementing an algorithm to
     register circular swipe patterns to manupulate the lock face.`, `The game guides the user from setting a combination to turning the
     correct direction for all three numbers. Once the third number is reached, the lock opens and the user is congratulated.`],
     tech: ['Next.js'],
@@ -67,6 +68,7 @@ const projectData = [
   },
   {
     name: 'String School',
+    titleLogo: '/images/projects/string-school/title-logo.png',
     date: 'Late 2024/Eary 2025',
     page: 'string-school',
     summary: 'Web & mobile app for music students with scheduling, progress-tracking and more',
@@ -115,13 +117,13 @@ const projectData = [
   },
   {
     name: 'Forgotten Alibi',
+    titleLogo: '/images/projects/forgottenalibi/title-logo.png',
     date: '2025',
     page: 'forgotten-alibi',
-    summary: 'Band website for my band, Forgotten Alibi',
+    summary: 'Band website for my band with custom on-site e-commerce store',
     description: [`This project was a special one—bringing our former band’s online presence to life in a way that
       reflects who we are and what we care about. From showcasing music and merch to sharing stories and updates,
-      the site is built to grow alongside us. It’s not just a website—it’s part of how we connect with people who
-      believe in what we’re doing.`],
+      the site is built to grow alongside us.`],
     tech: ['Next.js', 'Vercel'],
     images: [
       '/images/projects/forgottenalibi/fa-collage.jpg',
@@ -195,72 +197,72 @@ const projectData = [
     repoLink: {url:'https://github.com/timdobranski/atelier-design.git'},
     status: 'Demo Project'
   },
-  {
-    name: 'FitPass',
-    date: 'Spring 2023',
-    page: 'fitpass',
-    summary: 'Mobile web app to connect users to local fitness studio classes',
-    description: [`This is a mobile-first web app for users to connect with local fitness studio classes. Users or fitness studios can both sign
-    up to either host or attend classes. Features include a search function, a map with geolocation, a calendar, and a booking system.`, `This project
-    was developed in a team of seven, and each team member worked on crucial front-end and back-end features.`, `My responsibilities included the
-    home page for fitness studio login as well as pages to view all studio locations and all studio classes currently stored in the database. As a
-    stretch goal, I was able to also implement email confirmation on user class signup.`, `Challenges of this project included learning how to do
-    familiar things in a new framework. The team used Next.js, Typescript, Supabase, and Tailwind, all four of which were new to me. The experience
-    helped me develop a stronger level of comfort in working with new technologies.`],
-    tech: ['Next.js', 'Typescript', 'Supabase', 'Tailwind', 'Sendgrid API'],
-    images: [
-      '/images/projects/fitpass/fitpass.png', //'/images/projects/fitpass/fitpass-1.png
-      '/images/projects/fitpass/fitpass-1.png',
-      '/images/projects/fitpass/fitpass-2.png',
-      '/images/projects/fitpass/fitpass-3.png',
-      '/images/projects/fitpass/fitpass-4.png',
-      '/images/projects/fitpass/fitpass-5.png',
-      '/images/projects/fitpass/fitpass-6.png',
-      '/images/projects/fitpass/fitpass-7.png',
-      '/images/projects/fitpass/fitpass-8.png',
-    ],
-    deployLink: {url:'', text: 'No deployment available'},
-    repoLink: {url:'https://github.com/rpp2210-BOC-Aquaforce/FitnessPass', text: 'View Repo On Github'},
-    status: 'School Project'
-  },
-  {
-    name: 'Atelier Apparel',
-    date: 'Spring 2023',
-    page: 'atelier-apparel',
-    summary: 'Ecommerce portal for a fictional apparel company',
-    description: [`This project is a front-end e-commerce website for a fictional clothing retailer. It was build in a team of three,
-    with each team member handling a different section of the site.`, `My responsibilities included the related products carousel and a
-    'My Outfit' carousel for users to add and save their favorite items. As a stretch goal, I was also able to implement a dark mode
-    toggle`, `Challenges for this project included learning to use local browser storage to cache results from the API and learning to
-    toggle stylesheets based on state for the light/dark mode.`],
-    tech: ['React', 'Node.js', 'Express', 'AWS'],
-    images: [
-      '/images/projects/atelier-apparel/atelier-logo.png',
-      '/images/projects/atelier-apparel/light-mode.webp',
-      '/images/projects/atelier-apparel/dark-mode.webp',
-    ],
-    deployLink: {url:'', text: 'See It Deployed Here'},
-    repoLink: {url:'https://github.com/RPP2210-Wraith/Atelier'},
-    status: 'School Project'
-  },
-  {
-    name: 'Portfolio',
-    date: 'Fall 2023',
-    page: 'portfolio',
-    summary: 'This page!',
-    description: [`This project represents my first major attempt at improving my CSS skills. I wanted to create a portfolio that was attention-grabbing,
-    radical in design, and with enough technical styling challenges to help me grow as a developer.`, `I wanted to use as few styling libraries as possible,
-    to ensure that I was building a strong foundation in core CSS principles. The only library I need to rely on was Framer Motion for some of the
-    transitions.`, `The main challenges of this project were developing a quick and efficient workflow for styling, and learning Next.js's new router behavior
-    to conditionally render transitions.`],
-    tech: ['Next.js', 'Framer Motion'],
-    images: [
-      '/images/projects/portfolio/portfolio-preview.webp',
-    ],
-    deployLink: {url:'/', text: 'TimDobranski.com'},
-    repoLink: {url:'https://github.com/timdobranski/portfolio.git', text: ''},
-    status: 'In Production'
-  }
+  // {
+  //   name: 'FitPass',
+  //   date: 'Spring 2023',
+  //   page: 'fitpass',
+  //   summary: 'Mobile web app to connect users to local fitness studio classes',
+  //   description: [`This is a mobile-first web app for users to connect with local fitness studio classes. Users or fitness studios can both sign
+  //   up to either host or attend classes. Features include a search function, a map with geolocation, a calendar, and a booking system.`, `This project
+  //   was developed in a team of seven, and each team member worked on crucial front-end and back-end features.`, `My responsibilities included the
+  //   home page for fitness studio login as well as pages to view all studio locations and all studio classes currently stored in the database. As a
+  //   stretch goal, I was able to also implement email confirmation on user class signup.`, `Challenges of this project included learning how to do
+  //   familiar things in a new framework. The team used Next.js, Typescript, Supabase, and Tailwind, all four of which were new to me. The experience
+  //   helped me develop a stronger level of comfort in working with new technologies.`],
+  //   tech: ['Next.js', 'Typescript', 'Supabase', 'Tailwind', 'Sendgrid API'],
+  //   images: [
+  //     '/images/projects/fitpass/fitpass.png', //'/images/projects/fitpass/fitpass-1.png
+  //     '/images/projects/fitpass/fitpass-1.png',
+  //     '/images/projects/fitpass/fitpass-2.png',
+  //     '/images/projects/fitpass/fitpass-3.png',
+  //     '/images/projects/fitpass/fitpass-4.png',
+  //     '/images/projects/fitpass/fitpass-5.png',
+  //     '/images/projects/fitpass/fitpass-6.png',
+  //     '/images/projects/fitpass/fitpass-7.png',
+  //     '/images/projects/fitpass/fitpass-8.png',
+  //   ],
+  //   deployLink: {url:'', text: 'No deployment available'},
+  //   repoLink: {url:'https://github.com/rpp2210-BOC-Aquaforce/FitnessPass', text: 'View Repo On Github'},
+  //   status: 'School Project'
+  // },
+  // {
+  //   name: 'Atelier Apparel',
+  //   date: 'Spring 2023',
+  //   page: 'atelier-apparel',
+  //   summary: 'Ecommerce portal for a fictional apparel company',
+  //   description: [`This project is a front-end e-commerce website for a fictional clothing retailer. It was build in a team of three,
+  //   with each team member handling a different section of the site.`, `My responsibilities included the related products carousel and a
+  //   'My Outfit' carousel for users to add and save their favorite items. As a stretch goal, I was also able to implement a dark mode
+  //   toggle`, `Challenges for this project included learning to use local browser storage to cache results from the API and learning to
+  //   toggle stylesheets based on state for the light/dark mode.`],
+  //   tech: ['React', 'Node.js', 'Express', 'AWS'],
+  //   images: [
+  //     '/images/projects/atelier-apparel/atelier-logo.png',
+  //     '/images/projects/atelier-apparel/light-mode.webp',
+  //     '/images/projects/atelier-apparel/dark-mode.webp',
+  //   ],
+  //   deployLink: {url:'', text: 'See It Deployed Here'},
+  //   repoLink: {url:'https://github.com/RPP2210-Wraith/Atelier'},
+  //   status: 'School Project'
+  // },
+  // {
+  //   name: 'Portfolio',
+  //   date: 'Fall 2023',
+  //   page: 'portfolio',
+  //   summary: 'This page!',
+  //   description: [`This project represents my first major attempt at improving my CSS skills. I wanted to create a portfolio that was attention-grabbing,
+  //   radical in design, and with enough technical styling challenges to help me grow as a developer.`, `I wanted to use as few styling libraries as possible,
+  //   to ensure that I was building a strong foundation in core CSS principles. The only library I need to rely on was Framer Motion for some of the
+  //   transitions.`, `The main challenges of this project were developing a quick and efficient workflow for styling, and learning Next.js's new router behavior
+  //   to conditionally render transitions.`],
+  //   tech: ['Next.js', 'Framer Motion'],
+  //   images: [
+  //     '/images/projects/portfolio/portfolio-preview.webp',
+  //   ],
+  //   deployLink: {url:'/', text: 'TimDobranski.com'},
+  //   repoLink: {url:'https://github.com/timdobranski/portfolio.git', text: ''},
+  //   status: 'In Production'
+  // }
 ]
 
 export default projectData;
