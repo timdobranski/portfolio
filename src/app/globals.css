@@ -37,7 +37,9 @@ a {
   align-items: space-around;
   height: auto;
   overflow-y: auto;
-  width: 65%;
+  overflow: visible;
+  width: 1200px;
+  max-width: 90%;
   /* background-color: black; */
   /* background: rgba(255, 255, 255, .8); */
   /* background: white; */

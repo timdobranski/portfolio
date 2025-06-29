@@ -3,12 +3,13 @@ import styles from './Footer.module.css'; // Assuming you have a CSS file for st
 
 export default function Footer() {
   return (
+    <div className={styles.footerContainer}>
 <div className={styles.footerGrid}>
   <Link href='/' className={styles.footerLink}>
     <h2>HOME</h2>
   </Link>
   <Link href='/projects' className={styles.footerLink}>
-    <h2>SOFTWARE</h2>
+    <h2>APPS</h2>
   </Link>
     <Link href='/music' className={styles.footerLink}>
     <h2>MUSIC</h2>
@@ -20,7 +21,7 @@ export default function Footer() {
     <h2>3D DESIGN</h2>
   </Link>
     <Link href='/connect' className={styles.footerLink}>
-    <h2>CONTACT</h2>
+    <h2>CONNECT</h2>
   </Link>
   {/* <Link href='resume' className={styles.footerLink}>
     <h2>RESUME</h2>
@@ -32,5 +33,6 @@ export default function Footer() {
     <h2>CONNECT</h2>
   </Link> */}
 </div>
+    </div>
   )
 }

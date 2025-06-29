@@ -42,44 +42,42 @@ export default function Projects() {
 
   return (
     <div className='pageContentContainer'>
-      <h1 className={styles.projectsHeader}>WEBSITES & APPS</h1>
-      <p className={styles.projectsSubheader}>Click on a project below to learn more about it</p>
-      {/* <h3 className={styles.subtitle}>IN PRODUCTION</h3> */}
+      <h1 className={styles.projectsHeader}>WEB & MOBILE APPS</h1>
+      <p className={styles.projectsSubheader}>
+        Check out my personal software development projects below. While my schedule and current employment contract limit my availability for freelance work,
+        exceptions can be made for the right opportunity.
+      </p>
       <div className={styles.projectsGrid}>
 
         {projectData.map((project, index) => {
           return (
             <div className={styles.projectsGridItem} key={index}>
-              <div className={`${styles.thumbnailWrapper} ${styles.hoverMessage}`} key={index}>
 
-                <Link href={`projects/${project.page}`}>
+
+              <div className={styles.thumbnailWrapper}>
+                <div className={`${styles.hoverMessage}`} key={index}>
+                  {project.summary}
+                </div>
+                <Link href={`projects/${project.page}`} className={styles.projectLink}>
+
+                  {/* <Image className={styles.projectThumb} src={project.images[0]} fill='true' priority='true'  alt={'project homepage thumbnail'}/> */}
                   {project.images.length &&
                   <>
-                  <Image className={styles.projectThumb} src={project.images[0]} fill='true' priority='true'  alt={'project homepage thumbnail'}/>
-                  <p className={`
-                ${styles.projectStatus}
-                ${project.status === 'In Production' && styles.inProduction}
-                ${project.status === 'In Development' && styles.inDevelopment}
-                ${(project.status === 'Demo Project' || project.status === 'School Project') && styles.demoProject}
-
-                `}>{project.status}</p>
+                    <img className={styles.projectThumb} src={project.images[0]} priority='true'  alt={'project homepage thumbnail'}/>
+                    <p className={`
+                      ${styles.projectStatus}
+                      ${project.status === 'In Production' && styles.inProduction}
+                      ${project.status === 'In Development' && styles.inDevelopment}
+                      ${(project.status === 'Demo Project' || project.status === 'School Project') && styles.demoProject}
+                      `}>{project.status}</p>
                   </>
                   }
-                  <p className={styles.hoverText}>{project.summary}</p>
                 </Link>
-              </div>
-              <h3 className={styles.projectTitle}>{project.name}</h3>
-              {/* <p className={`
-                ${styles.projectStatus}
-                ${project.status === 'In Production' && styles.inProduction}
-                ${project.status === 'In Development' && styles.inDevelopment}
-                ${project.status === 'Demo Project' || project.status === 'School Project' && styles.demoProject}
-
-                `}>{project.status}</p> */}
             </div>
+              <h3 className={styles.projectTitle}>{project.name}</h3>
+        </div>
           )
         })}
-
 
       </div>
     </div>

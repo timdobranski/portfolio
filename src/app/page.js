@@ -17,29 +17,36 @@ export default function Home() {
       header: 'CONNECT',
       text: ['Select this ring to', 'connect with me'],
       color: 'yellowGlow',
-      link: '/Rings/Connect',
+      link: '/connect',
       id: 'ring0'
     },
     {
-      header: 'WELCOME!',
-      text: ['I\'m Tim and I develop', ' websites & apps. Select', 'this ring to see my work'],
+      header: 'APPS',
+      text: ['Select this ring to', 'see my web and mobile', 'software projects'],
       color: 'greenGlow',
-      link: '/Rings/Projects',
+      link: '/projects',
       id: 'ring1'
     },
     {
-      header: 'RESUME',
-      text: ['Select this ring to see my ', 'expanded resume'],
+      header: 'MUSIC',
+      text: ['Select this ring to see my ', 'musical projects'],
       color: 'redGlow',
-      link: '/Rings/Resume',
+      link: '/resume',
       id: 'ring2'
     },
     {
-      header: 'ABOUT ME',
-      text: ['Select this ring to learn', 'more about my', 'background'],
+      header: 'TEACHING',
+      text: ['Select this ring to learn', 'more about my guitar', 'lessons'],
       color: 'blueGlow',
-      link: '/Rings/About',
+      link: '/string-school',
       id: 'ring3'
+    },
+    {
+      header: '3D DESIGN',
+      text: ['Select this ring to', 'see the art I create', 'from 3D models and', 'woodworking'],
+      color: 'yellowGlow',
+      link: '/connect',
+      id: 'ring0'
     },
   ]
 

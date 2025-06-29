@@ -120,7 +120,7 @@ const projectData = [
     titleLogo: '/images/projects/forgottenalibi/title-logo.png',
     date: '2025',
     page: 'forgotten-alibi',
-    summary: 'Band website for my band with custom on-site e-commerce store',
+    summary: 'Website for my band with custom on-site e-commerce store',
     description: [`This project was a special one—bringing our former band’s online presence to life in a way that
       reflects who we are and what we care about. From showcasing music and merch to sharing stories and updates,
       the site is built to grow alongside us.`],

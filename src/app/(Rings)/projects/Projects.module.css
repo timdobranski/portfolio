@@ -11,9 +11,7 @@
   height: auto;
   overflow-y: auto;
   width: 65%;
-  /* background-color: black !important; */
   background: rgba(255, 255, 255, .5);
-  /* border-radius: 30px; */
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   min-width: 750px;
 }
@@ -24,7 +22,10 @@
 
 }
 .projectsSubheader {
-
+  width: 1000px;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-bottom: 4rem;
 }
 .projectTitle {
   position: relative;
@@ -47,92 +48,85 @@
 .projectsGrid{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto; /* Adjust based on content */
+  grid-template-rows: auto;
   justify-content: center;
   object-fit: cover;
   width: 100%;
-  padding: 0 1rem 0 1rem;
+  gap: 2rem;
+  overflow: visible;
 }
 .projectsGridItem {
-  /* border-radius: 5px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   align-items: center;
   position: relative;
-  height: 300px;
-  margin: 1rem 1rem 1rem 1rem;
-  /* border: solid red 1px; */
-
-}
-.projectThumb {
-  position: relative;
   width: 100%;
-  height: 500px;
-  /* border-radius: 5px; */
-  overflow: hidden;
-  object-fit: cover;
-  cursor: pointer;
-  border: solid white 2px;
+  /* height: 300px; */
+  height: fit-content;
+  /* margin: 1rem 1rem 1rem 1rem; */
+  overflow: visible;
+  /* border: solid red 2px; */
+}
+.projectLink {
+  box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .thumbnailWrapper {
   position: relative;
   width: 100%;
-  height: 100%;
-  /* border-radius: 5px; */
-  overflow: hidden;
-  object-fit: cover;
   cursor: pointer;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 1);
-  /* border: solid red 1px; */
+  aspect-ratio: 16 / 9;
+  border: solid white 2px;
+  transition: transform .3s ease;
 }
-.projectThumb img {
+.projectThumb {
+  position: relative;
   width: 100%;
-  height: auto;
+  cursor: pointer;
   object-fit: cover;
   position: relative;
-  top: -30px;
-  /* border: solid red 4px; */
-
+  aspect-ratio: 16/9;
+  /* border: solid 1px white; */
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 }
 .hoverMessage {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  /* border-radius: 20px; */
-  overflow: hidden;
-  object-fit: cover;
-  cursor: pointer;
-
-}
-.hoverMessage:hover .projectThumb img {
-  filter: brightness(0.2);
-}
-.hoverMessage:hover .hoverText {
-  display: block;
-}
-.hoverText {
   position: absolute;
-  top:0 !important;
-  width: 100%;
-  height: 100%;
-  display: none;
-  color: white;
-  font-size: 1.75rem;
-  text-align: center;
-  padding: 30px;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-.hoverMessage:hover .hoverText {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  object-fit: cover;
   cursor: pointer;
+  z-index: 1;
+  opacity: 0;
+  color: white;
+  padding: .5rem 1rem;
+  /* border: solid yellow 2px; */
 }
+
+.hoverMessage:hover {
+  opacity: 1;
+  /* transition: opacity .3s ease; */
+}
+.thumbnailWrapper:hover .projectThumb {
+  filter: brightness(0.3) blur(2px);
+}
+.projectsGridItem:hover .thumbnailWrapper {
+  transform: scale(1.05) !important;
+}
+
+
 .link {
   position: relative;
 }
@@ -162,21 +156,13 @@
   font-weight: 400;
 }
 .inProduction {
-  /* background-color: rgb(255, 136, 136); */
   color: rgb(255, 255, 255);
-  /* text-decoration: underline;
-  text-decoration-color: rgb(148, 255, 148);
-  text-underline-offset: 2px; */
 }
 .inDevelopment {
-  /* background-color: rgb(255, 136, 136); */
   color: rgb(255, 255, 255);
-  /* text-decoration: underline;
-  text-decoration-color: rgb(255, 208, 77);
-  text-underline-offset: 2px; */
+
 }
 .demoProject {
-  /* background-color: rgb(255, 136, 136); */
   color: white;
 }
 
