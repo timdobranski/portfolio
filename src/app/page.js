@@ -16,7 +16,7 @@ export default function Home() {
     {
       header: 'CONNECT',
       text: ['Select this ring to', 'connect with me'],
-      color: 'yellowGlow',
+      color: 'purpleGlow',
       link: '/connect',
       id: 'ring0',
       icon: faMessage
@@ -25,7 +25,7 @@ export default function Home() {
       header: 'APPS',
       text: ['Select this ring to', 'see my web and mobile', 'software projects'],
       color: 'greenGlow',
-      link: '/projects',
+      link: '/apps',
       id: 'ring1',
       icon: faCode
     },
@@ -38,10 +38,10 @@ export default function Home() {
       icon: faMusic
     },
     {
-      header: 'TEACHING',
+      header: 'LESSONS',
       text: ['Select this ring to learn', 'more about my guitar', 'lessons'],
       color: 'blueGlow',
-      link: '/string-school',
+      link: '/lessons',
       id: 'ring3',
       icon: faGraduationCap
     },
@@ -49,8 +49,8 @@ export default function Home() {
       header: '3D DESIGN',
       text: ['Select this ring to', 'see the art I create', 'from 3D models and', 'woodworking'],
       color: 'yellowGlow',
-      link: '/connect',
-      id: 'ring0',
+      link: '/3d-design',
+      id: 'ring4',
       icon: faWrench
     },
   ]
@@ -76,22 +76,33 @@ export default function Home() {
     <main id={styles.home}>
       <AnimatePresence >
 
-        <svg style={{position: 'absolute', width: 0, height: 0}}>
+        {/* <svg style={{position: 'absolute', width: 0, height: 0}}>
           <filter id="water">
             <feTurbulence  id='sea-filter' baseFrequency='0.005' numOctaves="5" seed='0' />
             <feDisplacementMap  id='displacement' in="SourceGraphic" in2='noise' scale="7"/>
           </filter>
           <animate xlinkHref="#sea-filter" attributeName="baseFrequency" dur="90s" keyTimes="0;0.5;1" values="0.02 0.02;0.03 0.03;0.02 0.02" repeatCount="indefinite"/>
 
-        </svg>
+        </svg> */}
         <div className={styles.homeContainer} key='homeContainer'>
           <FontAwesomeIcon icon={faChevronLeft} className={styles.leftNav} onClick={handlePreviousRing}/>
           <FontAwesomeIcon icon={faChevronRight} className={styles.rightNav} onClick={handleNextRing} />
-          <div className='backgroundRing yellowGlow m c1'></div>
-          <div className='backgroundRing blueGlow m c2'></div>
-          <div className='backgroundRing redGlow l c3'></div>
-          <div className='backgroundRing greenGlow m c4'></div>
-          <div className='backgroundRing blueGlow m c5'></div>
+          <div className='backgroundRing yellowGlow m c1'>
+            <FontAwesomeIcon icon={faWrench} className={styles.ringIcon} />
+
+          </div>
+          <div className='backgroundRing purpleGlow m c2'>
+            <FontAwesomeIcon icon={faMessage} className={styles.ringIcon} />
+          </div>
+          <div className='backgroundRing redGlow l c3'>
+            <FontAwesomeIcon icon={faMusic} className={styles.ringIcon} />
+          </div>
+          <div className='backgroundRing greenGlow m c4'>
+            <FontAwesomeIcon icon={faCode} className={styles.ringIcon} />
+          </div>
+          <div className='backgroundRing blueGlow m c5'>
+            <FontAwesomeIcon icon={faGraduationCap} className={styles.ringIcon} />
+          </div>
           <div className={styles.ringGrid}>
 
 
@@ -111,20 +122,28 @@ export default function Home() {
               }
 
               return (
+                <>
 
-                <div onClick={() => handleRingClick(ring.id, ring.link)} key={ring.link}
-                  className={`${styles.ring} ${styles[ring.color]} ${ringClass} ${zoomedRing === ring.id ? styles.ringZoom : ''}`}
-                  id={ring.id}>
-                  <div className={styles.ringContainer}>
-                    {ring.icon && <FontAwesomeIcon icon={ring.icon} className={styles.ringIcon} />}
-                    <h1 className={`${styles.ringHeader} ${textClass}`}>{ring.header}</h1>
-                    {ring.text.map((text, i) => {
-                      return (
-                        <p className={`${styles.ringText} ${textClass}`} key={i}>{text}</p>
-                      )
-                    })}
+                  <div onClick={() => handleRingClick(ring.id, ring.link)} key={ring.link}
+                    className={`${styles.ring} ${styles[ring.color]} ${ringClass} ${zoomedRing === ring.id ? styles.ringZoom : ''}`}
+                    id={ring.id}>
+
+                    <div className={styles.ringContainer}>
+
+                      {ring.icon && <FontAwesomeIcon icon={ring.icon} className={styles.ringIcon} />}
+                      <h1 className={`${styles.ringHeader} ${textClass}`}>{ring.header}</h1>
+                      {ring.text.map((text, i) => {
+                        return (
+                          <p className={`${styles.ringText} ${textClass}`} key={i}>{text}</p>
+                        )
+                      })}
+
+                    </div>
+
+
                   </div>
-                </div>
+                   <div className={styles.greenGlowBorder}></div>
+                </>
               );
             })}
           </div>

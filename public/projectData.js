@@ -38,6 +38,7 @@ const projectData = [
     correct direction for all three numbers. Once the third number is reached, the lock opens and the user is congratulated.`],
     tech: ['Next.js'],
     images: [
+      `/images/projects/lock-learner/lockLearner0.png`,
       `/images/projects/lock-learner/lockLearner2.webp`,
       `/images/projects/lock-learner/lockLearner1.webp`,
       `/images/projects/lock-learner/lockLearner3.webp`,
@@ -48,15 +49,17 @@ const projectData = [
   },
   {
     name: 'Parkway Schedule',
+    titleLogo: '/images/projects/parkway-schedule/title-logo.png',
     date: 'Summer 2024',
     page: 'parkway-schedule',
     summary: 'Interactive schedule for students and staff with todos functionality',
-    description: [`The Parkway Schedule app was build when the 2024-25 school year started and it became apparent
-      that navigating the school's new schedule had become a concern.`, `The new schedule includes branching paths for
+    description: [`The Parkway Schedule app was built when the 2024-25 school year started and it became apparent
+      that navigating the school's complicated new schedule had become a concern.`, `The new schedule includes branching paths for
       staff and students with different lunch periods, prep periods, etc.`, `The app allows you to input your schedule parameters
       and generate your personalized schedule for each day of the week. From there you can add todos to your schedule, which are stored in local storage`],
     tech: ['Next.js'],
     images: [
+      `/images/projects/parkway-schedule/schedule-thumb.png`,
       `/images/projects/parkway-schedule/3.webp`,
       `/images/projects/parkway-schedule/1.png`,
       `/images/projects/parkway-schedule/2.png`,
@@ -69,7 +72,7 @@ const projectData = [
   {
     name: 'String School',
     titleLogo: '/images/projects/string-school/title-logo.png',
-    date: 'Late 2024/Eary 2025',
+    date: '2024-2025',
     page: 'string-school',
     summary: 'Web & mobile app for music students with scheduling, progress-tracking and more',
     description: [`This is both a web app and a mobile app for iOS and Android for guitar students. Features include Google sign-in, scheduling/rescheduling, payment tracking,

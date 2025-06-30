@@ -1,7 +1,7 @@
 .gallery {
   width: 100%;
   padding: 1rem;
-  background: rgba(0, 0, 0, 0.5);
+  /* background: rgba(0, 0, 0, 0.3); */
   height: fit-content;
 }
 
@@ -14,7 +14,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: solid white 1px; */
+  /* border: solid rgb(0, 0, 0) 1px; */
 }
 .mainImageContainer img {
   cursor: pointer;
@@ -23,6 +23,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+
 }
 .thumbnails img:hover {
   cursor: pointer;
@@ -34,7 +35,7 @@
   height: 120px;
   overflow: hidden;
   border: solid white 1px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
   transition: transform 0.3s ease;
   /* border-radius: 8px; */
 }
@@ -94,10 +95,11 @@
   }
 
   .thumbnailContainer {
-    height: 80px;
+    /* height: 80px; */
+    aspect-ratio: 9 / 16;
     width: 100%;
-    border-radius: 5px;
-    border: solid rgb(0, 46, 87) 3px;
+    /* border-radius: 5px; */
+    /* border: solid rgb(0, 46, 87) 3px; */
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   }
   .thumbnails {

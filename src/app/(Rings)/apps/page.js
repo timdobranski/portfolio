@@ -4,6 +4,8 @@ import styles from './Projects.module.css'
 import Image from 'next/image';
 import Link from 'next/link';
 import projectData from 'public/projectData';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCode } from "@fortawesome/free-solid-svg-icons";
 
 export default function Projects() {
 
@@ -42,7 +44,11 @@ export default function Projects() {
 
   return (
     <div className='pageContentContainer'>
-      <h1 className={styles.projectsHeader}>WEB & MOBILE APPS</h1>
+      <div className={styles.titleWrapper}>
+        <FontAwesomeIcon icon={faCode} className={styles.codeIcon} />
+        <h1 className={styles.projectsHeader}>WEB & MOBILE APPS</h1>
+        {/* <FontAwesomeIcon icon={faCode} className={styles.codeIcon} /> */}
+      </div>
       <p className={styles.projectsSubheader}>
         Check out my personal software development projects below. While my schedule and current employment contract limit my availability for freelance work,
         exceptions can be made for the right opportunity.
@@ -58,9 +64,8 @@ export default function Projects() {
                 <div className={`${styles.hoverMessage}`} key={index}>
                   {project.summary}
                 </div>
-                <Link href={`projects/${project.page}`} className={styles.projectLink}>
+                <Link href={`apps/${project.page}`} className={styles.projectLink}>
 
-                  {/* <Image className={styles.projectThumb} src={project.images[0]} fill='true' priority='true'  alt={'project homepage thumbnail'}/> */}
                   {project.images.length &&
                   <>
                     <img className={styles.projectThumb} src={project.images[0]} priority='true'  alt={'project homepage thumbnail'}/>

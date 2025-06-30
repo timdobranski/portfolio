@@ -78,7 +78,7 @@ BACKGROUND RINGS - SIZES, THEN POSITION (LEFT, RIGHT, CENTER)
   animation: pulsate 3s infinite;
   animation-name: pulsate;
   z-index: -1;
-  filter: blur(5px);
+  /* filter: blur(5px); */
 }
 .l {
   width: 5vw;
@@ -114,22 +114,43 @@ BACKGROUND RINGS - SIZES, THEN POSITION (LEFT, RIGHT, CENTER)
 .c1 {
   top: 35%;
   left: 80%;
+  filter: blur(2px) !important;
+}
+.c1 svg {
+  color: rgb(255, 200, 0);
 }
 .c2 {
   top: 78%;
   left: 75%;
+  filter: blur(4px) !important;
+}
+.c2 svg {
+  color: rgb(70, 0, 176);
 }
 .c3 {
   top: 78%;
   left: 25%;
+  filter: blur(3px) !important;
+}
+.c3 svg {
+  color: rgb(255, 0, 0);
+  left: 45%;
 }
 .c4 {
   top: 25%;
   left: 15%;
+  filter: blur(2px) !important;
+}
+.c4 svg {
+  color: rgb(124, 255, 133);
 }
 .c5 {
   top: 34%;
   left: 28%;
+  filter: blur(2px) !important;
+}
+.c5 svg {
+    color: rgb(4, 127, 180);
 }
 .r1 {
   top: 34%;
@@ -202,6 +223,11 @@ ANIMATIONS
   box-shadow: 0 0 100px #ea0027;
   animation: pulsateRed 3s infinite, pulsate 7s infinite;
 }
+.purpleGlow {
+  border: solid #5500ff;
+  box-shadow: 0 0 100px #7900ea;
+  animation: pulsatePurple 3s infinite, pulsate 3s infinite;
+}
 .overlay {
   position: fixed;
   top: 0;
@@ -210,7 +236,7 @@ ANIMATIONS
   height: 100vh;
   background-color: black;
   z-index: -1;
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 
 

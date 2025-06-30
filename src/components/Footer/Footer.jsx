@@ -8,14 +8,14 @@ export default function Footer() {
   <Link href='/' className={styles.footerLink}>
     <h2>HOME</h2>
   </Link>
-  <Link href='/projects' className={styles.footerLink}>
+  <Link href='/apps' className={styles.footerLink}>
     <h2>APPS</h2>
   </Link>
     <Link href='/music' className={styles.footerLink}>
     <h2>MUSIC</h2>
   </Link>
-    <Link href='/string-school' className={styles.footerLink}>
-    <h2>TEACHING</h2>
+    <Link href='/lessons' className={styles.footerLink}>
+    <h2>LESSONS</h2>
   </Link>
     <Link href='/3d-design' className={styles.footerLink}>
     <h2>3D DESIGN</h2>
