@@ -110,13 +110,22 @@ export default function Home() {
               let ringClass;
               let textClass = "";  // Initialize an empty string for text class
 
+              const prev1 = (activeRing - 1 + rings.length) % rings.length;
+              const prev2 = (activeRing - 2 + rings.length) % rings.length;
+              const next1 = (activeRing + 1) % rings.length;
+              const next2 = (activeRing + 2) % rings.length;
+
               if (index === activeRing) {
                 ringClass = styles.activeRing;
-                textClass = styles['fade-in-text'];  // Assign the fade-in-text class to active ring
-              } else if (index === (activeRing + 1) % rings.length) {
+                textClass = styles['fade-in-text'];
+              } else if (index === next1) {
                 ringClass = styles.inactiveRight;
-              } else if (index === (activeRing - 1 + rings.length) % rings.length) {
+              } else if (index === next2) {
+                ringClass = styles.farRightInactive;
+              } else if (index === prev1) {
                 ringClass = styles.inactiveLeft;
+              } else if (index === prev2) {
+                ringClass = styles.farLeftInactive;
               } else {
                 ringClass = styles.hidden;
               }
