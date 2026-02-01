@@ -19,6 +19,109 @@
 .contactInfo {
 
 }
+
+.formOuter {
+  width: 92%;
+  margin: 1.5rem auto 2rem auto;
+  padding: 1.5rem;
+  border-radius: 30px;
+  border: solid rgba(255, 255, 255, 0.725) 1px;
+  background-color: rgba(68, 136, 173, 0.476);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: white;
+  text-align: left;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(0, 41, 63, 0.75);
+  color: white;
+  padding: 0.75rem 0.9rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.button {
+  border: none;
+  border-radius: 10px;
+  padding: 0.85rem 1.25rem;
+  background-color: rgb(0, 41, 63);
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.button:hover {
+  transform: scale(1.03);
+}
+
+.button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.statusSending,
+.statusSuccess,
+.statusError {
+  margin: 0;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.statusSending {
+  color: white;
+}
+
+.statusSuccess {
+  color: #1cfc84;
+}
+
+.statusError {
+  color: #ff9fb0;
+}
+
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 @media (max-width: 768px) {
   .connectContainer {
     position: relative;
@@ -74,6 +177,21 @@
     margin: 0 auto;
     /* border: solid red 2px; */
     font-size: 1.25rem !important;
+  }
+
+  .formOuter {
+    width: 92%;
+    margin: 1rem auto 1.5rem auto;
+    padding: 1rem;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
 .linkedIn, .github {

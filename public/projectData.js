@@ -138,6 +138,24 @@ const projectData = [
     repoLink: { url: '', text: 'Repo Is Private' },
     status: 'In Production'
   },
+  {
+    name: 'Early Times Music',
+    date: 'Winter 2026',
+    page: 'early-times-music',
+    summary: 'Archive of the 2000s San Diego emo/post-hardcore music scene',
+    description: [
+      `Early Times Music is an archive project dedicated to the 2000s San Diego emo/post-hardcore scene. The goal is to preserve the history and culture around the music in a clean, searchable format that’s easy to explore.`,
+      `The archive spans bands, shows, merch, and venues—capturing the people, places, and releases that defined the era.`,
+      `Built on Next.js and deployed through Vercel. Completed Winter 2026.`,
+    ],
+    tech: ['Next.js', 'Vercel'],
+    images: [
+      '/images/projects/early-times-music/etm-1.webp',
+    ],
+    deployLink: { url: 'https://www.forgottenalibi.com', text: 'See It In Action'},
+    repoLink: { url: '', text: 'Repo Is Private' },
+    status: 'In Production'
+  },
   // {
   //   name: 'Canine Corners',
   //   date: 'Fall 2023',
