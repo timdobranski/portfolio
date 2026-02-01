@@ -1,6 +1,7 @@
 .pageWrapper {
-  /* border: solid red 2px; */
+  width: 100%;
 }
+
 .pageContentContainer {
   width: 1200px;
   max-width: 90%;
@@ -16,4 +17,77 @@
 .whiteText {
   color: white;
   font-size: 1.25rem;
+}
+
+.hero {
+  width: 92%;
+  margin: 1.25rem auto 2rem auto;
+  padding: 1.5rem;
+  border-radius: 30px;
+  background-color: rgba(0, 92, 142, 0.399);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.logoLink {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.logo {
+  height: auto;
+  width: min(480px, 88vw);
+}
+
+.cta {
+  display: inline-block;
+  margin: 0.75rem auto 0 auto;
+  padding: 0.75rem 1.1rem;
+  border-radius: 10px;
+  background-color: rgb(0, 41, 63);
+  color: white;
+  width: fit-content;
+  transition: transform 0.2s ease;
+}
+
+.cta:hover {
+  transform: scale(1.05);
+}
+
+.sliderSection {
+  width: 96%;
+  margin: 0 auto 4.5rem auto;
+  padding: 1.5rem;
+  border-radius: 30px;
+  background-color: rgba(0, 92, 142, 0.399);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+}
+
+.sectionTitle {
+  color: white;
+  margin: 0 0 0.75rem 0;
+  font-size: 2rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .pageContentContainer {
+    max-width: 96%;
+  }
+
+  .hero,
+  .sliderSection {
+    width: 100%;
+    padding: 1.1rem;
+  }
+
+  .logo {
+    width: min(420px, 84vw);
+  }
 }

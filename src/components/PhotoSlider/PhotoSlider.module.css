@@ -1,0 +1,103 @@
+.root {
+  width: 100%;
+}
+
+.frame {
+  position: relative;
+  width: min(800px, 92vw);
+  margin: 0 auto;
+  border-radius: 18px;
+  overflow: hidden;
+  background-color: rgba(0, 41, 63, 0);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.35);
+}
+
+.image {
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .frame {
+    width: 100%;
+  }
+
+  .image {
+    object-fit: contain;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.controls {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+  pointer-events: none;
+}
+
+.navButton {
+  pointer-events: auto;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 2px solid rgb(255, 255, 255);
+  background: rgba(0, 0, 0, 0.35);
+  color: white;
+  font-size: 28px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.navButton:hover {
+  transform: scale(1.05);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.navButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.dots {
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.dot,
+.dotActive {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+.dotActive {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.empty {
+  width: min(420px, 92vw);
+  margin: 0 auto;
+  border-radius: 18px;
+  padding: 2rem 1.25rem;
+  background-color: rgba(0, 92, 142, 0.245);
+  border: 1px dashed rgba(255, 255, 255, 0.35);
+}
+
+.emptyText {
+  color: white;
+  margin: 0;
+  font-size: 1.1rem;
+}
