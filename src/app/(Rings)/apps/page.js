@@ -42,6 +42,23 @@ export default function Projects() {
     return <div>Loading...</div>
   }
 
+  const projectOrder = [
+    'forgotten-alibi',
+    'early-times-music',
+    'string-school',
+    'stringsmith',
+    'parkway-periodical',
+    'lock-learner',
+    'parkway-schedule',
+    'atelier-vacations',
+    'atelier-design',
+  ];
+
+  const orderMap = new Map(projectOrder.map((page, i) => [page, i]));
+  const sortedProjects = [...projectData].sort(
+    (a, b) => (orderMap.get(a.page) ?? 999) - (orderMap.get(b.page) ?? 999)
+  );
+
   return (
     <div className='pageContentContainer'>
       <div className={styles.titleWrapper}>
@@ -55,7 +72,7 @@ export default function Projects() {
       </p>
       <div className={styles.projectsGrid}>
 
-        {projectData.map((project, index) => {
+        {sortedProjects.map((project, index) => {
           return (
             <div className={styles.projectsGridItem} key={index}>
 

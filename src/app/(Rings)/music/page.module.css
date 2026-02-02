@@ -1,5 +1,5 @@
 .pageWrapper {
-  /* border: solid red 2px; */
+  width: 100%;
 }
 .pageContentContainer {
   width: 1200px;
@@ -8,12 +8,140 @@
   /* background: rgba(0, 0, 0, 0.5); */
   margin-top: 1rem;
 }
-.pageTitle {
+
+.titleWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+  overflow: visible;
+}
+
+.codeIconWrapper {
+
+  position: absolute;
+  left: -9rem;
+  margin: 0 2rem;
+  font-size: 2rem;
+  color: white;
+  border-radius: 50%;
+  background: rgb(0, 0, 0);
+  padding: 1.25rem;
+  border: solid rgb(247, 88, 88) 2px;
+  aspect-ratio: 1 / 1;
+
+
+}
+.codeIcon {
+  margin-top: 0.125rem;
+  margin-right: 0.25rem;
+  font-size: 2rem;
+  color: white;
+  height: 40px;
+  width: 40px;
+
+
+}
+
+
+.pageHeader {
   color: white;
   font-size: 3rem;
   text-align: center;
+  text-decoration: underline;
+  text-decoration-color: rgb(163, 252, 163);
+  text-underline-offset: 5px;
 }
 .whiteText {
   color: white;
   font-size: 1.25rem;
+}
+
+.hero {
+  width: 92%;
+  margin: 1.25rem auto 2rem auto;
+  padding: 1.5rem;
+  border-radius: 30px;
+  background-color: rgba(0, 92, 142, 0.245);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.logoLink {
+  display: inline-block;
+  margin: 0 auto;
+  filter: drop-shadow(0 0 15px rgba(0, 0, 0, 1));
+}
+
+.logo {
+  height: auto;
+  width: min(480px, 88vw);
+}
+
+.cta {
+  display: inline-block;
+  margin: 0.75rem auto 0 auto;
+  padding: 0.75rem 1.1rem;
+  border-radius: 10px;
+  background-color: rgb(0, 41, 63);
+  color: white;
+  width: fit-content;
+  transition: transform 0.2s ease;
+}
+
+.cta:hover {
+  transform: scale(1.05);
+}
+
+.sliderSection {
+  width: 96%;
+  margin: 0 auto 4.5rem auto;
+  padding: 1.5rem;
+  border-radius: 30px;
+  background-color: rgba(0, 92, 142, 0.399);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+}
+
+.sectionTitle {
+  color: white;
+  margin: 0 0 0.75rem 0;
+  font-size: 2rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .pageContentContainer {
+    max-width: 98%;
+  }
+
+  .titleWrapper {
+    margin-bottom: 1.25rem;
+  }
+
+  .codeIcon {
+    left: -4.75rem;
+    font-size: 1.6rem;
+    padding: 0.75rem;
+    height: 44px;
+    width: 44px;
+  }
+
+  .hero,
+  .sliderSection {
+    width: 100%;
+    padding: 1.1rem;
+  }
+
+  .logo {
+    width: min(420px, 84vw);
+  }
 }

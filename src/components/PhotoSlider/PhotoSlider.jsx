@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
 import styles from './PhotoSlider.module.css';
 
@@ -12,6 +12,9 @@ export default function PhotoSlider({
 }) {
   const safeImages = useMemo(() => (Array.isArray(images) ? images.filter(Boolean) : []), [images]);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  const touchStartRef = useRef(null);
 
   const canNavigate = safeImages.length > 1;
   const activeSrc = safeImages[activeIndex];
@@ -26,6 +29,39 @@ export default function PhotoSlider({
     setActiveIndex((i) => (i - 1 + safeImages.length) % safeImages.length);
   }
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const mql = window.matchMedia('(max-width: 768px)');
+    const update = () => setIsMobile(Boolean(mql.matches));
+    update();
+    mql.addEventListener?.('change', update);
+    return () => mql.removeEventListener?.('change', update);
+  }, []);
+
+  function onTouchStart(e) {
+    if (!canNavigate) return;
+    const t = e.touches?.[0];
+    if (!t) return;
+    touchStartRef.current = { x: t.clientX, y: t.clientY };
+  }
+
+  function onTouchEnd(e) {
+    if (!canNavigate) return;
+    const start = touchStartRef.current;
+    touchStartRef.current = null;
+    const t = e.changedTouches?.[0];
+    if (!start || !t) return;
+
+    const dx = t.clientX - start.x;
+    const dy = t.clientY - start.y;
+
+    if (Math.abs(dx) < 50) return;
+    if (Math.abs(dx) < Math.abs(dy) * 1.2) return;
+
+    if (dx > 0) goPrev();
+    else goNext();
+  }
+
   if (safeImages.length === 0) {
     return (
       <div className={`${styles.root} ${className}`}>
@@ -38,7 +74,12 @@ export default function PhotoSlider({
 
   return (
     <div className={`${styles.root} ${className}`}>
-      <div className={styles.frame} style={{ aspectRatio }}>
+      <div
+        className={styles.frame}
+        style={{ aspectRatio }}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
         <Image
           src={activeSrc}
           alt={`${altBase} ${activeIndex + 1}`}
@@ -52,8 +93,10 @@ export default function PhotoSlider({
           <button
             type="button"
             className={styles.navButton}
-            onClick={goPrev}
-            disabled={!canNavigate}
+            onClick={isMobile ? undefined : goPrev}
+            disabled={!canNavigate || isMobile}
+            tabIndex={isMobile ? -1 : 0}
+            aria-hidden={isMobile}
             aria-label="Previous photo"
           >
             ‹
@@ -61,8 +104,10 @@ export default function PhotoSlider({
           <button
             type="button"
             className={styles.navButton}
-            onClick={goNext}
-            disabled={!canNavigate}
+            onClick={isMobile ? undefined : goNext}
+            disabled={!canNavigate || isMobile}
+            tabIndex={isMobile ? -1 : 0}
+            aria-hidden={isMobile}
             aria-label="Next photo"
           >
             ›

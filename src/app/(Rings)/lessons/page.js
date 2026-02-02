@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import PhotoSlider from '../../../components/PhotoSlider/PhotoSlider';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMusic } from '@fortawesome/free-solid-svg-icons';
 import styles from './page.module.css'
 
 export default function Lessons() {
@@ -18,7 +20,12 @@ export default function Lessons() {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.pageContentContainer}>
-        <h1 className={styles.pageTitle}>TEACHING</h1>
+        <div className={styles.titleWrapper}>
+          <div className={styles.codeIconWrapper}>
+          <FontAwesomeIcon icon={faMusic} className={styles.codeIcon} />
+          </div>
+          <h1 className={styles.pageHeader}>TEACHING</h1>
+        </div>
 
         <div className={styles.hero}>
           <Link

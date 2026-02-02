@@ -8,6 +8,7 @@
   margin: 0 auto;
   border-radius: 18px;
   overflow: hidden;
+  touch-action: pan-y;
   background-color: rgba(0, 41, 63, 0);
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.35);
@@ -25,6 +26,17 @@
   .image {
     object-fit: contain;
     background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .navButton {
+    border: none;
+    background: transparent;
+    width: auto;
+    height: auto;
+    font-size: 42px;
+    opacity: 0.65;
+    pointer-events: none;
+    user-select: none;
   }
 }
 
