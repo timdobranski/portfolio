@@ -60,7 +60,7 @@ export default function Connect() {
     <div>
       <div className='pageContentContainer'>
         <h1 className={'pageTitle'}>CONNECT</h1>
-        <p className={'whiteText'}>{`Let’s connect! Send me a note or reach out below.`}</p>
+        <p className={'whiteText'}>{`Reach out below:`}</p>
 
         <div className={styles.formOuter}>
           <form className={styles.form} onSubmit={onSubmit}>
@@ -159,20 +159,6 @@ export default function Connect() {
           </form>
         </div>
 
-        <div className={styles.contactInfoContainer}>
-          <div className={styles.contactHeaders}>
-            <p className={styles.linkedLabel}>LinkedIn</p>
-            <p className={styles.githubLabel}>Github</p>
-          </div>
-          <div className={styles.contactInfo}>
-            <a href='http://www.linkedin.com/in/timdobranski' target='_blank' rel='noreferrer'>
-              <p className={styles.linkedIn}>linkedin.com/in/timdobranski</p>
-            </a>
-            <a href='http://www.github.com/timdobranski' target='_blank' rel='noreferrer'>
-              <p className={styles.github}>github.com/timdobranski</p>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   )

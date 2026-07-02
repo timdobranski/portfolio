@@ -435,8 +435,8 @@ export default function Home() {
           <div className='backgroundRing greenGlow m c4'>
             <FontAwesomeIcon icon={faCode} className={styles.ringIcon} />
           </div>
-          <div className='backgroundRing blueGlow m c5'>
-            <FontAwesomeIcon icon={faGraduationCap} className={styles.ringIcon} />
+          <div className='backgroundRing purpleGlow m c5'>
+            <FontAwesomeIcon icon={faMessage} className={styles.ringIcon} />
           </div>
           <div className={styles.ringGrid}>
             {rings.map((ring, index) => {
@@ -482,7 +482,13 @@ export default function Home() {
 
                     <div className={styles.ringContainer}>
 
-                      {ring.icon && <FontAwesomeIcon icon={ring.icon} className={styles.ringIcon} />}
+                      {ring.icon && (
+                        <FontAwesomeIcon
+                          icon={ring.icon}
+                          className={styles.ringIcon}
+                          style={zoomedRing === ring.id ? { opacity: 0, color: 'rgba(0, 0, 0, 0)' } : undefined}
+                        />
+                      )}
                       <h1 className={`${styles.ringHeader} ${textClass}`} style={getContentStyle(index, 'header')}>{ring.header}</h1>
                       {ring.text.map((text, i) => {
                         return (

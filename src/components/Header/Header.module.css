@@ -4,9 +4,12 @@
   width: 100%;
   /* height: 15%; */
   min-height: 100px;
-  background-color: rgba(17, 41, 63, 0.8);
+    background: linear-gradient(to bottom right, rgb(35, 64, 103), rgb(9, 66, 87));
+
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+  border-bottom: 1px solid rgba(166, 214, 255, 0.16);
+  box-shadow: 0 12px 32px rgba(4, 10, 26, 0.26);
+  backdrop-filter: blur(16px);
 }
 .headerLogo {
   position: absolute;
@@ -21,16 +24,18 @@
   font-size: 3rem;
   margin: 0 auto;
   padding-top: 1rem;
-  color: white;
+  color: rgba(247, 251, 255, 0.96);
   font-weight: 100;
   letter-spacing: 15px;
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
 }
 
 .description {
-  background: linear-gradient(to right, #72ffc7, #b3ff61, rgb(89, 253, 204), rgb(195, 253, 195));
+  /* background: linear-gradient(to right, #72ffc7, #b3ff61, rgb(89, 253, 204), rgb(195, 253, 195));
+  background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
+  color:rgb(135, 210, 135);
   font-size: 1.5rem;
   margin-top: 0;
   margin-bottom: 1rem

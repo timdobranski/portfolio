@@ -3,8 +3,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import PhotoSlider from '../../../components/PhotoSlider/PhotoSlider';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMusic } from '@fortawesome/free-solid-svg-icons';
 import styles from './page.module.css'
 
 export default function Music() {
@@ -17,11 +15,8 @@ export default function Music() {
 
   return (
     <div className={styles.pageWrapper}>
-      <div className={styles.pageContentContainer}>
+      <div className={`pageContentContainer ${styles.pageContentContainer}`}>
         <div className={styles.titleWrapper}>
-          <div className={styles.codeIconWrapper}>
-          <FontAwesomeIcon icon={faMusic} className={styles.codeIcon} />
-          </div>
           <h1 className={styles.pageHeader}>MUSIC</h1>
         </div>
 
@@ -44,9 +39,9 @@ export default function Music() {
           </Link>
 
 <p className={styles.whiteText}>
-  {`Forgotten Alibi is my band. We formed in high school in the 2000s during the height of the post-hardcore movement and released one EP on Pacific Ridge Records before breaking up. After that, we all stayed involved with music in different ways, including producing, learning and teaching, and working on other projects across different genres.
+  {`Forgotten Alibi is one of the first bands I was involved with. We formed in high school in the 2000s during the height of the post-hardcore movement and released one EP on Pacific Ridge Records before breaking up. After that, we all stayed involved with music in different ways, including producing, learning and teaching, and working on other projects across different genres.
 
-Now in 2025, our music has found new life on streaming platforms and we’re back together making new music. As of early 2026, we’re looking for a new singer, and we are excited to lock in a new voice and release the next chapter of Forgotten Alibi.`}
+Now in 2025, our music has found new life on streaming platforms and some of us are back together making new music. As of early 2026, we’re looking for a new singer, and we are excited to lock in a new voice and release the next chapter of Forgotten Alibi.`}
 </p>
 
 

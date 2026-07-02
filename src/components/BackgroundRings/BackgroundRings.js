@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMusic, faCode, faGraduationCap, faWrench } from '@fortawesome/free-solid-svg-icons';
+import { faMusic, faCode, faMessage, faWrench } from '@fortawesome/free-solid-svg-icons';
 import styles from './BackgroundRings.module.css';
 
 const getIconData = (color) => {
@@ -10,8 +10,8 @@ const getIconData = (color) => {
       return { icon: faMusic, className: styles.musicIcon };
     case 'yellowGlow':
       return { icon: faWrench, className: styles.wrenchIcon };
-    case 'blueGlow':
-      return { icon: faGraduationCap, className: styles.graduationCapIcon };
+    case 'purpleGlow':
+      return { icon: faMessage, className: styles.contactIcon };
     default:
       return {};
   }
@@ -20,10 +20,10 @@ const getIconData = (color) => {
 const rings = [
   { color: 'greenGlow', size: 'l', pos: 'l1' },
   { color: 'redGlow', size: 's', pos: 'l2' },
-  { color: 'blueGlow', size: 'm', pos: 'l3' },
+  { color: 'purpleGlow', size: 'm', pos: 'l3' },
   { color: 'yellowGlow', size: 'l', pos: 'l4' },
   { color: 'greenGlow', size: 's', pos: 'r1' },
-  { color: 'blueGlow', size: 'm', pos: 'r2' },
+  { color: 'purpleGlow', size: 'm', pos: 'r2' },
   { color: 'redGlow', size: 'l', pos: 'r3' },
   { color: 'yellowGlow', size: 'm', pos: 'r4' },
 ];

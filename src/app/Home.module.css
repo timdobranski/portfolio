@@ -47,14 +47,18 @@
   align-items: center;
   color: white;
   border-radius: 50%;
-  background-color: black;
+  --ring-rotation: 210deg;
+  border: 4px solid transparent;
+  background:
+    radial-gradient(circle at center, rgba(6, 10, 22, 0.98) 58%, rgba(2, 4, 10, 0.96) 100%) padding-box,
+    linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.08)) border-box;
   /* transition: transform 1s ease, width 1s ease, height 1s ease, margin 1s ease, left 1s ease, top 1s ease, font-size 1s ease; */
   transform: scale(1);
   position: absolute;
   overflow: visible;
 }
 .ringIcon {
-  /* filter: drop-shadow(0 0 12px rgba(255, 204, 0, .5)); */
+  filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.12));
   position: absolute;
   top: 50%;
   left: 50%;
@@ -62,7 +66,8 @@
   /* font-size: 20rem; */
   height: 60%;
   margin-bottom: 1rem;
-  color: rgb(34, 34, 34);
+  color: rgba(225, 235, 255, 0.068);
+  transition: opacity .75s ease, color .75s ease;
 }
 .ring:hover .ringIcon {
   filter: blur(0px);
@@ -196,34 +201,43 @@
   RING GLOW & PULSATE ANIMATION
 ------------------------------------------*/
 @keyframes pulsateGreen {
-  0% {box-shadow: 0 0 35px #00f38a;}
-  50% { box-shadow: 0 0 130px #00f38a;}
-  100% { box-shadow: 0 0 35px #00f38a; }
+  0% { box-shadow: 0 0 24px rgba(82, 255, 168, 0.42), 0 0 54px rgba(0, 245, 212, 0.2); }
+  50% { box-shadow: 0 0 48px rgba(82, 255, 168, 0.8), 0 0 120px rgba(0, 245, 212, 0.34); }
+  100% { box-shadow: 0 0 24px rgba(82, 255, 168, 0.42), 0 0 54px rgba(0, 245, 212, 0.2); }
 }
 
 @keyframes pulsateRed {
-  0% { box-shadow: 0 0 35px #ea005a; }
-  50% { box-shadow: 0 0 150px #ea003e; }
-  100% { box-shadow: 0 0 35px #ea005a; }
+  0% { box-shadow: 0 0 24px rgba(255, 77, 109, 0.42), 0 0 54px rgba(255, 0, 110, 0.18); }
+  50% { box-shadow: 0 0 50px rgba(255, 77, 109, 0.78), 0 0 124px rgba(255, 0, 110, 0.34); }
+  100% { box-shadow: 0 0 24px rgba(255, 77, 109, 0.42), 0 0 54px rgba(255, 0, 110, 0.18); }
 }
 @keyframes pulsatePurple {
-  0% { box-shadow: 0 0 35px #7d00ea; }
-  50% { box-shadow: 0 0 150px #8100ea; }
-  100% { box-shadow: 0 0 35px #6d00ea; }
+  0% { box-shadow: 0 0 24px rgba(143, 92, 255, 0.42), 0 0 56px rgba(41, 211, 255, 0.16); }
+  50% { box-shadow: 0 0 48px rgba(143, 92, 255, 0.76), 0 0 124px rgba(41, 211, 255, 0.3); }
+  100% { box-shadow: 0 0 24px rgba(143, 92, 255, 0.42), 0 0 56px rgba(41, 211, 255, 0.16); }
 }
 
 
 
 @keyframes pulsateBlue {
-  0% { box-shadow: 0 0 35px #00ccff; }
-  50% { box-shadow: 0 0 130px #00ccff; }
-  100% { box-shadow: 0 0 35px #00ccff; }
+  0% { box-shadow: 0 0 24px rgba(124, 247, 255, 0.38), 0 0 54px rgba(0, 187, 255, 0.18); }
+  50% { box-shadow: 0 0 48px rgba(124, 247, 255, 0.78), 0 0 120px rgba(0, 187, 255, 0.34); }
+  100% { box-shadow: 0 0 24px rgba(124, 247, 255, 0.38), 0 0 54px rgba(0, 187, 255, 0.18); }
 }
 
 @keyframes pulsateYellow {
-  0% { box-shadow: 0 0 35px #ffc70f; }
-  50% { box-shadow: 0 0 130px #ffc70f; }
-  100% { box-shadow: 0 0 35px #ffc70f; }
+  0% { box-shadow: 0 0 24px rgba(255, 243, 107, 0.34), 0 0 50px rgba(255, 138, 0, 0.16); }
+  50% { box-shadow: 0 0 48px rgba(255, 210, 63, 0.8), 0 0 118px rgba(255, 138, 0, 0.3); }
+  100% { box-shadow: 0 0 24px rgba(255, 243, 107, 0.34), 0 0 50px rgba(255, 138, 0, 0.16); }
+}
+
+@keyframes gradientOrbit {
+  from {
+    --ring-rotation: 210deg;
+  }
+  to {
+    --ring-rotation: 570deg;
+  }
 }
 /* .greenGlow {
   border: 4px solid #17ff9a;
@@ -232,34 +246,41 @@
 } */
 
 .blueGlow {
-  border: 4px solid #00ccff;
-  box-shadow: 0 0 100px #004063;
-  animation: pulsateBlue 3s infinite;
+  background:
+    radial-gradient(circle at center, rgba(6, 10, 22, 0.98) 58%, rgba(2, 4, 10, 0.96) 100%) padding-box,
+    conic-gradient(from var(--ring-rotation), var(--blue-start), var(--blue-mid), var(--blue-end), var(--blue-start)) border-box;
+  box-shadow: 0 0 26px rgba(124, 247, 255, 0.34), 0 0 78px rgba(0, 187, 255, 0.22);
+  animation: gradientOrbit 10s linear infinite, pulsateBlue 3s infinite;
 }
 .yellowGlow {
-  border: 4px solid #fff2b7;
-  box-shadow: 0 0 35px #ff9e27;
-  animation: pulsateYellow 3.5s infinite;
+  background:
+    radial-gradient(circle at center, rgba(6, 10, 22, 0.98) 58%, rgba(2, 4, 10, 0.96) 100%) padding-box,
+    conic-gradient(from var(--ring-rotation), var(--yellow-start), var(--yellow-mid), var(--yellow-end), var(--yellow-start)) border-box;
+  box-shadow: 0 0 24px rgba(255, 243, 107, 0.28), 0 0 66px rgba(255, 138, 0, 0.24);
+  animation: gradientOrbit 12s linear infinite, pulsateYellow 3.5s infinite;
 }
 .redGlow {
-  /* border: 2px solid #ffbd2e; */
-  outline: 4px solid #fb0019;
-  box-shadow: 0 0 50px 50px #fffa5d;
-  animation: pulsateRed 4.5s infinite;
+  background:
+    radial-gradient(circle at center, rgba(6, 10, 22, 0.98) 58%, rgba(2, 4, 10, 0.96) 100%) padding-box,
+    conic-gradient(from var(--ring-rotation), var(--red-start), var(--red-mid), var(--red-end), var(--red-start)) border-box;
+  box-shadow: 0 0 24px rgba(255, 77, 109, 0.42), 0 0 74px rgba(255, 0, 110, 0.24);
+  animation: gradientOrbit 9s linear infinite, pulsateRed 4.5s infinite;
 }
 .greenGlow {
-  border: 4px solid #a3ff84;
-  box-shadow: 0 0 35px #00f38a;
-  animation: pulsateGreen 4s infinite;
-  background: black;
+  background:
+    radial-gradient(circle at center, rgba(6, 10, 22, 0.98) 58%, rgba(2, 4, 10, 0.96) 100%) padding-box,
+    conic-gradient(from var(--ring-rotation), var(--green-start), var(--green-mid), var(--green-end), var(--green-start)) border-box;
+  box-shadow: 0 0 24px rgba(82, 255, 168, 0.42), 0 0 72px rgba(0, 245, 212, 0.22);
+  animation: gradientOrbit 8s linear infinite, pulsateGreen 4s infinite;
   position: absolute;
   z-index: 9999;
 }
 .purpleGlow {
-  /* border: 2px solid #ffbd2e; */
-  outline: 4px solid #7900fb;
-  box-shadow: 0 0 30px 30px #805dff;
-  animation: pulsatePurple 4.5s infinite;
+  background:
+    radial-gradient(circle at center, rgba(6, 10, 22, 0.98) 58%, rgba(2, 4, 10, 0.96) 100%) padding-box,
+    conic-gradient(from var(--ring-rotation), var(--purple-start), var(--purple-mid), var(--purple-end), var(--purple-start)) border-box;
+  box-shadow: 0 0 24px rgba(143, 92, 255, 0.4), 0 0 72px rgba(41, 211, 255, 0.22);
+  animation: gradientOrbit 11s linear infinite, pulsatePurple 4.5s infinite;
 }
 /* .greenGlowBorder {
   width: calc(75vw + 12px);
@@ -316,9 +337,8 @@
 .leftNav:hover, .rightNav:hover {
   cursor: pointer;
   transform:scale(1.1);
-  /* color:#00f38a; */
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, .2);
+  background-color: rgba(255, 255, 255, 0.08);
   transition: background-color .5s ease, transform 1s ease;
 }
 .leftNav {
@@ -454,3 +474,4 @@
   opacity: 0;
   transition: opacity .75s ease;
 }
+

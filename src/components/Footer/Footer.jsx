@@ -9,13 +9,10 @@ export default function Footer() {
     <h2>HOME</h2>
   </Link>
   <Link href='/apps' className={styles.footerLink}>
-    <h2>APPS</h2>
+    <h2>CODE</h2>
   </Link>
     <Link href='/music' className={styles.footerLink}>
     <h2>MUSIC</h2>
-  </Link>
-    <Link href='/lessons' className={styles.footerLink}>
-    <h2>LESSONS</h2>
   </Link>
     <Link href='/3d-design' className={styles.footerLink}>
     <h2>3D DESIGN</h2>

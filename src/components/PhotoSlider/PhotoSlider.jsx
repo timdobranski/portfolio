@@ -9,6 +9,7 @@ export default function PhotoSlider({
   aspectRatio = '3 / 2',
   altBase = 'Photo',
   className = '',
+  frameClassName = '',
 }) {
   const safeImages = useMemo(() => (Array.isArray(images) ? images.filter(Boolean) : []), [images]);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -75,7 +76,7 @@ export default function PhotoSlider({
   return (
     <div className={`${styles.root} ${className}`}>
       <div
-        className={styles.frame}
+        className={`${styles.frame} ${frameClassName}`}
         style={{ aspectRatio }}
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}

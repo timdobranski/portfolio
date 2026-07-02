@@ -3,6 +3,41 @@
   src: url('/fonts/JosefinSans-VariableFont_wght.ttf');
 }
 
+:root {
+  --bg-base: #050816;
+  --bg-deep: #02030a;
+  --bg-surface: rgba(10, 15, 31, 0.78);
+  --bg-surface-strong: rgba(8, 12, 24, 0.9);
+  --bg-surface-soft: rgba(14, 22, 46, 0.68);
+  --panel-gradient: linear-gradient(to bottom right, rgb(35, 64, 103), rgb(9, 66, 87));
+  --panel-gradient-soft: linear-gradient(to bottom right, rgba(35, 64, 103, 0.92), rgba(9, 66, 87, 0.86));
+  --panel-gradient-deep: linear-gradient(to bottom right, rgba(26, 49, 87, 0.96), rgba(8, 45, 60, 0.96));
+  --border-subtle: rgba(255, 255, 255, 0.16);
+  --text-primary: #f7fbff;
+  --text-secondary: rgba(233, 243, 255, 0.82);
+  --green-start: #52ffa8;
+  --green-mid: #00f5d4;
+  --green-end: #b7ff58;
+  --red-start: #ff4d6d;
+  --red-mid: #ff006e;
+  --red-end: #ff9e00;
+  --blue-start: #7cf7ff;
+  --blue-mid: #00bbff;
+  --blue-end: #4d7cff;
+  --yellow-start: #fff36b;
+  --yellow-mid: #ffd23f;
+  --yellow-end: #ff8a00;
+  --purple-start: #c299ff;
+  --purple-mid: #8f5cff;
+  --purple-end: #29d3ff;
+}
+
+@property --ring-rotation {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 210deg;
+}
+
 * {
   box-sizing: border-box;
   overflow: hidden;
@@ -21,7 +56,12 @@ a {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background: linear-gradient(to bottom right, rgb(0, 156, 162), rgb(0, 33, 83));
+  color: var(--text-primary);
+  background:
+    radial-gradient(circle at top left, rgba(0, 187, 255, 0.18), transparent 26%),
+    radial-gradient(circle at 85% 20%, rgba(255, 0, 110, 0.16), transparent 20%),
+    radial-gradient(circle at bottom right, rgba(82, 255, 168, 0.14), transparent 24%),
+    linear-gradient(145deg, #070b1a 0%, #040611 45%, #010208 100%);
   overflow-y: auto;
 }
 
@@ -40,27 +80,28 @@ a {
   overflow: visible;
   width: 1200px;
   max-width: 90%;
-  /* background-color: black; */
-  /* background: rgba(255, 255, 255, .8); */
-  /* background: white; */
-  border-radius: 30px;
-  /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); */
+  color: var(--text-primary);
+  background: var(--panel-gradient-soft);
+  /* border-radius: 30px; */
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(18px);
   min-width: 750px;
   font-size: 1.5rem;
   font-weight: normal;
 }
 .pageTitle {
-  color: white;
+  color: var(--text-primary);
   font-size: 3rem;
 }
 .whiteText {
-  color: white;
+  color: var(--text-secondary);
   font-size: 1.5rem;
   text-align: center;
   margin: 0;
 }
 .description {
-  color: #1cfc84;
+  color: var(--green-start);
   font-size: 2rem;
   margin: 0;
 }
@@ -71,7 +112,11 @@ BACKGROUND RINGS - SIZES, THEN POSITION (LEFT, RIGHT, CENTER)
 .backgroundRing {
   display: flex;
   border-radius: 50%;
-  background-color: black;
+  --ring-rotation: 210deg;
+  border: 3px solid transparent;
+  background:
+    radial-gradient(circle at center, rgba(5, 8, 22, 0.96) 58%, rgba(2, 4, 10, 0.92) 100%) padding-box,
+    linear-gradient(135deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.05)) border-box;
   transition: transform 1s ease, width 1s ease, height 1s ease, margin 1s ease, left 1s ease, top 1s ease, font-size 1s ease;
   position: fixed;
   transform: translateY(0);
@@ -180,53 +225,72 @@ ANIMATIONS
   }
 }
 
+@keyframes gradientOrbit {
+  from {
+    --ring-rotation: 210deg;
+  }
+  to {
+    --ring-rotation: 570deg;
+  }
+}
+
 @keyframes pulsateGreen {
-  0% {box-shadow: 0 0 35px #00f38a;}
-  50% { box-shadow: 0 0 130px #00f38a;}
-  100% { box-shadow: 0 0 35px #00f38a; }
+  0% { box-shadow: 0 0 22px rgba(82, 255, 168, 0.4), 0 0 48px rgba(0, 245, 212, 0.2); }
+  50% { box-shadow: 0 0 44px rgba(82, 255, 168, 0.75), 0 0 110px rgba(0, 245, 212, 0.38); }
+  100% { box-shadow: 0 0 22px rgba(82, 255, 168, 0.4), 0 0 48px rgba(0, 245, 212, 0.2); }
 }
 
 @keyframes pulsateRed {
-  0% { box-shadow: 0 0 35px #ea005a; }
-  50% { box-shadow: 0 0 150px #ea3700; }
-  100% { box-shadow: 0 0 35px #ea005a; }
+  0% { box-shadow: 0 0 22px rgba(255, 77, 109, 0.4), 0 0 48px rgba(255, 0, 110, 0.2); }
+  50% { box-shadow: 0 0 48px rgba(255, 77, 109, 0.72), 0 0 120px rgba(255, 0, 110, 0.34); }
+  100% { box-shadow: 0 0 22px rgba(255, 77, 109, 0.4), 0 0 48px rgba(255, 0, 110, 0.2); }
 }
 
 @keyframes pulsateBlue {
-  0% { box-shadow: 0 0 35px #00ccff; }
-  50% { box-shadow: 0 0 130px #00ccff; }
-  100% { box-shadow: 0 0 35px #00ccff; }
+  0% { box-shadow: 0 0 22px rgba(124, 247, 255, 0.35), 0 0 48px rgba(0, 187, 255, 0.18); }
+  50% { box-shadow: 0 0 44px rgba(124, 247, 255, 0.74), 0 0 112px rgba(0, 187, 255, 0.38); }
+  100% { box-shadow: 0 0 22px rgba(124, 247, 255, 0.35), 0 0 48px rgba(0, 187, 255, 0.18); }
 }
 
 @keyframes pulsateYellow {
-  0% { box-shadow: 0 0 35px #ffc70f; }
-  50% { box-shadow: 0 0 130px #ffc70f; }
-  100% { box-shadow: 0 0 35px #ffc70f; }
+  0% { box-shadow: 0 0 22px rgba(255, 243, 107, 0.32), 0 0 44px rgba(255, 138, 0, 0.16); }
+  50% { box-shadow: 0 0 44px rgba(255, 210, 63, 0.74), 0 0 110px rgba(255, 138, 0, 0.34); }
+  100% { box-shadow: 0 0 22px rgba(255, 243, 107, 0.32), 0 0 44px rgba(255, 138, 0, 0.16); }
 }
 .greenGlow {
-  border: solid #00f38a;
-  box-shadow: 0 0 35px #00f38a;
-  animation: pulsateGreen 3s infinite, pulsate 5s infinite;
+  background:
+    radial-gradient(circle at center, rgba(5, 8, 22, 0.96) 56%, rgba(2, 4, 10, 0.92) 100%) padding-box,
+    conic-gradient(from var(--ring-rotation), var(--green-start), var(--green-mid), var(--green-end), var(--green-start)) border-box;
+  box-shadow: 0 0 24px rgba(82, 255, 168, 0.45), 0 0 60px rgba(0, 245, 212, 0.22);
+  animation: gradientOrbit 8s linear infinite, pulsateGreen 3s infinite, pulsate 5s infinite;
 }
 .blueGlow {
-  border: solid #00ccff;
-  box-shadow: 0 0 100px #004063;
-  animation: pulsateBlue 3s infinite, pulsate 4s infinite;
+  background:
+    radial-gradient(circle at center, rgba(5, 8, 22, 0.96) 56%, rgba(2, 4, 10, 0.92) 100%) padding-box,
+    conic-gradient(from var(--ring-rotation), var(--blue-start), var(--blue-mid), var(--blue-end), var(--blue-start)) border-box;
+  box-shadow: 0 0 24px rgba(124, 247, 255, 0.38), 0 0 70px rgba(0, 187, 255, 0.2);
+  animation: gradientOrbit 10s linear infinite, pulsateBlue 3s infinite, pulsate 4s infinite;
 }
 .yellowGlow {
-  border: solid #ffd000;
-  box-shadow: 0 0 35px #ffc70f;
-  animation: pulsateYellow 3s infinite, pulsate 6s infinite;
+  background:
+    radial-gradient(circle at center, rgba(5, 8, 22, 0.96) 56%, rgba(2, 4, 10, 0.92) 100%) padding-box,
+    conic-gradient(from var(--ring-rotation), var(--yellow-start), var(--yellow-mid), var(--yellow-end), var(--yellow-start)) border-box;
+  box-shadow: 0 0 24px rgba(255, 243, 107, 0.3), 0 0 60px rgba(255, 138, 0, 0.22);
+  animation: gradientOrbit 12s linear infinite, pulsateYellow 3s infinite, pulsate 6s infinite;
 }
 .redGlow {
-  border: solid #fb0019;
-  box-shadow: 0 0 100px #ea0027;
-  animation: pulsateRed 3s infinite, pulsate 7s infinite;
+  background:
+    radial-gradient(circle at center, rgba(5, 8, 22, 0.96) 56%, rgba(2, 4, 10, 0.92) 100%) padding-box,
+    conic-gradient(from var(--ring-rotation), var(--red-start), var(--red-mid), var(--red-end), var(--red-start)) border-box;
+  box-shadow: 0 0 24px rgba(255, 77, 109, 0.42), 0 0 70px rgba(255, 0, 110, 0.22);
+  animation: gradientOrbit 9s linear infinite, pulsateRed 3s infinite, pulsate 7s infinite;
 }
 .purpleGlow {
-  border: solid #5500ff;
-  box-shadow: 0 0 100px #7900ea;
-  animation: pulsatePurple 3s infinite, pulsate 3s infinite;
+  background:
+    radial-gradient(circle at center, rgba(5, 8, 22, 0.96) 56%, rgba(2, 4, 10, 0.92) 100%) padding-box,
+    conic-gradient(from var(--ring-rotation), var(--purple-start), var(--purple-mid), var(--purple-end), var(--purple-start)) border-box;
+  box-shadow: 0 0 24px rgba(143, 92, 255, 0.4), 0 0 70px rgba(41, 211, 255, 0.2);
+  animation: gradientOrbit 11s linear infinite, pulsatePurple 3s infinite, pulsate 3s infinite;
 }
 .overlay {
   position: fixed;
@@ -250,7 +314,7 @@ MOBILE STYLING
       min-width: 0;
       padding-bottom: 2rem;
       margin-bottom: 6rem;
-      /* border: solid red 3px; */
+        max-width: 95vw;
     }
     .transitionContainer {
       width: 100vw;

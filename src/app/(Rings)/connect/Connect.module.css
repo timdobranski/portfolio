@@ -1,32 +1,15 @@
 
 
-.contactInfoContainer {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 92%;
-  height: 50%;
-  margin: 1rem 3rem 2rem 3rem;
-  /* background-color: rgba(0, 92, 142, 0.245); */
-  border-radius: 30px;
-  padding: 2rem;
-}
-.contactInfoContainer p {
-  margin: 1rem;
-}
-.contactInfo {
-
-}
-
 .formOuter {
   width: 92%;
   margin: 1.5rem auto 2rem auto;
   padding: 1.5rem;
   border-radius: 30px;
-  border: solid rgba(255, 255, 255, 0.725) 1px;
-  background-color: rgba(68, 136, 173, 0.476);
+  background: transparent;
+  /* border: 1px solid rgba(255, 255, 255, 0.18); */
+  /* background: var(--panel-gradient-soft); */
+  /* box-shadow: 0 18px 42px rgba(0, 0, 0, 0.26); */
+  /* backdrop-filter: blur(14px); */
 }
 
 .form {
@@ -54,8 +37,8 @@
 .textarea {
   width: 100%;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background-color: rgba(0, 41, 63, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: var(--panel-gradient-deep);
   color: white;
   padding: 0.75rem 0.9rem;
   font-size: 1rem;
@@ -77,7 +60,8 @@
   border: none;
   border-radius: 10px;
   padding: 0.85rem 1.25rem;
-  background-color: rgb(0, 41, 63);
+  background: var(--panel-gradient-deep);
+  border: 1px solid rgba(194, 153, 255, 0.26);
   color: white;
   font-size: 1.1rem;
   cursor: pointer;
@@ -136,8 +120,9 @@
     height: auto;
     overflow-y: auto;
     width: 92%;
-    background: rgba(255, 255, 255, .5);
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    background: var(--panel-gradient-soft);
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
     min-width: 0px;
   }
   .connectContainer h1 {
@@ -146,39 +131,6 @@
   .connectContainer p {
     font-size: 1.5rem;
   }
-  .contactInfoContainer {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 0 auto;
-    background-color: rgba(0, 92, 142, 0.245);
-    border-radius: 30px;
-    padding: 0rem;
-    /* border: solid red 2px; */
-  }
-  .contactInfoContainer p {
-    font-size: 1.5rem;
-    color: white;
-  }
-  .contactHeaders {
-    display: none;
-  }
-  .contactInfo {
-    padding-bottom: 6vw;
-  }
-  .contactInfo p {
-    font-size: 6vw;
-  }
-  .linkedIn, .github {
-    width: 100%;
-    padding: 0;
-    margin: 0 auto;
-    /* border: solid red 2px; */
-    font-size: 1.25rem !important;
-  }
-
   .formOuter {
     width: 92%;
     margin: 1rem auto 1.5rem auto;
@@ -193,37 +145,4 @@
     flex-direction: column;
     align-items: stretch;
   }
-}
-.linkedIn, .github {
-margin-top: 1rem;
-margin-bottom: 2rem;
-font-size: 1.25rem;
-color: black;
-text-decoration: none;
-text-align: center;
-transition: color 1s ease;
-color: rgb(255, 255, 255);
-border-radius: 6px;
-background-color: black;
-padding: .5rem;
-padding-left: 2rem;
-padding-right: 2rem;
-display: block;
-width: 90%;
-margin: 0 auto;
-margin-top: .5rem;
-transition: color 1s ease;
-background-color: rgb(0, 41, 63);
-transition: transform 0.3s ease;
-}
-.linkedIn:hover, .github:hover {
-  transform: scale(1.1);
-}
-.contactHeaders p {
-  color: white;
-
-}
-.contactInfo p {
-  color: white;
-
 }

@@ -1,3 +1,4 @@
+import './globals.css';
 import Header from '../components/Header/Header';
 import { Josefin_Sans } from '@next/font/google';
 import Link from 'next/link';

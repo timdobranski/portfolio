@@ -1,11 +1,8 @@
 'use client';
 
 import styles from './Projects.module.css'
-import Image from 'next/image';
 import Link from 'next/link';
 import projectData from 'public/projectData';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode } from "@fortawesome/free-solid-svg-icons";
 
 export default function Projects() {
 
@@ -60,11 +57,9 @@ export default function Projects() {
   );
 
   return (
-    <div className='pageContentContainer'>
+    <div className={`pageContentContainer ${styles.projectsContainer}`}>
       <div className={styles.titleWrapper}>
-        <FontAwesomeIcon icon={faCode} className={styles.codeIcon} />
         <h1 className={styles.projectsHeader}>WEB & MOBILE APPS</h1>
-        {/* <FontAwesomeIcon icon={faCode} className={styles.codeIcon} /> */}
       </div>
       <p className={styles.projectsSubheader}>
         Check out my personal software development projects below. While my schedule and current employment contract limit my availability for freelance work,
@@ -78,9 +73,6 @@ export default function Projects() {
 
 
               <div className={styles.thumbnailWrapper}>
-                <div className={`${styles.hoverMessage}`} key={index}>
-                  {project.summary}
-                </div>
                 <Link href={`apps/${project.page}`} className={styles.projectLink}>
 
                   {project.images.length &&
@@ -95,6 +87,9 @@ export default function Projects() {
                   </>
                   }
                 </Link>
+                <div className={`${styles.hoverMessage}`} key={index}>
+                  {project.summary}
+                </div>
             </div>
               <h3 className={styles.projectTitle}>{project.name}</h3>
         </div>
