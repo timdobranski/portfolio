@@ -7,6 +7,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 
 
+function ProjectDescriptionBlock({ block, index }) {
+  if (typeof block === 'string') {
+    return <p className={styles.description}>{block}</p>;
+  }
+
+  if (block.type === 'list') {
+    return (
+      <ul className={styles.descriptionList}>
+        {block.items.map((item) => (
+          <li className={styles.descriptionListItem} key={item}>{item}</li>
+        ))}
+      </ul>
+    );
+  }
+
+  return <p className={styles.description} key={index}>{block.content}</p>;
+}
+
 export default function Project({ data }) {
   const { name, date, description, tech, images, deployLink } = data;
 
@@ -29,7 +47,7 @@ export default function Project({ data }) {
         controls allowFullScreen></iframe> : null} */}
           <div className={styles.sectionContainer}>
             {description.map((p, i) => {
-              return <p className={styles.description} key={i}>{p}</p>
+              return <ProjectDescriptionBlock block={p} index={i} key={i} />
             })}
           </div>
           <div className={styles.sectionContainer}>

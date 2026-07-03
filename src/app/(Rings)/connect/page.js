@@ -1,22 +1,11 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import styles from './Connect.module.css'
 
 export default function Connect() {
-  const subjectOptions = useMemo(
-    () => [
-      { value: 'general', label: 'General' },
-      { value: 'music', label: 'Music' },
-      { value: 'software-dev', label: 'Software Dev' },
-      { value: '3d-print-and-design', label: '3D Print and Design' },
-    ],
-    []
-  );
-
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [subject, setSubject] = useState('general');
   const [message, setMessage] = useState('');
   const [company, setCompany] = useState('');
 
@@ -32,7 +21,7 @@ export default function Connect() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, subject, message, company }),
+        body: JSON.stringify({ name, email, message, company }),
       });
 
       const data = await res.json().catch(() => ({}));
@@ -47,7 +36,6 @@ export default function Connect() {
       setStatusMessage('Thanks — your message was sent.');
       setName('');
       setEmail('');
-      setSubject('general');
       setMessage('');
       setCompany('');
     } catch {
@@ -93,23 +81,6 @@ export default function Connect() {
                 />
               </label>
             </div>
-
-            <label className={styles.label}>
-              Subject
-              <select
-                className={styles.select}
-                name='subject'
-                value={subject}
-                onChange={(e) => setSubject(e.target.value)}
-                required
-              >
-                {subjectOptions.map((opt) => (
-                  <option key={opt.value} value={opt.value}>
-                    {opt.label}
-                  </option>
-                ))}
-              </select>
-            </label>
 
             <label className={styles.honeypot} aria-hidden='true'>
               Company
@@ -163,4 +134,3 @@ export default function Connect() {
     </div>
   )
 }
-

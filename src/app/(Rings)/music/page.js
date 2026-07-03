@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import PhotoSlider from '../../../components/PhotoSlider/PhotoSlider';
 import styles from './page.module.css'
@@ -21,30 +20,20 @@ export default function Music() {
         </div>
 
         <div className={styles.hero}>
-          <Link
-            href='https://www.forgottenalibi.com'
-            target='_blank'
-            rel='noreferrer'
-            className={styles.logoLink}
-            aria-label='Open Forgotten Alibi website'
-          >
-            <Image
-              src='/images/projects/forgottenalibi/title-logo.png'
-              alt='Forgotten Alibi'
-              width={520}
-              height={160}
-              priority
-              className={styles.logo}
+          <div className={styles.spotifyEmbed}>
+            <iframe
+              src='https://open.spotify.com/embed/artist/1t4C8ykJoEcC8mHUHOKem0?utm_source=generator&theme=0'
+              title='Forgotten Alibi on Spotify'
+              allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
+              loading='lazy'
             />
-          </Link>
+          </div>
 
-<p className={styles.whiteText}>
-  {`Forgotten Alibi is one of the first bands I was involved with. We formed in high school in the 2000s during the height of the post-hardcore movement and released one EP on Pacific Ridge Records before breaking up. After that, we all stayed involved with music in different ways, including producing, learning and teaching, and working on other projects across different genres.
+          <p className={styles.whiteText}>
+            {`Forgotten Alibi is one of the first bands I was involved with. We formed in high school in the 2000s during the height of the post-hardcore movement and released one EP on Pacific Ridge Records before breaking up. After that, we all stayed involved with music in different ways, including producing, learning and teaching, and working on other projects across different genres.
 
 Now in 2025, our music has found new life on streaming platforms and some of us are back together making new music. As of early 2026, we’re looking for a new singer, and we are excited to lock in a new voice and release the next chapter of Forgotten Alibi.`}
-</p>
-
-
+          </p>
 
           <Link href='https://www.forgottenalibi.com' target='_blank' rel='noreferrer' className={styles.cta}>
             Visit ForgottenAlibi.com
@@ -60,4 +49,3 @@ Now in 2025, our music has found new life on streaming platforms and some of us 
     </div>
   )
 }
-

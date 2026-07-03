@@ -148,6 +148,9 @@
   transform: scale(1.1);
   cursor: pointer;
 }
+.ringInteractionLocked .ring:hover {
+  transform: scale(1);
+}
 /*-----------------------------------------
   UNIQUE RING STYLING
 ------------------------------------------*/

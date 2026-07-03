@@ -42,6 +42,8 @@
   width: 1.1rem;
   height: 1.1rem;
   flex: 0 0 auto;
+  color: var(--nav-color);
+  transition: ease .5s;
 }
 .footerLink h2 {
   color: white;
@@ -54,14 +56,15 @@
   margin: 0;
 }
 .footerLink:hover {
-  color:rgb(135, 210, 135);
+  color: var(--nav-color);
   text-decoration: underline;
+  text-decoration-color: var(--nav-color);
   transform:scale(1.1);
   transition: ease .5s;
   cursor: pointer;
 }
 .footerLink:hover h2 {
-  color:rgb(135, 210, 135);
+  color: var(--nav-color);
 }
 
 

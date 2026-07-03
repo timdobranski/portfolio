@@ -4,13 +4,6 @@ import sgMail from '@sendgrid/mail';
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-const SUBJECTS = {
-  general: 'General',
-  music: 'Music',
-  'software-dev': 'Software Dev',
-  '3d-print-and-design': '3D Print and Design',
-};
-
 function isNonEmptyString(value) {
   return typeof value === 'string' && value.trim().length > 0;
 }
@@ -41,7 +34,6 @@ export async function POST(request) {
 
   const name = typeof body?.name === 'string' ? body.name.trim() : '';
   const email = typeof body?.email === 'string' ? body.email.trim() : '';
-  const subject = typeof body?.subject === 'string' ? body.subject.trim() : '';
   const message = typeof body?.message === 'string' ? body.message.trim() : '';
   const company = typeof body?.company === 'string' ? body.company.trim() : '';
 
@@ -59,13 +51,6 @@ export async function POST(request) {
 
   if (!isValidEmail(email)) {
     return NextResponse.json({ ok: false, error: 'Please provide a valid email.' }, { status: 400 });
-  }
-
-  if (!Object.hasOwn(SUBJECTS, subject)) {
-    return NextResponse.json(
-      { ok: false, error: 'Please select a valid subject.' },
-      { status: 400 }
-    );
   }
 
   if (!isNonEmptyString(message) || message.length > 5000) {
@@ -92,14 +77,13 @@ export async function POST(request) {
 
   sgMail.setApiKey(apiKey);
 
-  const subjectLine = `[Portfolio] ${SUBJECTS[subject]} — ${name}`;
+  const subjectLine = `[Portfolio] Contact from ${name}`;
 
   const text = [
     'New portfolio contact message',
     '',
     `Name: ${name}`,
     `Email: ${email}`,
-    `Subject: ${SUBJECTS[subject]} (${subject})`,
     '',
     message,
   ].join('\n');
@@ -108,7 +92,6 @@ export async function POST(request) {
     '<h2>New portfolio contact message</h2>',
     `<p><strong>Name:</strong> ${escapeHtml(name)}</p>`,
     `<p><strong>Email:</strong> ${escapeHtml(email)}</p>`,
-    `<p><strong>Subject:</strong> ${escapeHtml(SUBJECTS[subject])} (${escapeHtml(subject)})</p>`,
     '<hr />',
     `<pre style="white-space: pre-wrap; font-family: inherit;">${escapeHtml(message)}</pre>`,
   ].join('\n');

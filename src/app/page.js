@@ -165,22 +165,46 @@ export default function Home() {
     return 'hidden';
   }
 
+  const isOffscreenRole = (role) => (
+    role === 'farLeftInactive'
+    || role === 'farRightInactive'
+    || role === 'hidden'
+  );
+
+  const getOffscreenRoleForSide = (role) => {
+    if (role === 'inactiveLeft') return 'farLeftInactive';
+    if (role === 'inactiveRight') return 'farRightInactive';
+    return role;
+  }
+
+  const getTransitionRoles = (fromRole, toRole) => {
+    if (isOffscreenRole(fromRole) && (toRole === 'inactiveLeft' || toRole === 'inactiveRight')) {
+      return [getOffscreenRoleForSide(toRole), toRole];
+    }
+
+    if ((fromRole === 'inactiveLeft' || fromRole === 'inactiveRight') && isOffscreenRole(toRole)) {
+      return [fromRole, getOffscreenRoleForSide(fromRole)];
+    }
+
+    return [fromRole, toRole];
+  }
+
   const layout = isMobile
     ? {
-        active: { top: 15, left: 27, size: 75, mt: -14, ml: -14, opacity: 1, z: 2 },
-        inactiveLeft: { top: 22, left: -25, size: 30, mt: -7.5, ml: 0, opacity: 1, z: -1 },
-        inactiveRight: { top: 22, left: 88, size: 30, mt: -7.5, ml: 7.5, opacity: 1, z: -1 },
-        farLeftInactive: { top: 38, left: -100, size: 30, mt: -7.5, ml: -7.5, opacity: 0, z: -2 },
-        farRightInactive: { top: 38, left: 150, size: 30, mt: -7.5, ml: -7.5, opacity: 0, z: -2 },
-        hidden: { top: 38, left: 150, size: 30, mt: -7.5, ml: -7.5, opacity: 0, z: -3 },
+        active: { top: 15, left: 27, size: 75, mt: -14, ml: -14, opacity: 1, z: 2, fontSize: 2 },
+        inactiveLeft: { top: 22, left: -25, size: 30, mt: -7.5, ml: 0, opacity: 1, z: -1, fontSize: 1 },
+        inactiveRight: { top: 22, left: 88, size: 30, mt: -7.5, ml: 7.5, opacity: 1, z: -1, fontSize: 1 },
+        farLeftInactive: { top: 38, left: -100, size: 30, mt: -7.5, ml: -7.5, opacity: 0, z: -2, fontSize: 1 },
+        farRightInactive: { top: 38, left: 150, size: 30, mt: -7.5, ml: -7.5, opacity: 0, z: -2, fontSize: 1 },
+        hidden: { top: 38, left: 150, size: 30, mt: -7.5, ml: -7.5, opacity: 0, z: -3, fontSize: 1 },
       }
     : {
-        active: { top: 37, left: 50, size: 28, mt: -14, ml: -14, opacity: 1, z: 2 },
-        inactiveLeft: { top: 38, left: -7.5, size: 15, mt: -7.5, ml: 0, opacity: 1, z: -1 },
-        inactiveRight: { top: 38, left: 86, size: 15, mt: -7.5, ml: 7.5, opacity: 1, z: -1 },
-        farLeftInactive: { top: 38, left: -100, size: 15, mt: -7.5, ml: -7.5, opacity: 0, z: -2 },
-        farRightInactive: { top: 38, left: 150, size: 15, mt: -7.5, ml: -7.5, opacity: 0, z: -2 },
-        hidden: { top: 38, left: 150, size: 15, mt: -7.5, ml: -7.5, opacity: 0, z: -3 },
+        active: { top: 37, left: 50, size: 28, mt: -14, ml: -14, opacity: 1, z: 2, fontSize: 2 },
+        inactiveLeft: { top: 38, left: -7.5, size: 15, mt: -7.5, ml: 0, opacity: 1, z: -1, fontSize: 1 },
+        inactiveRight: { top: 38, left: 86, size: 15, mt: -7.5, ml: 7.5, opacity: 1, z: -1, fontSize: 1 },
+        farLeftInactive: { top: 38, left: -100, size: 15, mt: -7.5, ml: -7.5, opacity: 0, z: -2, fontSize: 1 },
+        farRightInactive: { top: 38, left: 150, size: 15, mt: -7.5, ml: -7.5, opacity: 0, z: -2, fontSize: 1 },
+        hidden: { top: 38, left: 150, size: 15, mt: -7.5, ml: -7.5, opacity: 0, z: -3, fontSize: 1 },
       };
 
   const getInterpolatedRingStyle = (index) => {
@@ -190,12 +214,14 @@ export default function Home() {
     const fromRing = interactionFromRing ?? activeRing;
     const toRing = interactionToRing ?? fromRing;
 
-    const fromRole = getRoleForIndex(index, fromRing);
-    const toRole = getRoleForIndex(index, toRing);
+    const rawFromRole = getRoleForIndex(index, fromRing);
+    const rawToRole = getRoleForIndex(index, toRing);
+    const [fromRole, toRole] = getTransitionRoles(rawFromRole, rawToRole);
 
     const from = layout[fromRole] ?? layout.hidden;
     const to = layout[toRole] ?? layout.hidden;
     const t = clamp(dragProgress, 0, 1);
+    const isOffscreenStartReposition = !isDragging && t === 0 && rawFromRole !== fromRole;
 
     return {
       top: `${lerp(from.top, to.top, t)}%`,
@@ -204,11 +230,12 @@ export default function Home() {
       height: `${lerp(from.size, to.size, t)}vw`,
       marginTop: `${lerp(from.mt, to.mt, t)}vw`,
       marginLeft: `${lerp(from.ml, to.ml, t)}vw`,
+      fontSize: `${lerp(from.fontSize, to.fontSize, t)}vw`,
       opacity: lerp(from.opacity, to.opacity, t),
       zIndex: Math.round(lerp(from.z, to.z, t)),
-      transition: isDragging
+      transition: isDragging || isOffscreenStartReposition
         ? 'none'
-        : 'top 1000ms cubic-bezier(0.22, 1, 0.36, 1), left 1000ms cubic-bezier(0.22, 1, 0.36, 1), width 1000ms cubic-bezier(0.22, 1, 0.36, 1), height 1000ms cubic-bezier(0.22, 1, 0.36, 1), margin 1000ms cubic-bezier(0.22, 1, 0.36, 1), opacity 800ms ease',
+        : 'top 1000ms cubic-bezier(0.22, 1, 0.36, 1), left 1000ms cubic-bezier(0.22, 1, 0.36, 1), width 1000ms cubic-bezier(0.22, 1, 0.36, 1), height 1000ms cubic-bezier(0.22, 1, 0.36, 1), margin 1000ms cubic-bezier(0.22, 1, 0.36, 1), font-size 1000ms cubic-bezier(0.22, 1, 0.36, 1), opacity 800ms ease',
     };
   }
 
@@ -230,26 +257,27 @@ export default function Home() {
     const fromOpacity = fromIsActive ? 1 : 0;
     const toOpacity = toIsActive ? 1 : 0;
     const opacity = lerp(fromOpacity, toOpacity, t);
-    const scale = lerp(fromIsActive ? 1 : 0.98, toIsActive ? 1 : 0.98, t);
 
     const activeFactor = clamp(lerp(fromIsActive ? 1 : 0, toIsActive ? 1 : 0, t), 0, 1);
 
-    // Mobile has CSS that hard-sets inactive font sizes (e.g. text = 0rem).
-    // Override those during interaction so incoming rings can grow/reveal gradually.
+    // Override CSS-driven text sizes during interaction so the content reaches
+    // its active size at the same time as the ring reaches center.
     const fontSize = (() => {
-      if (!isMobile) return undefined;
-
       if (kind === 'header') {
-        // Blend 0.75rem (inactive) -> 8vw (active)
+        if (!isMobile) return `${4 * activeFactor}vw`;
+
+        // Blend 0.75rem (inactive) -> 8vw (active).
         const inactiveRem = 0.75;
         const activeVw = 8;
-        return `calc(${inactiveRem * (1 - t)}rem + ${activeVw * t}vw)`;
+        return `calc(${inactiveRem * (1 - activeFactor)}rem + ${activeVw * activeFactor}vw)`;
       }
 
       if (kind === 'text') {
-        // Blend 0rem (inactive) -> 1.25rem (active)
+        if (!isMobile) return `${2 * activeFactor}vw`;
+
+        // Blend 0rem (inactive) -> 1.25rem (active).
         const activeRem = 1.25;
-        return `calc(${activeRem * t}rem)`;
+        return `calc(${activeRem * activeFactor}rem)`;
       }
 
       return undefined;
@@ -275,12 +303,11 @@ export default function Home() {
 
     return {
       opacity,
-      transform: `scale(${scale})`,
       fontSize,
       ...headerMargins,
       transition: isDragging
         ? 'none'
-        : 'opacity 700ms ease, transform 700ms ease, font-size 700ms ease, margin 700ms ease',
+        : 'opacity 1000ms cubic-bezier(0.22, 1, 0.36, 1), font-size 1000ms cubic-bezier(0.22, 1, 0.36, 1), margin 1000ms cubic-bezier(0.22, 1, 0.36, 1)',
     };
   }
 
@@ -442,7 +469,7 @@ export default function Home() {
           <div className='backgroundRing purpleGlow m c5'>
             <FontAwesomeIcon icon={faMessage} className={styles.ringIcon} />
           </div>
-          <div className={styles.ringGrid}>
+          <div className={`${styles.ringGrid} ${isDragging || isSettling ? styles.ringInteractionLocked : ''}`}>
             {rings.map((ring, index) => {
               let ringClass;
               let textClass = "";  // kept for future styling

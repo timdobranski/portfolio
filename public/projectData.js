@@ -65,27 +65,38 @@ const projectData = [
   },
   {
     name: 'String School App',
-    date: '2024-2025',
+    date: '2023-2026',
     page: 'string-school',
     summary: 'Web & mobile app for music students with scheduling, progress-tracking and more',
-    description: [`This is both a web app and a mobile app for iOS and Android for guitar students. Features include Google sign-in, scheduling/rescheduling, payment tracking,
-     progress tracking, access to sheet music and other online resources, practice-logging, and instructor sign-in to manage student accounts. `, `It's grown into a gigantic app
-     with twenty Postgres tables of extensive data and even has an entire companion app for Windows just to track and sync sheet music files with Supabase storage.`, `Although
-     it's not yet in production for my students, you can see the existing String School webpage, which I also designed, at the link above.`, `The challenges of
-     this project have been accounting for many different account edge cases, including students who share an email address with a parent, students
-     who have multiple parent contacts, parents who have multiple students, and adult students who have no parent contact.`],
+    description: [
+      `String School is an app platform for web, mobile, and desktop centered around guitar students, self-guided players, and private music teachers. The app combines standalone practice tools with a more guided learning path, so users can either jump straight into tools like the fretboard, tuner, and tab player, or follow structured lessons, games, quizzes, and ear-training activities.`,
+      `The feature set is organized around access tiers: Free gives students a starting point, Pro unlocks the main self-study tools, Pro + Learn adds the guided curriculum features, Lifetime is a one-time purchase for current and future individual features, and Studio is built for teachers managing students, scheduling, billing, and progress.`,
+      {
+        type: 'list',
+        items: [
+          `Practice tools include an interactive virtual fretboard with visual customization, scale and chord detection, reusable chord/scale/interval diagrams, and a built-in tuner with support for more advanced tuning modes in paid tiers.`,
+          `Song study features include a Song Maps editor for breaking a full song into sections, tracking progress one part at a time, and keeping students focused on the next useful practice target.`,
+          `The tab player supports Guitar Pro files with synced audio playback, notation views, track controls, and practice-friendly display tools for learning songs more independently.`,
+          `Learn features add structured skill paths, lessons, fretboard and note-reading games, quizzes, and ear-training challenges for students who want a more guided experience than a toolbox alone can provide.`,
+          `Practice logging and progress tracking help students keep their work organized across skills, songs, goals, and lesson assignments.`,
+          `Studio features extend the platform for teachers with student access management, scheduling, recurring lesson organization, invoicing, and Amplify: a studio-scoped social media platform where students can share their progress and wins with their studio, family, or just their teacher in a safe, controlled environment.`,
+        ],
+      },
+      `This project is the largest product I have built so far, and it has pushed me across a wide range of engineering problems: cross-platform product design, media playback, music-specific data modeling, authentication, payments, teacher/student permissions, scheduled jobs, email workflows, and database-backed progress tracking.`,
+    ],
     tech: ['Next.js', 'React Native', 'Electron', 'Node.js', 'Apple Music API', 'Google OAuth', 'Supabase', 'Cron', 'Sendgrid'],
     video: 'https://www.youtube.com/embed/LTPBrOg7JbY',
     images: [
       `/images/projects/string-school/lmss-banner.jpg`,
-      `/images/projects/string-school/lmss1.webp`,
-      `/images/projects/string-school/lmss2.webp`,
-      `/images/projects/string-school/lmss3.webp`,
-      `/images/projects/string-school/lmss4.webp`,
-      `/images/projects/string-school/lmss5.webp`,
-      `/images/projects/string-school/lmss6.webp`,
-      `/images/projects/string-school/lmss7.webp`,
-      `/images/projects/string-school/lmss8.webp`,
+      `/images/projects/string-school/og.png`,
+      `/images/projects/string-school/practice-tools.webp`,
+      `/images/projects/string-school/skill-path.webp`,
+      `/images/projects/string-school/song-breakdowns.webp`,
+      `/images/projects/string-school/student-home-mobile.webp`,
+      `/images/projects/string-school/tab-player.webp`,
+      `/images/projects/string-school/interactive-fretboard/cosmic.webp`,
+      `/images/projects/string-school/interactive-fretboard/glitterbomb.webp`,
+      `/images/projects/string-school/interactive-fretboard/metalhead.webp`,
     ],
     deployLink: { url: 'https://stringschool.app', text: ''},
     status: 'In Production'

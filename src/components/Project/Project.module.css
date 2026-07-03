@@ -62,6 +62,32 @@
   margin-top: 2rem;
   color: white;
 }
+.descriptionList {
+  color: white;
+  font-size: 1.35rem;
+  line-height: 1.4;
+  list-style-type: none;
+  margin: 2rem auto 0;
+  max-width: 90%;
+  padding-left: 0;
+  text-align: left;
+}
+.descriptionListItem {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  margin-right: 0 !important;
+  overflow: visible;
+}
+.descriptionListItem::before {
+  background: rgb(163, 255, 163);
+  border-radius: 50%;
+  content: '';
+  flex: 0 0 0.45rem;
+  height: 0.45rem;
+  margin-top: 0.45rem;
+  width: 0.45rem;
+}
 .sectionContainer{
   margin-top: 2rem;
   /* padding-left: 2rem;
@@ -72,12 +98,6 @@
   border-radius: 20px;
   /* background-color: rgba(0, 92, 142, 0.245);
   background: white; */
-}
-.sectionContainer ul {
-  list-style-type: none;
-}
-.sectionContainer li {
-  margin-right: 40px;
 }
 .techLabel {
   text-align: center;
@@ -92,8 +112,10 @@
 .techStack {
   font-size: 2rem;
   /* font-weight: bold; */
-  display: inline block;
+  display: inline-block;
   color: white;
+  list-style-type: none;
+  margin-right: 40px;
 }
 .video {
   width: 100%;
@@ -171,11 +193,12 @@
     /* padding: 3vw; */
     width: 100%;
   }
-  .sectionContainer ul {
-    list-style-type: none;
+  .descriptionList {
+    font-size: 1.2rem;
+    max-width: 100%;
   }
-  .sectionContainer li {
-    margin-right: 40px;
+  .descriptionListItem {
+    margin-right: 0 !important;
   }
   .techStack {
     font-weight: 200;
