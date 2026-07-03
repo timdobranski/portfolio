@@ -1,7 +1,7 @@
 'use client';
 
 import styles from './Home.module.css'
-import { useEffect, useRef, useState } from 'react'
+import { Fragment, useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight, faMusic, faCode, faCube, faMessage } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence } from 'framer-motion';
@@ -397,14 +397,26 @@ export default function Home() {
     <main id={styles.home}>
       <AnimatePresence >
 
-        {/* <svg style={{position: 'absolute', width: 0, height: 0}}>
-          <filter id="water">
-            <feTurbulence  id='sea-filter' baseFrequency='0.005' numOctaves="5" seed='0' />
-            <feDisplacementMap  id='displacement' in="SourceGraphic" in2='noise' scale="7"/>
-          </filter>
-          <animate xlinkHref="#sea-filter" attributeName="baseFrequency" dur="90s" keyTimes="0;0.5;1" values="0.02 0.02;0.03 0.03;0.02 0.02" repeatCount="indefinite"/>
-
-        </svg> */}
+        {/* Turbulence filters that displace the ring border layers so they
+            ebb/flow organically. The displacement `scale` breathes via SMIL,
+            while the conic gradient + layer rotation (CSS) make the wobble
+            travel around the ring. */}
+        <svg style={{ position: 'absolute', width: 0, height: 0 }} aria-hidden="true" focusable="false">
+          <defs>
+            <filter id="liquidRingA" x="-25%" y="-25%" width="150%" height="150%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.012 0.018" numOctaves="2" seed="7" result="noise" />
+              <feDisplacementMap in="SourceGraphic" in2="noise" xChannelSelector="R" yChannelSelector="G" scale="18">
+                <animate attributeName="scale" values="12;28;16;30;12" dur="9s" repeatCount="indefinite" />
+              </feDisplacementMap>
+            </filter>
+            <filter id="liquidRingB" x="-25%" y="-25%" width="150%" height="150%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.02 0.014" numOctaves="2" seed="42" result="noise" />
+              <feDisplacementMap in="SourceGraphic" in2="noise" xChannelSelector="R" yChannelSelector="G" scale="22">
+                <animate attributeName="scale" values="24;10;28;14;24" dur="7s" repeatCount="indefinite" />
+              </feDisplacementMap>
+            </filter>
+          </defs>
+        </svg>
         <div
           className={styles.homeContainer}
           key='homeContainer'
@@ -460,17 +472,19 @@ export default function Home() {
               }
 
               return (
-                <>
+                <Fragment key={ring.link}>
 
                   <div
                     onClick={() => {
                       if (didSwipeRef.current) return;
                       handleRingClick(ring.id, ring.link);
                     }}
-                    key={ring.link}
                     className={`${styles.ring} ${styles[ring.color]} ${ringClass} ${zoomedRing === ring.id ? styles.ringZoom : ''}`}
                     style={getInterpolatedRingStyle(index)}
                     id={ring.id}>
+
+                    <div className={`${styles.ringBorder} ${styles.ringBorderA}`} aria-hidden="true"></div>
+                    <div className={`${styles.ringBorder} ${styles.ringBorderB}`} aria-hidden="true"></div>
 
                     <div className={styles.ringContainer}>
 
@@ -493,7 +507,7 @@ export default function Home() {
 
                   </div>
                    <div className={styles.greenGlowBorder}></div>
-                </>
+                </Fragment>
               );
             })}
           </div>

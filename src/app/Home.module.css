@@ -48,14 +48,66 @@
   color: white;
   border-radius: 50%;
   --ring-rotation: 210deg;
-  border: 4px solid transparent;
-  background:
-    radial-gradient(circle at center, rgba(6, 10, 22, 0.98) 58%, rgba(2, 4, 10, 0.96) 100%) padding-box,
-    linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.08)) border-box;
+  background: radial-gradient(circle at center, rgba(6, 10, 22, 0.98) 58%, rgba(2, 4, 10, 0.96) 100%);
   /* transition: transform 1s ease, width 1s ease, height 1s ease, margin 1s ease, left 1s ease, top 1s ease, font-size 1s ease; */
   transform: scale(1);
   position: absolute;
   overflow: visible;
+}
+
+/*-----------------------------------------
+  LIQUID BORDER LAYERS
+  The gradient border lives on two stacked child layers so an SVG
+  turbulence filter can displace the band (ebb/flow) without warping
+  the ring's text or icon. The wobble "travels" because each layer
+  slowly spins while the conic gradient orbits at a different rate.
+------------------------------------------*/
+.ringBorder {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+}
+/* The band is drawn on ::before and the displacement filter sits on the
+   parent, so the mask shapes the band FIRST and the turbulence then warps
+   both its inner and outer edges. (Filter on the same element would re-clip
+   the inner edge back to a perfect circle.) */
+.ringBorder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 6px solid transparent;
+  --ring-rotation: 210deg;
+  /* Paint the gradient only in the border band. */
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: gradientOrbit 10s linear infinite;
+}
+.ringBorderA {
+  filter: url(#liquidRingA);
+  animation: borderSpin 26s linear infinite;
+}
+.ringBorderB {
+  filter: url(#liquidRingB) blur(2px);
+  opacity: 0.8;
+  mix-blend-mode: screen;
+  animation: borderSpinReverse 34s linear infinite;
+}
+.ringBorderB::before {
+  animation-duration: 14s;
+  animation-direction: reverse;
+}
+
+@keyframes borderSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes borderSpinReverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
 }
 .ringIcon {
   filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.12));
@@ -111,7 +163,9 @@
   margin-left: -14vw;
   /* padding-left: 3%;
   padding-right: 3%; */
-  overflow: hidden;
+  /* overflow moved to .ringContainer so the displaced border can flare
+     outside the circle while text stays clipped. */
+  overflow: visible;
   transition: transform 1s ease, width 1s ease, height 1s ease, margin 1s ease, left 1s ease, top 1s ease, font-size 1s ease;
 
 }
@@ -131,6 +185,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
  .ringContainer:hover {
   /* filter: url(#water); */
@@ -201,34 +256,34 @@
   RING GLOW & PULSATE ANIMATION
 ------------------------------------------*/
 @keyframes pulsateGreen {
-  0% { box-shadow: 0 0 24px rgba(82, 255, 168, 0.42), 0 0 54px rgba(0, 245, 212, 0.2); }
-  50% { box-shadow: 0 0 48px rgba(82, 255, 168, 0.8), 0 0 120px rgba(0, 245, 212, 0.34); }
-  100% { box-shadow: 0 0 24px rgba(82, 255, 168, 0.42), 0 0 54px rgba(0, 245, 212, 0.2); }
+  0% { box-shadow: 0 0 24px rgba(82, 255, 168, 0.42), 0 0 54px rgba(0, 245, 212, 0.2), inset 0 0 24px rgba(82, 255, 168, 0.38); }
+  50% { box-shadow: 0 0 48px rgba(82, 255, 168, 0.8), 0 0 120px rgba(0, 245, 212, 0.34), inset 0 0 42px rgba(82, 255, 168, 0.6); }
+  100% { box-shadow: 0 0 24px rgba(82, 255, 168, 0.42), 0 0 54px rgba(0, 245, 212, 0.2), inset 0 0 24px rgba(82, 255, 168, 0.38); }
 }
 
 @keyframes pulsateRed {
-  0% { box-shadow: 0 0 24px rgba(255, 77, 109, 0.42), 0 0 54px rgba(255, 0, 110, 0.18); }
-  50% { box-shadow: 0 0 50px rgba(255, 77, 109, 0.78), 0 0 124px rgba(255, 0, 110, 0.34); }
-  100% { box-shadow: 0 0 24px rgba(255, 77, 109, 0.42), 0 0 54px rgba(255, 0, 110, 0.18); }
+  0% { box-shadow: 0 0 24px rgba(255, 77, 109, 0.42), 0 0 54px rgba(255, 0, 110, 0.18), inset 0 0 24px rgba(255, 77, 109, 0.38); }
+  50% { box-shadow: 0 0 50px rgba(255, 77, 109, 0.78), 0 0 124px rgba(255, 0, 110, 0.34), inset 0 0 42px rgba(255, 77, 109, 0.58); }
+  100% { box-shadow: 0 0 24px rgba(255, 77, 109, 0.42), 0 0 54px rgba(255, 0, 110, 0.18), inset 0 0 24px rgba(255, 77, 109, 0.38); }
 }
 @keyframes pulsatePurple {
-  0% { box-shadow: 0 0 24px rgba(143, 92, 255, 0.42), 0 0 56px rgba(41, 211, 255, 0.16); }
-  50% { box-shadow: 0 0 48px rgba(143, 92, 255, 0.76), 0 0 124px rgba(41, 211, 255, 0.3); }
-  100% { box-shadow: 0 0 24px rgba(143, 92, 255, 0.42), 0 0 56px rgba(41, 211, 255, 0.16); }
+  0% { box-shadow: 0 0 24px rgba(143, 92, 255, 0.42), 0 0 56px rgba(41, 211, 255, 0.16), inset 0 0 24px rgba(143, 92, 255, 0.38); }
+  50% { box-shadow: 0 0 48px rgba(143, 92, 255, 0.76), 0 0 124px rgba(41, 211, 255, 0.3), inset 0 0 42px rgba(143, 92, 255, 0.58); }
+  100% { box-shadow: 0 0 24px rgba(143, 92, 255, 0.42), 0 0 56px rgba(41, 211, 255, 0.16), inset 0 0 24px rgba(143, 92, 255, 0.38); }
 }
 
 
 
 @keyframes pulsateBlue {
-  0% { box-shadow: 0 0 24px rgba(124, 247, 255, 0.38), 0 0 54px rgba(0, 187, 255, 0.18); }
-  50% { box-shadow: 0 0 48px rgba(124, 247, 255, 0.78), 0 0 120px rgba(0, 187, 255, 0.34); }
-  100% { box-shadow: 0 0 24px rgba(124, 247, 255, 0.38), 0 0 54px rgba(0, 187, 255, 0.18); }
+  0% { box-shadow: 0 0 24px rgba(124, 247, 255, 0.38), 0 0 54px rgba(0, 187, 255, 0.18), inset 0 0 24px rgba(124, 247, 255, 0.34); }
+  50% { box-shadow: 0 0 48px rgba(124, 247, 255, 0.78), 0 0 120px rgba(0, 187, 255, 0.34), inset 0 0 42px rgba(124, 247, 255, 0.56); }
+  100% { box-shadow: 0 0 24px rgba(124, 247, 255, 0.38), 0 0 54px rgba(0, 187, 255, 0.18), inset 0 0 24px rgba(124, 247, 255, 0.34); }
 }
 
 @keyframes pulsateYellow {
-  0% { box-shadow: 0 0 24px rgba(255, 243, 107, 0.34), 0 0 50px rgba(255, 138, 0, 0.16); }
-  50% { box-shadow: 0 0 48px rgba(255, 210, 63, 0.8), 0 0 118px rgba(255, 138, 0, 0.3); }
-  100% { box-shadow: 0 0 24px rgba(255, 243, 107, 0.34), 0 0 50px rgba(255, 138, 0, 0.16); }
+  0% { box-shadow: 0 0 24px rgba(255, 243, 107, 0.34), 0 0 50px rgba(255, 138, 0, 0.16), inset 0 0 24px rgba(255, 243, 107, 0.32); }
+  50% { box-shadow: 0 0 48px rgba(255, 210, 63, 0.8), 0 0 118px rgba(255, 138, 0, 0.3), inset 0 0 42px rgba(255, 210, 63, 0.55); }
+  100% { box-shadow: 0 0 24px rgba(255, 243, 107, 0.34), 0 0 50px rgba(255, 138, 0, 0.16), inset 0 0 24px rgba(255, 243, 107, 0.32); }
 }
 
 @keyframes gradientOrbit {
@@ -246,41 +301,41 @@
 } */
 
 .blueGlow {
-  background:
-    radial-gradient(circle at center, rgba(6, 10, 22, 0.98) 58%, rgba(2, 4, 10, 0.96) 100%) padding-box,
-    conic-gradient(from var(--ring-rotation), var(--blue-start), var(--blue-mid), var(--blue-end), var(--blue-start)) border-box;
   box-shadow: 0 0 26px rgba(124, 247, 255, 0.34), 0 0 78px rgba(0, 187, 255, 0.22);
-  animation: gradientOrbit 10s linear infinite, pulsateBlue 3s infinite;
+  animation: pulsateBlue 3s infinite;
+}
+.blueGlow .ringBorder::before {
+  background: conic-gradient(from var(--ring-rotation), var(--blue-start), var(--blue-mid), var(--blue-end), var(--blue-start)) border-box;
 }
 .yellowGlow {
-  background:
-    radial-gradient(circle at center, rgba(6, 10, 22, 0.98) 58%, rgba(2, 4, 10, 0.96) 100%) padding-box,
-    conic-gradient(from var(--ring-rotation), var(--yellow-start), var(--yellow-mid), var(--yellow-end), var(--yellow-start)) border-box;
   box-shadow: 0 0 24px rgba(255, 243, 107, 0.28), 0 0 66px rgba(255, 138, 0, 0.24);
-  animation: gradientOrbit 12s linear infinite, pulsateYellow 3.5s infinite;
+  animation: pulsateYellow 3.5s infinite;
+}
+.yellowGlow .ringBorder::before {
+  background: conic-gradient(from var(--ring-rotation), var(--yellow-start), var(--yellow-mid), var(--yellow-end), var(--yellow-start)) border-box;
 }
 .redGlow {
-  background:
-    radial-gradient(circle at center, rgba(6, 10, 22, 0.98) 58%, rgba(2, 4, 10, 0.96) 100%) padding-box,
-    conic-gradient(from var(--ring-rotation), var(--red-start), var(--red-mid), var(--red-end), var(--red-start)) border-box;
   box-shadow: 0 0 24px rgba(255, 77, 109, 0.42), 0 0 74px rgba(255, 0, 110, 0.24);
-  animation: gradientOrbit 9s linear infinite, pulsateRed 4.5s infinite;
+  animation: pulsateRed 4.5s infinite;
+}
+.redGlow .ringBorder::before {
+  background: conic-gradient(from var(--ring-rotation), var(--red-start), var(--red-mid), var(--red-end), var(--red-start)) border-box;
 }
 .greenGlow {
-  background:
-    radial-gradient(circle at center, rgba(6, 10, 22, 0.98) 58%, rgba(2, 4, 10, 0.96) 100%) padding-box,
-    conic-gradient(from var(--ring-rotation), var(--green-start), var(--green-mid), var(--green-end), var(--green-start)) border-box;
   box-shadow: 0 0 24px rgba(82, 255, 168, 0.42), 0 0 72px rgba(0, 245, 212, 0.22);
-  animation: gradientOrbit 8s linear infinite, pulsateGreen 4s infinite;
+  animation: pulsateGreen 4s infinite;
   position: absolute;
   z-index: 9999;
 }
+.greenGlow .ringBorder::before {
+  background: conic-gradient(from var(--ring-rotation), var(--green-start), var(--green-mid), var(--green-end), var(--green-start)) border-box;
+}
 .purpleGlow {
-  background:
-    radial-gradient(circle at center, rgba(6, 10, 22, 0.98) 58%, rgba(2, 4, 10, 0.96) 100%) padding-box,
-    conic-gradient(from var(--ring-rotation), var(--purple-start), var(--purple-mid), var(--purple-end), var(--purple-start)) border-box;
   box-shadow: 0 0 24px rgba(143, 92, 255, 0.4), 0 0 72px rgba(41, 211, 255, 0.22);
-  animation: gradientOrbit 11s linear infinite, pulsatePurple 4.5s infinite;
+  animation: pulsatePurple 4.5s infinite;
+}
+.purpleGlow .ringBorder::before {
+  background: conic-gradient(from var(--ring-rotation), var(--purple-start), var(--purple-mid), var(--purple-end), var(--purple-start)) border-box;
 }
 /* .greenGlowBorder {
   width: calc(75vw + 12px);
