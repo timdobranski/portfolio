@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import PhotoSlider from '../../../components/PhotoSlider/PhotoSlider';
 import styles from './page.module.css'
 
@@ -30,29 +31,41 @@ const projects = [
 ];
 
 export default function Design() {
+  const [selectedProjectTitle, setSelectedProjectTitle] = useState(projects[0].title);
+  const selectedProject = projects.find((project) => project.title === selectedProjectTitle) ?? projects[0];
+
   return (
     <div className={styles.pageWrapper}>
       <div className={`pageContentContainer ${styles.pageContentContainer}`}>
         <h1 className={styles.pageTitle}>3D DESIGN</h1>
-        <p className={styles.whiteText}>{`Lately, I’ve been getting deeper into woodworking and 3D design, building everything from art pieces to furniture that mixes physical craft with digital tools. A lot of that started with my dad, who’s shared his knowledge, experience, and eye for how things are made. I’m drawn to projects that feel tactile, colorful, and a little unexpected, often combining wood, 3D printing, lighting, and bold visual details.
+        <p className={styles.whiteText}>{`Woodworking and 3D design has become a new interest of mine, and I enjoy building everything from art pieces to concert installations that mix physical craft with digital tools. A lot of that started with my dad, who’s shared his knowledge, experience, and eye for how things are made.
 `}</p>
 
-        <div className={styles.projectsList}>
+        <div className={styles.projectSelector} aria-label="3D design projects">
           {projects.map((project) => (
-            <section className={styles.projectSection} key={project.title}>
-              <div className={styles.projectText}>
-                <h2 className={styles.projectTitle}>{project.title}</h2>
-                <p className={styles.projectDescription}>{project.description}</p>
-              </div>
-              <PhotoSlider
-                images={project.images}
-                aspectRatio='9 / 16'
-                altBase={`${project.title} photo`}
-                frameClassName={styles.projectSliderFrame}
-              />
-            </section>
+            <button
+              className={project.title === selectedProject.title ? styles.projectButtonActive : styles.projectButton}
+              key={project.title}
+              type="button"
+              onClick={() => setSelectedProjectTitle(project.title)}
+            >
+              {project.title}
+            </button>
           ))}
         </div>
+
+        <section className={styles.projectSection}>
+          <div className={styles.projectText}>
+            <h2 className={styles.projectTitle}>{selectedProject.title}</h2>
+            <p className={styles.projectDescription}>{selectedProject.description}</p>
+          </div>
+          <PhotoSlider
+            images={selectedProject.images}
+            aspectRatio='9 / 16'
+            altBase={`${selectedProject.title} photo`}
+            frameClassName={styles.projectSliderFrame}
+          />
+        </section>
       </div>
     </div>
   )

@@ -12,7 +12,7 @@
   justify-content: flex-start;
   align-items: space-around;
   height: auto;
-  overflow-y: auto;
+  overflow: visible;
   width: 65%;
   background: var(--panel-gradient-soft);
   border: 1px solid var(--border-subtle);
@@ -39,36 +39,61 @@
   margin: 0 auto 2rem auto;
   max-width: 900px;
 }
-.projectsList {
+.projectSelector {
   display: flex;
-  flex-direction: column;
-  gap: 3.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  padding-top: 0.15rem;
+  margin: 0 auto 2.5rem auto;
+  max-width: 900px;
   width: 100%;
-  margin-bottom: 4rem;
+}
+.projectButton,
+.projectButtonActive {
+  color: white;
+  font: inherit;
+  font-size: 1.15rem;
+  line-height: 1;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+.projectButton:hover,
+.projectButtonActive {
+  border-color: rgba(187, 175, 86, 0.85);
+  background: rgba(187, 175, 86, 0.18);
+}
+.projectButton:hover {
+  transform: translateY(-1px);
+}
+.projectButtonActive {
+  cursor: default;
 }
 .projectSection {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
   width: 100%;
+  margin-bottom: 4rem;
 }
 .projectText {
   max-width: 900px;
   margin: 0 auto;
 }
 .projectTitle {
-  width: fit-content;
-  color: transparent;
-  font-size: 2.25rem;
+  color: white;
+  font-size: clamp(1.75rem, 3vw, 2.15rem);
+  line-height: 1;
   text-align: center;
   text-transform: uppercase;
   margin: 0 auto 1rem auto;
-  padding: 0 0 0.4rem 0;
-  background-image: linear-gradient(to right, rgb(255, 253, 157), var(--yellow-mid), var(--green-start));
-  -webkit-background-clip: text;
-  background-clip: text;
-  border-bottom: 2px solid rgba(255, 243, 107, 0.55);
-  filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.45));
+  text-decoration: underline;
+  text-decoration-color: rgb(187, 175, 86);
+  text-underline-offset: 5px;
 }
 .projectDescription {
   color: white;
@@ -94,7 +119,7 @@
     justify-content: flex-start;
     align-items: center;
     height: auto;
-    overflow-y: auto;
+    overflow: visible;
     width: 95%;
     max-width: 500px;
     background: var(--panel-gradient-soft);
@@ -104,11 +129,17 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  .projectsList {
-    gap: 3rem;
+  .projectSelector {
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+  }
+  .projectButton,
+  .projectButtonActive {
+    font-size: 1rem;
+    padding: 0.65rem 0.85rem;
   }
   .projectTitle {
-    font-size: 1.85rem;
+    font-size: clamp(1.55rem, 8vw, 1.85rem);
   }
   .projectDescription {
     font-size: 1.15rem;

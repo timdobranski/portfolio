@@ -17,7 +17,7 @@
   color: var(--red-start);
   left: 45%;
  }
-.wrenchIcon { color: var(--yellow-mid); }
+.cubeIcon { color: var(--yellow-mid); }
 .contactIcon { color: var(--purple-start); }
 
 /*---------------------------------

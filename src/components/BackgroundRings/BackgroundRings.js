@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMusic, faCode, faMessage, faWrench } from '@fortawesome/free-solid-svg-icons';
+import { faMusic, faCode, faMessage, faCube } from '@fortawesome/free-solid-svg-icons';
 import styles from './BackgroundRings.module.css';
 
 const getIconData = (color) => {
@@ -9,7 +9,7 @@ const getIconData = (color) => {
     case 'redGlow':
       return { icon: faMusic, className: styles.musicIcon };
     case 'yellowGlow':
-      return { icon: faWrench, className: styles.wrenchIcon };
+      return { icon: faCube, className: styles.cubeIcon };
     case 'purpleGlow':
       return { icon: faMessage, className: styles.contactIcon };
     default:

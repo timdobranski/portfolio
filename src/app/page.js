@@ -3,7 +3,7 @@
 import styles from './Home.module.css'
 import { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft, faChevronRight, faMusic, faCode, faGraduationCap, faWrench, faMessage } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faChevronRight, faMusic, faCode, faCube, faMessage } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 
@@ -62,20 +62,12 @@ export default function Home() {
       icon: faMusic
     },
     {
-      header: 'LESSONS',
-      text: ['Select this ring to learn', 'more about my guitar', 'lessons'],
-      color: 'blueGlow',
-      link: '/lessons',
-      id: 'ring3',
-      icon: faGraduationCap
-    },
-    {
       header: '3D DESIGN',
       text: ['Select this ring to', 'see the art I create', 'from 3D models and', 'woodworking'],
       color: 'yellowGlow',
       link: '/3d-design',
       id: 'ring4',
-      icon: faWrench
+      icon: faCube
     },
   ]
 
@@ -423,7 +415,7 @@ export default function Home() {
           <FontAwesomeIcon icon={faChevronLeft} className={styles.leftNav} onClick={handlePreviousRing}/>
           <FontAwesomeIcon icon={faChevronRight} className={styles.rightNav} onClick={handleNextRing} />
           <div className='backgroundRing yellowGlow m c1'>
-            <FontAwesomeIcon icon={faWrench} className={styles.ringIcon} />
+            <FontAwesomeIcon icon={faCube} className={styles.ringIcon} />
 
           </div>
           <div className='backgroundRing purpleGlow m c2'>

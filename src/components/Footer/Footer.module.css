@@ -28,28 +28,55 @@
   min-height: 50px;
 }
 .footerLink {
-    cursor: pointer;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  color: white;
+  text-decoration: none;
+  transition: ease .5s;
+  padding: .25rem;
+  pointer-events: auto;
+}
+.footerIcon {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex: 0 0 auto;
 }
 .footerLink h2 {
   color: white;
   text-decoration: none;
   font-size: 1.5rem;
+  line-height: 1;
+  transform: translateY(.11em);
   transition: ease .5s;
-  padding: .25rem;
-  padding-bottom: 0;
-  pointer-events: auto;
+  padding: 0;
+  margin: 0;
 }
-.footerLink h2:hover {
+.footerLink:hover {
   color:rgb(135, 210, 135);
   text-decoration: underline;
   transform:scale(1.1);
   transition: ease .5s;
   cursor: pointer;
 }
+.footerLink:hover h2 {
+  color:rgb(135, 210, 135);
+}
 
 
 
 @media (max-width: 768px) {
+   .footerLink {
+    flex-direction: column;
+    justify-content: center;
+    gap: .15rem;
+    padding: .2rem .1rem;
+  }
+  .footerIcon {
+    width: 1rem;
+    height: 1rem;
+  }
    .footerLink h2 {
     font-size: 3vw;
   }
