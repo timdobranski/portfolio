@@ -1,7 +1,6 @@
 const projectData = [
   {
     name: 'Parkway Periodical',
-    titleLogo: '/images/projects/parkway-periodical/title-logo.png',
     date: 'Summer 2024',
     page: 'parkway-periodical',
     summary: 'School blog w/intro animation and custom post editor for school administrators.',
@@ -22,12 +21,10 @@ const projectData = [
       `/images/projects/parkway-periodical/5.webp`,
     ],
     deployLink: {url:'https://parkway-periodical.vercel.app/', text: 'See It In Action'},
-    repoLink: {url:'https://github.com/timdobranski/parkway-periodical.git', text: 'View Repo On Github'},
     status: 'In Production'
   },
   {
     name: 'Lock Learner',
-    titleLogo: '/images/projects/lock-learner/title-logo.png',
     date: 'Fall 2023',
     page: 'lock-learner',
     summary: 'Web game to teach PE students how to open their combination locks',
@@ -44,12 +41,10 @@ const projectData = [
       `/images/projects/lock-learner/lockLearner3.webp`,
     ],
     deployLink: {url:'https://lock-game.vercel.app/', text: 'See It In Action'},
-    repoLink: {url:'https://github.com/timdobranski/lock-game.git', text: 'View Repo On Github'},
     status: 'In Production'
   },
   {
     name: 'Parkway Schedule',
-    titleLogo: '/images/projects/parkway-schedule/title-logo.png',
     date: 'Summer 2024',
     page: 'parkway-schedule',
     summary: 'Interactive schedule for students and staff with todos functionality',
@@ -66,12 +61,10 @@ const projectData = [
 
     ],
     deployLink: {url:'https://parkwayschedule.vercel.app/', text: 'See It In Action'},
-    repoLink: {url:'https://github.com/timdobranski/lock-game.git', text: 'View Repo On Github'},
     status: 'In Production'
   },
   {
-    name: 'String School',
-    titleLogo: '/images/projects/string-school/title-logo.png',
+    name: 'String School App',
     date: '2024-2025',
     page: 'string-school',
     summary: 'Web & mobile app for music students with scheduling, progress-tracking and more',
@@ -81,7 +74,7 @@ const projectData = [
      it's not yet in production for my students, you can see the existing String School webpage, which I also designed, at the link above.`, `The challenges of
      this project have been accounting for many different account edge cases, including students who share an email address with a parent, students
      who have multiple parent contacts, parents who have multiple students, and adult students who have no parent contact.`],
-    tech: ['Next.js', 'React Native', 'Node.js', 'Spotify API', 'Google OAuth', 'PostgreSQL', 'cron', 'Twilio', 'AWS'],
+    tech: ['Next.js', 'React Native', 'Electron', 'Node.js', 'Apple Music API', 'Google OAuth', 'Supabase', 'Cron', 'Sendgrid'],
     video: 'https://www.youtube.com/embed/LTPBrOg7JbY',
     images: [
       `/images/projects/string-school/lmss-banner.jpg`,
@@ -94,12 +87,11 @@ const projectData = [
       `/images/projects/string-school/lmss7.webp`,
       `/images/projects/string-school/lmss8.webp`,
     ],
-    deployLink: { url: 'http://www.lamesastringschool.com', 'text': 'LaMesaStringSchool.com'},
-    repoLink: { url: 'https://github.com/timdobranski/string-school-web', text: 'View On Github' },
+    deployLink: { url: 'https://stringschool.app', text: ''},
     status: 'In Production'
   },
   {
-    name: 'String School Toolbox',
+    name: 'La Mesa String School Website',
     date: '2025',
     page: 'stringsmith',
     summary: 'A unique tool to teach guitar & music theory through games & songwriting. Not complete yet!',
@@ -115,18 +107,15 @@ const projectData = [
       '/images/projects/songsmith/glitterbombTheme.webp',
     ],
     deployLink: { url: 'https://stringsmith.vercel.app/fretboard', text: 'See It In Action'},
-    repoLink: { url: '', text: 'Repo Is Private' },
     status: 'In Development'
   },
   {
     name: 'Forgotten Alibi',
-    titleLogo: '/images/projects/forgottenalibi/title-logo.png',
     date: '2025',
     page: 'forgotten-alibi',
     summary: 'Website for my band with custom on-site e-commerce store',
-    description: [`This project was a special one—bringing our former band’s online presence to life in a way that
-      reflects who we are and what we care about. From showcasing music and merch to sharing stories and updates,
-      the site is built to grow alongside us.`],
+    description: [`When my old band from the 2000s started to find new life online in 2025, I created this
+      website to showcase our music and provide a place for fans to buy merch. It includes an online store through Shopify and Printify. The site is Next.js on the front end running headless Shopify on the back end.`],
     tech: ['Next.js', 'Vercel'],
     images: [
       '/images/projects/forgottenalibi/fa-collage.jpg',
@@ -135,7 +124,6 @@ const projectData = [
       // '/images/projects/songsmith/glitterbombTheme.webp',
     ],
     deployLink: { url: 'https://www.forgottenalibi.com', text: 'See It In Action'},
-    repoLink: { url: '', text: 'Repo Is Private' },
     status: 'In Production'
   },
   {
@@ -144,16 +132,13 @@ const projectData = [
     page: 'early-times-music',
     summary: 'Archive of the 2000s San Diego emo/post-hardcore music scene',
     description: [
-      `Early Times Music is an archive project dedicated to the 2000s San Diego emo/post-hardcore scene. The goal is to preserve the history and culture around the music in a clean, searchable format that’s easy to explore.`,
-      `The archive spans bands, shows, merch, and venues—capturing the people, places, and releases that defined the era.`,
-      `Built on Next.js and deployed through Vercel. Completed Winter 2026.`,
+      `Early Times Music is an archive project dedicated to the 2000s San Diego emo/post-hardcore scene. The goal is to preserve the history and culture around the music in a clean, searchable format that’s easy to explore. The archive spans bands, shows, merch, and venues—capturing the people, places, and releases that defined this era of music.`,
     ],
     tech: ['Next.js', 'Vercel'],
     images: [
       '/images/projects/early-times-music/etm-1.webp',
     ],
-    deployLink: { url: 'https://www.forgottenalibi.com', text: 'See It In Action'},
-    repoLink: { url: '', text: 'Repo Is Private' },
+    deployLink: { url: 'https://www.earlytimesmusic.com', text: 'See It In Action'},
     status: 'In Production'
   },
   // {
@@ -177,7 +162,6 @@ const projectData = [
   //     `/images/projects/canine-corners/6.webp`,
   //   ],
   //   deployLink: {url:'https://canine-corners.vercel.app/', text: 'See It In Action'},
-  //   repoLink: {url:'https://github.com/timdobranski/canine-corners', text: 'View Repo On Github'},
   //   status: 'Demo Project'
   // },
   {
@@ -195,7 +179,6 @@ const projectData = [
       `/images/projects/atelier-vacations/atelier-vacations.jpg`,
     ],
     deployLink: {url:'https://parkway-three.vercel.app/', text: 'See It In Action'},
-    repoLink: {url:'https://github.com/timdobranski/parkway.git', text: 'View Repo On Github'},
     status: 'Demo Project'
   },
   {
@@ -215,7 +198,6 @@ const projectData = [
       `/images/projects/atelier-design/atelier-design-4.jpg`,
     ],
     deployLink: {url:'', text: 'See It In Action'},
-    repoLink: {url:'https://github.com/timdobranski/atelier-design.git'},
     status: 'Demo Project'
   },
   // {
@@ -243,7 +225,6 @@ const projectData = [
   //     '/images/projects/fitpass/fitpass-8.png',
   //   ],
   //   deployLink: {url:'', text: 'No deployment available'},
-  //   repoLink: {url:'https://github.com/rpp2210-BOC-Aquaforce/FitnessPass', text: 'View Repo On Github'},
   //   status: 'School Project'
   // },
   // {
@@ -263,7 +244,6 @@ const projectData = [
   //     '/images/projects/atelier-apparel/dark-mode.webp',
   //   ],
   //   deployLink: {url:'', text: 'See It Deployed Here'},
-  //   repoLink: {url:'https://github.com/RPP2210-Wraith/Atelier'},
   //   status: 'School Project'
   // },
   // {
@@ -281,7 +261,6 @@ const projectData = [
   //     '/images/projects/portfolio/portfolio-preview.webp',
   //   ],
   //   deployLink: {url:'/', text: 'TimDobranski.com'},
-  //   repoLink: {url:'https://github.com/timdobranski/portfolio.git', text: ''},
   //   status: 'In Production'
   // }
 ]

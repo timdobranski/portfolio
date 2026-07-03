@@ -92,7 +92,10 @@ a {
 }
 .pageTitle {
   color: var(--text-primary);
-  font-size: 3rem;
+  font-size: clamp(2.5rem, 4vw, 3rem);
+  line-height: 1;
+  margin: 1rem 0;
+  text-align: center;
 }
 .whiteText {
   color: var(--text-secondary);

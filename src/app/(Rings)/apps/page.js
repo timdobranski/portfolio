@@ -78,12 +78,12 @@ export default function Projects() {
                   {project.images.length &&
                   <>
                     <img className={styles.projectThumb} src={project.images[0]} priority='true'  alt={'project homepage thumbnail'}/>
-                    <p className={`
+                    {/* <p className={`
                       ${styles.projectStatus}
                       ${project.status === 'In Production' && styles.inProduction}
                       ${project.status === 'In Development' && styles.inDevelopment}
                       ${(project.status === 'Demo Project' || project.status === 'School Project') && styles.demoProject}
-                      `}>{project.status}</p>
+                      `}>{project.status}</p> */}
                   </>
                   }
                 </Link>

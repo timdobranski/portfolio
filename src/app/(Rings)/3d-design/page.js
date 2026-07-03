@@ -6,16 +6,21 @@ import styles from './page.module.css'
 const projects = [
   {
     title: 'Acoustic Panels',
-    description: `Custom acoustic panels built to soften reflections while adding a warm, geometric visual element to the room. These combine practical sound treatment with a handmade design that can stand on its own as wall art.`,
+    description: `I built these acoustic panels for sound treatment in my home studio. 
+    They combine a black wooden frame with a lightstrip for a subtle glow, while reducing sound reflections.
+     The panels are made from a combination of wood, fabric, and acoustic foam.`,
     images: [
       '/images/3d-design-projects/acoustic-panels/acoustic-panel1.webp',
-      '/images/3d-design-projects/acoustic-panels/acoustic-panel2.webp',
-      '/images/3d-design-projects/acoustic-panels/acousticpanel3.webp',
+      '/images/3d-design-projects/acoustic-panels/acousticpanel2.webp',
+      '/images/3d-design-projects/acoustic-panels/acoustic-panel3.webp',
     ],
   },
   {
     title: 'LightWall',
-    description: `A modular illuminated wall piece that blends 3D-printed forms, layered texture, and programmable light. The goal was to create a sculptural surface that changes character as the lighting shifts.`,
+    description: `This Lightwall prototype eventually became a full-scale 8-foot tall by 30-foot wide installation
+     for the school I used to work at. It was designed as a backdrop for performances and events. 
+     It combines 3D printed components, wood, and LED lighting to create a visually striking wall that can be
+     programmed to display different colors and patterns.`,
     images: [
       '/images/3d-design-projects/lightwall/lightwall1.webp',
       '/images/3d-design-projects/lightwall/lightwall2.webp',

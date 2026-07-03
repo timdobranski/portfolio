@@ -1,45 +1,30 @@
 'use client';
 
 import styles from './Project.module.css';
-import Image from 'next/image';
 import Link from 'next/link';
 import Gallery from '../Gallery/Gallery.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function Project({ data }) {
-  console.log('project data', data)
-  // const name = data.name;
-  // const date = data.date;
-  // const description = data.description;
-  // const tech = data.tech;
-  // const images = data.images;
-  // const deployLink = data.deployLink;
-  // const repoLink = data.repoLink;
-
-  const { name, date, description, tech, images, deployLink, repoLink, titleLogo } = data;
-  // const { date } = data;
-  // const { description } = data;
-  // const { tech } = data;
-  // const { images } = data;
-  // const { deployLink } = data;
-  // const { repoLink } = data;
+  const { name, date, description, tech, images, deployLink } = data;
 
   return (
     <div className='pageContentContainer'>
-      {titleLogo ? <img src={titleLogo} className={styles.titleLogo}/> : <h2 className={'pageTitle'}>{name}</h2>}
+      <div className={styles.titleRow}>
+        <h1 className={`pageTitle ${styles.projectHeader}`}>{name}</h1>
+        {deployLink.url.length > 0 ?
+          <Link href={deployLink.url} className={styles.projectLink} aria-label={`Open ${name}`}>
+            <FontAwesomeIcon icon={faLink} />
+          </Link> :
+          null}
+      </div>
       <p className={styles.date}>{date}</p>
       <div className={styles.projectGrid}>
         <Gallery images={images} />
 
         <div className={`${styles.textContainer} ${styles.gridItem}`}>
-          {deployLink.url.length > 0 ?
-          <Link href={deployLink.url}>
-            <p className={styles.projectLink}>{deployLink.text}</p>
-          </Link> :
-          null}
-          {repoLink.url ? <Link href={repoLink.url}>
-            <p className={styles.projectLink}>View Repo on Github</p>
-          </Link> : <p className={styles.projectLink}>Repo Is Private</p>}
           {/* {data.video ? <iframe className={styles.video} src={data.video} title={name} frameBorder="0"
         controls allowFullScreen></iframe> : null} */}
           <div className={styles.sectionContainer}>

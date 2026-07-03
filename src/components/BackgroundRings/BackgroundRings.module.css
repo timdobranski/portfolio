@@ -43,81 +43,71 @@ BACKGROUND RINGS - SIZES, THEN POSITION (LEFT, RIGHT, CENTER)
 .l {
   width: 5vw;
   height: 5vw;
+  filter: blur(1px);
 }
 .m {
   width: 3vw;
   height: 3vw;
   border-width: 3px;
+  filter: blur(2.5px);
 }
 .s {
   width: 1.5vw;
   height: 1.5vw;
   border-width: 1px;
+  filter: blur(4px);
 }
 .l1 {
   top: 22%;
   left: 10%;
-  filter: blur(2px);
 }
 .l2 {
   top: 65%;
   left: 14%;
-  filter: blur(2px);
 }
 .l3 {
   top: 85%;
   left: 5%;
-  filter: blur(3px);
 }
 .l4 {
   top:50%;
   left: 3%;
-  filter: blur(4px);
 }
 .c1 {
   top: 35%;
   left: 80%;
-  filter: blur(2px);
 }
 .c2 {
   top: 78%;
   left: 75%;
-  filter: blur(2px);
 }
 .c3 {
   top: 78%;
   left: 25%;
-  filter: blur(2px);
 }
 .c4 {
   top: 25%;
   left: 15%;
-  filter: blur(2px);
 }
 .c5 {
   top: 34%;
   left: 28%;
-  filter: blur(2px);
 }
 .r1 {
   top: 34%;
   left: 85%;
-  filter: blur(1.5px);
 }
 .r2 {
   top: 75%;
   left: 88%;
-  filter: blur(3px);
 }
 .r3 {
   top: 45%;
   left: 92%;
-  filter: blur(3px);
 }
 .r4 {
   top: 25%;
   left: 95%;
-filter: blur(2px);
 }
 
 @keyframes pulsate {

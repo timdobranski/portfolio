@@ -21,6 +21,16 @@
   margin-bottom: 2rem;
   border-radius: 20px;
 }
+.aboutHeader {
+  color: var(--text-primary);
+  font-size: clamp(2.5rem, 4vw, 3rem);
+  line-height: 1;
+  margin: 1rem 0;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: var(--purple-start);
+  text-underline-offset: 5px;
+}
 .bioContainer {
   display: flex;
   flex-direction: column;

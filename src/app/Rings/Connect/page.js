@@ -6,7 +6,7 @@ export default function Connect() {
   return (
     <div>
       <div className='pageContentContainer'>
-      <h1>CONNECT</h1>
+      <h1 className={`pageTitle ${styles.pageHeader}`}>CONNECT</h1>
       <p>{`I'm always happy to make a new connection. Feel free to reach out in the following ways:`}</p>
       <div className={styles.contactInfoContainer}>
         <div className={styles.contactHeaders}>

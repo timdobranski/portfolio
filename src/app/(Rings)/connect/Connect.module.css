@@ -12,6 +12,12 @@
   /* backdrop-filter: blur(14px); */
 }
 
+.pageHeader {
+  text-decoration: underline;
+  text-decoration-color: rgb(0, 106, 145);
+  text-underline-offset: 5px;
+}
+
 .form {
   display: flex;
   flex-direction: column;

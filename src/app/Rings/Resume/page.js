@@ -8,7 +8,7 @@ export default function Resume() {
 
   return (
     <div className='pageContentContainer'>
-      <h1 >RESUME</h1>
+      <h1 className={`pageTitle ${styles.pageHeader}`}>RESUME</h1>
       <p>Download my resume, or browse my skills, history, accomplishments, & work values below</p>
       <a className={styles.resumeLink}href='https://docs.google.com/document/d/1W2uhSpW7nABS7ghYJyMSFq4B4OewsUBZX-lPDuYDrVk/edit?usp=sharing' target='_blank' rel='noreferrer'>
         <div >Download Resume</div>

@@ -59,7 +59,7 @@ export default function Connect() {
   return (
     <div>
       <div className='pageContentContainer'>
-        <h1 className={'pageTitle'}>CONNECT</h1>
+        <h1 className={`pageTitle ${styles.pageHeader}`}>CONNECT</h1>
         <p className={'whiteText'}>{`Reach out below:`}</p>
 
         <div className={styles.formOuter}>
