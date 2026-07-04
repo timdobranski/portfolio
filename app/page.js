@@ -380,12 +380,12 @@ export default function Home() {
 
   const layout = isMobile
     ? {
-        active: { top: 15, left: 27, size: 75, mt: -14, ml: -14, opacity: 1, z: 2, fontSize: 2 },
-        inactiveLeft: { top: 22, left: -25, size: 30, mt: -7.5, ml: 0, opacity: 1, z: -1, fontSize: 1 },
-        inactiveRight: { top: 22, left: 88, size: 30, mt: -7.5, ml: 7.5, opacity: 1, z: -1, fontSize: 1 },
-        farLeftInactive: { top: 38, left: -100, size: 30, mt: -7.5, ml: -7.5, opacity: 0, z: -2, fontSize: 1 },
-        farRightInactive: { top: 38, left: 150, size: 30, mt: -7.5, ml: -7.5, opacity: 0, z: -2, fontSize: 1 },
-        hidden: { top: 38, left: 150, size: 30, mt: -7.5, ml: -7.5, opacity: 0, z: -3, fontSize: 1 },
+        active: { top: 50, left: 50, size: 75, mt: -37.5, ml: -37.5, opacity: 1, z: 2, fontSize: 2 },
+        inactiveLeft: { top: 50, left: -25, size: 30, mt: -15, ml: 0, opacity: 1, z: -1, fontSize: 1 },
+        inactiveRight: { top: 50, left: 88, size: 30, mt: -15, ml: 7.5, opacity: 1, z: -1, fontSize: 1 },
+        farLeftInactive: { top: 50, left: -100, size: 30, mt: -15, ml: -7.5, opacity: 0, z: -2, fontSize: 1 },
+        farRightInactive: { top: 50, left: 150, size: 30, mt: -15, ml: -7.5, opacity: 0, z: -2, fontSize: 1 },
+        hidden: { top: 50, left: 150, size: 30, mt: -15, ml: -7.5, opacity: 0, z: -3, fontSize: 1 },
       }
     : {
         active: { top: 50, left: 50, size: 28, mt: -14, ml: -14, opacity: 1, z: 2, fontSize: 2 },
@@ -396,9 +396,27 @@ export default function Home() {
         hidden: { top: 50, left: 150, size: 15, mt: -7.5, ml: -7.5, opacity: 0, z: -3, fontSize: 1 },
       };
 
+  const getRingLayoutStyle = (ringLayout, transition) => ({
+    top: `${ringLayout.top}%`,
+    left: `${ringLayout.left}%`,
+    width: `${ringLayout.size}vw`,
+    height: `${ringLayout.size}vw`,
+    marginTop: `${ringLayout.mt}vw`,
+    marginLeft: `${ringLayout.ml}vw`,
+    fontSize: `${ringLayout.fontSize}vw`,
+    opacity: ringLayout.opacity,
+    zIndex: ringLayout.z,
+    ...(transition ? { transition } : {}),
+  });
+
   const getInterpolatedRingStyle = (index) => {
     const isInteracting = isDragging || isSettling;
-    if (!isInteracting) return undefined;
+    if (!isInteracting) {
+      if (!isMobile) return undefined;
+
+      const currentRole = getRoleForIndex(index, activeRing);
+      return getRingLayoutStyle(layout[currentRole] ?? layout.hidden);
+    }
 
     const fromRing = interactionFromRing ?? activeRing;
     const toRing = interactionToRing ?? fromRing;
@@ -412,20 +430,18 @@ export default function Home() {
     const t = clamp(dragProgress, 0, 1);
     const isOffscreenStartReposition = !isDragging && t === 0 && rawFromRole !== fromRole;
 
-    return {
-      top: `${lerp(from.top, to.top, t)}%`,
-      left: `${lerp(from.left, to.left, t)}%`,
-      width: `${lerp(from.size, to.size, t)}vw`,
-      height: `${lerp(from.size, to.size, t)}vw`,
-      marginTop: `${lerp(from.mt, to.mt, t)}vw`,
-      marginLeft: `${lerp(from.ml, to.ml, t)}vw`,
-      fontSize: `${lerp(from.fontSize, to.fontSize, t)}vw`,
+    return getRingLayoutStyle({
+      top: lerp(from.top, to.top, t),
+      left: lerp(from.left, to.left, t),
+      size: lerp(from.size, to.size, t),
+      mt: lerp(from.mt, to.mt, t),
+      ml: lerp(from.ml, to.ml, t),
+      fontSize: lerp(from.fontSize, to.fontSize, t),
       opacity: lerp(from.opacity, to.opacity, t),
-      zIndex: Math.round(lerp(from.z, to.z, t)),
-      transition: isDragging || isOffscreenStartReposition
+      z: Math.round(lerp(from.z, to.z, t)),
+    }, isDragging || isOffscreenStartReposition
         ? 'none'
-        : 'top 1000ms cubic-bezier(0.22, 1, 0.36, 1), left 1000ms cubic-bezier(0.22, 1, 0.36, 1), width 1000ms cubic-bezier(0.22, 1, 0.36, 1), height 1000ms cubic-bezier(0.22, 1, 0.36, 1), margin 1000ms cubic-bezier(0.22, 1, 0.36, 1), font-size 1000ms cubic-bezier(0.22, 1, 0.36, 1), opacity 800ms ease',
-    };
+        : 'top 1000ms cubic-bezier(0.22, 1, 0.36, 1), left 1000ms cubic-bezier(0.22, 1, 0.36, 1), width 1000ms cubic-bezier(0.22, 1, 0.36, 1), height 1000ms cubic-bezier(0.22, 1, 0.36, 1), margin 1000ms cubic-bezier(0.22, 1, 0.36, 1), font-size 1000ms cubic-bezier(0.22, 1, 0.36, 1), opacity 800ms ease');
   }
 
   const getContentStyle = (index, kind) => {

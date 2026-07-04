@@ -104,7 +104,7 @@ const projectData = [
     name: 'La Mesa String School Website',
     date: '2025',
     page: 'stringsmith',
-    summary: 'A unique tool to teach guitar & music theory through games & songwriting. Not complete yet!',
+    summary: 'Marketing site for La Mesa String School, my private music school in La Mesa, CA.',
     description: [`Marketing site for La Mesa String School, my private music school in La Mesa, CA.`],
     tech: ['Next.js', 'Vercel'],
     images: [
