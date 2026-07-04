@@ -31,11 +31,13 @@
 .title {
   display: inline-block;
   font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+  line-height: 0.9;
   margin: 0;
   color: rgba(247, 251, 255, 0.96);
   font-weight: 200;
   letter-spacing: 0.32em;
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.6));
+  transform: translateY(0.02em);
 }
 
 .desktopNav {
@@ -93,19 +95,21 @@
     display: block;
     padding-left: 6vw;
     padding-right: 6vw;
-    padding-top: 0.5rem;
-    padding-bottom: 0;
+    padding-top: var(--mobile-header-pad-top);
+    padding-bottom: var(--mobile-header-pad-bottom);
     width: 100%;
+    min-height: 0;
     /* height: 30vw; */
     /* min-height: 130px; */
     /* background-color: rgb(0, 0, 0); */
-    overflow: hidden;
+    overflow: visible;
     }
   .title {
-    font-size: 10vw;
+    font-size: var(--mobile-header-title-size);
     letter-spacing: 2px;
     line-height: 1;
-    transform: translateY(0.24em);
+    white-space: nowrap;
+    transform: none;
   }
   .desktopNav {
     display: none;

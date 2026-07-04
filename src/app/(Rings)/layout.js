@@ -10,6 +10,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import '../globals.css';
 
 const ringThemeByRoute = [
+  { path: '/about', className: 'ringPageBlue' },
   { path: '/connect', className: 'ringPagePurple' },
   { path: '/apps', className: 'ringPageGreen' },
   { path: '/music', className: 'ringPageRed' },
@@ -49,17 +50,14 @@ export default function Background({children}) {
   const pageVariants = {
     initial: {
       backgroundColor: 'black',
-      scale: 0.005,
       opacity: 0,
     },
     in: {
       backgroundColor: 'transparent',
-      scale: 1,
       opacity: 1,
     },
     out: {
       backgroundColor: 'black',
-      scale: 0.5
     }
   };
   const overlayVariants = {

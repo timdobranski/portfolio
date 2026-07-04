@@ -18,12 +18,14 @@ export default function About() {
           </div>
           <div className={styles.bioContainer}>
             <p>{`I'm a native of La Mesa, California, just outside of San Diego. I've been playing the guitar and writing/recording music
-            for most of my life. I grew up on rock, and as I've progressed I've ventured into blues and more recently jazz.`}</p>
-          <p>{`In high school, I started a rock band, and we were fortunate enough to sign a record contract just as I started college. We wrote and
-          recorded the first album, then promptly broke up after that.`}</p>
+            for most of my life. I grew up on rock, and as I've progressed I've ventured into blues and jazz. I'm drawn to music that is unfamiliar,
+            and surprising to me. Lately, I've been really impressed by the creativity and innovation in bands like Bear Ghost, Closure In Moscow,
+            and The Dear Hunter. I love to shred along to the band Intervals when I've got the time.`}</p>
+          <p>{`In high school, I started a rock band, Forgotten Alibi, and we were fortunate enough to sign a record contract just as I started college. We wrote and
+          recorded the first EP, then broke up due to creative differences after that.`}</p>
           <p>{`In 2009 I opened the La Mesa String School, my music studio, and I've taught guitar there ever since. `}</p>
-          <p>{`In my free time, I can be found playing music, reading or binge watching the latest show, and spending time exploring San Diego
-          with my dog, Aria. I'm currently working my way through Isaac Asimov's considerable body of fiction, and playing Aria's favorite new game, called 'Chew on Tim's arm'.`}</p>
+          <p>{`In my free time, I can be found playing and recording music, reading or binge watching the latest show, and spending time exploring San Diego
+          with my dog, Aria.`}</p>
           </div>
           <div className={styles.meImageContainer}>
             <Image className={styles.ariaImage} src={aria} alt='Tim Dobranski'/>

@@ -28,7 +28,7 @@
   margin: 1rem 0;
   text-align: center;
   text-decoration: underline;
-  text-decoration-color: var(--purple-start);
+  text-decoration-color: var(--ring-title-accent);
   text-underline-offset: 5px;
 }
 .bioContainer {

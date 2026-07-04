@@ -3,21 +3,32 @@
 import styles from './Home.module.css'
 import { Fragment, useCallback, useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft, faChevronRight, faMusic, faCode, faCube, faMessage } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faChevronRight, faMusic, faCode, faCube, faMessage, faUser } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence } from 'framer-motion';
 import Projects from './(Rings)/apps/page.js';
 import Connect from './(Rings)/connect/page.js';
 import Music from './(Rings)/music/page.js';
 import Design from './(Rings)/3d-design/page.js';
+import About from './(Rings)/about/page.js';
 
 const rings = [
+  {
+    header: 'ABOUT',
+    text: ['Select this ring to', 'learn more about me'],
+    color: 'blueGlow',
+    pageTheme: 'ringPageBlue',
+    link: '/about',
+    id: 'ring0',
+    icon: faUser,
+    Content: About,
+  },
   {
     header: 'CONNECT',
     text: ['Select this ring to', 'connect with me'],
     color: 'purpleGlow',
     pageTheme: 'ringPagePurple',
     link: '/connect',
-    id: 'ring0',
+    id: 'ring1',
     icon: faMessage,
     Content: Connect,
   },
@@ -27,7 +38,7 @@ const rings = [
     color: 'greenGlow',
     pageTheme: 'ringPageGreen',
     link: '/apps',
-    id: 'ring1',
+    id: 'ring2',
     icon: faCode,
     Content: Projects,
   },
@@ -37,7 +48,7 @@ const rings = [
     color: 'redGlow',
     pageTheme: 'ringPageRed',
     link: '/music',
-    id: 'ring2',
+    id: 'ring3',
     icon: faMusic,
     Content: Music,
   },
@@ -53,8 +64,10 @@ const rings = [
   },
 ]
 
+const defaultActiveRing = rings.findIndex(({ link }) => link === '/apps');
+
 export default function Home() {
-  const [activeRing, setActiveRing] = useState(1);
+  const [activeRing, setActiveRing] = useState(defaultActiveRing);
   const [zoomedRing, setZoomedRing] = useState(null);
   const [selectedRoute, setSelectedRoute] = useState(null);
   const [isRingContentVisible, setIsRingContentVisible] = useState(false);
@@ -664,7 +677,7 @@ export default function Home() {
               >
                 <button className='ringPageBackButton' type='button' onClick={handleRingBack}>
                   <FontAwesomeIcon icon={faChevronLeft} aria-hidden="true" />
-                  Back to rings
+                  Back
                 </button>
                 <SelectedContent />
               </div>

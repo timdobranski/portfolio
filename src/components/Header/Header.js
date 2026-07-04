@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCode, faCube, faEnvelope, faMusic } from '@fortawesome/free-solid-svg-icons';
+import { faCode, faCube, faEnvelope, faMusic, faUser } from '@fortawesome/free-solid-svg-icons';
 import styles from './Header.module.css';
 
 const links = [
@@ -10,7 +10,8 @@ const links = [
   { href: '/apps', label: 'CODE', icon: faCode, color: 'rgb(116, 185, 116)' },
   { href: '/music', label: 'MUSIC', icon: faMusic, color: 'var(--red-start)' },
   { href: '/3d-design', label: '3D DESIGN', icon: faCube, color: 'rgb(187, 175, 86)' },
-  { href: '/connect', label: 'CONNECT', icon: faEnvelope, color: 'rgb(0, 106, 145)' },
+  { href: '/about', label: 'ABOUT', icon: faUser, color: 'rgb(0, 106, 145)' },
+  { href: '/connect', label: 'CONNECT', icon: faEnvelope, color: 'rgb(139, 141, 255)' },
 ];
 
 export default function Header() {

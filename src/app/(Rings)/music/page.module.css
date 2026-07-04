@@ -1,5 +1,6 @@
 .pageWrapper {
   width: 100%;
+  overflow: visible;
 }
 .pageContentContainer {
   position: relative;

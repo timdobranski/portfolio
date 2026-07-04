@@ -366,6 +366,17 @@ ROUTED PAGE RING PROTOTYPE
   --ring-title-accent-soft: rgba(116, 185, 116, 0.18);
 }
 
+.ringPageBlue {
+  --ring-page-start: var(--blue-start);
+  --ring-page-mid: var(--blue-mid);
+  --ring-page-end: var(--blue-end);
+  --ring-page-glow: rgba(124, 247, 255, 0.38);
+  --ring-page-glow-soft: rgba(0, 187, 255, 0.2);
+  --ring-title-accent: rgb(0, 106, 145);
+  --ring-title-accent-soft: rgba(0, 106, 145, 0.22);
+  --ring-scroll-track: rgba(0, 106, 145, 0.5);
+}
+
 .ringPageRed {
   --ring-page-start: var(--red-start);
   --ring-page-mid: var(--red-mid);
@@ -394,9 +405,9 @@ ROUTED PAGE RING PROTOTYPE
   --ring-page-end: var(--purple-end);
   --ring-page-glow: rgba(143, 92, 255, 0.42);
   --ring-page-glow-soft: rgba(41, 211, 255, 0.2);
-  --ring-title-accent: rgb(0, 106, 145);
-  --ring-title-accent-soft: rgba(0, 106, 145, 0.22);
-  --ring-scroll-track: rgba(0, 106, 145, 0.5);
+  --ring-title-accent: rgb(194, 153, 255);
+  --ring-title-accent-soft: rgba(194, 153, 255, 0.22);
+  --ring-scroll-track: rgba(194, 153, 255, 0.5);
 }
 
 .ringPageFrame {
@@ -484,7 +495,7 @@ ROUTED PAGE RING PROTOTYPE
 
 .ringPageContentScroll > :not(.ringPageBackButton):not(.ringPageSiblingBackButton) {
   grid-column: 1;
-  grid-row: 1 / span 20;
+  grid-row: 2 / span 20;
   min-width: 0;
   width: 100%;
 }
@@ -514,14 +525,15 @@ ROUTED PAGE RING PROTOTYPE
 }
 
 .ringPageBackButton {
-  position: absolute;
-  top: calc(var(--ring-content-pad-top) + 1rem);
-  left: var(--ring-back-button-anchor-x);
+  position: relative;
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: center;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
   width: fit-content;
-  translate: -100% 0;
+  margin: 0 auto 1rem;
   padding: 0.55rem 0.9rem;
   border: 1px solid var(--ring-title-accent);
   border-radius: 999px;
@@ -637,10 +649,17 @@ MOBILE STYLING
 ----------------------------------*/
 @media (max-width: 768px) {
     :root {
-      --mobile-header-offset: 87px;
-      --mobile-footer-offset: clamp(58px, 14vw, 64px);
-      --mobile-ring-band-height: calc(100dvh - var(--mobile-header-offset) - var(--mobile-footer-offset));
-      --mobile-ring-center-y: calc(var(--mobile-header-offset) + var(--mobile-ring-band-height) / 2);
+  --mobile-header-title-size: 9vw;
+  --mobile-header-pad-top: 0.75rem;
+  --mobile-header-pad-bottom: 0.25rem;
+  --mobile-header-border-width: 1px;
+  --mobile-header-height: calc(var(--mobile-header-title-size) + var(--mobile-header-pad-top) + var(--mobile-header-pad-bottom) + var(--mobile-header-border-width));
+  --mobile-footer-height: clamp(58px, 14vw, 64px);
+  --mobile-ring-edge-gap: 0.25rem;
+  --mobile-header-offset: var(--mobile-header-height);
+  --mobile-footer-offset: var(--mobile-footer-height);
+  --mobile-ring-band-height: calc(100dvh - var(--mobile-header-offset) - var(--mobile-footer-offset) - (2 * var(--mobile-ring-edge-gap)));
+  --mobile-ring-center-y: calc(var(--mobile-header-offset) + var(--mobile-ring-edge-gap) + var(--mobile-ring-band-height) / 2);
       --mobile-ring-base: 75vw;
       --mobile-ring-visual: max(132vw, var(--mobile-ring-band-height));
       --mobile-ring-content-size: var(--mobile-ring-visual);
@@ -658,8 +677,8 @@ MOBILE STYLING
       --ring-content-track-size: min(calc(100vw - 2rem), calc(var(--ring-content-size) - 1rem));
       --ring-content-column-max: var(--ring-content-track-size);
       --ring-content-pad-x: calc((var(--ring-content-size) - var(--ring-content-track-size)) / 2);
-      --ring-content-pad-top: clamp(1rem, 5dvh, 2.5rem);
-      --ring-content-pad-bottom: 2rem;
+      --ring-content-pad-top: clamp(3.75rem, 8dvh, 5rem);
+      --ring-content-pad-bottom: 3.25rem;
       --ring-content-clip-radius: calc(50% - 0.675rem);
       --ring-back-button-anchor-x: max(0.35rem, calc((100% - 100vw) / 2 + 0.35rem));
       --ring-scroll-size: var(--ring-page-size);
@@ -673,6 +692,7 @@ MOBILE STYLING
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: flex-start;
       grid-template-columns: minmax(0, var(--ring-content-column-max));
       width: var(--ring-content-size);
       height: var(--ring-content-size);
@@ -685,8 +705,8 @@ MOBILE STYLING
       justify-content: center;
       width: fit-content;
       height: auto;
-      margin: 0 auto 0.75rem;
-      padding: 0.55rem 0.9rem;
+      margin: 0 auto 1rem;
+      padding: 0.7rem 0.95rem;
       gap: 0.4rem;
       border-radius: 999px;
       font-size: 1rem;

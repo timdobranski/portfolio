@@ -1,16 +1,17 @@
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCode, faCube, faEnvelope, faHome, faMusic } from '@fortawesome/free-solid-svg-icons';
+import { faCode, faCube, faEnvelope, faHome, faMusic, faUser } from '@fortawesome/free-solid-svg-icons';
 import styles from './Footer.module.css'; // Assuming you have a CSS file for styling
 
 export default function Footer() {
   // Icon colors match each page's header underline (text-decoration-color).
   const links = [
-    { href: '/', label: 'HOME', icon: faHome, color: 'var(--text-primary)' },
+    // { href: '/', label: 'HOME', icon: faHome, color: 'var(--text-primary)' },
     { href: '/apps', label: 'CODE', icon: faCode, color: 'rgb(116, 185, 116)' },
     { href: '/music', label: 'MUSIC', icon: faMusic, color: 'var(--red-start)' },
     { href: '/3d-design', label: '3D DESIGN', icon: faCube, color: 'rgb(187, 175, 86)' },
-    { href: '/connect', label: 'CONNECT', icon: faEnvelope, color: 'rgb(0, 106, 145)' },
+    { href: '/about', label: 'ABOUT', icon: faUser, color: 'rgb(0, 106, 145)' },
+    { href: '/connect', label: 'CONNECT', icon: faEnvelope, color: 'rgb(147, 135, 251)' },
   ];
 
   return (

@@ -73,9 +73,9 @@
   .footerContainer,
   .footerGrid {
     display: flex;
-    height: 14vw;
-    min-height: 58px;
-    max-height: 64px;
+    height: var(--mobile-footer-height);
+    min-height: var(--mobile-footer-height);
+    max-height: var(--mobile-footer-height);
     z-index: 15000;
   }
   .footerLink {
