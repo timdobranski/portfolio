@@ -2,8 +2,6 @@
 
 import styles from './Projects.module.css'
 import { useEffect, useMemo, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import projectData from 'public/projectData';
 import Project from '../../../components/Project/Project';
 
@@ -83,11 +81,6 @@ export default function Projects() {
     window.history.pushState({ projectPage }, '', `/apps/${projectPage}`);
   };
 
-  const backToGrid = () => {
-    setSelectedProjectPage(null);
-    window.history.back();
-  };
-
   if (!projectData) {
     return <div>Loading...</div>
   }
@@ -95,10 +88,6 @@ export default function Projects() {
   if (selectedProject) {
     return (
       <>
-        <button className={`ringPageSiblingBackButton ${styles.projectBackButton}`} type="button" onClick={backToGrid}>
-          <FontAwesomeIcon icon={faChevronLeft} aria-hidden="true" />
-          Back
-        </button>
         <Project data={selectedProject} />
       </>
     );

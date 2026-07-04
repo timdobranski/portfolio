@@ -2,6 +2,7 @@
 
 import styles from './Home.module.css'
 import { Fragment, useCallback, useEffect, useRef, useState } from 'react'
+import { usePathname } from 'next/navigation';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight, faMusic, faCode, faCube, faMessage, faUser } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence } from 'framer-motion';
@@ -67,6 +68,7 @@ const rings = [
 const defaultActiveRing = rings.findIndex(({ link }) => link === '/apps');
 
 export default function Home() {
+  const pathname = usePathname();
   const [activeRing, setActiveRing] = useState(defaultActiveRing);
   const [zoomedRing, setZoomedRing] = useState(null);
   const [selectedRoute, setSelectedRoute] = useState(null);
@@ -87,9 +89,21 @@ export default function Home() {
   const didSwipeRef = useRef(false);
   const settleTimeoutRef = useRef(null);
   const contentTimeoutRef = useRef(null);
+  const routeTransitionTimeoutRef = useRef(null);
   const ringContentScrollRef = useRef(null);
   const rafRef = useRef(null);
   const pendingTouchRef = useRef(null);
+  const activeRingRef = useRef(defaultActiveRing);
+  const selectedRouteRef = useRef(null);
+  const hasSyncedRouteRef = useRef(false);
+
+  useEffect(() => {
+    activeRingRef.current = activeRing;
+  }, [activeRing]);
+
+  useEffect(() => {
+    selectedRouteRef.current = selectedRoute;
+  }, [selectedRoute]);
 
   useEffect(() => {
     const mq = window.matchMedia('(max-width: 768px)');
@@ -116,26 +130,86 @@ export default function Home() {
     return () => window.removeEventListener('resize', updateRingScrollProgress);
   }, [selectedRoute, isRingContentVisible, updateRingScrollProgress]);
 
-  useEffect(() => {
-    const syncFromHistory = () => {
-      const routeIndex = rings.findIndex(({ link }) => (
-        window.location.pathname === link
-        || window.location.pathname.startsWith(`${link}/`)
-      ));
+  const syncRouteState = useCallback((nextPathname) => {
+    const routeIndex = rings.findIndex(({ link }) => (
+      nextPathname === link
+      || nextPathname.startsWith(`${link}/`)
+    ));
 
-      if (routeIndex === -1) {
-        setZoomedRing(null);
-        setSelectedRoute(null);
-        setIsRingContentVisible(false);
-        return;
-      }
+    if (contentTimeoutRef.current) {
+      window.clearTimeout(contentTimeoutRef.current);
+      contentTimeoutRef.current = null;
+    }
 
-      const ring = rings[routeIndex];
-      setActiveRing(routeIndex);
-      setZoomedRing(ring.id);
+    if (routeTransitionTimeoutRef.current) {
+      window.clearTimeout(routeTransitionTimeoutRef.current);
+      routeTransitionTimeoutRef.current = null;
+    }
+
+    if (routeIndex === -1) {
+      hasSyncedRouteRef.current = true;
+      selectedRouteRef.current = null;
+      setZoomedRing(null);
+      setSelectedRoute(null);
+      setIsRingContentVisible(false);
+      return;
+    }
+
+    const ring = rings[routeIndex];
+    const currentActiveRing = activeRingRef.current;
+    const shouldAnimateRouteChange = hasSyncedRouteRef.current && currentActiveRing !== routeIndex;
+
+    hasSyncedRouteRef.current = true;
+
+    if (shouldAnimateRouteChange) {
+      const forwardDistance = (routeIndex - currentActiveRing + rings.length) % rings.length;
+      const backwardDistance = (currentActiveRing - routeIndex + rings.length) % rings.length;
+
+      activeRingRef.current = routeIndex;
+      selectedRouteRef.current = ring.link;
       setSelectedRoute(ring.link);
-      setIsRingContentVisible(true);
-    };
+      setIsRingContentVisible(false);
+      setZoomedRing(null);
+      setInteractionFromRing(currentActiveRing);
+      setInteractionToRing(routeIndex);
+      setDragDirection(forwardDistance <= backwardDistance ? -1 : 1);
+      setDragProgress(0);
+      setIsSettling(true);
+      setActiveRing(routeIndex);
+
+      window.requestAnimationFrame(() => {
+        setDragProgress(1);
+      });
+
+      const settleMs = 1000;
+      routeTransitionTimeoutRef.current = window.setTimeout(() => {
+        setIsSettling(false);
+        setDragProgress(0);
+        setDragDirection(0);
+        setInteractionFromRing(null);
+        setInteractionToRing(null);
+        setZoomedRing(ring.id);
+        setIsRingContentVisible(true);
+        routeTransitionTimeoutRef.current = null;
+      }, settleMs);
+
+      return;
+    }
+
+    activeRingRef.current = routeIndex;
+    selectedRouteRef.current = ring.link;
+    setActiveRing(routeIndex);
+    setZoomedRing(ring.id);
+    setSelectedRoute(ring.link);
+    setIsRingContentVisible(true);
+  }, []);
+
+  useEffect(() => {
+    syncRouteState(pathname);
+  }, [pathname, syncRouteState]);
+
+  useEffect(() => {
+    const syncFromHistory = () => syncRouteState(window.location.pathname);
 
     const resetToRings = () => {
       if (contentTimeoutRef.current) {
@@ -159,8 +233,11 @@ export default function Home() {
       if (contentTimeoutRef.current) {
         window.clearTimeout(contentTimeoutRef.current);
       }
+      if (routeTransitionTimeoutRef.current) {
+        window.clearTimeout(routeTransitionTimeoutRef.current);
+      }
     };
-  }, []);
+  }, [syncRouteState]);
 
 
   const handleRingClick = (ringElement, url) => {
@@ -658,10 +735,6 @@ export default function Home() {
           </div>
           {SelectedContent && (
             <div className={`${styles.homeRingPageContent} ${isRingContentVisible ? styles.homeRingPageContentVisible : ''} ringPageViewport ${selectedRingTheme}`}>
-              <div className={`ringPageFrame ${styles.homeRingPageFrame}`} aria-hidden="true">
-                <div className='ringPageBorder ringPageBorderA'></div>
-                <div className='ringPageBorder ringPageBorderB'></div>
-              </div>
               <div
                 className={`ringPageScrollArc ${hasRingScrollableContent ? 'ringPageScrollArcVisible' : ''}`}
                 style={{

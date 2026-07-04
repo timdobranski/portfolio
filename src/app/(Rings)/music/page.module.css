@@ -1,4 +1,5 @@
 .pageWrapper {
+  --music-text-color: color-mix(in srgb, var(--red-start) 42%, white);
   width: 100%;
   overflow: visible;
 }
@@ -47,7 +48,8 @@
   text-underline-offset: 5px;
 }
 .whiteText {
-  color: white;
+  /* color: var(--music-text-color); */
+  /* color: #fd7272; */
   font-size: 1.25rem;
 }
 

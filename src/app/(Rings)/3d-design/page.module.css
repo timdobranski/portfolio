@@ -34,6 +34,7 @@
 }
 .whiteText {
   color: white;
+  /* color: rgb(255, 255, 173); */
   font-size: 1.25rem;
   text-align: center;
   margin: 0 auto 2rem auto;
@@ -83,6 +84,7 @@
 .projectText {
   max-width: 900px;
   margin: 0 auto;
+  /* color: rgb(255, 255, 173); */
 }
 .projectTitle {
   color: white;
@@ -97,6 +99,7 @@
 }
 .projectDescription {
   color: white;
+  /* color: rgb(255, 255, 173); */
   font-size: 1.25rem;
   margin: 0;
   text-align: center;

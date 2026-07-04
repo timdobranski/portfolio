@@ -43,6 +43,7 @@
   max-width: 100%;
   margin: 0 auto;
   margin-bottom: 4rem;
+  color: white !important;
 }
 .projectTitle {
   position: relative;

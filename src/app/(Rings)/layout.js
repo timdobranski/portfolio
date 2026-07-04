@@ -1,13 +1,13 @@
 'use client';
 
 import BackgroundRings from '../../components/BackgroundRings/BackgroundRings.js';
+import Home from '../page.js';
 import { usePathname, useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { AnimatePresence } from 'framer-motion';
 import { motion } from 'framer-motion';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import '../globals.css';
 
 const ringThemeByRoute = [
   { path: '/about', className: 'ringPageBlue' },
@@ -26,6 +26,7 @@ export default function Background({children}) {
   const router = useRouter();
   const pathname = usePathname();
   const ringThemeClass = getRingThemeClass(pathname);
+  const shouldUseCarouselShell = ringThemeByRoute.some(({ path }) => pathname === path);
   const isAppsProjectPage = /^\/apps\/[^/]+$/.test(pathname);
   const scrollRef = useRef(null);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -74,6 +75,10 @@ export default function Background({children}) {
       pointerEvents: 'all'
     }
   };
+
+  if (shouldUseCarouselShell) {
+    return <Home />;
+  }
 
 
   return (
