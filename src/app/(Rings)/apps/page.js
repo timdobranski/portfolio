@@ -1,10 +1,14 @@
 'use client';
 
 import styles from './Projects.module.css'
-import Link from 'next/link';
+import { useEffect, useMemo, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import projectData from 'public/projectData';
+import Project from '../../../components/Project/Project';
 
 export default function Projects() {
+  const [selectedProjectPage, setSelectedProjectPage] = useState(null);
 
   // const pageVariants = {
   //   initial: {
@@ -35,10 +39,6 @@ export default function Projects() {
   //   }
   // };
 
-  if (!projectData) {
-    return <div>Loading...</div>
-  }
-
   const projectOrder = [
     'forgotten-alibi',
     'early-times-music',
@@ -55,6 +55,54 @@ export default function Projects() {
   const sortedProjects = [...projectData].sort(
     (a, b) => (orderMap.get(a.page) ?? 999) - (orderMap.get(b.page) ?? 999)
   );
+  const selectedProject = useMemo(
+    () => projectData.find((project) => project.page === selectedProjectPage),
+    [selectedProjectPage]
+  );
+
+  const syncProjectFromUrl = () => {
+    const slug = window.location.pathname.match(/^\/apps\/([^/]+)$/)?.[1] ?? null;
+    setSelectedProjectPage(slug);
+  };
+
+  useEffect(() => {
+    syncProjectFromUrl();
+    window.addEventListener('popstate', syncProjectFromUrl);
+
+    return () => window.removeEventListener('popstate', syncProjectFromUrl);
+  }, []);
+
+  useEffect(() => {
+    window.requestAnimationFrame(() => {
+      window.dispatchEvent(new Event('resize'));
+    });
+  }, [selectedProjectPage]);
+
+  const openProject = (projectPage) => {
+    setSelectedProjectPage(projectPage);
+    window.history.pushState({ projectPage }, '', `/apps/${projectPage}`);
+  };
+
+  const backToGrid = () => {
+    setSelectedProjectPage(null);
+    window.history.pushState({ projectPage: null }, '', '/apps');
+  };
+
+  if (!projectData) {
+    return <div>Loading...</div>
+  }
+
+  if (selectedProject) {
+    return (
+      <>
+        <button className={`ringPageSiblingBackButton ${styles.projectBackButton}`} type="button" onClick={backToGrid}>
+          <FontAwesomeIcon icon={faChevronLeft} aria-hidden="true" />
+          Back to apps
+        </button>
+        <Project data={selectedProject} />
+      </>
+    );
+  }
 
   return (
     <div className={`pageContentContainer ${styles.projectsContainer}`}>
@@ -73,7 +121,12 @@ export default function Projects() {
 
 
               <div className={styles.thumbnailWrapper}>
-                <Link href={`apps/${project.page}`} className={styles.projectLink}>
+                <button
+                  type="button"
+                  className={styles.projectLink}
+                  onClick={() => openProject(project.page)}
+                  aria-label={`Open ${project.name}`}
+                >
 
                   {project.images.length &&
                   <>
@@ -86,7 +139,7 @@ export default function Projects() {
                       `}>{project.status}</p> */}
                   </>
                   }
-                </Link>
+                </button>
                 <div className={`${styles.hoverMessage}`} key={index}>
                   {project.summary}
                 </div>

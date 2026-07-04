@@ -1,7 +1,7 @@
 .footerContainer {
     background: linear-gradient(to bottom right, rgb(35, 64, 103), rgb(9, 66, 87));
 
-  display: flex;
+  display: none;
   position: fixed;
   flex-direction: row;
   justify-content: space-evenly;
@@ -72,9 +72,11 @@
 @media (max-width: 768px) {
   .footerContainer,
   .footerGrid {
+    display: flex;
     height: 14vw;
     min-height: 58px;
     max-height: 64px;
+    z-index: 15000;
   }
   .footerLink {
     flex-direction: column;

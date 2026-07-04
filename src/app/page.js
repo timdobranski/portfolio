@@ -1,18 +1,68 @@
 'use client';
 
 import styles from './Home.module.css'
-import { Fragment, useEffect, useRef, useState } from 'react'
+import { Fragment, useCallback, useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight, faMusic, faCode, faCube, faMessage } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence } from 'framer-motion';
-import { useRouter } from 'next/navigation';
+import Projects from './(Rings)/apps/page.js';
+import Connect from './(Rings)/connect/page.js';
+import Music from './(Rings)/music/page.js';
+import Design from './(Rings)/3d-design/page.js';
+
+const rings = [
+  {
+    header: 'CONNECT',
+    text: ['Select this ring to', 'connect with me'],
+    color: 'purpleGlow',
+    pageTheme: 'ringPagePurple',
+    link: '/connect',
+    id: 'ring0',
+    icon: faMessage,
+    Content: Connect,
+  },
+  {
+    header: 'CODE',
+    text: ['Select this ring to', 'see my web and mobile', 'software projects'],
+    color: 'greenGlow',
+    pageTheme: 'ringPageGreen',
+    link: '/apps',
+    id: 'ring1',
+    icon: faCode,
+    Content: Projects,
+  },
+  {
+    header: 'MUSIC',
+    text: ['Select this ring to see my ', 'musical projects'],
+    color: 'redGlow',
+    pageTheme: 'ringPageRed',
+    link: '/music',
+    id: 'ring2',
+    icon: faMusic,
+    Content: Music,
+  },
+  {
+    header: '3D DESIGN',
+    text: ['Select this ring to', 'see the art I create', 'from 3D models and', 'woodworking'],
+    color: 'yellowGlow',
+    pageTheme: 'ringPageYellow',
+    link: '/3d-design',
+    id: 'ring4',
+    icon: faCube,
+    Content: Design,
+  },
+]
 
 export default function Home() {
   const [activeRing, setActiveRing] = useState(1);
   const [zoomedRing, setZoomedRing] = useState(null);
+  const [selectedRoute, setSelectedRoute] = useState(null);
+  const [isRingContentVisible, setIsRingContentVisible] = useState(false);
+  const [ringScrollProgress, setRingScrollProgress] = useState(0);
+  const [hasRingScrollableContent, setHasRingScrollableContent] = useState(false);
 
   const [dragProgress, setDragProgress] = useState(0); // 0..1
-  const [dragDirection, setDragDirection] = useState(0); // -1 (left), 1 (right)
+  const [, setDragDirection] = useState(0); // -1 (left), 1 (right)
   const [isDragging, setIsDragging] = useState(false);
   const [isSettling, setIsSettling] = useState(false);
   const [interactionFromRing, setInteractionFromRing] = useState(null);
@@ -23,10 +73,11 @@ export default function Home() {
   const touchDeltaRef = useRef({ x: 0, y: 0 });
   const didSwipeRef = useRef(false);
   const settleTimeoutRef = useRef(null);
+  const contentTimeoutRef = useRef(null);
+  const ringContentScrollRef = useRef(null);
   const rafRef = useRef(null);
   const pendingTouchRef = useRef(null);
 
-  const router = useRouter();
   useEffect(() => {
     const mq = window.matchMedia('(max-width: 768px)');
     const onChange = () => setIsMobile(mq.matches);
@@ -36,47 +87,96 @@ export default function Home() {
     return () => mq.removeEventListener('change', onChange);
   }, []);
 
-  const rings = [
-    {
-      header: 'CONNECT',
-      text: ['Select this ring to', 'connect with me'],
-      color: 'purpleGlow',
-      link: '/connect',
-      id: 'ring0',
-      icon: faMessage
-    },
-    {
-      header: 'CODE',
-      text: ['Select this ring to', 'see my web and mobile', 'software projects'],
-      color: 'greenGlow',
-      link: '/apps',
-      id: 'ring1',
-      icon: faCode
-    },
-    {
-      header: 'MUSIC',
-      text: ['Select this ring to see my ', 'musical projects'],
-      color: 'redGlow',
-      link: '/music',
-      id: 'ring2',
-      icon: faMusic
-    },
-    {
-      header: '3D DESIGN',
-      text: ['Select this ring to', 'see the art I create', 'from 3D models and', 'woodworking'],
-      color: 'yellowGlow',
-      link: '/3d-design',
-      id: 'ring4',
-      icon: faCube
-    },
-  ]
+  const updateRingScrollProgress = useCallback(() => {
+    const scrollEl = ringContentScrollRef.current;
+    if (!scrollEl) return;
+
+    const maxScroll = scrollEl.scrollHeight - scrollEl.clientHeight;
+    setHasRingScrollableContent(maxScroll > 1);
+    setRingScrollProgress(maxScroll > 0 ? scrollEl.scrollTop / maxScroll : 0);
+  }, []);
+
+  useEffect(() => {
+    updateRingScrollProgress();
+    window.addEventListener('resize', updateRingScrollProgress);
+
+    return () => window.removeEventListener('resize', updateRingScrollProgress);
+  }, [selectedRoute, isRingContentVisible, updateRingScrollProgress]);
+
+  useEffect(() => {
+    const syncFromHistory = () => {
+      const routeIndex = rings.findIndex(({ link }) => (
+        window.location.pathname === link
+        || window.location.pathname.startsWith(`${link}/`)
+      ));
+
+      if (routeIndex === -1) {
+        setZoomedRing(null);
+        setSelectedRoute(null);
+        setIsRingContentVisible(false);
+        return;
+      }
+
+      const ring = rings[routeIndex];
+      setActiveRing(routeIndex);
+      setZoomedRing(ring.id);
+      setSelectedRoute(ring.link);
+      setIsRingContentVisible(true);
+    };
+
+    const resetToRings = () => {
+      if (contentTimeoutRef.current) {
+        window.clearTimeout(contentTimeoutRef.current);
+        contentTimeoutRef.current = null;
+      }
+
+      setIsRingContentVisible(false);
+      setSelectedRoute(null);
+      setZoomedRing(null);
+      setRingScrollProgress(0);
+      setHasRingScrollableContent(false);
+    };
+
+    window.addEventListener('popstate', syncFromHistory);
+    window.addEventListener('ringPageBackToRings', resetToRings);
+
+    return () => {
+      window.removeEventListener('popstate', syncFromHistory);
+      window.removeEventListener('ringPageBackToRings', resetToRings);
+      if (contentTimeoutRef.current) {
+        window.clearTimeout(contentTimeoutRef.current);
+      }
+    };
+  }, []);
 
 
   const handleRingClick = (ringElement, url) => {
     setZoomedRing(ringElement);
-    setTimeout(() => {
-      router.push(url);
-    }, 1000);
+    setSelectedRoute(url);
+    setIsRingContentVisible(false);
+
+    if (contentTimeoutRef.current) {
+      window.clearTimeout(contentTimeoutRef.current);
+    }
+
+    contentTimeoutRef.current = window.setTimeout(() => {
+      window.history.pushState({ ringRoute: url }, '', url);
+      setIsRingContentVisible(true);
+    }, 850);
+  }
+
+  const handleRingBack = () => {
+    if (contentTimeoutRef.current) {
+      window.clearTimeout(contentTimeoutRef.current);
+      contentTimeoutRef.current = null;
+    }
+
+    window.history.pushState({ ringRoute: null }, '', '/');
+    setIsRingContentVisible(false);
+    setSelectedRoute(null);
+    setZoomedRing(null);
+    setRingScrollProgress(0);
+    setHasRingScrollableContent(false);
   }
 
   const handleNextRing = () => {
@@ -199,12 +299,12 @@ export default function Home() {
         hidden: { top: 38, left: 150, size: 30, mt: -7.5, ml: -7.5, opacity: 0, z: -3, fontSize: 1 },
       }
     : {
-        active: { top: 37, left: 50, size: 28, mt: -14, ml: -14, opacity: 1, z: 2, fontSize: 2 },
-        inactiveLeft: { top: 38, left: -7.5, size: 15, mt: -7.5, ml: 0, opacity: 1, z: -1, fontSize: 1 },
-        inactiveRight: { top: 38, left: 86, size: 15, mt: -7.5, ml: 7.5, opacity: 1, z: -1, fontSize: 1 },
-        farLeftInactive: { top: 38, left: -100, size: 15, mt: -7.5, ml: -7.5, opacity: 0, z: -2, fontSize: 1 },
-        farRightInactive: { top: 38, left: 150, size: 15, mt: -7.5, ml: -7.5, opacity: 0, z: -2, fontSize: 1 },
-        hidden: { top: 38, left: 150, size: 15, mt: -7.5, ml: -7.5, opacity: 0, z: -3, fontSize: 1 },
+        active: { top: 50, left: 50, size: 28, mt: -14, ml: -14, opacity: 1, z: 2, fontSize: 2 },
+        inactiveLeft: { top: 50, left: -7.5, size: 15, mt: -7.5, ml: 0, opacity: 1, z: -1, fontSize: 1 },
+        inactiveRight: { top: 50, left: 86, size: 15, mt: -7.5, ml: 7.5, opacity: 1, z: -1, fontSize: 1 },
+        farLeftInactive: { top: 50, left: -100, size: 15, mt: -7.5, ml: -7.5, opacity: 0, z: -2, fontSize: 1 },
+        farRightInactive: { top: 50, left: 150, size: 15, mt: -7.5, ml: -7.5, opacity: 0, z: -2, fontSize: 1 },
+        hidden: { top: 50, left: 150, size: 15, mt: -7.5, ml: -7.5, opacity: 0, z: -3, fontSize: 1 },
       };
 
   const getInterpolatedRingStyle = (index) => {
@@ -384,7 +484,6 @@ export default function Home() {
     const isPrimarilyHorizontal = Math.abs(dx) >= Math.abs(dy) * 1.2;
 
     const settleMs = 1000;
-    const maxDrag = typeof window !== 'undefined' ? Math.min(260, window.innerWidth * 0.33) : 220;
     const dir = dx === 0 ? 0 : dx < 0 ? -1 : 1;
     const baseRing = interactionFromRing ?? activeRing;
     const nextRing = (baseRing + (dir === -1 ? 1 : -1) + rings.length) % rings.length;
@@ -419,6 +518,9 @@ export default function Home() {
     }, settleMs);
   }
 
+  const selectedRing = rings.find(({ link }) => link === selectedRoute);
+  const SelectedContent = selectedRing?.Content;
+  const selectedRingTheme = selectedRing?.pageTheme ?? 'ringPageGreen';
 
   return (
     <main id={styles.home}>
@@ -445,7 +547,7 @@ export default function Home() {
           </defs>
         </svg>
         <div
-          className={styles.homeContainer}
+          className={`${styles.homeContainer} ${selectedRoute ? styles.homeContentMode : ''}`}
           key='homeContainer'
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
@@ -498,15 +600,18 @@ export default function Home() {
                 ringClass = styles.hidden;
               }
 
+              const isSelectableRing = !zoomedRing && !isDragging && !isSettling && index === activeRing;
+
               return (
                 <Fragment key={ring.link}>
 
                   <div
                     onClick={() => {
                       if (didSwipeRef.current) return;
+                      if (!isSelectableRing) return;
                       handleRingClick(ring.id, ring.link);
                     }}
-                    className={`${styles.ring} ${styles[ring.color]} ${ringClass} ${zoomedRing === ring.id ? styles.ringZoom : ''}`}
+                    className={`${styles.ring} ${styles[ring.color]} ${ringClass} ${isSelectableRing ? styles.selectableRing : styles.nonSelectableRing} ${zoomedRing === ring.id ? styles.ringZoom : ''}`}
                     style={getInterpolatedRingStyle(index)}
                     id={ring.id}>
 
@@ -538,6 +643,29 @@ export default function Home() {
               );
             })}
           </div>
+          {SelectedContent && (
+            <div className={`${styles.homeRingPageContent} ${isRingContentVisible ? styles.homeRingPageContentVisible : ''} ringPageViewport ${selectedRingTheme}`}>
+              <div
+                className={`ringPageScrollArc ${hasRingScrollableContent ? 'ringPageScrollArcVisible' : ''}`}
+                style={{
+                  '--ring-scroll-progress-angle': `${5 + ringScrollProgress * 55}deg`,
+                  '--ring-scroll-progress-distance': `${ringScrollProgress * 50}dvh`,
+                }}
+                aria-hidden="true"
+              ></div>
+              <div
+                className={`ringPageContentScroll ${styles.homeRingPageContentScroll}`}
+                ref={ringContentScrollRef}
+                onScroll={updateRingScrollProgress}
+              >
+                <button className='ringPageBackButton' type='button' onClick={handleRingBack}>
+                  <FontAwesomeIcon icon={faChevronLeft} aria-hidden="true" />
+                  Back to rings
+                </button>
+                <SelectedContent />
+              </div>
+            </div>
+          )}
         </div>
       </AnimatePresence>
     </main>

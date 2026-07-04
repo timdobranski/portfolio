@@ -88,12 +88,17 @@
   /* border: solid red 2px; */
 }
 .projectLink {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
   box-shadow: 0 0 15px rgba(0, 0, 0, .5);
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  padding: 0;
 }
 .thumbnailWrapper {
   position: relative;
@@ -151,6 +156,71 @@
 }
 .projectsGridItem:hover .thumbnailWrapper {
   transform: scale(1.05) !important;
+}
+
+:global(.ringPageViewport) .projectsContainer {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+:global(.ringPageViewport) .titleWrapper {
+  margin-bottom: 1rem;
+}
+
+:global(.ringPageViewport) .projectsSubheader {
+  margin-bottom: 2rem;
+}
+
+:global(.ringPageViewport) .projectsGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+:global(.ringPageViewport) .projectTitle {
+  font-size: 1.25rem;
+  margin: 0.5rem 0 0;
+}
+
+:global(.ringPageViewport) .projectsGridItem:hover .thumbnailWrapper {
+  transform: scale(1.025) !important;
+}
+
+:global(.ringPageViewport) .hoverMessage {
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.projectBackButton {
+  position: absolute;
+  top: calc(var(--ring-content-pad-top) + 3.65rem);
+  left: var(--ring-back-button-anchor-x);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: fit-content;
+  translate: -100% 0;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgb(116, 185, 116);
+  border-radius: 999px;
+  background: rgba(5, 8, 22, 0.52);
+  color: var(--text-primary);
+  cursor: pointer;
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  box-shadow: 0 0 18px rgba(116, 185, 116, 0.18);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.projectBackButton svg {
+  color: rgb(116, 185, 116);
+  font-size: 0.85em;
+}
+
+.projectBackButton:hover {
+  background: rgba(116, 185, 116, 0.18);
+  transform: translateX(-2px);
 }
 
 
@@ -296,5 +366,20 @@
   }
   .projectsGridItem:hover .thumbnailWrapper {
     transform: none !important;
+  }
+  .projectBackButton {
+    top: 3.45rem;
+    left: var(--ring-back-button-anchor-x);
+    justify-content: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    padding: 0;
+    gap: 0;
+    border-radius: 50%;
+    font-size: 0;
+    translate: 0 0;
+  }
+  .projectBackButton svg {
+    font-size: 1rem;
   }
 }

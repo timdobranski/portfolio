@@ -296,6 +296,325 @@ ANIMATIONS
   box-shadow: 0 0 24px rgba(143, 92, 255, 0.4), 0 0 70px rgba(41, 211, 255, 0.2);
   animation: gradientOrbit 11s linear infinite, pulsatePurple 3s infinite, pulsate 3s infinite;
 }
+
+/*---------------------------------
+ROUTED PAGE RING PROTOTYPE
+---------------------------------*/
+.transitionContainer {
+  min-height: 100dvh;
+}
+
+.ringPageSvgFilters {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.ringPageViewport {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100dvh;
+  padding: clamp(5.5rem, 9vh, 7.5rem) clamp(1rem, 5vw, 5rem) 1rem;
+  isolation: isolate;
+  overflow: hidden;
+  --ring-page-start: var(--green-start);
+  --ring-page-mid: var(--green-mid);
+  --ring-page-end: var(--green-end);
+  --ring-page-glow: rgba(82, 255, 168, 0.42);
+  --ring-page-glow-soft: rgba(0, 245, 212, 0.2);
+  --ring-page-center-y: 55dvh;
+  --ring-page-size: clamp(720px, 82vmax, 1180px);
+  --ring-content-inset: clamp(4.5rem, 8vmin, 8rem);
+  --ring-content-size: calc(var(--ring-page-size) - var(--ring-content-inset));
+  --ring-content-edge-gap: clamp(3rem, 7vmin, 5.5rem);
+  --ring-content-pad-x: clamp(5rem, 9vw, 9rem);
+  --ring-content-column-max: 700px;
+  --ring-content-available-size: calc(var(--ring-content-size) - (2 * var(--ring-content-pad-x)));
+  --ring-back-button-anchor-x: calc(50% - clamp(15rem, 16vw, 19rem));
+  --ring-content-end-clearance: clamp(4rem, 10dvh, 7rem);
+  --ring-content-wrapper-end-clearance: clamp(19rem, 40dvh, 24rem);
+  --ring-content-pad-top: calc(max(var(--ring-content-edge-gap), calc((var(--ring-content-size) / 2) - var(--ring-page-center-y) + var(--ring-content-edge-gap))) + clamp(2.5rem, 5dvh, 4rem));
+  --ring-content-pad-bottom: calc(max(var(--ring-content-edge-gap), calc((var(--ring-content-size) / 2) + var(--ring-page-center-y) - 100dvh + var(--ring-content-edge-gap))) + var(--ring-content-end-clearance));
+  --ring-scroll-size: var(--ring-page-size);
+  --ring-scroll-start-angle: 60deg;
+  --ring-scroll-range-angle: 60deg;
+  --ring-scroll-gap: calc(clamp(0.9rem, 1.1vw, 1.35rem) + 2rem);
+  --ring-scroll-content-gap: 1rem;
+  --ring-scroll-thickness: 1rem;
+  --ring-scroll-reserved-space: clamp(4rem, calc(20rem - 20vw), 10rem);
+  --ring-content-track-size: min(calc(100% - var(--ring-scroll-reserved-space)), var(--ring-content-column-max));
+  --ring-scroll-reference-track-size: min(calc(var(--ring-content-available-size) - var(--ring-scroll-reserved-space)), var(--ring-content-column-max));
+  --ring-scroll-content-edge-inset: calc(var(--ring-content-pad-x) + ((var(--ring-content-available-size) - var(--ring-scroll-reference-track-size)) / 2) - var(--ring-scroll-content-gap) - var(--ring-scroll-thickness));
+  --ring-scroll-window-width: clamp(7rem, 8vw, 9rem);
+  --ring-scroll-window-height: 50dvh;
+  --ring-scroll-window-edge: max(0px, calc((var(--ring-scroll-size) - var(--ring-scroll-window-height)) / 2));
+  --ring-scroll-track: rgba(116, 185, 116, 0.55);
+  --ring-title-accent: rgb(116, 185, 116);
+  --ring-title-accent-soft: rgba(116, 185, 116, 0.18);
+}
+
+.ringPageGreen {
+  --ring-page-start: var(--green-start);
+  --ring-page-mid: var(--green-mid);
+  --ring-page-end: var(--green-end);
+  --ring-page-glow: rgba(82, 255, 168, 0.42);
+  --ring-page-glow-soft: rgba(0, 245, 212, 0.2);
+  --ring-title-accent: rgb(116, 185, 116);
+  --ring-title-accent-soft: rgba(116, 185, 116, 0.18);
+}
+
+.ringPageRed {
+  --ring-page-start: var(--red-start);
+  --ring-page-mid: var(--red-mid);
+  --ring-page-end: var(--red-end);
+  --ring-page-glow: rgba(255, 77, 109, 0.42);
+  --ring-page-glow-soft: rgba(255, 0, 110, 0.2);
+  --ring-title-accent: var(--red-start);
+  --ring-title-accent-soft: rgba(255, 77, 109, 0.18);
+  --ring-scroll-track: rgba(255, 77, 109, 0.5);
+}
+
+.ringPageYellow {
+  --ring-page-start: var(--yellow-start);
+  --ring-page-mid: var(--yellow-mid);
+  --ring-page-end: var(--yellow-end);
+  --ring-page-glow: rgba(255, 243, 107, 0.34);
+  --ring-page-glow-soft: rgba(255, 138, 0, 0.2);
+  --ring-title-accent: rgb(187, 175, 86);
+  --ring-title-accent-soft: rgba(187, 175, 86, 0.18);
+  --ring-scroll-track: rgba(187, 175, 86, 0.52);
+}
+
+.ringPagePurple {
+  --ring-page-start: var(--purple-start);
+  --ring-page-mid: var(--purple-mid);
+  --ring-page-end: var(--purple-end);
+  --ring-page-glow: rgba(143, 92, 255, 0.42);
+  --ring-page-glow-soft: rgba(41, 211, 255, 0.2);
+  --ring-title-accent: rgb(0, 106, 145);
+  --ring-title-accent-soft: rgba(0, 106, 145, 0.22);
+  --ring-scroll-track: rgba(0, 106, 145, 0.5);
+}
+
+.ringPageFrame {
+  position: fixed;
+  top: var(--ring-page-center-y);
+  left: 50%;
+  width: var(--ring-page-size);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at center, rgba(6, 10, 22, 0.88) 58%, rgba(2, 4, 10, 0.96) 100%);
+  box-shadow:
+    inset 0 0 120px rgba(0, 0, 0, 0.5),
+    0 0 36px var(--ring-page-glow),
+    0 0 120px var(--ring-page-glow-soft);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ringPageBorder {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ringPageBorder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: clamp(7px, 0.8vw, 12px) solid transparent;
+  border-radius: 50%;
+  --ring-rotation: 210deg;
+  background: conic-gradient(
+    from var(--ring-rotation),
+    var(--ring-page-start),
+    var(--ring-page-mid),
+    var(--ring-page-end),
+    var(--ring-page-start)
+  ) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: gradientOrbit 10s linear infinite;
+}
+
+.ringPageBorderA {
+  filter: url(#liquidRingA);
+  animation: borderSpin 26s linear infinite;
+}
+
+.ringPageBorderB {
+  filter: url(#liquidRingB) blur(2px);
+  opacity: 0.8;
+  mix-blend-mode: screen;
+  animation: borderSpinReverse 34s linear infinite;
+}
+
+.ringPageBorderB::before {
+  animation-duration: 14s;
+  animation-direction: reverse;
+}
+
+.ringPageContentScroll {
+  position: fixed;
+  top: var(--ring-page-center-y);
+  left: 50%;
+  display: grid;
+  grid-template-columns: minmax(0, var(--ring-content-track-size));
+  align-items: start;
+  justify-content: center;
+  width: var(--ring-content-size);
+  height: var(--ring-content-size);
+  padding: var(--ring-content-pad-top) var(--ring-content-pad-x) var(--ring-content-pad-bottom);
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  translate: -50% -50%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  scrollbar-width: none;
+  z-index: 1;
+}
+
+.ringPageContentScroll > :not(.ringPageBackButton):not(.ringPageSiblingBackButton) {
+  grid-column: 1;
+  grid-row: 1 / span 20;
+  min-width: 0;
+  width: 100%;
+}
+
+.ringPageContentScroll > :not(.ringPageBackButton):not(.ringPageSiblingBackButton):has(.pageContentContainer) {
+  box-sizing: border-box;
+  padding-bottom: var(--ring-content-wrapper-end-clearance);
+}
+
+.ringPageViewport .pageContentContainer {
+  top: 0;
+  width: var(--ring-content-track-size);
+  max-width: 100%;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 0;
+  overflow: visible;
+  color: var(--text-primary);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.ringPageViewport .pageTitle {
+  margin-top: 0;
+}
+
+.ringPageBackButton {
+  position: absolute;
+  top: calc(var(--ring-content-pad-top) + 1rem);
+  left: var(--ring-back-button-anchor-x);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: fit-content;
+  translate: -100% 0;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--ring-title-accent);
+  border-radius: 999px;
+  background: rgba(5, 8, 22, 0.52);
+  color: var(--text-primary);
+  cursor: pointer;
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  box-shadow: 0 0 18px var(--ring-title-accent-soft);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  z-index: 3;
+}
+
+.ringPageBackButton svg {
+  color: var(--ring-title-accent);
+  font-size: 0.85em;
+}
+
+.ringPageBackButton:hover {
+  background: var(--ring-title-accent-soft);
+  transform: translateX(-2px);
+}
+
+.ringPageContentScroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.ringPageScrollArc {
+  position: fixed;
+  top: var(--ring-page-center-y);
+  left: 50%;
+  width: var(--ring-content-size);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.ringPageScrollArc {
+  opacity: 0;
+  z-index: 2;
+  background: none;
+  filter: none;
+  mix-blend-mode: normal;
+  transition: opacity 250ms ease;
+}
+
+.ringPageScrollArc::before,
+.ringPageScrollArc::after {
+  content: '';
+  position: absolute;
+  top: calc(50% - (var(--ring-scroll-window-height) / 2));
+  right: var(--ring-scroll-content-edge-inset);
+  width: var(--ring-scroll-thickness);
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.ringPageScrollArc::before {
+  height: var(--ring-scroll-window-height);
+  background: var(--ring-scroll-track);
+}
+
+.ringPageScrollArc::after {
+  height: min(var(--ring-scroll-window-height), var(--ring-scroll-progress-distance, 0px));
+  background: var(--ring-title-accent);
+}
+
+.ringPageScrollArcVisible {
+  opacity: 1;
+}
+
+@media (min-width: 769px) {
+  .ringPageViewport {
+    --ring-page-center-y: calc(50dvh + 36px + 6vh);
+    --ring-page-size: 79.8vw;
+    --ring-content-pad-x: clamp(3rem, 5vw, 6rem);
+    --ring-content-column-max: min(1180px, calc(100vw - 14rem));
+    --ring-scroll-size: var(--ring-page-size);
+  }
+}
+
+@keyframes borderSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes borderSpinReverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
 .overlay {
   position: fixed;
   top: 0;
@@ -312,6 +631,61 @@ ANIMATIONS
 MOBILE STYLING
 ----------------------------------*/
 @media (max-width: 768px) {
+    :root {
+      --mobile-header-offset: 3.25rem;
+      --mobile-footer-offset: 4rem;
+      --mobile-ring-band-height: calc(100dvh - var(--mobile-header-offset) - var(--mobile-footer-offset));
+      --mobile-ring-center-y: calc(var(--mobile-header-offset) + var(--mobile-ring-band-height) / 2);
+      --mobile-ring-base: 75vw;
+      --mobile-ring-scale: 2.2;
+      --mobile-ring-visual: calc(var(--mobile-ring-base) * var(--mobile-ring-scale));
+      --mobile-ring-content-width: calc(var(--mobile-ring-visual) - 7rem);
+    }
+
+    .ringPageViewport {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: var(--mobile-header-offset) 0.75rem var(--mobile-footer-offset);
+      --ring-page-center-y: var(--mobile-ring-center-y);
+      --ring-page-size: var(--mobile-ring-visual);
+      --ring-content-size: var(--mobile-ring-content-width);
+      --ring-content-pad-x: 0.35rem;
+      --ring-content-column-max: 100%;
+      --ring-content-track-size: 100%;
+      --ring-back-button-anchor-x: max(0.35rem, calc((100% - 100vw) / 2 + 0.35rem));
+      --ring-scroll-size: var(--ring-page-size);
+      --ring-scroll-content-edge-inset: 0.5rem;
+    }
+    .ringPageFrame {
+      transform: translate(-50%, -50%);
+    }
+    .ringPageContentScroll {
+      grid-template-columns: minmax(0, var(--ring-content-column-max));
+      width: var(--mobile-ring-content-width);
+      height: var(--mobile-ring-content-width);
+      padding: 0.75rem 0.35rem 1rem;
+    }
+    .ringPageBackButton {
+      top: 0.9rem;
+      left: var(--ring-back-button-anchor-x);
+      justify-content: center;
+      width: 2.1rem;
+      height: 2.1rem;
+      padding: 0;
+      gap: 0;
+      border-radius: 50%;
+      font-size: 0;
+      translate: 0 0;
+    }
+    .ringPageBackButton svg {
+      font-size: 1rem;
+    }
+    .ringPageViewport .pageContentContainer {
+      width: 100%;
+      max-width: 100%;
+    }
     .pageContentContainer {
       margin: 0 auto;
       width: 95vw;
