@@ -9,14 +9,41 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 
 
-// const josefin = Josefin_Sans({
-//   subsets: ['latin'],
-//   weight: ['100']
-// });
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
+
+const personStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Tim Dobranski',
+  url: siteUrl,
+  jobTitle: 'Software Developer',
+  sameAs: [
+    'https://www.linkedin.com/in/timdobranski',
+    'https://github.com/timdobranski',
+  ],
+};
 
 export const metadata = {
-  title: 'Tim Dobranski',
-  description: 'A collection of projects and professional accomplishments by software developer Tim Dobranski',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: 'Tim Dobranski',
+    template: '%s | Tim Dobranski',
+  },
+  description: 'Portfolio of software engineering, music, teaching, and 3D design projects by Tim Dobranski.',
+  openGraph: {
+    title: 'Tim Dobranski',
+    description: 'Portfolio of software engineering, music, teaching, and 3D design projects by Tim Dobranski.',
+    url: siteUrl,
+    siteName: 'Tim Dobranski',
+    images: ['/opengraph-image.png'],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Tim Dobranski',
+    description: 'Portfolio of software engineering, music, teaching, and 3D design projects by Tim Dobranski.',
+    images: ['/twitter-image.png'],
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -36,6 +63,11 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-SLYXEWB0XE');
           `}
         </Script>
+        <Script
+          id="person-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personStructuredData) }}
+        />
         <Header />
 
         {children}
