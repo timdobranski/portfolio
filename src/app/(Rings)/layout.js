@@ -27,10 +27,20 @@ export default function Background({children}) {
   const pathname = usePathname();
   const ringThemeClass = getRingThemeClass(pathname);
   const shouldUseCarouselShell = ringThemeByRoute.some(({ path }) => pathname === path);
+  const isAppsRoute = pathname === '/apps' || pathname.startsWith('/apps/');
   const isAppsProjectPage = /^\/apps\/[^/]+$/.test(pathname);
   const scrollRef = useRef(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [hasScrollableContent, setHasScrollableContent] = useState(false);
+
+  const handleBackNavigation = useCallback(() => {
+    if (isAppsRoute && window.history.length > 1) {
+      router.back();
+      return;
+    }
+
+    router.push('/');
+  }, [isAppsRoute, router]);
 
   const updateScrollProgress = useCallback(() => {
     const scrollEl = scrollRef.current;
@@ -126,9 +136,9 @@ export default function Background({children}) {
             ></div>
             <div className='ringPageContentScroll' ref={scrollRef} onScroll={updateScrollProgress}>
               {!isAppsProjectPage && (
-                <button className='ringPageBackButton' type='button' onClick={() => router.push('/')}>
+                <button className='ringPageBackButton' type='button' onClick={handleBackNavigation}>
                   <FontAwesomeIcon icon={faChevronLeft} aria-hidden="true" />
-                  <span className='ringPageBackLabelFull'>Back to rings</span>
+                  <span className='ringPageBackLabelFull'>{isAppsRoute ? 'Back' : 'Back to rings'}</span>
                   <span className='ringPageBackLabelShort'>Back</span>
                 </button>
               )}
