@@ -453,6 +453,8 @@
   z-index: 50;
   pointer-events: auto;
   transform: translateY(-50%);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 
 }
 /* Only apply hover styles on devices that can truly hover (not touch).
