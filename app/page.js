@@ -5,7 +5,6 @@ import { Fragment, useCallback, useEffect, useRef, useState } from 'react'
 import { usePathname } from 'next/navigation';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight, faMusic, faCode, faCube, faMessage, faUser } from "@fortawesome/free-solid-svg-icons";
-import { AnimatePresence } from 'framer-motion';
 import Projects from './(Rings)/apps/page.js';
 import Connect from './(Rings)/connect/page.js';
 import Music from './(Rings)/music/page.js';
@@ -614,8 +613,6 @@ export default function Home() {
 
   return (
     <main id={styles.home}>
-      <AnimatePresence >
-
         {/* Turbulence filters that displace the ring border layers so they
             ebb/flow organically. The displacement `scale` breathes via SMIL,
             while the conic gradient + layer rotation (CSS) make the wobble
@@ -749,7 +746,7 @@ export default function Home() {
                 onScroll={updateRingScrollProgress}
               >
                 <button className='ringPageBackButton' type='button' onClick={handleRingBack}>
-                  <FontAwesomeIcon icon={faChevronLeft} aria-hidden="true" />
+                  <span aria-hidden="true">‹</span>
                   Back
                 </button>
                 <SelectedContent />
@@ -757,7 +754,6 @@ export default function Home() {
             </div>
           )}
         </div>
-      </AnimatePresence>
     </main>
   )
 }

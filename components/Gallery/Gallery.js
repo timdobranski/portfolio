@@ -89,6 +89,7 @@ export default function Gallery({ images = [] }) {
             )}
 
             {/* Native img keeps mixed aspect ratios within the viewport without a fixed frame. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={activeImage}
               alt={`Project screenshot ${activeIndex + 1}`}

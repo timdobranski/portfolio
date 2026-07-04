@@ -1,8 +1,9 @@
 'use client';
 
 import styles from './Projects.module.css'
+import Image from 'next/image';
 import { useEffect, useMemo, useState } from 'react';
-import projectData from 'public/projectData';
+import projectData from '@/public/projectData';
 import Project from '../../../components/Project/Project';
 
 export default function Projects() {
@@ -119,7 +120,13 @@ export default function Projects() {
 
                   {project.images.length &&
                   <>
-                    <img className={styles.projectThumb} src={project.images[0]} priority='true'  alt={'project homepage thumbnail'}/>
+                    <Image
+                      className={styles.projectThumb}
+                      src={project.images[0]}
+                      alt={`${project.name} thumbnail`}
+                      fill
+                      sizes="(max-width: 768px) 90vw, 22vw"
+                    />
                     {/* <p className={`
                       ${styles.projectStatus}
                       ${project.status === 'In Production' && styles.inProduction}

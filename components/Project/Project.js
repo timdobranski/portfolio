@@ -3,8 +3,6 @@
 import styles from './Project.module.css';
 import Link from 'next/link';
 import Gallery from '../Gallery/Gallery.js';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLink } from '@fortawesome/free-solid-svg-icons';
 
 
 function ProjectDescriptionBlock({ block, index }) {
@@ -34,7 +32,7 @@ export default function Project({ data }) {
         <h1 className={`pageTitle ${styles.projectHeader}`}>{name}</h1>
         {deployLink.url.length > 0 ?
           <Link href={deployLink.url} className={styles.projectLink} aria-label={`Open ${name}`}>
-            <FontAwesomeIcon icon={faLink} />
+            <span aria-hidden="true">↗</span>
           </Link> :
           null}
       </div>

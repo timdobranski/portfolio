@@ -1,8 +1,8 @@
 'use client';
 
 import styles from './About.module.css';
-import me from '../../../../public/images/me2square.jpg';
-import aria from '../../../../public/images/aria3.jpg';
+import me from '@/public/images/me2square.jpg';
+import aria from '@/public/images/aria3.jpg';
 
 import Image from 'next/image';
 

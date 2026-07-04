@@ -1,7 +1,8 @@
-import projectData from '../../../../../public/projectData';
+import projectData from '@/public/projectData';
 
 export async function generateMetadata({ params }) {
-  const project = projectData.find((item) => item.page === params.projectName);
+  const { projectName } = await params;
+  const project = projectData.find((item) => item.page === projectName);
 
   if (!project) {
     return {

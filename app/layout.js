@@ -1,7 +1,5 @@
 import './globals.css';
 import Header from '../components/Header/Header';
-import { Josefin_Sans } from '@next/font/google';
-import Link from 'next/link';
 import Script from 'next/script';
 import { config } from "@fortawesome/fontawesome-svg-core";
 import Footer from '../components/Footer/Footer';
