@@ -1,11 +1,17 @@
 .projectHeader {
+  grid-column: 2;
+  justify-self: center;
   text-decoration: none;
+  min-width: 0;
+  overflow: visible;
+  text-align: center;
 }
 .titleRow {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
   gap: 0.75rem;
+  overflow: visible;
 }
 .date {
   font-size: 2rem;
@@ -13,13 +19,21 @@
   background: rgb(163, 255, 163);
   color: black;
   width: fit-content;
-  margin: 0 auto;
-  margin-top: 2rem;
+  margin: 0;
   padding: 0.5rem 1rem .35rem 1rem;
-  margin-bottom: 2rem;
   /* color: white; */
 }
+.dateRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 2rem auto;
+  overflow: visible;
+}
 .projectLink {
+  grid-column: 3;
+  justify-self: start;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -36,6 +50,9 @@
 .projectLink:hover {
   transform: scale(1.1);
   cursor: pointer;
+}
+.mobileProjectLink {
+  display: none;
 }
 .projectGrid {
   display: grid;
@@ -167,17 +184,26 @@
   .date {
     font-size: 2rem;
     /* margin: 1rem; */
-    margin-bottom: 0;
+  }
+  .dateRow {
+    margin: 2rem auto 0;
   }
   .titleRow {
     gap: 0.5rem;
     padding: 0 1rem;
+    width: 100%;
   }
   .projectLink {
     width: 2.25rem;
     height: 2.25rem;
     font-size: 1rem;
     flex-shrink: 0;
+  }
+  .desktopProjectLink {
+    display: none;
+  }
+  .mobileProjectLink {
+    display: inline-flex;
   }
   .projectGrid {
     display: flex;

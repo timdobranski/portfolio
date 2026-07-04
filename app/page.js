@@ -720,6 +720,11 @@ export default function Home() {
 
                     <div className={`${styles.ringBorder} ${styles.ringBorderA}`} aria-hidden="true"></div>
                     <div className={`${styles.ringBorder} ${styles.ringBorderB}`} aria-hidden="true"></div>
+                    <div className={styles.portalParticles} aria-hidden="true">
+                      <span className={styles.portalParticleLayer}></span>
+                      <span className={styles.portalParticleLayer}></span>
+                      <span className={styles.portalParticleLayer}></span>
+                    </div>
 
                     <div className={styles.ringContainer}>
 

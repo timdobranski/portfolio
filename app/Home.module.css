@@ -158,6 +158,75 @@
   from { transform: rotate(360deg); }
   to { transform: rotate(0deg); }
 }
+.portalParticles {
+  position: absolute;
+  inset: -9%;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateZ(0);
+  transition: opacity 500ms ease;
+  contain: paint;
+}
+
+.portalParticleLayer {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 2%, var(--portal-particle-light) 0 0.18rem, transparent 0.24rem),
+    radial-gradient(circle at 72% 11%, var(--portal-particle-mid) 0 0.12rem, transparent 0.2rem),
+    radial-gradient(circle at 88% 43%, var(--portal-particle-deep) 0 0.16rem, transparent 0.24rem),
+    radial-gradient(circle at 66% 88%, var(--portal-particle-light) 0 0.1rem, transparent 0.18rem),
+    radial-gradient(circle at 21% 76%, var(--portal-particle-mid) 0 0.14rem, transparent 0.22rem),
+    radial-gradient(circle at 8% 38%, var(--portal-particle-deep) 0 0.11rem, transparent 0.18rem);
+  -webkit-mask: radial-gradient(circle, transparent 56%, #000 61%, #000 78%, transparent 84%);
+  mask: radial-gradient(circle, transparent 56%, #000 61%, #000 78%, transparent 84%);
+  mix-blend-mode: screen;
+  opacity: 0.65;
+  transform: translateZ(0) rotate(0deg);
+  animation: portalParticleOrbit 18s linear infinite, portalParticleBreath 7s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.portalParticleLayer:nth-child(2) {
+  inset: 3%;
+  opacity: 0.42;
+  animation-duration: 24s, 9s;
+  animation-direction: reverse, normal;
+}
+
+.portalParticleLayer:nth-child(3) {
+  inset: -4%;
+  opacity: 0.36;
+  animation-duration: 32s, 11s;
+  animation-delay: -4s, -2s;
+}
+
+.activeRing .portalParticles {
+  opacity: 1;
+}
+
+.inactiveLeft .portalParticles,
+.inactiveRight .portalParticles {
+  opacity: 0.28;
+}
+
+.ringZoom .portalParticles {
+  opacity: 0;
+}
+
+@keyframes portalParticleOrbit {
+  from { transform: translateZ(0) rotate(0deg); }
+  to { transform: translateZ(0) rotate(360deg); }
+}
+
+@keyframes portalParticleBreath {
+  0%, 100% { opacity: 0.22; }
+  40% { opacity: 0.72; }
+  64% { opacity: 0.34; }
+}
 .ringIcon {
   filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.12));
   position: absolute;
@@ -365,6 +434,9 @@
 } */
 
 .blueGlow {
+  --portal-particle-light: rgba(202, 255, 255, 0.88);
+  --portal-particle-mid: rgba(124, 247, 255, 0.84);
+  --portal-particle-deep: rgba(0, 187, 255, 0.72);
   box-shadow: 0 0 26px rgba(124, 247, 255, 0.34), 0 0 78px rgba(0, 187, 255, 0.22);
   animation: pulsateBlue 3s infinite;
 }
@@ -372,6 +444,9 @@
   background: conic-gradient(from var(--ring-rotation), var(--blue-start), var(--blue-mid), var(--blue-end), var(--blue-start)) border-box;
 }
 .yellowGlow {
+  --portal-particle-light: rgba(255, 252, 184, 0.88);
+  --portal-particle-mid: rgba(255, 210, 63, 0.84);
+  --portal-particle-deep: rgba(255, 138, 0, 0.72);
   box-shadow: 0 0 24px rgba(255, 243, 107, 0.28), 0 0 66px rgba(255, 138, 0, 0.24);
   animation: pulsateYellow 3.5s infinite;
 }
@@ -379,6 +454,9 @@
   background: conic-gradient(from var(--ring-rotation), var(--yellow-start), var(--yellow-mid), var(--yellow-end), var(--yellow-start)) border-box;
 }
 .redGlow {
+  --portal-particle-light: rgba(255, 183, 196, 0.86);
+  --portal-particle-mid: rgba(255, 77, 109, 0.82);
+  --portal-particle-deep: rgba(255, 0, 110, 0.7);
   box-shadow: 0 0 24px rgba(255, 77, 109, 0.42), 0 0 74px rgba(255, 0, 110, 0.24);
   animation: pulsateRed 4.5s infinite;
 }
@@ -386,6 +464,9 @@
   background: conic-gradient(from var(--ring-rotation), var(--red-start), var(--red-mid), var(--red-end), var(--red-start)) border-box;
 }
 .greenGlow {
+  --portal-particle-light: rgba(201, 255, 226, 0.88);
+  --portal-particle-mid: rgba(82, 255, 168, 0.84);
+  --portal-particle-deep: rgba(0, 245, 212, 0.7);
   box-shadow: 0 0 24px rgba(82, 255, 168, 0.42), 0 0 72px rgba(0, 245, 212, 0.22);
   animation: pulsateGreen 4s infinite;
   position: absolute;
@@ -395,6 +476,9 @@
   background: conic-gradient(from var(--ring-rotation), var(--green-start), var(--green-mid), var(--green-end), var(--green-start)) border-box;
 }
 .purpleGlow {
+  --portal-particle-light: rgba(228, 209, 255, 0.88);
+  --portal-particle-mid: rgba(143, 92, 255, 0.84);
+  --portal-particle-deep: rgba(41, 211, 255, 0.66);
   box-shadow: 0 0 24px rgba(143, 92, 255, 0.4), 0 0 72px rgba(41, 211, 255, 0.22);
   animation: pulsatePurple 4.5s infinite;
 }

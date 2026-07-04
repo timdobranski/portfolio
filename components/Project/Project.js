@@ -25,18 +25,27 @@ function ProjectDescriptionBlock({ block, index }) {
 
 export default function Project({ data }) {
   const { name, date, description, tech, images, deployLink } = data;
+  const hasDeployLink = deployLink.url.length > 0;
+  const deployLinkLabel = `Open ${name}`;
 
   return (
     <div className='pageContentContainer'>
       <div className={styles.titleRow}>
         <h1 className={`pageTitle ${styles.projectHeader}`}>{name}</h1>
-        {deployLink.url.length > 0 ?
-          <Link href={deployLink.url} className={styles.projectLink} aria-label={`Open ${name}`}>
+        {hasDeployLink ?
+          <Link href={deployLink.url} className={`${styles.projectLink} ${styles.desktopProjectLink}`} aria-label={deployLinkLabel}>
             <span aria-hidden="true">↗</span>
           </Link> :
           null}
       </div>
-      <p className={styles.date}>{date}</p>
+      <div className={styles.dateRow}>
+        <p className={styles.date}>{date}</p>
+        {hasDeployLink ?
+          <Link href={deployLink.url} className={`${styles.projectLink} ${styles.mobileProjectLink}`} aria-label={deployLinkLabel}>
+            <span aria-hidden="true">↗</span>
+          </Link> :
+          null}
+      </div>
       <div className={styles.projectGrid}>
         <Gallery images={images} />
 
