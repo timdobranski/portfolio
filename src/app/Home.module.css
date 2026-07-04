@@ -401,6 +401,30 @@
 .purpleGlow .ringBorder::before {
   background: conic-gradient(from var(--ring-rotation), var(--purple-start), var(--purple-mid), var(--purple-end), var(--purple-start)) border-box;
 }
+
+.ringZoom {
+  animation: none !important;
+}
+
+.blueGlow.ringZoom {
+  box-shadow: 0 0 12px rgba(124, 247, 255, 0.22), 0 0 34px rgba(0, 187, 255, 0.1) !important;
+}
+
+.yellowGlow.ringZoom {
+  box-shadow: 0 0 12px rgba(255, 243, 107, 0.2), 0 0 32px rgba(255, 138, 0, 0.1) !important;
+}
+
+.redGlow.ringZoom {
+  box-shadow: 0 0 12px rgba(255, 77, 109, 0.22), 0 0 34px rgba(255, 0, 110, 0.1) !important;
+}
+
+.greenGlow.ringZoom {
+  box-shadow: 0 0 12px rgba(82, 255, 168, 0.22), 0 0 34px rgba(0, 245, 212, 0.1) !important;
+}
+
+.purpleGlow.ringZoom {
+  box-shadow: 0 0 12px rgba(143, 92, 255, 0.22), 0 0 34px rgba(41, 211, 255, 0.1) !important;
+}
 /* .greenGlowBorder {
   width: calc(75vw + 12px);
   aspect-ratio: 1/1;
