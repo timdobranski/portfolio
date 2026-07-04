@@ -387,17 +387,19 @@
   height: 6rem;
   padding: 1rem;
   border-radius: 50%;
+  cursor: pointer;
   transition: background-color .5s ease, transform 1s ease;
   z-index: 50;
   pointer-events: auto;
 
 }
-.leftNav:hover, .rightNav:hover {
-  cursor: pointer;
-  transform:scale(1.1);
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.08);
-  transition: background-color .5s ease, transform 1s ease;
+/* Only apply hover styles on devices that can truly hover (not touch).
+   Touch browsers otherwise keep :hover sticky after tap. */
+@media (hover: hover) and (pointer: fine) {
+  .leftNav:hover, .rightNav:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.08);
+  }
 }
 .leftNav {
   left: 15vw;

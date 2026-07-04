@@ -46,7 +46,7 @@ export default function Home() {
       icon: faMessage
     },
     {
-      header: 'APPS',
+      header: 'CODE',
       text: ['Select this ring to', 'see my web and mobile', 'software projects'],
       color: 'greenGlow',
       link: '/apps',

@@ -52,9 +52,9 @@ export default function Project({ data }) {
           </div>
           <div className={styles.sectionContainer}>
             <p className={styles.techLabel}>TECH</p>
-            <ul>
+            <ul className={styles.techList}>
               {tech.map((tech) => {
-                return <li className={styles.techStack}key={tech}>{tech}</li>
+                return <li className={styles.techStack} key={tech}>{tech}</li>
               })}
             </ul>
           </div>

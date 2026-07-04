@@ -70,21 +70,24 @@
 
 
 @media (max-width: 768px) {
-   .footerLink {
+  .footerContainer,
+  .footerGrid {
+    height: 14vw;
+    min-height: 58px;
+    max-height: 64px;
+  }
+  .footerLink {
     flex-direction: column;
     justify-content: center;
-    gap: .15rem;
+    gap: .35rem;
     padding: .2rem .1rem;
   }
   .footerIcon {
-    width: 1rem;
-    height: 1rem;
+    width: 1.35rem;
+    height: 1.35rem;
   }
-   .footerLink h2 {
+  .footerLink h2 {
     font-size: 3vw;
-  }
-  .footerGrid {
-    height: 12vw;
-    max-height: 50px;
+    font-weight: 400;
   }
 }

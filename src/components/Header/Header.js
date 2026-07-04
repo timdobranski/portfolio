@@ -9,7 +9,13 @@ export default function Header() {
       <Link href='/'>
         <h1 className={styles.title}>TIM DOBRANSKI</h1>
       </Link>
-      <p className={styles.description}>CODE, MUSIC, & 3D DESIGN</p>
+      <p className={styles.description}>
+        <span>CODE</span>
+        <span className={styles.separator}>|</span>
+        <span>MUSIC</span>
+        <span className={styles.separator}>|</span>
+        <span>3D DESIGN</span>
+      </p>
     </div>
   )
 }

@@ -87,7 +87,6 @@ const projectData = [
     tech: ['Next.js', 'React Native', 'Electron', 'Node.js', 'Apple Music API', 'Google OAuth', 'Supabase', 'Cron', 'Sendgrid'],
     video: 'https://www.youtube.com/embed/LTPBrOg7JbY',
     images: [
-      `/images/projects/string-school/lmss-banner.jpg`,
       `/images/projects/string-school/og.png`,
       `/images/projects/string-school/practice-tools.webp`,
       `/images/projects/string-school/skill-path.webp`,
@@ -106,16 +105,13 @@ const projectData = [
     date: '2025',
     page: 'stringsmith',
     summary: 'A unique tool to teach guitar & music theory through games & songwriting. Not complete yet!',
-    description: [`The String School toolbox is a collection of tools to help music students learn guitar and music theory through
-      games and songwriting. It includes a fretboard trainer, a chord trainer, a scale trainer, and a songwriting tool.`, `Currently
-      the toolbox is used for my students to practice their fretboard knowledge, but the goal is to expand it into a standalone learning
-      platform in the future.`],
-    tech: ['Next.js', 'Vercel', 'Supabase', 'Tauri', 'React Native'],
+    description: [`Marketing site for La Mesa String School, my private music school in La Mesa, CA.`],
+    tech: ['Next.js', 'Vercel'],
     images: [
-      '/images/projects/songsmith/logo.jpg',
-      '/images/projects/songsmith/defaultTheme.webp',
-      '/images/projects/songsmith/metalheadTheme.webp',
-      '/images/projects/songsmith/glitterbombTheme.webp',
+      '/images/projects/lamesastringschool/lmss-banner.jpg',
+      '/images/projects/lamesastringschool/lamesastringschool1.webp',
+      '/images/projects/lamesastringschool/lamesastringschool2.webp',
+      '/images/projects/lamesastringschool/lamesastringschool3.webp',
     ],
     deployLink: { url: 'https://stringsmith.vercel.app/fretboard', text: 'See It In Action'},
     status: 'In Development'
@@ -127,7 +123,7 @@ const projectData = [
     summary: 'Website for my band with custom on-site e-commerce store',
     description: [`When my old band from the 2000s started to find new life online in 2025, I created this
       website to showcase our music and provide a place for fans to buy merch. It includes an online store through Shopify and Printify. The site is Next.js on the front end running headless Shopify on the back end.`],
-    tech: ['Next.js', 'Vercel'],
+    tech: ['Next.js', 'Shopify', 'Printify', 'Vercel'],
     images: [
       '/images/projects/forgottenalibi/fa-collage.jpg',
       '/images/projects/forgottenalibi/home-page.jpg',

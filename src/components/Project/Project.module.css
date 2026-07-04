@@ -109,13 +109,27 @@
   color: white;
   text-decoration-color: rgb(116, 185, 116);
 }
-.techStack {
-  font-size: 2rem;
-  /* font-weight: bold; */
-  display: inline-block;
-  color: white;
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
   list-style-type: none;
-  margin-right: 40px;
+  margin: 1.5rem auto 0;
+  padding: 0;
+}
+.techStack {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(163, 255, 163, 0.45);
+  border-radius: 999px;
+  background: rgba(163, 255, 163, 0.12);
+  box-shadow: 0 0 18px rgba(116, 185, 116, 0.18);
+  color: white;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  padding: 0.55rem 0.9rem;
 }
 .video {
   width: 100%;
@@ -200,7 +214,13 @@
   .descriptionListItem {
     margin-right: 0 !important;
   }
+  .techList {
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
   .techStack {
+    font-size: 1rem;
     font-weight: 200;
+    padding: 0.5rem 0.8rem;
   }
 }
