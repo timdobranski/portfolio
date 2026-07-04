@@ -85,7 +85,7 @@ export default function Projects() {
 
   const backToGrid = () => {
     setSelectedProjectPage(null);
-    window.history.pushState({ projectPage: null }, '', '/apps');
+    window.history.back();
   };
 
   if (!projectData) {
@@ -97,7 +97,7 @@ export default function Projects() {
       <>
         <button className={`ringPageSiblingBackButton ${styles.projectBackButton}`} type="button" onClick={backToGrid}>
           <FontAwesomeIcon icon={faChevronLeft} aria-hidden="true" />
-          Back to apps
+          Back
         </button>
         <Project data={selectedProject} />
       </>

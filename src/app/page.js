@@ -645,6 +645,10 @@ export default function Home() {
           </div>
           {SelectedContent && (
             <div className={`${styles.homeRingPageContent} ${isRingContentVisible ? styles.homeRingPageContentVisible : ''} ringPageViewport ${selectedRingTheme}`}>
+              <div className={`ringPageFrame ${styles.homeRingPageFrame}`} aria-hidden="true">
+                <div className='ringPageBorder ringPageBorderA'></div>
+                <div className='ringPageBorder ringPageBorderB'></div>
+              </div>
               <div
                 className={`ringPageScrollArc ${hasRingScrollableContent ? 'ringPageScrollArcVisible' : ''}`}
                 style={{

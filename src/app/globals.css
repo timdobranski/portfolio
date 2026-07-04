@@ -328,6 +328,7 @@ ROUTED PAGE RING PROTOTYPE
   --ring-page-size: clamp(720px, 82vmax, 1180px);
   --ring-content-inset: clamp(4.5rem, 8vmin, 8rem);
   --ring-content-size: calc(var(--ring-page-size) - var(--ring-content-inset));
+  --ring-content-clip-radius: 50%;
   --ring-content-edge-gap: clamp(3rem, 7vmin, 5.5rem);
   --ring-content-pad-x: clamp(5rem, 9vw, 9rem);
   --ring-content-column-max: 700px;
@@ -472,7 +473,7 @@ ROUTED PAGE RING PROTOTYPE
   height: var(--ring-content-size);
   padding: var(--ring-content-pad-top) var(--ring-content-pad-x) var(--ring-content-pad-bottom);
   border-radius: 50%;
-  clip-path: circle(50% at 50% 50%);
+  clip-path: circle(var(--ring-content-clip-radius) at 50% 50%);
   translate: -50% -50%;
   overflow-x: hidden;
   overflow-y: auto;
@@ -543,6 +544,10 @@ ROUTED PAGE RING PROTOTYPE
 .ringPageBackButton:hover {
   background: var(--ring-title-accent-soft);
   transform: translateX(-2px);
+}
+
+.ringPageBackLabelShort {
+  display: none;
 }
 
 .ringPageContentScroll::-webkit-scrollbar {
@@ -632,14 +637,13 @@ MOBILE STYLING
 ----------------------------------*/
 @media (max-width: 768px) {
     :root {
-      --mobile-header-offset: 3.25rem;
-      --mobile-footer-offset: 4rem;
+      --mobile-header-offset: 87px;
+      --mobile-footer-offset: clamp(58px, 14vw, 64px);
       --mobile-ring-band-height: calc(100dvh - var(--mobile-header-offset) - var(--mobile-footer-offset));
       --mobile-ring-center-y: calc(var(--mobile-header-offset) + var(--mobile-ring-band-height) / 2);
       --mobile-ring-base: 75vw;
-      --mobile-ring-scale: 2.2;
-      --mobile-ring-visual: calc(var(--mobile-ring-base) * var(--mobile-ring-scale));
-      --mobile-ring-content-width: calc(var(--mobile-ring-visual) - 7rem);
+      --mobile-ring-visual: max(132vw, var(--mobile-ring-band-height));
+      --mobile-ring-content-size: var(--mobile-ring-visual);
     }
 
     .ringPageViewport {
@@ -650,37 +654,52 @@ MOBILE STYLING
       padding: var(--mobile-header-offset) 0.75rem var(--mobile-footer-offset);
       --ring-page-center-y: var(--mobile-ring-center-y);
       --ring-page-size: var(--mobile-ring-visual);
-      --ring-content-size: var(--mobile-ring-content-width);
-      --ring-content-pad-x: 0.35rem;
-      --ring-content-column-max: 100%;
-      --ring-content-track-size: 100%;
+      --ring-content-size: var(--mobile-ring-content-size);
+      --ring-content-track-size: min(calc(100vw - 2rem), calc(var(--ring-content-size) - 1rem));
+      --ring-content-column-max: var(--ring-content-track-size);
+      --ring-content-pad-x: calc((var(--ring-content-size) - var(--ring-content-track-size)) / 2);
+      --ring-content-pad-top: clamp(1rem, 5dvh, 2.5rem);
+      --ring-content-pad-bottom: 2rem;
+      --ring-content-clip-radius: calc(50% - 0.675rem);
       --ring-back-button-anchor-x: max(0.35rem, calc((100% - 100vw) / 2 + 0.35rem));
       --ring-scroll-size: var(--ring-page-size);
-      --ring-scroll-content-edge-inset: 0.5rem;
+      --ring-scroll-thickness: 0.4rem;
+      --ring-scroll-content-edge-inset: calc(var(--ring-content-pad-x) - 0.65rem);
     }
     .ringPageFrame {
       transform: translate(-50%, -50%);
     }
     .ringPageContentScroll {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       grid-template-columns: minmax(0, var(--ring-content-column-max));
-      width: var(--mobile-ring-content-width);
-      height: var(--mobile-ring-content-width);
-      padding: 0.75rem 0.35rem 1rem;
+      width: var(--ring-content-size);
+      height: var(--ring-content-size);
+      padding: var(--ring-content-pad-top) var(--ring-content-pad-x) var(--ring-content-pad-bottom);
     }
     .ringPageBackButton {
-      top: 0.9rem;
-      left: var(--ring-back-button-anchor-x);
+      position: relative;
+      top: auto;
+      left: auto;
       justify-content: center;
-      width: 2.1rem;
-      height: 2.1rem;
-      padding: 0;
-      gap: 0;
-      border-radius: 50%;
-      font-size: 0;
+      width: fit-content;
+      height: auto;
+      margin: 0 auto 0.75rem;
+      padding: 0.55rem 0.9rem;
+      gap: 0.4rem;
+      border-radius: 999px;
+      font-size: 1rem;
       translate: 0 0;
     }
     .ringPageBackButton svg {
-      font-size: 1rem;
+      font-size: 0.85em;
+    }
+    .ringPageBackLabelFull {
+      display: none;
+    }
+    .ringPageBackLabelShort {
+      display: inline;
     }
     .ringPageViewport .pageContentContainer {
       width: 100%;

@@ -25,6 +25,7 @@ export default function Background({children}) {
   const router = useRouter();
   const pathname = usePathname();
   const ringThemeClass = getRingThemeClass(pathname);
+  const isAppsProjectPage = /^\/apps\/[^/]+$/.test(pathname);
   const scrollRef = useRef(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [hasScrollableContent, setHasScrollableContent] = useState(false);
@@ -121,10 +122,13 @@ export default function Background({children}) {
               aria-hidden="true"
             ></div>
             <div className='ringPageContentScroll' ref={scrollRef} onScroll={updateScrollProgress}>
-              <button className='ringPageBackButton' type='button' onClick={() => router.push('/')}>
-                <FontAwesomeIcon icon={faChevronLeft} aria-hidden="true" />
-                Back to rings
-              </button>
+              {!isAppsProjectPage && (
+                <button className='ringPageBackButton' type='button' onClick={() => router.push('/')}>
+                  <FontAwesomeIcon icon={faChevronLeft} aria-hidden="true" />
+                  <span className='ringPageBackLabelFull'>Back to rings</span>
+                  <span className='ringPageBackLabelShort'>Back</span>
+                </button>
+              )}
               {children}
             </div>
           </div>

@@ -160,6 +160,8 @@
 
 :global(.ringPageViewport) .projectsContainer {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   padding-left: 0;
   padding-right: 0;
 }
@@ -311,6 +313,9 @@
     object-fit: cover;
     width: 100%;
   }
+  :global(.ringPageViewport) .projectsGrid {
+    grid-template-columns: 1fr;
+  }
   .projectsGridItem {
     /* border-radius: 20px; */
     display: flex;
@@ -368,18 +373,19 @@
     transform: none !important;
   }
   .projectBackButton {
-    top: 3.45rem;
-    left: var(--ring-back-button-anchor-x);
+    position: relative;
+    top: auto;
+    left: auto;
     justify-content: center;
-    width: 2.1rem;
-    height: 2.1rem;
-    padding: 0;
-    gap: 0;
-    border-radius: 50%;
-    font-size: 0;
+    width: fit-content;
+    height: auto;
+    margin: 0 auto 0.75rem;
     translate: 0 0;
   }
+  .projectBackButton:hover {
+    transform: translateY(-1px);
+  }
   .projectBackButton svg {
-    font-size: 1rem;
+    font-size: 0.85em;
   }
 }

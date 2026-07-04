@@ -612,14 +612,19 @@
     z-index: 9999;
   }
 
+  .homeContentMode .ring:not(.ringZoom) {
+    opacity: 0;
+    pointer-events: none;
+  }
+
   .homeContentMode .ring.activeRing.ringZoom {
     left: 50% !important;
     top: 50% !important;
-    margin-left: calc(var(--mobile-ring-base) / -2) !important;
-    margin-top: calc(var(--mobile-ring-base) / -2) !important;
-    width: var(--mobile-ring-base) !important;
-    height: var(--mobile-ring-base) !important;
-    transform: scale(var(--mobile-ring-scale)) !important;
+    margin-left: calc(var(--mobile-ring-visual) / -2) !important;
+    margin-top: calc(var(--mobile-ring-visual) / -2) !important;
+    width: var(--mobile-ring-visual) !important;
+    height: var(--mobile-ring-visual) !important;
+    transform: none !important;
   }
 
   .homeRingPageContent {
@@ -630,19 +635,28 @@
     padding: var(--mobile-header-offset) 0 var(--mobile-footer-offset);
   }
 
-  .homeRingPageContent .ringPageScrollArc {
-    top: var(--mobile-ring-center-y);
+  .homeRingPageFrame {
+    background: transparent;
+    box-shadow:
+      0 0 36px var(--ring-page-glow),
+      0 0 120px var(--ring-page-glow-soft);
+    z-index: 3;
   }
 
-  .homeRingPageContent .ringPageContentScroll {
+  .homeRingPageContent :global(.ringPageScrollArc) {
+    top: var(--mobile-ring-center-y);
+    z-index: 4;
+  }
+
+  .homeRingPageContent :global(.ringPageContentScroll) {
     position: fixed;
     top: var(--mobile-ring-center-y);
     left: 50%;
-    width: var(--mobile-ring-content-width);
-    height: var(--mobile-ring-content-width);
+    width: var(--ring-content-size);
+    height: var(--ring-content-size);
     max-height: none;
     margin: 0;
-    padding: 0.75rem 0.35rem 1rem;
+    padding: var(--ring-content-pad-top) var(--ring-content-pad-x) var(--ring-content-pad-bottom);
     translate: -50% -50%;
   }
 }

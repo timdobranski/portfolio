@@ -171,42 +171,42 @@ const projectData = [
   //   deployLink: {url:'https://canine-corners.vercel.app/', text: 'See It In Action'},
   //   status: 'Demo Project'
   // },
-  {
-    name: 'Atelier Vacations',
-    date: 'Fall 2023',
-    page: 'atelier-vacations',
-    summary: 'A small mobile-responsive landing page with a focus on design & styling',
-    description: [`This small project represents my continued efforts to improve my CSS skills and design creativity. It's a mobile-responsive
-    front-end without a use yet.`, `Thus far styling and design has been the primary focus, but features will be added as needed
-    in the future.`, `A major styling challenge for this project was learning how to display portions of the
-    same image in multiple places on the page. There are libraries that can accomplish this, but I wanted to learn how to do
-    so while familiarizing myself with advanced CSS.`],
-    tech: ['Next.js', 'AWS'],
-    images: [
-      `/images/projects/atelier-vacations/atelier-vacations.jpg`,
-    ],
-    deployLink: {url:'https://parkway-three.vercel.app/', text: 'See It In Action'},
-    status: 'Demo Project'
-  },
-  {
-    name: 'Atelier Design',
-    date: 'Fall 2023',
-    page: 'atelier-design',
-    summary: 'Promo site for a fictional web development firm',
-    description: [`This is a promotional website for a fictional web development firm. Features include a full-screen fade-in effect,
-    a responsive grid layout, and a signup form that sends a confirmation email to the user via a node express server and the Twilio sendgrid API.`,
-    `Challenges of this project were learning how to create a mobile-responsive grid layout that rendered consistently across different browsers,
-    aspect ratios and platforms.`],
-    tech: ['React', 'Node.js', 'Express', 'AWS', 'Twilio Sendgrid API'],
-    images: [
-      `/images/projects/atelier-design/atelier-design.jpg`,
-      `/images/projects/atelier-design/atelier-design-2.jpg`,
-      `/images/projects/atelier-design/atelier-design-3.jpg`,
-      `/images/projects/atelier-design/atelier-design-4.jpg`,
-    ],
-    deployLink: {url:'', text: 'See It In Action'},
-    status: 'Demo Project'
-  },
+  // {
+  //   name: 'Atelier Vacations',
+  //   date: 'Fall 2023',
+  //   page: 'atelier-vacations',
+  //   summary: 'A small mobile-responsive landing page with a focus on design & styling',
+  //   description: [`This small project represents my continued efforts to improve my CSS skills and design creativity. It's a mobile-responsive
+  //   front-end without a use yet.`, `Thus far styling and design has been the primary focus, but features will be added as needed
+  //   in the future.`, `A major styling challenge for this project was learning how to display portions of the
+  //   same image in multiple places on the page. There are libraries that can accomplish this, but I wanted to learn how to do
+  //   so while familiarizing myself with advanced CSS.`],
+  //   tech: ['Next.js', 'AWS'],
+  //   images: [
+  //     `/images/projects/atelier-vacations/atelier-vacations.jpg`,
+  //   ],
+  //   deployLink: {url:'https://parkway-three.vercel.app/', text: 'See It In Action'},
+  //   status: 'Demo Project'
+  // },
+  // {
+  //   name: 'Atelier Design',
+  //   date: 'Fall 2023',
+  //   page: 'atelier-design',
+  //   summary: 'Promo site for a fictional web development firm',
+  //   description: [`This is a promotional website for a fictional web development firm. Features include a full-screen fade-in effect,
+  //   a responsive grid layout, and a signup form that sends a confirmation email to the user via a node express server and the Twilio sendgrid API.`,
+  //   `Challenges of this project were learning how to create a mobile-responsive grid layout that rendered consistently across different browsers,
+  //   aspect ratios and platforms.`],
+  //   tech: ['React', 'Node.js', 'Express', 'AWS', 'Twilio Sendgrid API'],
+  //   images: [
+  //     `/images/projects/atelier-design/atelier-design.jpg`,
+  //     `/images/projects/atelier-design/atelier-design-2.jpg`,
+  //     `/images/projects/atelier-design/atelier-design-3.jpg`,
+  //     `/images/projects/atelier-design/atelier-design-4.jpg`,
+  //   ],
+  //   deployLink: {url:'', text: 'See It In Action'},
+  //   status: 'Demo Project'
+  // },
   // {
   //   name: 'FitPass',
   //   date: 'Spring 2023',
