@@ -60,8 +60,10 @@ a {
   background:
     radial-gradient(circle at top left, rgba(0, 187, 255, 0.28), transparent 32%),
     radial-gradient(circle at 85% 20%, rgba(255, 0, 110, 0.16), transparent 20%),
-    radial-gradient(circle at bottom right, rgba(255, 210, 63, 0.22), transparent 31%),
-    radial-gradient(circle at 14% 78%, rgba(0, 245, 212, 0.18), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(0, 187, 255, 0.22), transparent 31%),
+    radial-gradient(circle at 14% 78%, rgba(143, 92, 255, 0.18), transparent 25%),
+    radial-gradient(circle at 50% 46%, rgba(0, 187, 255, 0.12), transparent 24%),
+    radial-gradient(circle at 56% 56%, rgba(255, 0, 110, 0.1), transparent 22%),
     linear-gradient(145deg, #070b1a 0%, #040611 45%, #010208 100%);
   overflow-y: auto;
 }

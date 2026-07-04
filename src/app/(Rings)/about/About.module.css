@@ -8,11 +8,17 @@
 .meImageContainer {
   margin: 0;
 }
-.aboutImage {
+.aboutAvatarFrame {
   position: relative;
-  width: 60%;
-  height: auto;
-  border-radius: 20px;
+  width: clamp(140px, 18vw, 220px);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+}
+.aboutAvatar {
+  object-fit: cover;
 }
 .ariaImage {
   width: 60%;
@@ -79,10 +85,9 @@
     font-size: 1.25rem;
 
   }
-  .aboutImage {
+  .aboutAvatarFrame {
+    width: clamp(120px, 34vw, 180px);
     margin-bottom: 1rem;
-    width: 80%;
-
   }
   .ariaImage {
     width: 80%;

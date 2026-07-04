@@ -1,7 +1,7 @@
 'use client';
 
 import styles from './About.module.css';
-import me from '../../../../public/images/Me-2.jpg';
+import me from '../../../../public/images/me2square.jpg';
 import aria from '../../../../public/images/aria3.jpg';
 
 import Image from 'next/image';
@@ -14,7 +14,9 @@ export default function About() {
       <h1 className={styles.aboutHeader}>ABOUT ME</h1>
 
           <div className={styles.meImageContainer}>
-            <Image className={styles.aboutImage} src={me} alt='Tim Dobranski'/>
+            <div className={styles.aboutAvatarFrame}>
+              <Image className={styles.aboutAvatar} src={me} alt='Tim Dobranski' fill sizes='(max-width: 768px) 180px, 220px'/>
+            </div>
           </div>
           <div className={styles.bioContainer}>
             <p>{`I'm a native of La Mesa, California, just outside of San Diego. I've been playing the guitar and writing/recording music
