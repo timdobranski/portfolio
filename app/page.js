@@ -2,7 +2,7 @@
 
 import styles from './Home.module.css'
 import { Fragment, useCallback, useEffect, useRef, useState } from 'react'
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight, faMusic, faCode, faCube, faMessage, faUser } from "@fortawesome/free-solid-svg-icons";
 import Projects from './(Rings)/apps/page.js';
@@ -68,10 +68,12 @@ const defaultActiveRing = rings.findIndex(({ link }) => link === '/apps');
 
 export default function Home() {
   const pathname = usePathname();
+  const router = useRouter();
   const [activeRing, setActiveRing] = useState(defaultActiveRing);
   const [zoomedRing, setZoomedRing] = useState(null);
   const [selectedRoute, setSelectedRoute] = useState(null);
   const [isRingContentVisible, setIsRingContentVisible] = useState(false);
+  const [isRingContentExiting, setIsRingContentExiting] = useState(false);
   const [ringScrollProgress, setRingScrollProgress] = useState(0);
   const [hasRingScrollableContent, setHasRingScrollableContent] = useState(false);
 
@@ -89,6 +91,7 @@ export default function Home() {
   const settleTimeoutRef = useRef(null);
   const contentTimeoutRef = useRef(null);
   const routeTransitionTimeoutRef = useRef(null);
+  const ringBackTimeoutRef = useRef(null);
   const ringContentScrollRef = useRef(null);
   const rafRef = useRef(null);
   const pendingTouchRef = useRef(null);
@@ -140,6 +143,11 @@ export default function Home() {
       contentTimeoutRef.current = null;
     }
 
+    if (ringBackTimeoutRef.current) {
+      window.clearTimeout(ringBackTimeoutRef.current);
+      ringBackTimeoutRef.current = null;
+    }
+
     if (routeTransitionTimeoutRef.current) {
       window.clearTimeout(routeTransitionTimeoutRef.current);
       routeTransitionTimeoutRef.current = null;
@@ -151,6 +159,7 @@ export default function Home() {
       setZoomedRing(null);
       setSelectedRoute(null);
       setIsRingContentVisible(false);
+      setIsRingContentExiting(false);
       return;
     }
 
@@ -167,6 +176,7 @@ export default function Home() {
       activeRingRef.current = routeIndex;
       selectedRouteRef.current = ring.link;
       setSelectedRoute(ring.link);
+      setIsRingContentExiting(false);
       setIsRingContentVisible(false);
       setZoomedRing(null);
       setInteractionFromRing(currentActiveRing);
@@ -200,6 +210,7 @@ export default function Home() {
     setActiveRing(routeIndex);
     setZoomedRing(ring.id);
     setSelectedRoute(ring.link);
+    setIsRingContentExiting(false);
     setIsRingContentVisible(true);
   }, []);
 
@@ -219,6 +230,7 @@ export default function Home() {
       setIsRingContentVisible(false);
       setSelectedRoute(null);
       setZoomedRing(null);
+      setIsRingContentExiting(false);
       setRingScrollProgress(0);
       setHasRingScrollableContent(false);
     };
@@ -234,6 +246,9 @@ export default function Home() {
       }
       if (routeTransitionTimeoutRef.current) {
         window.clearTimeout(routeTransitionTimeoutRef.current);
+      }
+      if (ringBackTimeoutRef.current) {
+        window.clearTimeout(ringBackTimeoutRef.current);
       }
     };
   }, [syncRouteState]);
@@ -260,12 +275,23 @@ export default function Home() {
       contentTimeoutRef.current = null;
     }
 
-    window.history.pushState({ ringRoute: null }, '', '/');
+    if (ringBackTimeoutRef.current) {
+      window.clearTimeout(ringBackTimeoutRef.current);
+      ringBackTimeoutRef.current = null;
+    }
+
     setIsRingContentVisible(false);
-    setSelectedRoute(null);
+    setIsRingContentExiting(true);
     setZoomedRing(null);
     setRingScrollProgress(0);
     setHasRingScrollableContent(false);
+
+    ringBackTimeoutRef.current = window.setTimeout(() => {
+      router.push('/');
+      setSelectedRoute(null);
+      setIsRingContentExiting(false);
+      ringBackTimeoutRef.current = null;
+    }, 1050);
   }
 
   const handleNextRing = () => {
@@ -443,6 +469,17 @@ export default function Home() {
         ? 'none'
         : 'top 1000ms cubic-bezier(0.22, 1, 0.36, 1), left 1000ms cubic-bezier(0.22, 1, 0.36, 1), width 1000ms cubic-bezier(0.22, 1, 0.36, 1), height 1000ms cubic-bezier(0.22, 1, 0.36, 1), margin 1000ms cubic-bezier(0.22, 1, 0.36, 1), font-size 1000ms cubic-bezier(0.22, 1, 0.36, 1), opacity 800ms ease');
   }
+
+  const getMobileZoomedRingStyle = () => ({
+    top: '50%',
+    left: '50%',
+    width: 'var(--mobile-ring-visual)',
+    height: 'var(--mobile-ring-visual)',
+    marginTop: 'calc(var(--mobile-ring-visual) / -2)',
+    marginLeft: 'calc(var(--mobile-ring-visual) / -2)',
+    transform: 'none',
+    transition: 'top 1.05s cubic-bezier(0.05, 0.85, 0.25, 1), left 1.05s cubic-bezier(0.05, 0.85, 0.25, 1), width 1.05s cubic-bezier(0.05, 0.85, 0.25, 1), height 1.05s cubic-bezier(0.05, 0.85, 0.25, 1), margin 1.05s cubic-bezier(0.05, 0.85, 0.25, 1)',
+  });
 
   const getContentStyle = (index, kind) => {
     const isInteracting = isDragging || isSettling;
@@ -650,7 +687,7 @@ export default function Home() {
           </defs>
         </svg>
         <div
-          className={`${styles.homeContainer} ${selectedRoute ? styles.homeContentMode : ''}`}
+          className={`${styles.homeContainer} ${selectedRoute ? styles.homeContentMode : ''} ${isRingContentExiting ? styles.homeContentExiting : ''}`}
           key='homeContainer'
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
@@ -678,6 +715,7 @@ export default function Home() {
             {rings.map((ring, index) => {
               let ringClass;
               let textClass = "";  // kept for future styling
+              const isZoomedRing = zoomedRing === ring.id;
 
               const visualCenter = (isDragging || isSettling)
                 ? (interactionFromRing ?? activeRing)
@@ -714,8 +752,8 @@ export default function Home() {
                       if (!isSelectableRing) return;
                       handleRingClick(ring.id, ring.link);
                     }}
-                    className={`${styles.ring} ${styles[ring.color]} ${ringClass} ${isSelectableRing ? styles.selectableRing : styles.nonSelectableRing} ${zoomedRing === ring.id ? styles.ringZoom : ''}`}
-                    style={getInterpolatedRingStyle(index)}
+                    className={`${styles.ring} ${styles[ring.color]} ${ringClass} ${isSelectableRing ? styles.selectableRing : styles.nonSelectableRing} ${isZoomedRing ? styles.ringZoom : ''}`}
+                    style={isMobile && selectedRoute && isZoomedRing ? getMobileZoomedRingStyle() : getInterpolatedRingStyle(index)}
                     id={ring.id}>
 
                     <div className={`${styles.ringBorder} ${styles.ringBorderA}`} aria-hidden="true"></div>
@@ -732,7 +770,7 @@ export default function Home() {
                         <FontAwesomeIcon
                           icon={ring.icon}
                           className={styles.ringIcon}
-                          style={zoomedRing === ring.id ? { opacity: 0, color: 'rgba(0, 0, 0, 0)' } : undefined}
+                          style={isZoomedRing ? { opacity: 0, color: 'rgba(0, 0, 0, 0)' } : undefined}
                         />
                       )}
                       <h1 className={`${styles.ringHeader} ${textClass}`} style={getContentStyle(index, 'header')}>{ring.header}</h1>

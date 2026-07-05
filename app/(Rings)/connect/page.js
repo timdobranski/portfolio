@@ -45,92 +45,90 @@ export default function Connect() {
   }
 
   return (
-    <div>
-      <div className='pageContentContainer'>
-        <h1 className={`pageTitle ${styles.pageHeader}`}>CONNECT</h1>
-        <p className={'whiteText'}>{`Reach out below:`}</p>
+    <div className='pageContentContainer'>
+      <h1 className={`pageTitle ${styles.pageHeader}`}>CONNECT</h1>
+      <p className={'whiteText'}>{`Reach out below:`}</p>
 
-        <div className={styles.formOuter}>
-          <form className={styles.form} onSubmit={onSubmit}>
-            <div className={styles.formRow}>
-              <label className={styles.label}>
-                Name
-                <input
-                  className={styles.input}
-                  type='text'
-                  name='name'
-                  autoComplete='name'
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                  maxLength={100}
-                />
-              </label>
-
-              <label className={styles.label}>
-                Email
-                <input
-                  className={styles.input}
-                  type='email'
-                  name='email'
-                  autoComplete='email'
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  maxLength={254}
-                />
-              </label>
-            </div>
-
-            <label className={styles.honeypot} aria-hidden='true'>
-              Company
+      <div className={styles.formOuter}>
+        <form className={styles.form} onSubmit={onSubmit}>
+          <div className={styles.formRow}>
+            <label className={styles.label}>
+              Name
               <input
                 className={styles.input}
                 type='text'
-                tabIndex={-1}
-                autoComplete='off'
-                value={company}
-                onChange={(e) => setCompany(e.target.value)}
+                name='name'
+                autoComplete='name'
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                maxLength={100}
               />
             </label>
 
             <label className={styles.label}>
-              Message
-              <textarea
-                className={styles.textarea}
-                name='message'
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
+              Email
+              <input
+                className={styles.input}
+                type='email'
+                name='email'
+                autoComplete='email'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
-                maxLength={5000}
-                rows={8}
+                maxLength={254}
               />
             </label>
+          </div>
 
-            <div className={styles.actions}>
-              <button className={styles.button} type='submit' disabled={status === 'sending'}>
-                {status === 'sending' ? 'Sending…' : 'Send'}
-              </button>
+          <label className={styles.honeypot} aria-hidden='true'>
+            Company
+            <input
+              className={styles.input}
+              type='text'
+              tabIndex={-1}
+              autoComplete='off'
+              value={company}
+              onChange={(e) => setCompany(e.target.value)}
+            />
+          </label>
 
-              {status !== 'idle' && (
-                <p
-                  className={
-                    status === 'success'
-                      ? styles.statusSuccess
-                      : status === 'error'
-                      ? styles.statusError
-                      : styles.statusSending
-                  }
-                  role={status === 'error' ? 'alert' : 'status'}
-                >
-                  {statusMessage}
-                </p>
-              )}
-            </div>
-          </form>
-        </div>
+          <label className={styles.label}>
+            Message
+            <textarea
+              className={styles.textarea}
+              name='message'
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              required
+              maxLength={5000}
+              rows={8}
+            />
+          </label>
 
+          <div className={styles.actions}>
+            <button className={styles.button} type='submit' disabled={status === 'sending'}>
+              {status === 'sending' ? 'Sending…' : 'Send'}
+            </button>
+
+            {status !== 'idle' && (
+              <p
+                className={
+                  status === 'success'
+                    ? styles.statusSuccess
+                    : status === 'error'
+                    ? styles.statusError
+                    : styles.statusSending
+                }
+                role={status === 'error' ? 'alert' : 'status'}
+              >
+                {statusMessage}
+              </p>
+            )}
+          </div>
+        </form>
       </div>
+
     </div>
   )
 }

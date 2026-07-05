@@ -3,6 +3,10 @@
 import BackgroundRings from '../../components/BackgroundRings/BackgroundRings.js';
 import Home from '../page.js';
 import { usePathname, useRouter } from 'next/navigation';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 const ringThemeByRoute = [
@@ -18,29 +22,25 @@ const getRingThemeClass = (pathname) => (
   ?? 'ringPageGreen'
 );
 
-const getBackTarget = (pathname) => {
-  const segments = pathname.split('/').filter(Boolean);
-
-  if (segments.length <= 1) {
-    return '/';
-  }
-
-  return `/${segments.slice(0, -1).join('/')}`;
-};
-
 export default function Background({children}) {
   const router = useRouter();
   const pathname = usePathname();
   const ringThemeClass = getRingThemeClass(pathname);
   const shouldUseCarouselShell = ringThemeByRoute.some(({ path }) => pathname === path);
-  const backTarget = getBackTarget(pathname);
+  const isAppsRoute = pathname === '/apps' || pathname.startsWith('/apps/');
+  const isAppsProjectPage = /^\/apps\/[^/]+$/.test(pathname);
   const scrollRef = useRef(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [hasScrollableContent, setHasScrollableContent] = useState(false);
 
   const handleBackNavigation = useCallback(() => {
-    router.push(backTarget);
-  }, [backTarget, router]);
+    if (isAppsRoute && window.history.length > 1) {
+      router.back();
+      return;
+    }
+
+    router.push('/');
+  }, [isAppsRoute, router]);
 
   const updateScrollProgress = useCallback(() => {
     const scrollEl = scrollRef.current;
@@ -58,9 +58,38 @@ export default function Background({children}) {
     return () => window.removeEventListener('resize', updateScrollProgress);
   }, [pathname, children, updateScrollProgress]);
 
+  const pageVariants = {
+    initial: {
+      backgroundColor: 'black',
+      opacity: 0,
+    },
+    in: {
+      backgroundColor: 'transparent',
+      opacity: 1,
+    },
+    out: {
+      backgroundColor: 'black',
+    }
+  };
+  const overlayVariants = {
+    initial: {
+      opacity: 1,
+      pointerEvents: 'all'
+    },
+    in: {
+      opacity: 0,
+      pointerEvents: 'none',
+    },
+    out: {
+      opacity: 1,
+      pointerEvents: 'all'
+    }
+  };
+
   if (shouldUseCarouselShell) {
     return <Home />;
   }
+
 
   return (
     <>
@@ -81,7 +110,17 @@ export default function Background({children}) {
           </filter>
         </defs>
       </svg>
-      <div className='transitionContainer' style={{ transformOrigin: "top center" }}>
+      <AnimatePresence >
+        <motion.div
+        initial="initial"
+        animate="in"
+        exit="out"
+        variants={pageVariants}
+        transition={{ duration: 1.5, ease: [0.05, 0.85, 0.25, 1]}}
+        style={{ transformOrigin: "top center" }}
+        key={'zoomTransition'}
+        className='transitionContainer'
+        >
           <div className={`ringPageViewport ${ringThemeClass}`}>
             <div className='ringPageFrame' aria-hidden="true">
               <div className='ringPageBorder ringPageBorderA'></div>
@@ -96,21 +135,32 @@ export default function Background({children}) {
               aria-hidden="true"
             ></div>
             <div className='ringPageContentScroll' ref={scrollRef} onScroll={updateScrollProgress}>
-              <button className='ringPageBackButton' type='button' onClick={handleBackNavigation}>
-                <span aria-hidden="true">‹</span>
-                <span className='ringPageBackLabelFull'>{backTarget === '/' ? 'Back to rings' : 'Back'}</span>
-                <span className='ringPageBackLabelShort'>Back</span>
-              </button>
+              {!isAppsProjectPage && (
+                <button className='ringPageBackButton' type='button' onClick={handleBackNavigation}>
+                  <FontAwesomeIcon icon={faChevronLeft} aria-hidden="true" />
+                  <span className='ringPageBackLabelFull'>{isAppsRoute ? 'Back' : 'Back to rings'}</span>
+                  <span className='ringPageBackLabelShort'>Back</span>
+                </button>
+              )}
               {children}
             </div>
           </div>
-      </div>
+        </motion.div>
 
         {/* {
         noTransition !== 'true' && ( */}
-          <div className='overlay'></div>
+          <motion.div
+            className='overlay'
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={overlayVariants}
+            transition={{ duration: .5, delay: .5 }}
+            key={'fadeTransition'}
+          ></motion.div>
         {/* )
       } */}
+      </AnimatePresence>
     </>
   )
 }

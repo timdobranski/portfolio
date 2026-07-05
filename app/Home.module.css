@@ -61,6 +61,8 @@
   .homeRingPageContent {
     --ring-page-center-y: calc(50dvh + 36px + 6vh);
     --ring-page-size: 79.8vw;
+    --ring-content-size: var(--ring-page-size);
+    --ring-content-clip-radius: calc(50% - 0.75rem);
     --ring-content-pad-x: clamp(3rem, 5vw, 6rem);
     --ring-content-column-max: min(1180px, calc(100vw - 14rem));
     --ring-scroll-size: var(--ring-page-size);
@@ -631,6 +633,18 @@
 ------------------------------------------*/
 
 @media (max-width: 768px) {
+  .homeRingPageContent,
+  .homeContentMode.homeContainer {
+    --home-mobile-ring-visual: calc(max(132vw, var(--mobile-ring-band-height)) + clamp(3.5rem, 10vw, 5.5rem));
+    --mobile-ring-visual: var(--home-mobile-ring-visual);
+  }
+
+  .homeRingPageContent {
+    --mobile-ring-content-size: var(--home-mobile-ring-visual);
+    --ring-content-size: var(--home-mobile-ring-visual);
+    --ring-content-clip-radius: calc(50% - 0.25rem);
+  }
+
   .homeContainer {
     top: var(--mobile-header-offset);
     bottom: var(--mobile-footer-offset);
@@ -646,7 +660,13 @@
     height: var(--mobile-ring-base);
     margin-top: calc(var(--mobile-ring-base) / -2);
     margin-left: calc(var(--mobile-ring-base) / -2);
-    transition: none;
+    transition:
+      top 1.05s cubic-bezier(0.05, 0.85, 0.25, 1),
+      left 1.05s cubic-bezier(0.05, 0.85, 0.25, 1),
+      width 1.05s cubic-bezier(0.05, 0.85, 0.25, 1),
+      height 1.05s cubic-bezier(0.05, 0.85, 0.25, 1),
+      margin 1.05s cubic-bezier(0.05, 0.85, 0.25, 1),
+      font-size 1.05s cubic-bezier(0.05, 0.85, 0.25, 1);
   }
   .inactiveLeft {
     position: absolute;
@@ -738,6 +758,10 @@
   .homeContentMode .ring:not(.ringZoom) {
     opacity: 0;
     pointer-events: none;
+  }
+
+  .homeContentMode.homeContentExiting .ring.activeRing {
+    opacity: 1;
   }
 
   .homeContentMode .ring.activeRing.ringZoom {
